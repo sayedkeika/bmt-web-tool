@@ -959,15 +959,15 @@ export const assessments = {
   
     content: [
         {
-            id: "cat1",
+            id: "cat5",
             category: "Environment",
             principles: [
                 {
-                    id: "p1",
+                    id: "p17",
                     title: "Environmental management",
                     criteria: [
                         {
-                            id: "EN-EM-1",
+                            id: "c61",
                             text: "The scheme a requires an environmental management plan for relevant environmental topics.",
                             requirements: [
                                 {
@@ -999,11 +999,11 @@ export const assessments = {
                     ]
                 },
                 {
-                    id: "p2",
+                    id: "p18",
                     title: "Climate change management",
                     criteria: [
                         {
-                            id: "EN-CC-1",
+                            id: "c62",
                             text: "The scheme requires activities that reduce GHG emissions.",
                             requirements: [
                                 {
@@ -1017,7 +1017,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "EN-CC-2",
+                            id: "c63",
                             text: "The scheme requires quantification and disclosure of the certified product's lifecycle greenhouse gas emissions (GHG).",
                             requirements: [
                                 {
