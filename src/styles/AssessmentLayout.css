@@ -152,3 +152,9 @@
   margin-top: 1rem;
   background-color: #f9fdf9;
 }
+
+.inputs input {
+  width: 100%;
+  box-sizing: border-box;
+  margin-bottom: 1rem;
+}
