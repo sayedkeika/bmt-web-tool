@@ -1,4 +1,4 @@
-// ✅ UPDATED Assessment.jsx to support both system and content structures, with full-width input boxes
+// Assessment Questionnaire
 import React from 'react'
 import '../styles/AssessmentLayout.css';
 
