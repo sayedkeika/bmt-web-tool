@@ -1,6 +1,5 @@
 // Assessment Questionnaire
 import React from 'react'
-import '../styles/AssessmentLayout.css';
 
 export default function Assessment({
   category,
