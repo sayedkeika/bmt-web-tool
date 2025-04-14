@@ -105,10 +105,13 @@ export default function Assessment({
         {isContentAssessment ? (
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
-              <p><strong>{criterion.text}</strong></p>
+              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
+              <div className="examples">
+                {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
+              </div>
               {criterion.requirements.map(req => (
                 <div key={req.id} className="sub-criterion-block">
-                  <p>{req.text} <em>({req.level})</em></p>
+                  <p><strong>{req.text}</strong>  <em>({req.level})</em></p>
                   <div className="options">
                     {req.responseOptions.map(option => (
                       <button
@@ -141,9 +144,9 @@ export default function Assessment({
         ) : (
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
-              <p><strong>{criterion.text}</strong></p>
+              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
               <div className="examples">
-                {criterion.examples?.map((ex, i) => <p key={i}>{ex}</p>)}
+                {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
               </div>
               <div className="options">
                 {criterion.responseOptions.map(option => (

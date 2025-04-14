@@ -1,6 +1,5 @@
 // Progress Overview
 import React, { useState, useEffect } from 'react'
-import '../styles/AssessmentLayout.css';
 
 // Map assessment types
 const TYPE_LABELS = {

@@ -1008,6 +1008,9 @@ export const assessments = {
                         {
                             id: "c62",
                             text: "The scheme requires activities that reduce GHG emissions.",
+                            examples: [
+                                "GHG emissions reductions activities can include, for example, increasing the use of renewable energy; increasing energy efficiency; increasing/stock soil carbon content; promoting activities such as forest restoration on working land."
+                            ],
                             requirements: [
                                 {
                                     id: "r4",
@@ -1022,6 +1025,10 @@ export const assessments = {
                         {
                             id: "c63",
                             text: "The scheme requires quantification and disclosure of the certified product's lifecycle greenhouse gas emissions (GHG).",
+                            examples: [
+                                "• Examples of existing standards and legislation include the EU Product Environmental Footprint.",
+                                "• See glossary for definitions of \"lifecycle greenhouse gas emissions\", \"emission factor\", \"EU Product Environmental Footprint\""
+                            ],
                             requirements: [
                                 {
                                     id: "r5",
@@ -1052,6 +1059,10 @@ export const assessments = {
                         {
                             id: "c64",
                             text: "The scheme requires quantification and disclosure of the operator's total GHG emissions.",
+                            examples: [
+                                "• Examples of existing standard and legislation include the GHG Protocol, ESRS E1-6",
+                                "• See glossary for definitions of \"emission factor\", \"scope 1\", \"scope 2\" and \"scope 3\""
+                            ],
                             requirements: [
                                 {
                                     id: "r8",
@@ -1082,6 +1093,10 @@ export const assessments = {
                         {
                             id: "c65",
                             text: "The scheme requires a roadmap for reduction of the certified products' lifecycle GHG emissions.",
+                            examples: [
+                                "• An example of interim targets include setting targets, for example, -10% by 2030, -50% by 2040, and -100% by 2050.",
+                                "• See glossary for definitions of \"lifecycle greenhouse gas emissions\", \"carbon neutrality\"."
+                            ],
                             requirements: [
                                 {
                                     id: "r11",
@@ -1112,6 +1127,9 @@ export const assessments = {
                         {
                             id: "c66",
                             text: "The scheme requires a roadmap for reduction of the total GHG emissions of the operator.",
+                            examples: [
+                                "See glossary for definition of \"carbon neutrality\", \"scope 1\", \"scope 2\" and \"scope 3\""
+                            ],
                             requirements: [
                                 {
                                     id: "r14",
@@ -1162,6 +1180,9 @@ export const assessments = {
                         {
                             id: "c106",
                             text: "The scheme requires the 9R framework and/or the cascading use principle to be the main guiding principle of resource use.",
+                            examples: [
+                                "See glossary for definitions for \"9R framework\" and \"cascading use principle\""
+                            ],
                             requirements: [
                                 {
                                     id: "r94",
@@ -1176,6 +1197,9 @@ export const assessments = {
                         {
                             id: "c107",
                             text: "The scheme requires that virgin biomass is harvested at levels that ensure regeneration.",
+                            examples: [
+                                "See glossary for definitions for \"virgin biomass\""
+                            ],
                             requirements: [
                                 {
                                     id: "r95",
@@ -1190,6 +1214,10 @@ export const assessments = {
                         {
                             id: "c108",
                             text: "The scheme requires a plan for the improvement of the share of circular inflows in production ",
+                            examples: [
+                                "• The industry average can be calculated using existing test methodologies; or obtained from reference literature.",
+                                "• See glossary for definitions for \"circular inflow\", \"inflow\"."
+                            ],
                             requirements: [
                                 {
                                     id: "r96",
@@ -1220,6 +1248,10 @@ export const assessments = {
                         {
                             id: "c109",
                             text: "The scheme requires the development and implementation of a circular procurement plan ",
+                            examples: [
+                                "• Circular material inflows are materials that are produced in accordance with the principles of circular economy. These include recycled material and virgin biomass that is regeneratively produced.",
+                                "• See glossary for definitions for \"inflow\""
+                            ],
                             requirements: [
                                 {
                                     id: "r99",
@@ -1234,6 +1266,10 @@ export const assessments = {
                         {
                             id: "c110",
                             text: "The scheme requires re-using or recycling of residual flows in a sustainable manner.",
+                            examples: [
+                                "• Residual flows and waste can be used for energy generation in certain circumstances  where (1) the use for material purposes is not possible (e.g. no market is accessible) and (2) the use provides a greenhouse gas benefit in comparison to the alternative.",
+                                "• See glossary for \"recycling\""
+                            ],
                             requirements: [
                                 {
                                     id: "r100",
@@ -1270,6 +1306,11 @@ export const assessments = {
                         {
                             id: "c112",
                             text: "The scheme requires products to be designed for repairability and reusability, when possible.",
+                            examples: [
+                                "• Examples of repairability and reusability practices include: (A) Spare parts essential to the functionality of the products are accessible at a reasonable  price;  (B) Designed for easy inspecting, non-destructive dismantling, and replaceability with commonly available tools ; (C) Spare parts are not unnecessarily bundled, (D) Use of standardised components and tools, (E) Access to repair and maintenance manuals and documentation.",
+                                "• Examples of product life extension initiatives  include: (A) product upgrades, (B) repair and maintenance services, (D)  making spare parts available and provides tools for self-repair, (D)  a second-hand, refurbished and/or remanufactured sales program.",
+                                "• Examples of specific products where repairability and reusability design is not appropriate (i.e. not possible) is detergents."
+                            ],
                             requirements: [
                                 {
                                     id: "r103",
@@ -1300,6 +1341,9 @@ export const assessments = {
                         {
                             id: "c113",
                             text: "The scheme requires products to be designed for high-quality recyclability",
+                            examples: [
+                                "See glossary for definition of \"high-quality recycling\", \"recycling\", \"9R framework\""
+                            ],
                             requirements: [
                                 {
                                     id: "r106",
@@ -1342,6 +1386,10 @@ export const assessments = {
                         {
                             id: "c115",
                             text: "The scheme does not allow the use of landfills or open-air burning for waste disposal or for burning residues and by-products.",
+                            examples: [
+                                "• The scheme can allow the following exceptions for instances where open-air burning is acceptable in a limited fashion: health and safety of workers is at risk; there are no viable alternatives in terms of availability or cost; burning may prevent natural fires; OR the cultivation of the crop require regular burning for its long-term viability and there are no equivalent alternatives.",
+                                "• Hazardous substances should never be burned in the open air."
+                            ],
                             requirements: [
                                 {
                                     id: "r109",
@@ -1376,6 +1424,9 @@ export const assessments = {
                         {
                             id: "c116",
                             text: "The scheme requires adherence and commitment to the Universal Declaration of Human Rights and the ILO Core Conventions.",
+                            examples: [
+                                "See glossary for \"ILO Core Conventions\""
+                            ],
                             requirements: [
                                 {
                                     id: "r111",
@@ -1398,6 +1449,9 @@ export const assessments = {
                         {
                             id: "c117",
                             text: "The scheme requires effective management of ILO Core Conventions in its own operations",
+                            examples: [
+                                "See glossary for definition of \"ILO Core Conventions\""
+                            ],
                             requirements: [
                                 {
                                     id: "r113",
@@ -1452,6 +1506,9 @@ export const assessments = {
                         {
                             id: "c118",
                             text: "The scheme requires the operator to ensure that there is no child labour in its own operations. (C138, C182)",
+                            examples: [
+                                "See glossary for definition of \"child labour\""
+                            ],
                             requirements: [
                                 {
                                     id: "r119",
@@ -1490,6 +1547,9 @@ export const assessments = {
                         {
                             id: "c119",
                             text: "The scheme requires the operator to ensure that there is no forced labour in its own operations (C105, C029)",
+                            examples: [
+                                "See glossary for definition of \"forced labour\""
+                            ],
                             requirements: [
                                 {
                                     id: "r123",
@@ -1504,6 +1564,9 @@ export const assessments = {
                         {
                             id: "c120",
                             text: "The scheme requires that the rights of all workers to freedom of association and collective bargaining are respected, free from interference. (C087, C098)",
+                            examples: [
+                                "See glossary for definition of \"collective bargaining\", \"freedom of association\""
+                            ],
                             requirements: [
                                 {
                                     id: "r124",
@@ -1538,6 +1601,9 @@ export const assessments = {
                         {
                             id: "c147",
                             text: "The scheme requires a business plan to ensure economic viability.",
+                            examples: [
+                                "Business plans can include the revenue streams, a growth plan, and an operational action plan that projects the generation of financial resources for the future. "
+                            ],
                             requirements: [
                                 {
                                     id: "r220",
@@ -1580,6 +1646,9 @@ export const assessments = {
                         {
                             id: "c149",
                             text: "The scheme requires fighting against fraudulent, deceptive and dishonest practices within the organization.",
+                            examples: [
+                                "These fradulent, deceptive and dishonest practices include bribery, corruption, extortion, and embezzlement, including - but not limited to - promising, offering, giving, or accepting any improper incentives, monetary or otherwise. See glossary for definition of \"policy\", \"procedure\""
+                            ],
                             requirements: [
                                 {
                                     id: "r223",
@@ -1660,6 +1729,9 @@ export const assessments = {
                         {
                             id: "c152",
                             text: "The scheme requires management of financial and economic risks.",
+                            examples: [
+                                "Financial and economic risks could be related to competition, capital availability, or assets of the operator."
+                            ],
                             requirements: [
                                 {
                                     id: "r230",
@@ -1674,6 +1746,12 @@ export const assessments = {
                         {
                             id: "c153",
                             text: "The scheme requires minimising the operator's level of vulnerability.",
+                            examples: [
+                                "• Examples of strategic measures for supply shortage include maintaining ongoing business relationships with suppliers and ensuring access to alternative procurement channels.",
+                                "• Examples of strategic measures for income generation include diversification of the products and/or services the organization offers where no buyer is responsible for a substantial part of annual income.",
+                                "• Examples of strategic measures for financial liquidity include having sufficient number of (in)formal financing sources to maintain capital flow. (i.e., banks, micro-credit institutions, public social programmes, government transfers of cash).",
+                                "• See glossary for definition of \"liquidity\""
+                            ],
                             requirements: [
                                 {
                                     id: "r231",
