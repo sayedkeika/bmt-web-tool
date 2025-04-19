@@ -10,7 +10,8 @@ export default function Assessment({
   onBackToOverview,
   onPrev,
   onNext,
-  onSubmit
+  onSubmit,
+  onOpenGlossary
 }) {
   const handleAnswer = (criterionId, value) => {
     setAnswers(prev => ({
@@ -19,7 +20,7 @@ export default function Assessment({
         ...prev[criterionId],
         response: value
       }
-    }))
+    }));
   }
 
   const handleInputChange = (criterionId, field, value) => {
@@ -29,7 +30,7 @@ export default function Assessment({
         ...prev[criterionId],
         [field]: value
       }
-    }))
+    }));
   }
 
   const currentIndex = allPrinciples.findIndex(p => p.id === principle.id)
@@ -95,6 +96,9 @@ export default function Assessment({
               <button onClick={() => onPrev(prevPrinciple.id)}>← Previous</button>
             )}
           </div>
+
+          <button onClick={onOpenGlossary}>Go to Glossary</button>
+
           <div>
             {nextPrinciple && (
               <button onClick={() => onNext(nextPrinciple.id)}>Next →</button>

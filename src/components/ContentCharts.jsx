@@ -115,9 +115,9 @@ export default function ContentCharts({ answers }) {
             <YAxis domain={[0, 100]} tickFormatter={(v) => `${v}%`} />
             <Tooltip formatter={(val) => `${val.toFixed(0)}%`} />
             <Legend />
-            <Bar dataKey="Mandatory" fill="#d32f2f" name="Mandatory" barSize={40} />
-            <Bar dataKey="Basic" fill="#1976d2" name="Basic" barSize={40} />
-            <Bar dataKey="Advanced" fill="#388e3c" name="Advanced" barSize={40} />
+            <Bar dataKey="Mandatory" fill="#8884d8" name="Mandatory" barSize={40} />
+            <Bar dataKey="Basic" fill="#82ca9d" name="Basic" barSize={40} />
+            <Bar dataKey="Advanced" fill="#ffc658" name="Advanced" barSize={40} />
           </BarChart>
         </ResponsiveContainer>
       </div>
