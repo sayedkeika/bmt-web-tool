@@ -20,7 +20,7 @@ export default function Assessment({
         ...prev[criterionId],
         response: value
       }
-    }));
+    }))
   }
 
   const handleInputChange = (criterionId, field, value) => {
@@ -30,7 +30,7 @@ export default function Assessment({
         ...prev[criterionId],
         [field]: value
       }
-    }));
+    }))
   }
 
   const currentIndex = allPrinciples.findIndex(p => p.id === principle.id)

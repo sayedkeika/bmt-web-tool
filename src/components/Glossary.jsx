@@ -3,35 +3,35 @@ import React, { useState } from 'react'
 import { glossary } from '../Data'
 
 const Glossary = ({ onBack }) => {
-    const [activeTerm, setActiveTerm] = useState(null);
-    const [filterByTheme, setFilterByTheme] = useState('');
-    const [filterByLetter, setFilterByLetter] = useState('');
+    const [activeTerm, setActiveTerm] = useState(null)
+    const [filterByTheme, setFilterByTheme] = useState('')
+    const [filterByLetter, setFilterByLetter] = useState('')
 
     const handleTermClick = (term) => {
-        setActiveTerm(prevTerm => (prevTerm === term ? null : term));
+        setActiveTerm(prevTerm => (prevTerm === term ? null : term))
     };
 
     const handleLetterClick = (letter) => {
-        setFilterByLetter(prevLetter => (prevLetter === letter ? '' : letter));
+        setFilterByLetter(prevLetter => (prevLetter === letter ? '' : letter))
     };
 
     const handleThemeFilterChange = (event) => {
-        setFilterByTheme(event.target.value);
+        setFilterByTheme(event.target.value)
     };
 
     const filteredGlossary = glossary.filter((item) => {
-        const firstChar = item.term[0].toUpperCase();
+        const firstChar = item.term[0].toUpperCase()
         const matchesTheme = filterByTheme ? item.theme === filterByTheme : true;
         const matchesLetter = filterByLetter
         ? filterByLetter === '0-9'
             ? /^[0-9]/.test(firstChar)
             : firstChar === filterByLetter
         : true;
-        return matchesTheme && matchesLetter;
+        return matchesTheme && matchesLetter
     });
 
-    const themes = [...new Set(glossary.map(item => item.theme))];
-    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('');
+    const themes = [...new Set(glossary.map(item => item.theme))]
+    const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
     return (
         <div className="container">
@@ -98,7 +98,7 @@ const Glossary = ({ onBack }) => {
                 ))}
             </div>
         </div>
-    );
-};
+    )
+}
 
 export default Glossary;

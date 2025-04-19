@@ -7,48 +7,48 @@ import Results from './components/Results'
 import Glossary from './components/Glossary'
 
 export default function App() {
-  const [selectedTypes, setSelectedTypes] = useState([]);
-  const [answers, setAnswers] = useState({});
-  const [currentPrincipleId, setCurrentPrincipleId] = useState(null);
-  const [submitted, setSubmitted] = useState(false);
-  const [showGlossary, setShowGlossary] = useState(false);
+  const [selectedTypes, setSelectedTypes] = useState([])
+  const [answers, setAnswers] = useState({})
+  const [currentPrincipleId, setCurrentPrincipleId] = useState(null)
+  const [submitted, setSubmitted] = useState(false)
+  const [showGlossary, setShowGlossary] = useState(false)
 
   const handleStart = (types) => {
-    setSelectedTypes(types);
-  };
+    setSelectedTypes(types)
+  }
 
   const handleSelectPrinciple = (id) => {
-    setCurrentPrincipleId(id);
-  };
+    setCurrentPrincipleId(id)
+  }
 
   const handleBackToOverview = () => {
-    setCurrentPrincipleId(null);
-  };
+    setCurrentPrincipleId(null)
+  }
 
   const handleSubmit = () => {
-    setSubmitted(true);
-  };
+    setSubmitted(true)
+  }
 
   const handleRestart = () => {
-    setAnswers({});
-    setSelectedTypes([]);
-    setSubmitted(false);
-    setCurrentPrincipleId(null);
-  };
+    setAnswers({})
+    setSelectedTypes([])
+    setSubmitted(false)
+    setCurrentPrincipleId(null)
+  }
 
-  const selectedCategories = selectedTypes.flatMap(type => assessments[type] || []);
-  const allPrinciples = selectedCategories.flatMap(cat => cat.principles);
-  const currentPrinciple = allPrinciples.find(p => p.id === currentPrincipleId);
-  const currentCategory = selectedCategories.find(cat => cat.principles.some(p => p.id === currentPrincipleId));
+  const selectedCategories = selectedTypes.flatMap(type => assessments[type] || [])
+  const allPrinciples = selectedCategories.flatMap(cat => cat.principles)
+  const currentPrinciple = allPrinciples.find(p => p.id === currentPrincipleId)
+  const currentCategory = selectedCategories.find(cat => cat.principles.some(p => p.id === currentPrincipleId))
 
   if (showGlossary) {
     return (
       <Glossary onBack={() => setShowGlossary(false)} />
-    );
+    )
   }
 
   if (!selectedTypes.length) {
-    return <Start onStart={handleStart} />;
+    return <Start onStart={handleStart} />
   }
 
   if (submitted) {
@@ -58,11 +58,11 @@ export default function App() {
         answers={answers}
         onRestart={handleRestart}
         onBackToOverview={() => {
-          setSubmitted(false);
-          setCurrentPrincipleId(null);
+          setSubmitted(false)
+          setCurrentPrincipleId(null)
         }}
       />
-    );
+    )
   }
 
   if (currentPrincipleId) {
@@ -79,7 +79,7 @@ export default function App() {
         onSubmit={handleSubmit}
         onOpenGlossary={() => setShowGlossary(true)}
       />
-    );
+    )
   }
 
   return (
@@ -92,5 +92,5 @@ export default function App() {
       onSubmit={handleSubmit}
       onShowGlossary={() => setShowGlossary(true)}
     />
-  );
+  )
 }
