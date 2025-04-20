@@ -25,6 +25,9 @@ const computeContentScores = (answers) => {
   const categories = assessments['content'] || []
 
   categories.forEach(cat => {
+    // Handle Minimum Backstop separately
+    if (cat.category === "Minimum Backstop") return
+
     if (!scoreByCategory[cat.category]) {
       scoreByCategory[cat.category] = {
         Mandatory: { met: 0, total: 0 },
@@ -66,6 +69,8 @@ const computeContentScores = (answers) => {
 export default function ContentCharts({ answers }) {
   const { scoreByCategory, principleScores } = useMemo(() => computeContentScores(answers), [answers])
 
+  const minimumBackstopCategory = assessments['content']?.find(cat => cat.category === "Minimum Backstop")
+
   // Transform into grouped bar dataset
   const groupedBarData = Object.entries(scoreByCategory).map(([category, levels]) => {
     const entry = { category }
@@ -80,6 +85,42 @@ export default function ContentCharts({ answers }) {
     <div className="content">
       <h2>Content-Level Assessment</h2>
 
+      {/* Minimum Backstop Section */}
+      {minimumBackstopCategory && (
+        <div className="minimum-backstop">
+          {minimumBackstopCategory.principles.map(principle => (
+            <div key={principle.id}> 
+              <table className="content-table">
+                <thead>
+                  <tr>
+                    <th>Minimum Backstop Criterion</th>
+                    <th>Requirements Met</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {principle.criteria.map(criterion => (
+                    <tr key={criterion.id}>
+                      <td>{criterion.text}</td>
+                      {criterion.requirements.map(req => {
+                        const a = answers[req.id]
+                        const met = a?.response === 'Yes' ? 1 : 0
+                        const total = 1
+                        return (
+                          <td key={req.id} className={getColorClass({ met, total })}>
+                            {formatPercent({ met, total })}
+                          </td>
+                        )
+                      })}
+                    </tr>
+                  ))}
+                </tbody>
+              </table>
+            </div>
+          ))}
+        </div>
+      )}
+
+      {/* Content-Level Assessment Table */}
       <table className="content-table">
         <thead>
           <tr>
@@ -102,6 +143,7 @@ export default function ContentCharts({ answers }) {
         </tbody>
       </table>
 
+      {/* Content-Level Bar Chart */}
       <div style={{ height: 400, marginTop: '2rem' }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
@@ -122,6 +164,7 @@ export default function ContentCharts({ answers }) {
         </ResponsiveContainer>
       </div>
 
+      {/* Principle-Level Tables */}
       {Object.entries(principleScores).map(([category, principles]) => (
         <div key={category} style={{ marginTop: '2rem' }}>
           <h3>{category}</h3>

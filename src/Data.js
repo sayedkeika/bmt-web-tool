@@ -962,6 +962,32 @@ export const assessments = {
   
     content: [
         {
+            id: "cat0",
+            category: "Minimum Backstop",
+            principles: [
+                {
+                    id: "p0",
+                    title: "Compliance",
+                    criteria: [
+                        {
+                            id: "c0",
+                            text: "The scheme requires adherence to all applicable regional, national and international laws, regulations and agreements.",
+                            requirements: [
+                                {
+                                    id: "r0",
+                                    level: "-",
+                                    text: "i. The scheme requires implementing and maintaining a system to ensure compliance with all relevant international, national, and regional laws and regulations.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
             id: "cat5",
             category: "Environment",
             principles: [
@@ -1170,7 +1196,7 @@ export const assessments = {
             ]
         },
         {
-            id: "cat2",
+            id: "cat6",
             category: "Circularity",
             principles: [
                 {
@@ -1414,7 +1440,7 @@ export const assessments = {
             ]
         },
         {
-            id: "cat3",
+            id: "cat7",
             category: "Social",
             principles: [
                 {
@@ -1591,7 +1617,7 @@ export const assessments = {
             ]
         },
         {
-            id: "cat4",
+            id: "cat8",
             category: "Economic",
             principles: [
                 {
@@ -1806,61 +1832,6 @@ export const assessments = {
 
 export const glossary = [
     {
-      theme: "Term",
-      term: "4R principle for nutrient stewardship",
-      definition: "4Rs; Right source, Right rate, Right time, Right place",
-      references: [
-        {
-            label: "4R Principles (The Fertilizer Institute)",
-            url: "https://www.tfi.org/insights/nutrient-stewardship/4r-principles/"
-        }
-      ]
-    },
-    {
-        theme: "Term",
-        term: "9R framework",
-        definition: "The 9R framework proposes an order of priority among circularity strategies which is best on best environmental outcome. As a rule of thumb, the nine R framework puts foward the following prioritization: refuse, rethink, reduce, reuse, repair, refurbish, remanufacture, repurpose, recycle and recover.",
-        references: [
-            {
-                label: "Potting, José; Worrell, Ernst; Hekkert, M. P. (2017): Circular Economy: Measuring innovation in the product chain. PBL Netherlands Environmental Assessment Agency. The Hague. ",
-                url: "https://www.pbl.nl/sites/default/files/downloads/pbl-2016-circular-economy-measuring-innovation-in-product-chains-2544.pdf"
-            }
-        ]
-    },
-    {
-        theme: "Term",
-        term: "Abandoned land",
-        definition: "Unused land, which was used in the past for the cultivation of food and feed crops but where the cultivation of food and feed crops was stopped due to biophysical or socioeconomic constraints",
-        references: [
-            {
-                label: "COMMISSION DELEGATED REGULATION (EU) 2019/807",
-                url: "https://eur-lex.europa.eu/eli/reg_del/2019/807/oj/eng"
-            }
-        ]
-    },
-    {
-        theme: "Term",
-        term: "Biomass",
-        definition: "Raw material of biological origin",
-        references: [
-            {
-                label: "ISO 13065:2014 - Retrieved from ISO14021:1999/Amd1:2011, 3.1.1",
-                url: "https://www.iso.org/standard/52528.html"
-            }
-        ]
-    },
-    {
-        theme: "Term",
-        term: "Carbon neutrality",
-        definition: "Also called having a \"net zero carbon footprint\". Refers to achieving net zero carbon emissions by balancing a measured amount of carbon released with an equivalent amount sequestered or offset.",
-        references: [
-            {
-                label: "UNEP",
-                url: "https://www.unep.org/news-and-stories/story/un-environment-walks-talk-carbon-neutrality"
-            }
-        ]
-    },
-    {
         theme: "Feedstock",
         term: "Crop",
         definition: "Vegetable biological organism used for biomass production and the biomass produced based on this plant.",
@@ -1941,5 +1912,485 @@ export const glossary = [
             }
         ]
     },
-  ]
-;
+    {
+        theme: "Term",
+        term: "4R principle for nutrient stewardship",
+        definition: "4Rs; Right source, Right rate, Right time, Right place",
+        references: [
+          {
+              label: "4R Principles (The Fertilizer Institute)",
+              url: "https://www.tfi.org/insights/nutrient-stewardship/4r-principles/"
+          }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "9R framework",
+        definition: "The 9R framework proposes an order of priority among circularity strategies which is best on best environmental outcome. As a rule of thumb, the nine R framework puts foward the following prioritization: refuse, rethink, reduce, reuse, repair, refurbish, remanufacture, repurpose, recycle and recover.",
+        references: [
+            {
+                label: "Potting, José; Worrell, Ernst; Hekkert, M. P. (2017): Circular Economy: Measuring innovation in the product chain. PBL Netherlands Environmental Assessment Agency. The Hague. ",
+                url: "https://www.pbl.nl/sites/default/files/downloads/pbl-2016-circular-economy-measuring-innovation-in-product-chains-2544.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Abandoned land",
+        definition: "Unused land, which was used in the past for the cultivation of food and feed crops but where the cultivation of food and feed crops was stopped due to biophysical or socioeconomic constraints",
+        references: [
+            {
+                label: "COMMISSION DELEGATED REGULATION (EU) 2019/807",
+                url: "https://eur-lex.europa.eu/eli/reg_del/2019/807/oj/eng"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Biomass",
+        definition: "Raw material of biological origin",
+        references: [
+            {
+                label: "ISO 13065:2014 - Retrieved from ISO14021:1999/Amd1:2011, 3.1.1",
+                url: "https://www.iso.org/standard/52528.html"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Carbon neutrality",
+        definition: "Also called having a \"net zero carbon footprint\". Refers to achieving net zero carbon emissions by balancing a measured amount of carbon released with an equivalent amount sequestered or offset.",
+        references: [
+            {
+                label: "UNEP",
+                url: "https://www.unep.org/news-and-stories/story/un-environment-walks-talk-carbon-neutrality"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Carbon sink",
+        definition: "Any process, activity or mechanism which removes a greenhouse gas, an aerosol, or a precursor of a greenhouse gas from the atmosphere. ",
+        references: [
+            {
+                label: "United Nations Framework Convention on Climate Change Article 1.8",
+                url: "https://unfccc.int/files/essential_background/background_publications_htmlpdf/application/pdf/conveng.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Carbon stock",
+        definition: "The absolute quantity of carbon held in a habitat pool at any specified time is the carbon stock or store",
+        references: [
+            {
+                label: "European Environment Agency",
+                url: "https://www.eea.europa.eu/publications/carbon-stocks-and-sequestration-rates"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Cascading use principle",
+        definition: "Cascading use of biomass takes place when biomass is processed into a bio-based final product and this final product is utilised at least once more either for material use or energy.",
+        references: [
+            {
+                label: "Carus, M.; Dammer, L. & Essel, R. (2015): \"Quo vadis, cascading use of biomass? Policy paper on background information on the cascading principle\"",
+                url: "https://renewable-carbon.eu/publications/product/quo-vadis-cascading-use-of-biomass-%E2%88%92-full-version/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Child labour",
+        definition: "Work that deprives children of their childhood, their potential, and their dignity, and that is harmful to their physical and mental development. Child labour refers to work that is mentally, physically, socially or morally dangerous and harmful to children; and interferes with their schooling by depriving them of the opportunity to attend school; obliging them to leave school prematurely; or requiring them to attempt to combine school attendance with excessively long and heavy work.\nInternational standards set the general minimum age for admission to employment or work at 15 years (13 for light work) and the minimum age for hazardous work at 18 (16 under certain strict conditions). They provide for the possibility of initially setting the general minimum age at 14 (12 for light work) where the economy and educational facilities are insufficiently developed. Children between the ages of 13 and 15 years old may do light work. Light work is defined as work that is not likely to be harmful to a child’s health or development and does not interfere with attendance at school or participation in vocational orientation or training programmes or a child’s capacity to benefit from the instruction received.",
+        references: [
+            {
+                label: "Accountability Framework Initiative;  ILO Convention 138, Article 7 (1973); ILO Recommendation 190; ISO 13065:2014; ILO Convention 138, Article 7",
+                url: "https://accountability-framework.org/fileadmin/uploads/afi/Documents/Definitions_doc/Definitions-2020-5.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Circular economy",
+        definition: "A systems solution framework that tackles global challenges like climate change, biodiversity loss, waste, and pollution. It is based on three principles, driven by design: eliminate waste and pollution, circulate products and materials (at their highest value), and regenerate nature.\nIt is underpinned by a transition to renewable energy and materials. Transitioning to a circular economy entails decoupling economic activity from the consumption of finite resources. This represents a systemic shift that builds long-term resilience, generates business and economic opportunities, and provides environmental and societal benefits.",
+        references: [
+            {
+                label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation ",
+                url: "https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/glossary"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Circular inflow",
+        definition: "Secondary or non-virgin materials and primary or virgin renewable materials that come from regenerative production. Unsustainably managed renewable resources are not considered circular.",
+        references: [
+            {
+                label: "Circular Transition Indicators v4.0 - Metrics for business, by business, World Business Council for Sustainable Development",
+                url: "https://www.wbcsd.org/resources/circular-transition-indicators-v4/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Collective bargaining",
+        definition: "All negotiations which take place between an employer, a group of employers or one or more employers’ organisations and one or more workers’ organisations for: (i) determining working conditions and terms of employment; and/or (ii) regulating relations between employers and workers; and/or (iii) regulating relations between employers or their organisations and a workers’ organisation or workers’ organisations.",
+        references: [
+            {
+                label: "Accountability Framework Initiative",
+                url: "https://accountability-framework.org/fileadmin/uploads/afi/Documents/Definitions_doc/Definitions-2020-5.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Conflict resolution",
+        definition: "The methods and process of dialogue building which promote the peaceful ending of social conflict in any setting, including between employees and businesses. The broader term “conflict management” involves a kind of proactive-reactive continuum. The proactive end of the spectrum involves fostering productive communication and collaboration among diverse interests, addressing the underlying causes of conflicts in order to prevent conflicts from recurring, developing trust and understanding in order to prevent conflicts. The reactive end of the spectrum includes approaches to managing conflicts that vary, by order of increasing collaborative consensus building level: negotiated rule-making; arbitration; mediation; facilitation; conciliation; and negotiation. The reactive approach of conflict management is used after the conflict has erupted and is referred to as conflict resolution.",
+        references: [
+            {
+                label: "FAO (2014)",
+                url: "https://www.fao.org/nr/sustainability/sustainability-assessments-safa/en/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Consultation",
+        definition: "Land spanning more than one hectares with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ",
+        references: [
+            {
+                label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources ",
+                url: "https://eur-lex.europa.eu/eli/dir/2018/2001/oj/eng"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Discrimination",
+        definition: "The term discrimination includes (a) any distinction, exclusion or preference made on the basis of race, colour, sex, religion, political opinion, national extraction or social origin, which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation; (b) such other distinction, exclusion or preference which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation as may be determined by the individual concerned after consultation with representative employers’ and workers’ organisations and with other appropriate bodies.\nAny distinction, exclusion or preference in respect of a particular job based on the inherent requirements thereof shall not be deemed to be discrimination. Discrimination can be based on race, colour, gender identity, age, language, religion, property/ wealth, nationality, ethnic/social origin, caste, disability, pregnancy, indigeneity, union affiliation, political affiliation, marital/family status, personal relationships, health status, sexual orientation or other non-valid reasons that are irrelevant to the skills, capabilities, qualities and medical fitness for the job.",
+        references: [
+            {
+                label: "ILO Convention C111, Article 1",
+                url: "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12100:0::NO::P12100_INSTRUMENT_ID:312256"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Ecological corridor",
+        definition: "Areas of land and water that aim to maintain or restore ecological connectivity by allowing species to move, and natural processes to flow freely. A practical example of an ecological corridor is a a trip of vegetation used by wildlife, allowing movement between two areas.",
+        references: [
+            {
+                label: "National Program for Ecological Corridors, Parks Canada",
+                url: "https://parks.canada.ca/nature/science/conservation/corridors-ecologiques-ecological-corridors"
+            },
+            {
+                label: "European Environment Agency Glossary",
+                url: "https://www.eea.europa.eu/help/glossary/eea-glossary/ecological-corridor"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Emission factor",
+        definition: "Rate of emission per unit of activity, output or input. E.g. a particular fossil fuel power plant has a CO2 emission factor of 0.765 kg/kWh generated.",
+        references: [
+            {
+                label: "IPCC Fourth Assessment Report: Climate Change 2007",
+                url: "https://archive.ipcc.ch/publications_and_data/ar4/wg3/en/annex1-ensglossary-e-i.html"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Equal opportunity",
+        definition: "Principle of non-discrimination which emphasizes that opportunities in education, employment, advancement, benefits and resource distribution, and other areas should be freely available to all citizens irrespective of their age, race, sex, religion, political association, ethnic origin, or any other individual or group characteristic unrelated to ability, performance, and qualification.",
+        references: [
+            {
+                label: "FAO (2014)",
+                url: "https://www.fao.org/nr/sustainability/sustainability-assessments-safa/en/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "EU Product Environmental Footprint",
+        definition: "The Product Environmental Footprint (PEF) method is as a common way of measuring environmental performance. The PEF is an EU recommended Life Cycle Assessment (LCA) based method to quantify the environmental impacts of products (goods or services).\nThe overarching purpose of PEF information is to reduce the environmental impacts of goods, services and organisations by taking into account supply chain activities. This purpose is achieved through the provision of detailed requirements for modelling the environmental impacts of the flows of material/energy and the emissions and waste streams associated with a product or an organisation throughout the life cycle.",
+        references: [
+            {
+                label: "European Commission",
+                url: "https://green-forum.ec.europa.eu/environmental-footprint-methods/pef-method_en"
+            },
+            {
+                label: "European Commission",
+                url: "https://eplca.jrc.ec.europa.eu/EnvironmentalFootprint.html"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Food security",
+        definition: "Food security is achieved when all people, at all times, have physical, social and economic access to sufficient, safe and nutritious food to meet their dietary needs and food preferences for an active and healthy life. Four dimensions of food security are commonly identified: food availability, food access, utilisation and stability.",
+        references: [
+            {
+                label: "FAO (1996)",
+                url: "https://www.fao.org/fileadmin/templates/faoitaly/documents/pdf/pdf_Food_Security_Cocept_Note.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Forced labour",
+        definition: "All work or service that is exacted from any person under the menace of any penalty and for which the said person has not offered themselves voluntarily.",
+        references: [
+            {
+                label: "ILO Convention 29",
+                url: "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12100:0::NO::P12100_ILO_CODE:C029"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Forest degradation",
+        definition: "Structural changes to forest cover, taking the form of the conversion of: (a) primary forests or naturally regenerating forests into plantation forests or into other wooded land; or (b) primary forests into planted forests.",
+        references: [
+            {
+                label: "EU Deforestation Regulation",
+                url: "https://oeil.secure.europarl.europa.eu/oeil/en/document-summary?id=1741344#:~:text=The%20amended%20text%20defines%20'forest,primary%20forests%20into%20planted%20forests."
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Free, Prior, Informed Consent",
+        definition: "Collective human right of Indigenous Peoples and Local Communities (IP/LC) to give or withhold their consent prior to the commencement of any activity that may affect their rights, land, resources, territories, livelihoods and food security.\n- Free: Consent is given by the affected IP/LC voluntarily without coercion, duress or intimidation.\n- Prior: The consent is given before the specified activity is authorised or commenced.\n- Informed: The consent is given after the IP/LC have received the relevant, timely and culturally appropriate information necessary to make a fully informed decision. Consent: The IP/LC take a collective decision to grant or withhold approval of each activity that may impact IP/LCs.",
+        references: [
+            {
+                label: "Accountability Framework Initiative",
+                url: "https://accountability-framework.org/fileadmin/uploads/afi/Documents/Definitions_doc/Definitions-2020-5.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Freedom of association",
+        definition: "The right of workers and employers to create and join organisations of their choice freely and without fear of reprisal or interference. This includes the right to establish and affiliate to confederations and international organisations. ",
+        references: [
+            {
+                label: "ILO Freedom of Association and Development",
+                url: "https://www.ilo.org/sites/default/files/wcmsp5/groups/public/@ed_norm/@declaration/documents/publication/wcms_160208.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Gender equality",
+        definition: "When women and men enjoy equal rights, opportunities and entitlements in civil and political life.",
+        references: [
+            {
+                label: "FAO (2014)",
+                url: "https://www.fao.org/nr/sustainability/sustainability-assessments-safa/en/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Grievance mechanism",
+        definition: "Any routinised process through which grievances concerning business-related negative impacts to human rights or the environment can be raised, and remedy can be sought.",
+        references: [
+            {
+                label: "Accountability Framework Initiative; UN Guiding Principles on Business and Human Rights",
+                url: "https://accountability-framework.org/fileadmin/uploads/afi/Documents/Definitions_doc/Definitions-2020-5.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Hazard",
+        definition: "A process, phenomenon or human activity that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
+        references: [
+            {
+                label: "Sendai Framework Terminology on Disaster Risk Reduction (UNDRR)",
+                url: "https://www.undrr.org/terminology/hazard#:~:text=Definition%3A%20Hazard,economic%20disruption%20or%20environmental%20degradation."
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Hazardous substances",
+        definition: "Chemicals classified as health hazard statements according to GHS (Globally Harmonized System of Classification and Labelling of Chemicals)",
+        references: [
+            {
+                label: "National Library of Medicine: GHS Classification (Rev.10, 2023) Summary",
+                url: "https://pubchem.ncbi.nlm.nih.gov/ghs/#_haz"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "High Carbon Stock Approach",
+        definition: "Methodology that distinguishes forest areas for protection from degraded lands with low carbon and biodiversity values that may be developed.",
+        references: [
+            {
+                label: "High Carbon Stock Approach",
+                url: "https://highcarbonstock.org/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "High carbon stock areas",
+        definition: "Land that had one of the following statuses in January 2008 and no longer has that status:\n(a) wetlands, namely land that is covered with or saturated by water permanently or for a significant part of the year;\n(b) continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;\n(c) land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ.",
+        references: [
+            {
+                label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018L2001"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "High Conservation Value",
+        definition: "Biological, ecological, social or cultural values which are considered outstandingly significant or critically important at the national, regional or global level. All natural habitats possess some inherent conservation values, including the presence of rare or endemic species, provision of ecosystem services, sacred sites or resources harvested by local residents. However, some values are more significant or critical than others, and it is the HCV approach which offers an objective way of identifying those values to be maintained or enhanced.\n\nThe six High Conservation Values:\n(1) HCV 1 Species diversity\n(2) HCV 2 Landscape-level ecosystems, ecosystem mosaics and IFL\n(3) HCV 3 Ecosystems and habitats\n(4) HCV 4 Ecosystem services\n(5)HCV 5 Community needs\n(6) HCV 6 Cultural valueS",
+        references: [
+            {
+                label: "HCV Common Guidance for Identification",
+                url: "https://www.hcvnetwork.org/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "High-quality recycling",
+        definition: "High-quality recycling preserves the characteristics of materials which make them most useful. This includes consideration of mechanical, chemical and organic recyclability of the bio-based product.\n\nThe idea of ‘quality’ for secondary raw materials is captured by two interlinked concepts:\n(1) ‘Virgin-like’ secondary raw materials – how closely comparable the secondary raw materials from a recycling chain is to the virgin material originally used in the product being recycled. Subsequently, how substitutable the secondary raw materials is for virgin material with little or no detrimental impact on the final product.\n(2) ‘High value’ secondary raw materials – the extent to which secondary raw materials produced is of comparable value to virgin polymer, in terms of value to the user, and associated monetary value.",
+        references: [
+            {
+                label: "Quality of recycling: Towards and operational definition (European Commission)",
+                url: "https://publications.jrc.ec.europa.eu/repository/bitstream/JRC122293/final_quality_of_recycling_report.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "ILO Core Conventions",
+        definition: "C029 - Forced Labour Convention, 1930 (No. 29)\nC087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87)\nC098 - Right to Organise and Collective Bargaining Convention, 1949 (No. 98)\nC100 - Equal Remuneration Convention, 1951 (No. 100)\nC105 - Abolition of Forced Labour Convention, 1957 (No. 105)\nC111 - Discrimination (Employment and Occupation) Convention, 1958 (No. 111)\nC138 - Minimum Age Convention, 1973 (No. 138)\nC155 - Occupational Safety and Health Convention, 1981 (No. 155)\nC182 - Worst Forms of Child Labour Convention, 1999 (No. 182)\nC187 - Promotional Framework for Occupational Safety and Health Convention, 2006 (No. 187)",
+        references: [
+            {
+                label: "ILO Labour Standards - Conventions",
+                url: "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12000:0::NO:::"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Incident",
+        definition: "An unsafe occurrence arising out of or in the course of work where no personal injury is caused, or where personal injury requires only first-aid treatment.",
+        references: [
+            {
+                label: "Report V(1): Recording and notifcation of occupational accidents and diseases and ILO list of occupational diseases",
+                url: "https://webapps.ilo.org/public/english/standards/relm/ilc/ilc90/rep-v-1.htm"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Indigenous",
+        definition: "Indigenous signifies someone who is intimately connected with the land where he lives, who has not arrived by immigration or is not in passage. The idea “indigenous” is necessarily relative. It often expresses a cultural or property claim.",
+        references: [
+            {
+                label: "FAO (2003)",
+                url: "https://www.fao.org/4/x2038e/x2038e0a.htm#:~:text=Indigenous%20signifies%20someone%20who%20is,a%20cultural%20or%20property%20claim."
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Indirect land use change",
+        definition: "Indirect land use change can occur when land previously devoted to food or feed production is converted to produce biofuels, bioliquids and biomass fuels. In that case, food and feed demand still needs to be satisfied, which may lead to the extension of agricultural land into areas with high carbon stock such as forests, wetlands and peat land, causing additional greenhouse gas emissions.",
+        references: [
+            {
+                label: "European Commission Knowledge for Policy",
+                url: "https://knowledge4policy.ec.europa.eu/glossary-item/indirect-land-use-change_en"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Inflows",
+        definition: "Resources that enter the company, including materials, parts or products (depending on a company's position within the supply chain).",
+        references: [
+            {
+                label: "Circular Transition Indicators v4.0 - Metrics for business, by business, World Business Council for Sustainable Development",
+                url: "https://www.wbcsd.org/Programs/Circular-Economy/Metrics-Measurement/Resources/Circular-Transition-Indicators-v4.0-Metrics-for-business-by-business"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Invasive species",
+        definition: "Animals and plants that are introduced accidentally or deliberately into a natural environment where they are not normally found, with serious negative consequences for their new environment.",
+        references: [
+            {
+                label: "Directorate-General for Environment",
+                url: "https://health.ec.europa.eu/system/files/2016-11/glos4en200408_en_0.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Land with high biodiversity value",
+        definition: "Land that had one of the following statuses in or after January 2008, whether or not the land continues to have that status:\na) primary forest and other wooded land, namely forest and other wooded land of native species, where there is no clearly visible indication of human activity and the ecological processes are not significantly disturbed;\nb) highly biodiverse forest and other wooded land which is species-rich and not degraded, or has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\nc) areas designated: (i) by law or by the relevant competent authority for nature protection purposes; or (ii) for the protection of rare, threatened or endangered ecosystems or species recognised by international agreements or included in lists drawn up by intergovernmental organisations or the International Union for the Conservation of Nature, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\nd) highly biodiverse grassland spanning more than one hectare that is: (i) natural, namely grassland that would remain grassland in the absence of human intervention and that maintains the natural species composition and ecological characteristics and processes; or (ii) non-natural, namely grassland that would cease to be grassland in the absence of human intervention and that is species-rich and not degraded and has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the harvesting of the raw material is necessary to preserve its status as highly biodiverse grassland.\n\nNationally, regionally, or internationally legally protected areas including but not limited to those designated by any of the of the following: (a) The World Conservation Union “IUCN” Category I-IV protected areas; (b) Wetlands of International Importance designated under the Ramsar Convention; (c) World Heritage Sites designated under the UNESCO World Heritage Convention; (d) Biosphere Reserves designated under the UNESCO Man and the Biosphere Programme; (e) Other legally protected areas ; (f) Primary Forest, i.e. naturally regenerated forest, where there are no clearly visible indication of human activities and the ecological processes are not significantly disturbed, (g) Natural or non-natural highly biodiverse grassland; (e) Any other defined High Conservation value Area",
+        references: [
+            {
+                label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources; Protected Planet; Ramsar; UNESCO",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018L2001%20;%20http://www.protectedplanet.net%20;%20http://ramsar.wetlands.org%20;%20Http://whc.unesco.org/en/list%20;%20http://www.unesco.org/new/en/natural-sciences/environment/ecological-sciences/biosphere-reserves/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Lifecycle greenhouse gas emissions",
+        definition: "Product life cycle emissions are all the emissions associated with the production and use of a specific product, from cradle to grave, including emissions from raw materials, manufacture, transport, storage, sale, use and disposal.",
+        references: [
+            {
+                label: "Greenhouse Gas Protocol",
+                url: "https://ghgprotocol.org/sites/default/files/standards_supporting/FAQ.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Living wage",
+        definition: "The remuneration received for a standard workweek by a worker, and supplemented by other means of social protection, in a particular place sufficient to afford a decent standard of living for the worker and her or his family. Elements of a decent standard of living include food, water, housing, education, health care, transportation, clothing and other essential needs including provision for unexpected events. In the BMT, the living wage is defined as that determined by the Global Living Wage Coaltion for the region in question.",
+        references: [
+            {
+                label: "Global Living Wage Coalition",
+                url: "https://www.globallivingwage.org/"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Lost-time injury",
+        definition: "When a worker is unable to present for their next scheduled workplace attendance due to a work-related injury.",
+        references: [
+            {
+                label: "Australian government",
+                url: "https://www.transparency.gov.au/publications/finance/asc-pty-ltd/asc-annual-report-2023/work-health%2C-safety-and-environment/lost-time-injuries"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "LULUCF",
+        definition: "Land use, land-use change and forestry. Land use and land-use changes can act either as sinks or as emission sources. It is estimated that approximately one-fifth of global emissions result from LULUCF activities. ",
+        references: [
+            {
+                label: "United Nations Framework Convention on Climate Change",
+                url: "https://unfccc.int/topics/land-use/workstreams/land-use--land-use-change-and-forestry-lulucf"
+            }
+        ]
+    }
+]

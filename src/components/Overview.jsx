@@ -40,16 +40,27 @@ export default function Overview({
     }))
   }
 
-  // Calculate overall progress of answered criteria
+  // Calculate overall progress of answered criteria/requirements
   const { totalCriteria, totalAnswered } = selectedTypes.reduce(
     (acc, type) => {
       const categories = assessmentMap[type] || []
       categories.forEach(cat => {
         cat.principles.forEach(principle => {
-          principle.criteria.forEach(c => {
-            acc.totalCriteria++
-            if (answers[c.id]?.response) acc.totalAnswered++
-          })
+          if (type === 'system') {
+            // For system-type, check if the response exists directly in the criterion
+            principle.criteria.forEach(c => {
+              acc.totalCriteria++
+              if (answers[c.id]?.response) acc.totalAnswered++
+            })
+          } else if (type === 'content') {
+            // For content-type, check responses inside requirements
+            principle.criteria.forEach(c => {
+              c.requirements.forEach(req => {
+                acc.totalCriteria++
+                if (answers[req.id]?.response) acc.totalAnswered++
+              })
+            })
+          }
         })
       })
       return acc
@@ -98,12 +109,24 @@ export default function Overview({
                       <div className="principle-label">{principle.title}</div>
                       {/* Criteria progress */}
                       <div className="criteria-nav">
-                        {principle.criteria.map(c => (
-                          <div
-                            key={c.id}
-                            className={`criteria-box ${answers[c.id]?.response ? 'answered' : 'unanswered'}`}
-                          />
-                        ))}
+                        {principle.criteria.map(c => {
+                          if (type === 'system') {
+                            return (
+                              <div
+                                key={c.id}
+                                className={`criteria-box ${answers[c.id]?.response ? 'answered' : 'unanswered'}`}
+                              />
+                            )
+                          } else if (type === 'content') {
+                            return c.requirements.map(req => (
+                              <div
+                                key={req.id}
+                                className={`criteria-box ${answers[req.id]?.response ? 'answered' : 'unanswered'}`}
+                              />
+                            ))
+                          }
+                          return null
+                        })}
                       </div>
                     </div>
                   ))}

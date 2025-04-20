@@ -9,26 +9,26 @@ const Glossary = ({ onBack }) => {
 
     const handleTermClick = (term) => {
         setActiveTerm(prevTerm => (prevTerm === term ? null : term))
-    };
+    }
 
     const handleLetterClick = (letter) => {
         setFilterByLetter(prevLetter => (prevLetter === letter ? '' : letter))
-    };
+    }
 
     const handleThemeFilterChange = (event) => {
         setFilterByTheme(event.target.value)
-    };
+    }
 
     const filteredGlossary = glossary.filter((item) => {
         const firstChar = item.term[0].toUpperCase()
-        const matchesTheme = filterByTheme ? item.theme === filterByTheme : true;
+        const matchesTheme = filterByTheme ? item.theme === filterByTheme : true
         const matchesLetter = filterByLetter
         ? filterByLetter === '0-9'
             ? /^[0-9]/.test(firstChar)
             : firstChar === filterByLetter
-        : true;
+        : true
         return matchesTheme && matchesLetter
-    });
+    })
 
     const themes = [...new Set(glossary.map(item => item.theme))]
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
@@ -80,7 +80,10 @@ const Glossary = ({ onBack }) => {
                     <h3>{item.term}</h3>
                     {activeTerm && activeTerm.term === item.term && (
                         <div className="term-details">
-                        <p><strong>Definition:</strong> {item.definition}</p>
+                        <p><strong>Definition:</strong></p>
+                        {item.definition.split('\n').map((line, i) => (
+                        <p key={i}>{line}</p>
+                        ))}
                         <div>
                             <h4>References</h4>
                             {item.references.map((ref, refIndex) => (
@@ -100,5 +103,4 @@ const Glossary = ({ onBack }) => {
         </div>
     )
 }
-
-export default Glossary;
+export default Glossary
