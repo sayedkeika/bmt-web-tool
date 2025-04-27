@@ -1,4 +1,3 @@
-// Progress Overview
 import React, { useState, useEffect } from 'react'
 
 // Map assessment types
@@ -8,7 +7,7 @@ const TYPE_LABELS = {
   outcome: 'Outcome-Level Assessment'
 }
 
-// UI component for showing graphical overview of assessment progress
+// Component for showing graphical overview of assessment progress
 export default function Overview({
   selectedTypes,
   assessmentMap,

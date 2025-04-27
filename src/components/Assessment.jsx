@@ -1,6 +1,6 @@
-// Assessment Questionnaire
 import React from 'react'
 
+// Component for rendering the questionnaire and recording user responses
 export default function Assessment({
   category,
   principle,
@@ -13,6 +13,7 @@ export default function Assessment({
   onSubmit,
   onOpenGlossary
 }) {
+  // Save a response value for a criterion or requirement
   const handleAnswer = (criterionId, value) => {
     setAnswers(prev => ({
       ...prev,
@@ -23,6 +24,7 @@ export default function Assessment({
     }))
   }
 
+  // Save justification, feedback for a criterion
   const handleInputChange = (criterionId, field, value) => {
     setAnswers(prev => ({
       ...prev,
@@ -33,19 +35,23 @@ export default function Assessment({
     }))
   }
 
+  // Determine navigation indices
   const currentIndex = allPrinciples.findIndex(p => p.id === principle.id)
   const prevPrinciple = allPrinciples[currentIndex - 1]
   const nextPrinciple = allPrinciples[currentIndex + 1]
 
+  // Flatten all criteria and requirements to check if every one has a response
   const allCriteria = allPrinciples.flatMap(p =>
     p.criteria.flatMap(c => (Array.isArray(c.requirements) ? c.requirements : [c]))
   )
   const allAnswered = allCriteria.every(c => answers[c.id]?.response)
 
+  // Check if this is a content-level principle (has requirements)
   const isContentAssessment = principle.criteria.some(c => Array.isArray(c.requirements))
 
   return (
     <>
+      {/* Top navigation bar*/}
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
           <button onClick={onBackToOverview}>← Back to Overview</button>
@@ -59,6 +65,7 @@ export default function Assessment({
           </button>
         </div>
 
+        {/* Breadcrumb-style indicator of previous, current, and next principle */}
         <div className="progress-header">
           <div className="progress-labels">
             {prevPrinciple && <span>{prevPrinciple.title}</span>}
@@ -68,6 +75,7 @@ export default function Assessment({
             {nextPrinciple && <span>{nextPrinciple.title}</span>}
           </div>
 
+          {/* Progress grid showing answered/unanswered items per principle */}
           <div className="progress-grid">
             {allPrinciples.map(p => (
               <div key={p.id} className="principle-progress">
@@ -88,7 +96,8 @@ export default function Assessment({
           </div>
         </div>
       </div>
-
+      
+      {/* Main questionnaire content */}
       <div className="container">
         <div className="navigation-buttons" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
           <div>
@@ -174,7 +183,7 @@ export default function Assessment({
                 <input
                   className="full-width"
                   type="text"
-                  placeholder="Feedback"
+                  placeholder="Source Reference"
                   value={answers[criterion.id]?.feedback || ''}
                   onChange={(e) => handleInputChange(criterion.id, 'feedback', e.target.value)}
                 />

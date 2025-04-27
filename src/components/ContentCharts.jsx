@@ -1,13 +1,14 @@
-// Content Level Score and Charts
 import React, { useMemo } from 'react'
 import { assessments } from '../Data'
 import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts'
 
 const LEVELS = ['Mandatory', 'Basic', 'Advanced']
 
+// Formats a met/total pair as a percentage string
 const formatPercent = ({ met, total }) =>
   total > 0 ? `${((met / total) * 100).toFixed(0)}%` : '–'
 
+// Determines CSS class based on percentage thresholds
 const getColorClass = ({ met, total }) => {
   if (total === 0) return ''
   const percentage = (met / total) * 100
@@ -18,6 +19,7 @@ const getColorClass = ({ met, total }) => {
   return 'cell-red'
 }
 
+// Computes scores per category and per principle based on answers
 const computeContentScores = (answers) => {
   const scoreByCategory = {}
   const principleScores = {}
@@ -28,6 +30,7 @@ const computeContentScores = (answers) => {
     // Handle Minimum Backstop separately
     if (cat.category === "Minimum Backstop") return
 
+    // Initialize score tracking for this category
     if (!scoreByCategory[cat.category]) {
       scoreByCategory[cat.category] = {
         Mandatory: { met: 0, total: 0 },
@@ -36,6 +39,7 @@ const computeContentScores = (answers) => {
       }
     }
 
+    // Initialize score tracking for this principle
     cat.principles.forEach(principle => {
       if (!principleScores[cat.category]) principleScores[cat.category] = {}
       if (!principleScores[cat.category][principle.title]) {
@@ -46,9 +50,11 @@ const computeContentScores = (answers) => {
         }
       }
 
+      // For each criterion within the principle
       principle.criteria.forEach(criterion => {
         criterion.requirements.forEach(req => {
           const level = req.level
+          // Only score if level is recognized
           if (LEVELS.includes(level)) {
             scoreByCategory[cat.category][level].total++
             principleScores[cat.category][principle.title][level].total++
@@ -66,6 +72,7 @@ const computeContentScores = (answers) => {
   return { scoreByCategory, principleScores }
 }
 
+// Component for displaying visual results for content-level scores
 export default function ContentCharts({ answers }) {
   const { scoreByCategory, principleScores } = useMemo(() => computeContentScores(answers), [answers])
 

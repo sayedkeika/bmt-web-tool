@@ -15,6 +15,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c1",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner makes consultation drafts and final versions of its standards freely available and easily accessible in the scheme’s official languages.",
                             responseOptions: [
                                 {label: "Yes (publicly, on request (no fee))", score: 2},
@@ -31,6 +32,7 @@ export const assessments = {
                         },
                         {
                             id: "c2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner ensures that guidance is in place to support consistent interpretation of the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -49,6 +51,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c3",
+                            type: ["Scheme"],
                             text: "The scheme owner reviews and revises the standards at least once every 5 years.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -60,6 +63,7 @@ export const assessments = {
                         },
                         {
                             id: "c4",
+                            type: ["Scheme"],
                             text: "The scheme owner makes publicly available a public summary that includes the decision-making procedures of how decisions are made and who makes them.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -79,6 +83,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c5",
+                            type: ["Scheme"],
                             text: "Standards setting and update is subjected to public consultation.",
                             responseOptions: [
                                 {label: "Yes (with min. number of rounds)", score: 2},
@@ -95,6 +100,7 @@ export const assessments = {
                         },
                         {
                             id: "c6",
+                            type: ["Scheme"],
                             text: "The scheme owner shall ensure that participation in the consultation process is open to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes, possible", score: 1},
@@ -106,6 +112,7 @@ export const assessments = {
                         },
                         {
                             id: "c7",
+                            type: ["Scheme"],
                             text: "The scheme owner proactively encourages participation in standard-setting of all stakeholders directly affected.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -117,6 +124,7 @@ export const assessments = {
                         },
                         {
                             id: "c8",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures balanced participation of stakeholder interests in the consultation and decision-making processes.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -129,6 +137,7 @@ export const assessments = {
                         },
                         {
                             id: "c9",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures that procedures and guidance are in place for adaptation or interpretation of the standard to regional contexts.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -147,6 +156,7 @@ export const assessments = {
                         },
                         {
                             id: "c10",
+                            type: ["Scheme"],
                             text: "The scheme owner provides information on how the input received from stakeholder consultations has been included in the final version of the standard.",
                             responseOptions: [
                                 {label: "Yes, fully", score: 2},
@@ -173,6 +183,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c11",
+                            type: ["Label"],
                             text: "The scheme owner outlines specified requirements for Conformity Assessment Bodies (CABs) to assess compliance with the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -185,6 +196,7 @@ export const assessments = {
                         },
                         {
                             id: "c12",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures that there is a publicly available description of the consistent methodology used to assess complaince with the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -200,6 +212,7 @@ export const assessments = {
                         },
                         {
                             id: "c13",
+                            type: ["Scheme"],
                             text: "The scheme owner requires CABs to have a documented complaints mechanism in place for compliance decisions.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -214,6 +227,7 @@ export const assessments = {
                         },
                         {
                             id: "c14",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures that summary certification/verification reports are made available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -234,6 +248,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c15",
+                            type: ["Scheme"],
                             text: "Minimum level of conformity assessment allowed by the scheme owner.",
                             responseOptions: [
                                 {label: "3rd party", score: 1},
@@ -246,6 +261,7 @@ export const assessments = {
                         },
                         {
                             id: "c16",
+                            type: ["Scheme"],
                             text: "The scheme owner requires CABs to have a procedure in place for how clients are required to address non-conformities, including when a certificate or license is suspended or revoked.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -265,6 +281,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c17",
+                            type: ["Scheme"],
                             text: "The scheme owner requires CABs to be compliant with and accredited according to ISO/IEC 17065, ISO/IEC 17021 or ISO/IEC 17020.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -279,6 +296,7 @@ export const assessments = {
                         },
                         {
                             id: "c18",
+                            type: ["Scheme"],
                             text: "The scheme owner makes public a list of all accredited/approved CABs.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -291,6 +309,7 @@ export const assessments = {
                         },
                         {
                             id: "c19",
+                            type: ["Scheme"],
                             text: "The scheme owner requires specific qualifications and competencies for auditors of conformity assessment bodies (CABs).",
                             responseOptions: [
                                 {label: "Yes, examination included", score: 2},
@@ -304,6 +323,7 @@ export const assessments = {
                         },
                         {
                             id: "c20",
+                            type: ["Scheme"],
                             text: "The scheme owner maintains or requires CABs to maintain a publicly accessible list of certified products/product groups.",
                             responseOptions: [
                                 {label: "Yes, incl. scope of certificate or license", score: 2},
@@ -323,6 +343,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c21",
+                            type: ["Scheme"],
                             text: "The scheme owner has or requires CABs to have documented procedures for reliable auditing methods.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -337,6 +358,7 @@ export const assessments = {
                         },
                         {
                             id: "c22",
+                            type: ["Scheme"],
                             text: "The scheme owner defines or requires CABs to define frequency of a full audit process.",
                             responseOptions: [
                                 {label: "At least every 2 years", score: 2},
@@ -351,6 +373,7 @@ export const assessments = {
                         },
                         {
                             id: "c23",
+                            type: ["Scheme"],
                             text: "The scheme owner defines the type of activities CABs are required to undertake during a full audit.",
                             responseOptions: [
                                 {label: "Field visit (incl. office visit & doc. review)", score: 2},
@@ -364,6 +387,7 @@ export const assessments = {
                         },
                         {
                             id: "c24",
+                            type: ["Scheme"],
                             text: "The scheme owner or CAB require initial audits of new participants to always be on-site.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -375,6 +399,7 @@ export const assessments = {
                         },
                         {
                             id: "c25",
+                            type: ["Scheme"],
                             text: "The scheme owner requires or allows CABs to do unscheduled audits.",
                             responseOptions: [
                                 {label: "Required", score: 2},
@@ -389,6 +414,7 @@ export const assessments = {
                         },
                         {
                             id: "c26",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures or requires CABs to ensure consistency in audit report formats. ",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -410,6 +436,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c27",
+                            type: ["Scheme"],
                             text: "The scheme owner requires a documented oversight of assurance activities and assurance providers.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 1},
@@ -422,6 +449,7 @@ export const assessments = {
                         },
                         {
                             id: "c28",
+                            type: ["Scheme"],
                             text: "The scheme owner requires oversight bodies to have a publicly available documented complaints mechanism in place for compliance decisions.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -449,6 +477,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c29",
+                            type: ["Scheme"],
                             text: "The scheme owner has a documented Chain of Custody (CoC) standard or other traceability requirements for checking product flow between links of the supply chain.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -463,6 +492,7 @@ export const assessments = {
                         },
                         {
                             id: "c30",
+                            type: ["Label"],
                             text: "The scheme owner requires all enterprises that are physically handling the certified product to undergo a CoC audit if the product can be destined for retail sale as a certified, labeled product.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -477,6 +507,7 @@ export const assessments = {
                         },
                         {
                             id: "c31",
+                            type: ["Scheme"],
                             text: "The scheme owner defines procedures for CoC certification of multiple sites of one or several legal entities.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -493,6 +524,7 @@ export const assessments = {
                         },
                         {
                             id: "c32",
+                            type: ["Scheme"],
                             text: "The scheme owner requires subcontractors to meet the CoC requirements.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -508,6 +540,7 @@ export const assessments = {
                         },
                         {
                             id: "c33",
+                            type: ["Scheme"],
                             text: "The scheme owner allows different chain of custody models as traceability systems.",
                             responseOptions: [
                                 {label: "Yes, Identity Preservation or Segregation model", score: 2},
@@ -524,6 +557,7 @@ export const assessments = {
                         },
                         {
                             id: "c34",
+                            type: ["Scheme"],
                             text: "The scheme owner has a clear statement in case mixing of certified with uncertified inputs is allowed.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -541,6 +575,7 @@ export const assessments = {
                         },
                         {
                             id: "c35",
+                            type: ["Scheme"],
                             text: "Continuous increase of the amount of certified input is encouraged, in case of mixing.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -555,6 +590,7 @@ export const assessments = {
                         },
                         {
                             id: "c36",
+                            type: ["Scheme"],
                             text: "The scheme owner requires CABs to verify that all enterprises within the chain maintain and keep accurate and accessible traceability records.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -578,6 +614,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c37",
+                            type: ["Scheme"],
                             text: "The scheme owner provides description of its specific policies for products labelling and claims use.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -592,6 +629,7 @@ export const assessments = {
                         },
                         {
                             id: "c38",
+                            type: ["Scheme"],
                             text: "Claims and labelling requirements ensure that claims or logos clearly indicate to what they apply.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -603,6 +641,7 @@ export const assessments = {
                         },
                         {
                             id: "c39",
+                            type: ["Scheme"],
                             text: "The label is accompanied by an explanatory text claim or a link to further information.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -618,6 +657,7 @@ export const assessments = {
                         },
                         {
                             id: "c40",
+                            type: ["Scheme"],
                             text: "Claims and label users are required to use unique license numbers or other tracking mechanisms.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -633,6 +673,7 @@ export const assessments = {
                         },
                         {
                             id: "c41",
+                            type: ["Scheme"],
                             text: "Claims requirements specify the types of claims that can be made for different types of CoC models, where the scheme owner allows for more than one model.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -654,6 +695,7 @@ export const assessments = {
                         },
                         {
                             id: "c42",
+                            type: ["Scheme"],
                             text: "The scheme owner specifies requirements for claims depending on the percentage of certified / verified content in a product.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -674,6 +716,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c43",
+                            type: ["Scheme"],
                             text: "The scheme owner has a procedure in place that defines specific consequences of misuse of claims.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -688,6 +731,7 @@ export const assessments = {
                         },
                         {
                             id: "c44",
+                            type: ["Scheme"],
                             text: "The scheme owner requires surveillance of the accurate use of claims and labels in the market.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -707,6 +751,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c45",
+                            type: ["Label"],
                             text: "The scheme owner defines the minimum percentage of a certified / verified input in a single ingredient product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 75%", score: 2},
@@ -724,6 +769,7 @@ export const assessments = {
                         },
                         {
                             id: "c46",
+                            type: ["Scheme"],
                             text: "The scheme owner defines the minimum percentage of certified / verified material in a composite product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 50%", score: 2},
@@ -754,6 +800,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c47",
+                            type: ["Scheme"],
                             text: "The scheme owner has a defined scope for certification under its scheme.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -769,6 +816,7 @@ export const assessments = {
                         },
                         {
                             id: "c48",
+                            type: ["Scheme"],
                             text: "The scheme has sustainability-defined goals and objectives.",
                             responseOptions: [
                                 {label: "Yes, with a detailed strategy", score: 2},
@@ -789,6 +837,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c49",
+                            type: ["Scheme"],
                             text: "The scheme owner is a legal entity, or an organization that is a partnership of legal entities, or a government or inter-governmental agency.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -800,6 +849,7 @@ export const assessments = {
                         },
                         {
                             id: "c50",
+                            type: ["Scheme"],
                             text: "The scheme owner make its organizational structure available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -813,6 +863,7 @@ export const assessments = {
                         },
                         {
                             id: "c51",
+                            type: ["Scheme"],
                             text: "The scheme owner is economically independent from the certificate holder.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -826,6 +877,7 @@ export const assessments = {
                         },
                         {
                             id: "c52",
+                            type: ["Scheme"],
                             text: "The top decision-making body members are accountable to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -838,6 +890,7 @@ export const assessments = {
                         },
                         {
                             id: "c53",
+                            type: ["Scheme"],
                             text: "The scheme owner makes quantitative information on the income sources or financing structure of the scheme available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 1},
@@ -850,6 +903,7 @@ export const assessments = {
                         },
                         {
                             id: "c54",
+                            type: ["Scheme"],
                             text: "The scheme owner has a clear statement in case of a mutual recognition agreement with at least one other scheme.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -870,6 +924,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c55",
+                            type: ["Scheme"],
                             text: "Stakeholders have the possibility to participate in or contribute formal input on the scheme's governance.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -883,6 +938,7 @@ export const assessments = {
                         },
                         {
                             id: "c56",
+                            type: ["Scheme"],
                             text: "The procedures of the top decision-making body ensure that there is a balanced representation of stakeholder interests, where no single interest predominates.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -896,6 +952,7 @@ export const assessments = {
                         },
                         {
                             id: "c57",
+                            type: ["Scheme"],
                             text: "The scheme owner addresses engagement of under-represented stakeholder groups.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -908,6 +965,7 @@ export const assessments = {
                         },
                         {
                             id: "c58",
+                            type: ["Scheme"],
                             text: "The scheme owner ensures that clients and other affected stakeholders are notified of any changes to any scheme components that might affect them.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -926,6 +984,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "c59",
+                            type: ["Scheme"],
                             text: "The scheme owner has a publicly available complaints mechanism in place for appealing decisions and resolving disputes.",
                             responseOptions: [
                                 {label: "Yes, at least one policy", score: 2},
@@ -942,6 +1001,7 @@ export const assessments = {
                         },
                         {
                             id: "c60",
+                            type: ["Scheme"],
                             text: "The scheme owner enables complaints procedures to include appeal mechanisms that are open to any involved party. ",
                             responseOptions: [
                                 {label: "Yes, with an impartiality policy", score: 2},
@@ -2391,6 +2451,302 @@ export const glossary = [
                 label: "United Nations Framework Convention on Climate Change",
                 url: "https://unfccc.int/topics/land-use/workstreams/land-use--land-use-change-and-forestry-lulucf"
             }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Natural replenishing rate",
+        definition: "Replenishment of a natural resource at a rate that is equal to or faster than the rate at which they are consumed.",
+        references: [
+            { 
+                label: "Natural Resources Canada (adjusted)",
+                url: "-" 
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Nonpoint source pollution",
+        definition: "Contamination originated from various sources, including agricultural and stormwater runoff or debris blown into waterways from land.",
+        references: [
+            { 
+                label: "Natural Resources Defense Council",
+                url: "https://www.nrdc.org/stories/water-pollution-everything-you-need-know" 
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Operator",
+        definition: "Individual or organization that has ownership or control of one or more parts of the supply chain.",
+        references: [
+            { label: "ISO 13065:2014", url: "-" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Peatland",
+        definition: "Peatlands are wetland ecosystems where soils are dominated by peat. In peatlands net primary production exceeds organic matter decomposition as a result of waterlogged conditions, which leads to the accumulation of peat.",
+        references: [
+            { label: "2019 Refinement to the 2006 IPCC Guidelines for National Greenhouse Gas Inventories", url: "https://www.ipcc.ch/site/assets/uploads/2019/12/19R_V0_02_Glossary.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Personal Protective Equipment",
+        definition: "Products that the user can wear or hold, to be protected against risks either at work, at home or whilst engaging in leisure activities.",
+        references: [
+            { label: "European Commission", url: "https://single-market-economy.ec.europa.eu/sectors/mechanical-engineering/personal-protective-equipment-ppe_en" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Plant protection products",
+        definition: "Plant protection products are 'pesticides' that protect crops or desirable or useful plants. They are primarily used in the agricultural sector but also in forestry, horticulture, amenity areas and in home gardens. They contain at least one active substance and have one of the following functions: (1) Protect plants or plant products against pests/diseases, before or after harvest; (2) Influence the life processes of plants (such as substances influencing their growth, excluding nutrients); (3) Preserve plant products; (4) Destroy or prevent growth of undesired plants or parts of plants. They may also contain other components including safeners and synergists.",
+        references: [
+            { label: "Directorate-General for Health and Food Safety", url: "https://food.ec.europa.eu/plants/pesticides_en" }
+    ]
+    },
+    {
+        theme: "Term",
+        term: "Point source pollution",
+        definition: "Contamination originating from a single source. Examples include wastewater discharged by a manufacturer, oil refinery, or wastewater treatment facility, as well as contamination from leaking septic systems, chemical and oil spills, and illegal dumping.",
+        references: [
+            { label: "Natural Resources Defense Council", url: "https://www.nrdc.org/stories/water-pollution-everything-you-need-know" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Policy",
+        definition: "A set of written guidelines intended to govern the actions of a company's managers and its other employees in specified situations.",
+        references: [
+            { label: "Oxford Dictionary of Business and Management; Oxford Reference", url: "https://www.oxfordreference.com/display/10.1093/acref/9780199684984.001.0001/acref-9780199684984-e-7459" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Procedure",
+        definition: "Specified way to carry out an activity or a process. Procedures can be documented or not. When a procedure is documented, the term “written procedure” or “documented procedure” is frequently used. The document that contains a procedure can be called a “procedure document.”",
+        references: [
+            { label: "ISO 13065:2014 - ISO 9000:2005, 3.4.5", url: "-" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Raw material",
+        definition: "Primary or secondary material that is used to produce a product. Secondary material includes recycled material. Raw material also includes agricultural, forest and processing residues.",
+        references: [
+            { label: "ISO 13065:2014; ISO 14040:2006, 3.15", url: "-" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Recycling",
+        definition: "Any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes. It includes the reprocessing of organic material but does not include energy recovery and the reprocessing into materials that are to be used as fuels or for backfilling operations. Recycling can involve mechanical, physical, chemical processes or biological processes or a combination of these processes. Not all resources should be recycled though, as hazardous substances can accumulate during successive cycles, increasing net toxicity.",
+        references: [
+            { label: "EU Waste Framework Directive", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32008L0098" },
+            { label: "ISO 59004:2024 Circular economy — Vocabulary, principles and guidance for implementation", url: "https://www.iso.org/standard/80648.html" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Regenerative agriculture and forestry",
+        definition: "Regenerative production provides biomass in ways that support positive outcomes for nature, which include but are not limited to healthy and stable soils, improved local biodiversity, improved air and water quality, as well as improved societal outcomes. The method and production systems that can achieve these outcomes are context-dependent – so there is no such thing as a 'regenerative practice' that works everywhere.\nIn agriculture, there are different schools of thought that can be leaned on, including agroecology, organic, agroforestry, and conservation agriculture – as long as the emphasis is on those positive outcomes. This concept applies beyond land-based agriculture to aquatic farms and fisheries as well.\nIn forestry, there are likewise several definitions for regenerative forestry. In general, regenerative forestry is a whole system approach, delivering benefits for climate, nature and people. The goal is to ensure that forests are diverse, resilient, adaptive, and support high levels of engagement people and delivering strong livelihoods.",
+        references: [
+            { label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation", url: "https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/glossary" },
+            { label: "The Regenerative Forestry Report, Soil Association", url: "https://www.soilassociation.org/media/23626/regenerative-forestry-report-final.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Remuneration",
+        definition: "The term remuneration includes the ordinary, basic or minimum wage or salary and any additional emoluments whatsoever payable directly or indirectly, whether in cash or in kind, by the employer to the worker and arising out of the worker’s employment.",
+        references: [
+            { label: "C100 - Equal Remuneration Convention, 1951 (No. 100), International Labour Organization", url: "https://normlex.ilo.org/dyn/normlex/en/f?p=NORMLEXPUB:12100:0::NO::P12100_INSTRUMENT_ID:312245" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Renewable energy",
+        definition: "Energy derived from natural sources that are replenished at a higher rate than they are consumed. These include hydropower, solar energy, geothermal, marine energy, wind energy and bioenergy.",
+        references: [
+            { label: "United Nations (n.d.)", url: "https://www.un.org/en/climatechange/what-is-renewable-energy" },
+            { label: "International Renewable Energy Agency (n.d.)", url: "https://www.irena.org/-/media/Irena/Files/Capacity-building-Statistics-Training/2-Overview-of-renewable-energy.pdf?rev=3e1570cd0acb4c6785bd4b7d10527930&hash=F7C800868B221FBBAC9A531E958DE072#:~:text=Energy%20that%20can%20be%20used,Chemical%20energy%20from%20biomass%20(biofuels)"}
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Runoff",
+        definition: "Runoff is the movement of water and any contaminants across the soil surface. Water running off the land towards canals, streams, rivers, and lakes can also move chemicals, such as pesticides and fertilizers. Pesticides may be moving with the runoff water if dissolved in the water or adsorbed to eroding soil particles.",
+        references: [
+            { label: "Center for Integrated Pest Management, North Carolina State University", url: "https://pesticidestewardship.org/water/runoff/" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Safe drinking water",
+        definition: "Safe drinking water complies with the microbiological, physical, and chemical and other parameters established in applicable country legislation or, in their absence, the critical parameters defined by the World Health Organization.",
+        references: [
+            { label: "World Health Organisation", url: "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/water-safety-and-quality/drinking-water-quality-guidelines" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Scope 1",
+        definition: "Direct emissions occur from sources owned or controlled by the company.",
+        references: [
+            { label: "Greenhouse Gas Protocol", url: "https://ghgprotocol.org/sites/default/files/standards_supporting/FAQ.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Scope 2",
+        definition: "Indirect emissions from the generation of purchased energy. The emissions resulting from the production of grid electricity are accounted for under Scope 2.",
+        references: [
+            { label: "Greenhouse Gas Protocol", url: "https://ghgprotocol.org/sites/default/files/standards_supporting/FAQ.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Scope 3",
+        definition: "All indirect emissions (not included in scope 2) that occur in the value chain of the reporting company, including both upstream and downstream emissions.",
+        references: [
+            { label: "Greenhouse Gas Protocol", url: "https://ghgprotocol.org/sites/default/files/standards_supporting/FAQ.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Severely degraded land",
+        definition: "Land that, for a significant period of time, has either been significantly alienated or presented significantly low organic matter content and has been severely eroded.",
+        references: [
+            { label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018L2001" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Sewage",
+        definition: "Sewage is the part of wastewater that is contaminated with feces or urine.",
+        references: [
+            { label: "UNEP", url: "https://www.unep.org/cep/wastewater-sewage-and-sanitation" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Skilled positions",
+        definition: "Skilled positions are those allocated to workers who currently hold leadership/management, professional or technician/associate professional positions. Skilled labour is generally characterised by advanced education (college and higher), possession of knowledge and skills to perform complicated tasks, ability to adapt quickly to technology changes, and creative application of knowledge and skills acquired through training in their work. In essence, skilled workers are those directly and closely involved in the generation, development, spreading and application of knowledge.",
+        references: [
+            { label: "SKILLED LABOUR - A determining factor for sustainable growth of the nation policy brief (ILO)", url: "https://www.ilo.org/global/docs/WCMS_428969/lang--en/index.htm" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Sludge",
+        definition: "Mud-like residue resulting from wastewater treatment. It can contain contaminants such as heavy metals or other chemicals, or pathogens.",
+        references: [
+            { label: "Directorate-General for Environment", url: "https://environment.ec.europa.eu/topics/waste-and-recycling/sewage-sludge_en" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Slurry",
+        definition: "A watery mixture or suspension of insoluble (not dissolved) matter; a thin, watery mud or any substance resembling it (such as grit slurry or a lime slurry).",
+        references: [
+            { label: "Sacramento State University", url: "https://www.owp.csus.edu/glossary/slurry.php" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Stakeholder",
+        definition: "An individual or group that has an interest in any decision or activity of an organisation. Stakeholders may include suppliers, internal staff such as employees and workers, seasonal or migratory workers, members, customers, shareholders, investors, consumers, regulators, local and regional communities.",
+        references: [
+            { label: "ISO 26000:2010", url: "-" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Subcontractor",
+        definition: "A subcontractor is a person or entity that has been awarded by the general contractor the performance of part of the work or services of an existing contract entered between the general contractor and the (original) contracting party.",
+        references: [
+            { label: "Legal Information Institute (Cornell University)", url: "https://www.law.cornell.edu/wex/subcontractor" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Subsidiary",
+        definition: "An undertaking controlled by a parent undertaking; a company whose capital includes a minimum holding of 20%.",
+        references: [
+            { 
+                label: "Council Directive 90/435/EEC of 23 July 1990 on the common system of taxation of parent companies and subsidiaries of other Member States",
+                url: "https://eur-lex.europa.eu/EN/legal-content/summary/common-taxation-of-parent-companies-and-their-subsidiaries.html"
+            },
+            { 
+                label: "DIRECTIVE 2013/34/EU OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 26 June 2013 on the annual financial statements, consolidated financial statements and related reports of certain types of undertakings",
+                url: "https://echa.europa.eu/support/getting-started/enquiry-on-reach-and-clp#:~:text=A%20substance%20is%20defined%20as,without%20affecting%20the%20stability%20of"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Substance",
+        definition: "A chemical element and its compounds in the natural state or obtained by any manufacturing process, including any additive necessary to preserve its stability and any impurity deriving from the process used, but excluding any solvent which may be separated without affecting the stability of the substance or changing its composition.",
+        references: [
+            { label: "European Chemicals Agency", url: "https://echa.europa.eu/support/getting-started/enquiry-on-reach-and-clp#:~:text=A%20substance%20is%20defined%20as,without%20affecting%20the%20stability%20of" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Substances of very high concern",
+        definition: "Chemical substance (or part of a group of chemical substances) concerning which it has been proposed that use within the European Union be subject to authorisation under the REACH Regulation. A substance may be proposed as an SVHC if it meets one or more of the following criteria: it is carcinogenic; it is mutagenic; it is toxic for reproduction; it is persistent, bioaccumulative and toxic; it is very persistent and very bioaccumulative; there is “scientific evidence of probable serious effects to human health or the environment which give rise to an equivalent level of concern.”",
+        references: [
+            { label: "ECHA Candidate list of substances of very high concern for Authorisation", url: "https://echa.europa.eu/candidate-list-table" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Substances that are carcinogenic, mutagenic or toxic to reproduction",
+        definition: "Carcinogenic, mutagenic and reprotoxic substances (CMRs). Complete list can be found in Annex VI of the CLP Regulation (European Regulation(EC) No. 1272/2008).",
+        references: [
+            { label: "Annex VI of the CLP Regulation (European Regulation(EC) No. 1272/2008)", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=celex%3A32008R1272" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Supply chain",
+        definition: "Upstream supply chain of the product in scope of the certification.",
+        references: [
+            { label: "-", url: "-" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Unused land",
+        definition: "Areas which, for a consecutive period of at least 5 years before the start of cultivation of the feedstock used for the production of biofuels, bioliquids and biomass fuels, were neither used for the cultivation of food and feed crops, other energy crops nor any substantial amount of fodder for grazing animals.",
+        references: [
+            { label: "COMMISSION DELEGATED REGULATION (EU) 2019/807", url: "https://faolex.fao.org/docs/pdf/eur188157.pdf" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Virgin biomass",
+        definition: "Biomass that have not yet been used in the economy. These include both finite materials and renewable resources.",
+        references: [
+            { label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation", url: "https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/glossary" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Water withdrawal",
+        definition: "Gross amount of water extracted from the resources for a given use. It includes conveyance losses, consumptive use and return flow.",
+        references: [
+            { label: "FAO (2014)", url: "https://www.fao.org/nr/sustainability/sustainability-assessments-safa/en/" }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Wetland",
+        definition: "Land that is covered with or saturated by water permanently or for a significant part of the year.",
+        references: [
+            { label: "Ramsar Convention on Wetlands", url: "https://www.ramsar.org/sites/default/files/documents/library/factsheet1_why_should_i_care_0.pdf" }
         ]
     }
 ]

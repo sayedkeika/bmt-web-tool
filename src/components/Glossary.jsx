@@ -1,24 +1,29 @@
-// Glossary Page
 import React, { useState } from 'react'
 import { glossary } from '../Data'
 
+// Component for displaying list of terms with definitions and sources
 const Glossary = ({ onBack }) => {
+    // Local state for filters and active term
     const [activeTerm, setActiveTerm] = useState(null)
     const [filterByTheme, setFilterByTheme] = useState('')
     const [filterByLetter, setFilterByLetter] = useState('')
 
+    // Toggles expansion of a glossary term
     const handleTermClick = (term) => {
         setActiveTerm(prevTerm => (prevTerm === term ? null : term))
     }
 
+    // Toggles letter filter
     const handleLetterClick = (letter) => {
         setFilterByLetter(prevLetter => (prevLetter === letter ? '' : letter))
     }
 
+    // Updates theme filter based on dropdown selection
     const handleThemeFilterChange = (event) => {
         setFilterByTheme(event.target.value)
     }
 
+    // Derive filtered glossary entries based on theme and letter
     const filteredGlossary = glossary.filter((item) => {
         const firstChar = item.term[0].toUpperCase()
         const matchesTheme = filterByTheme ? item.theme === filterByTheme : true
@@ -35,6 +40,7 @@ const Glossary = ({ onBack }) => {
 
     return (
         <div className="container">
+            {/* Navigation header */}
             <div className="nav-header">
                 <button onClick={onBack} className="back-button">← Back</button>
                 <h2>Glossary</h2>
