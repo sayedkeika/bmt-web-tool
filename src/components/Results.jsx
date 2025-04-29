@@ -7,8 +7,7 @@ import ContentCharts from './ContentCharts'
 
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
-  content: 'Content-Level Assessment',
-  outcome: 'Outcome-Level Assessment'
+  content: 'Content-Level Assessment'
 }
 
 // Component for showing charts and allowing export of results
@@ -104,28 +103,23 @@ export default function Results({ selectedTypes, answers, onRestart, onBackToOve
   }
 
   return (
-    <div className="container">
-      {/* Navigation header with controls for export and restart */}
-      <div className="nav-header">
-        <button onClick={onBackToOverview}>← Back to Overview</button>
-        <button onClick={handleDownloadPDF}>Download Results as PDF</button>
-        <button onClick={handleDownloadCSV}>Download Results as CSV</button>
-        <button onClick={onRestart}>Start New Assessment →</button>
+    <>
+      {/* Top navigation */}
+      <div className="container">
+        <div className="nav-header">
+          <button onClick={onBackToOverview}>← Back to Overview</button>
+          <button onClick={handleDownloadPDF}>Download Results as PDF</button>
+          <h1>Results</h1>
+          <button onClick={handleDownloadCSV}>Download Answers as CSV</button>
+          <button onClick={onRestart}>Start New Assessment →</button>
+        </div>
       </div>
 
-      {/* Wrap results in a ref for PDF capture */}
-      <div ref={resultsRef}>
-        <h1>Results</h1>
-        
-        {/* Conditionally render system-level and content-level charts */}
-        {selectedTypes.includes('system') && (
-          <SystemCharts answers={answers} />
-        )}
-
-        {selectedTypes.includes('content') && (
-          <ContentCharts answers={answers} />
-        )}
+      {/* Main results content */}
+      <div className="container" ref={resultsRef}>
+        {selectedTypes.includes('system') && <SystemCharts answers={answers} />}
+        {selectedTypes.includes('content') && <ContentCharts answers={answers} />}
       </div>
-    </div>
+    </>     
   )
 }

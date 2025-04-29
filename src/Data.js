@@ -1861,32 +1861,6 @@ export const assessments = {
                 }
             ]
         }
-    ],
-    outcome: [
-        {
-            id: "",
-            category: "Category 1 name (OL)",
-            principles: [
-                {
-                    id: "",
-                    title: "Principle 1 name",
-                    criteria: [
-                        {
-                            id: "",
-                            text: "Criteria 1 name",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0}
-                            ],
-                            requirements: [
-                                ""
-                            ]
-                        }
-                    ]
-                }
-            ]
-
-        },
     ]
 }
 

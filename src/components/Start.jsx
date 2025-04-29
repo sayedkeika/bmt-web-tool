@@ -4,7 +4,6 @@ import { assessments } from '../Data'
 const TYPES = [
   { key: 'system', label: 'System-Level Assessment' },
   { key: 'content', label: 'Content-Level Assessment' },
-  //{ key: 'outcome', label: 'Outcome-Level Assessment' }
 ]
 
 // Component for selecting assessment types and applying context filters
@@ -61,9 +60,10 @@ export default function Start({ onStart }) {
 
   return (
     <div className="container">
-      <h1>Select Assessment Types</h1>
+      <h1>BIOBASEDCERT Monotoring Tool</h1>
+      <h3>Please select atleast one level of assessment you wish to conduct</h3>
       {/* Assessment selection buttons */}
-      <div className="types">
+      <div>
         {TYPES.map(({ key, label }) => (
           <button
             key={key}
@@ -75,55 +75,60 @@ export default function Start({ onStart }) {
       
       {/* System-level filters */}
       {selectedTypes.includes('system') && (
-        <div className="sub-select">
-          <h3>CSL Type</h3>
+        <div>
+          <h3>Please select atleast one context type</h3>
           {allContexts.map(ctx => (
-            <label key={ctx}>  
-              <input
-                type="checkbox"
-                checked={selectedContexts.includes(ctx)}
-                onChange={() => toggle(ctx, selectedContexts, setSelectedContexts)}
-              /> {ctx}
-            </label>
+            <button
+              key={ctx}
+              onClick={() => toggle(ctx, selectedContexts, setSelectedContexts)}
+              className={selectedContexts.includes(ctx) ? 'selected' : ''}
+            >
+              {ctx}
+            </button>
           ))}
         </div>
       )}
 
       {/* Content-level filters */}
       {selectedTypes.includes('content') && (
-        <div className="sub-select">
-          <h3>Applicable Feedstocks</h3>
-          {allFeedstocks.map(f => (
-            <label key={f}>
-              <input
-                type="checkbox"
-                checked={selectedFeedstocks.includes(f)}
-                onChange={() => toggle(f, selectedFeedstocks, setSelectedFeedstocks)}
-              /> {f}
-            </label>
-          ))}
-          <h3>Applicable Value Chain Actors</h3>
-          {allPhases.map(p => (
-            <label key={p}>
-              <input
-                type="checkbox"
-                checked={selectedPhases.includes(p)}
-                onChange={() => toggle(p, selectedPhases, setSelectedPhases)}
-              /> {p}
-            </label>
-          ))}
+        <div>
+          <h3>Please select atleast one applicable feedstock</h3>
+          <div>
+            {allFeedstocks.map(f => (
+              <button
+                key={f}
+                onClick={() => toggle(f, selectedFeedstocks, setSelectedFeedstocks)}
+                className={selectedFeedstocks.includes(f) ? 'selected' : ''}
+              >
+                {f}
+              </button>
+            ))}
+          </div>
+
+          <h3>Please select atleast one applicable value chain actor</h3>
+          <div>
+            {allPhases.map(p => (
+              <button
+                key={p}
+                onClick={() => toggle(p, selectedPhases, setSelectedPhases)}
+                className={selectedPhases.includes(p) ? 'selected' : ''}
+              >
+                {p}
+              </button>
+            ))}
+          </div>
         </div>
       )}
 
       {/* Start button */}
-      <button
+      <button style={{ marginTop: '2rem' }}
         onClick={handleStart}
         disabled={
           !(selectedTypes.length > 0 &&
             (!selectedTypes.includes('system') || selectedContexts.length > 0) &&
             (!selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0)))
         }
-      >Start Assessment</button>
+      >Start Assessment →</button>
     </div>
   )
 }

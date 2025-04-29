@@ -15,13 +15,23 @@ export default function Assessment({
 }) {
   // Save a response value for a criterion or requirement
   const handleAnswer = (criterionId, value) => {
-    setAnswers(prev => ({
-      ...prev,
-      [criterionId]: {
-        ...prev[criterionId],
-        response: value
+    setAnswers(prev => {
+      const current = prev[criterionId]?.response
+      const next = { ...prev }
+      
+      if (current === value) {
+        // deselect
+        delete next[criterionId]
+      } else {
+        // select
+        next[criterionId] = {
+          ...prev[criterionId],
+          response: value
+        }
       }
-    }))
+      
+      return next
+    })
   }
 
   // Save justification, feedback for a criterion
@@ -51,7 +61,7 @@ export default function Assessment({
 
   return (
     <>
-      {/* Top navigation bar*/}
+      {/* Top navigation */}
       <div className="container">
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
           <button onClick={onBackToOverview}>← Back to Overview</button>
@@ -99,7 +109,7 @@ export default function Assessment({
       
       {/* Main questionnaire content */}
       <div className="container">
-        <div className="navigation-buttons" style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
           <div>
             {prevPrinciple && (
               <button onClick={() => onPrev(prevPrinciple.id)}>← Previous</button>
@@ -119,11 +129,11 @@ export default function Assessment({
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
               <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
-              <div className="examples">
+              <div>
                 {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
               </div>
               {criterion.requirements.map(req => (
-                <div key={req.id} className="sub-criterion-block">
+                <div key={req.id}>
                   <p><strong>{req.text}</strong>  <em>({req.level})</em></p>
                   <div className="options">
                     {req.responseOptions.map(option => (
@@ -158,7 +168,7 @@ export default function Assessment({
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
               <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
-              <div className="examples">
+              <div>
                 {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
               </div>
               <div className="options">
@@ -174,14 +184,12 @@ export default function Assessment({
               </div>
               <div className="inputs">
                 <input
-                  className="full-width"
                   type="text"
                   placeholder="Justification"
                   value={answers[criterion.id]?.justification || ''}
                   onChange={(e) => handleInputChange(criterion.id, 'justification', e.target.value)}
                 />
                 <input
-                  className="full-width"
                   type="text"
                   placeholder="Source Reference"
                   value={answers[criterion.id]?.feedback || ''}

@@ -42,9 +42,9 @@ const Glossary = ({ onBack }) => {
         <div className="container">
             {/* Navigation header */}
             <div className="nav-header">
-                <button onClick={onBack} className="back-button">← Back</button>
+                <button onClick={onBack}>← Back</button>
                 <h2>Glossary</h2>
-                <div className="theme-filter">
+                <div>
                 <label htmlFor="themeFilter">Filter:</label>
                 <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
                     <option value="">All Themes</option>
@@ -56,7 +56,7 @@ const Glossary = ({ onBack }) => {
             </div>
 
             {/* Letter Filter */}
-            <div className="letter-buttons">
+            <div style={{ marginBottom: '1rem' }}>
                 <button
                 onClick={() => handleLetterClick('0-9')}
                 className={`letter-button ${filterByLetter === '0-9' ? 'active' : ''}`}
@@ -76,9 +76,9 @@ const Glossary = ({ onBack }) => {
             </div>
 
             {/* Glossary List */}
-            <div className="glossary-container">
+            <div>
                 {filteredGlossary.map((item, index) => (
-                <div key={index} className="glossary-entry">
+                <div key={index} style={{ marginBottom: '1rem' }}>
                     <div
                     className="glossary-term"
                     onClick={() => handleTermClick(item)}

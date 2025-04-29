@@ -4,7 +4,6 @@ import React, { useState, useEffect } from 'react'
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
   content: 'Content-Level Assessment',
-  outcome: 'Outcome-Level Assessment'
 }
 
 // Component for showing graphical overview of assessment progress
@@ -71,17 +70,17 @@ export default function Overview({
   const isComplete = totalAnswered === totalCriteria
 
   return (
-    <div className="overview-container">
+    <div className="container">
       {/* Top navigation with restart and submit buttons */}
       <div className="nav-header">
         <button onClick={onRestart}>← Start New Assessment</button>
         <h1>Assessment Overview</h1>
-        <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria to submit.' : ''}>Submit Now</button>
+        <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria to submit.' : ''}>Submit Now →</button>
       </div>
 
       {/* Render each selected assessment type and its categories */}
       {selectedTypes.map(type => (
-        <div key={type} className="type-block">
+        <div key={type}>
           <div className="type-header">{TYPE_LABELS[type]}</div>
 
           {/* Render categories within the current type */}
