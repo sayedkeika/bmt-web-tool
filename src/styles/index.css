@@ -267,8 +267,6 @@ select {
 /* Results */
 
 .results-container {
-  /* you can adjust spacing or add its own background, etc. */
-  /* e.g. give it a top border to separate visually */
   padding-top: 2rem;
   border-top: 1px solid #eee;
 }
