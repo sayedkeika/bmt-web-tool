@@ -73,9 +73,15 @@ export default function Overview({
     <div className="container">
       {/* Top navigation with restart and submit buttons */}
       <div className="nav-header">
-        <button onClick={onRestart}>← Start New Assessment</button>
-        <h1>Assessment Overview</h1>
-        <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria to submit.' : ''}>Submit Now →</button>
+        <div className='nav-left'>
+          <button onClick={onRestart}>← Start New Assessment</button>
+        </div>
+        <div className='nav-center'>
+          <h1>Assessment Overview</h1>
+        </div>
+        <div className='nav-right'>
+          <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria to submit.' : ''}>Submit →</button>
+        </div>
       </div>
 
       {/* Render each selected assessment type and its categories */}

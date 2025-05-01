@@ -42,16 +42,22 @@ const Glossary = ({ onBack }) => {
         <div className="container">
             {/* Navigation header */}
             <div className="nav-header">
-                <button onClick={onBack}>← Back</button>
-                <h2>Glossary</h2>
-                <div>
-                <label htmlFor="themeFilter">Filter:</label>
-                <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
-                    <option value="">All Themes</option>
-                    {themes.map((theme, index) => (
-                    <option key={index} value={theme}>{theme}</option>
-                    ))}
-                </select>
+                <div className='nav-left'>
+                    <button onClick={onBack}>← Back</button>
+                </div>
+                <div className='nav-center'>
+                    <h2>Glossary</h2>
+                </div>
+                <div className='nav-right'>
+                    <div>
+                        <label htmlFor="themeFilter">Filter:</label>
+                        <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
+                            <option value="">All</option>
+                            {themes.map((theme, index) => (
+                            <option key={index} value={theme}>{theme}</option>
+                            ))}
+                        </select>
+                    </div>
                 </div>
             </div>
 

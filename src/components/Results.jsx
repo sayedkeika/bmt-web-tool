@@ -4,6 +4,7 @@ import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import SystemCharts from './SystemCharts'
 import ContentCharts from './ContentCharts'
+import DownloadIcon from '../svgs/data-download.svg'
 
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
@@ -107,11 +108,17 @@ export default function Results({ selectedTypes, answers, onRestart, onBackToOve
       {/* Top navigation */}
       <div className="container">
         <div className="nav-header">
-          <button onClick={onBackToOverview}>← Back to Overview</button>
-          <button onClick={handleDownloadPDF}>Download Results as PDF</button>
-          <h1>Results</h1>
-          <button onClick={handleDownloadCSV}>Download Answers as CSV</button>
-          <button onClick={onRestart}>Start New Assessment →</button>
+          <div className='nav-left'>
+            <button onClick={onBackToOverview}>← Back to Overview</button>
+            <button onClick={handleDownloadPDF}>Download Results as PDF <img src={DownloadIcon} className="icon"/></button>
+          </div>
+          <div className='nav-center'>
+            <h1>Results</h1>
+          </div>
+          <div className='nav-right'>
+            <button onClick={handleDownloadCSV}>Download Answers as CSV <img src={DownloadIcon} className="icon"/></button>
+            <button onClick={onRestart}>Start New Assessment →</button>
+          </div>
         </div>
       </div>
 

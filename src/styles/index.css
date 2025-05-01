@@ -19,9 +19,21 @@ body {
 
 .nav-header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   margin-bottom: 2rem;
+}
+
+.nav-header .nav-left,
+.nav-header .nav-right {
+  flex: 1;
+}
+
+.nav-header .nav-right {
+  text-align: right;
+}
+
+.nav-header .nav-center {
+  margin: 0;
 }
 
 h1 {
@@ -58,6 +70,17 @@ button:not(:disabled):hover {
 button.selected {
   background-color: #4caf50;
   color: white;
+}
+
+button .icon {
+  width: 1em;
+  height: 1em;
+  margin-left: 0.2rem;
+  vertical-align: middle;
+}
+
+button:not(:disabled):hover .icon {
+  filter: brightness(0) invert(1);
 }
 
 /* Overview */
@@ -155,6 +178,39 @@ button.selected {
 
 .progress-header {
   margin-bottom: 2rem;
+
+  .stepper-breadcrumbs {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    gap: 0.3rem;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    
+  }
+  .stepper-breadcrumbs::-webkit-scrollbar {
+    display: none;
+  }
+  .stepper-pill {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    cursor: pointer;
+    user-select: none;
+    transition: background-color 0.2s, color 0.2s;
+
+    &.done   { background-color: #8dc63f; color: white; }
+    &.todo   { background-color: #eee;   color: #666; }
+    &.current{ box-shadow: inset 0 0 0 2px #333; }
+
+    &:hover {
+      background-color: #e59200;
+      color: white;
+      .icon { color: white; }
+    }
+  }
 }
 
 .progress-labels {
@@ -248,9 +304,14 @@ button.selected {
 select {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
-  padding: 5px;
-  border-radius: 4px;
+  padding: 0.5rem 1rem;
+  padding: 15px 22px;
+  width: auto;
+  border-radius: 1000px;
   border: 1px solid #ccc;
+  background-color: #e0e0e0;
+  cursor: pointer;
+  font-size: 14px;
 }
 
 .term-details a {

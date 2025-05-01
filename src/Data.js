@@ -11,10 +11,10 @@ export const assessments = {
             principles: [
                 {
                     id: "p1",
-                    title: "Standards content and structure",
+                    title: "Standards content",
                     criteria: [
                         {
-                            id: "c1",
+                            id: "SS-SS-1",
                             type: ["Scheme","Label"],
                             text: "The scheme owner makes consultation drafts and final versions of its standards freely available and easily accessible in the scheme’s official languages.",
                             responseOptions: [
@@ -31,7 +31,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c2",
+                            id: "SS-SS-2",
                             type: ["Scheme","Label"],
                             text: "The scheme owner ensures that guidance is in place to support consistent interpretation of the standard.",
                             responseOptions: [

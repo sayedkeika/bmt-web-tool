@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
+import BookIcon from '../svgs/book.svg'
 
 // Component for rendering the questionnaire and recording user responses
 export default function Assessment({
@@ -18,7 +19,7 @@ export default function Assessment({
     setAnswers(prev => {
       const current = prev[criterionId]?.response
       const next = { ...prev }
-      
+
       if (current === value) {
         // deselect
         delete next[criterionId]
@@ -29,7 +30,7 @@ export default function Assessment({
           response: value
         }
       }
-      
+
       return next
     })
   }
@@ -47,80 +48,100 @@ export default function Assessment({
 
   // Determine navigation indices
   const currentIndex = allPrinciples.findIndex(p => p.id === principle.id)
-  const prevPrinciple = allPrinciples[currentIndex - 1]
-  const nextPrinciple = allPrinciples[currentIndex + 1]
 
-  // Flatten all criteria and requirements to check if every one has a response
-  const allCriteria = allPrinciples.flatMap(p =>
-    p.criteria.flatMap(c => (Array.isArray(c.requirements) ? c.requirements : [c]))
-  )
+  // Flatten all criteria and requirements
+  const flatCriteriaOf = p =>
+    p.criteria.flatMap(c =>
+      Array.isArray(c.requirements) ? c.requirements : [c]
+    )
+
+  const isPrincipleCompleted = p =>
+    flatCriteriaOf(p).every(c => !!answers[c.id]?.response)
+
+  const allCriteria = allPrinciples.flatMap(flatCriteriaOf)
   const allAnswered = allCriteria.every(c => answers[c.id]?.response)
 
   // Check if this is a content-level principle (has requirements)
-  const isContentAssessment = principle.criteria.some(c => Array.isArray(c.requirements))
+  const isContentAssessment = principle.criteria.some(c =>
+    Array.isArray(c.requirements)
+  )
+
+  // Refs for scrolling the progress header
+  const breadcrumbsRef = useRef(null)
+  const pillRefs = useRef({})
+
+  // Center the active pill
+  useEffect(() => {
+    const el = pillRefs.current[principle.id]
+    if (el && breadcrumbsRef.current) {
+      el.scrollIntoView({
+        behavior: 'smooth',
+        block: 'nearest',
+        inline: 'center'
+      })
+    }
+  }, [principle.id])
 
   return (
     <>
       {/* Top navigation */}
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
-          <button onClick={onBackToOverview}>← Back to Overview</button>
-          <h2 style={{ textAlign: 'center', flex: 1 }}>{category.category}</h2>
-          <button
-            onClick={onSubmit}
-            disabled={!allAnswered}
-            title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
-          >
-            Submit Now →
-          </button>
-        </div>
-
-        {/* Breadcrumb-style indicator of previous, current, and next principle */}
-        <div className="progress-header">
-          <div className="progress-labels">
-            {prevPrinciple && <span>{prevPrinciple.title}</span>}
-            <span>›</span>
-            <span><strong>{principle.title}</strong></span>
-            <span>›</span>
-            {nextPrinciple && <span>{nextPrinciple.title}</span>}
+        <div className='nav-header'>
+          <div className='nav-left'>
+            <button onClick={onBackToOverview}>← Overview</button>
           </div>
+          <div className='nav-center'>
+            <h2 style={{ textAlign: 'center', flex: 1 }}>{category.category}</h2>
+          </div>
+          <div className='nav-right'>
+            <button
+                onClick={onSubmit}
+                disabled={!allAnswered}
+                title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
+              >
+                Submit →
+              </button>
+          </div>           
+        </div>
+        
 
-          {/* Progress grid showing answered/unanswered items per principle */}
-          <div className="progress-grid">
-            {allPrinciples.map(p => (
-              <div key={p.id} className="principle-progress">
-                {p.criteria.flatMap(c => Array.isArray(c.requirements) ? c.requirements : [c]).map(c => {
-                  const isAnswered = !!answers[c.id]?.response
-                  const isCurrent = p.id === principle.id
-                  return (
-                    <div
-                      key={c.id}
-                      title={c.text}
-                      onClick={() => onNext(p.id)}
-                      className={`criteria-box ${isAnswered ? 'answered' : 'unanswered'} ${isCurrent ? 'current' : ''}`}
-                    />
-                  )
-                })}
-              </div>
-            ))}
+        {/* Breadcrumb‐style stepper and progress header */}
+        <div className="progress-header">
+          <div className="stepper-breadcrumbs" ref={breadcrumbsRef}>
+            {allPrinciples.map((p, idx) => {
+              const done = isPrincipleCompleted(p)
+              const isCurrent = idx === currentIndex
+              const pillClasses = ['stepper-pill', done ? 'done' : 'todo', isCurrent ? 'current' : ''].join(' ')
+
+              return (
+                <div
+                  key={p.id}
+                  className={pillClasses}
+                  onClick={() => onNext(p.id)}
+                  ref={el => (pillRefs.current[p.id] = el)}
+                >
+                  <span className="title">{p.title}</span>
+                </div>
+              )
+            })}
           </div>
         </div>
       </div>
-      
+
       {/* Main questionnaire content */}
       <div className="container">
-        <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '2rem' }}>
-          <div>
-            {prevPrinciple && (
-              <button onClick={() => onPrev(prevPrinciple.id)}>← Previous</button>
+        <div className='nav-header'>
+          <div className='nav-left'>
+            {currentIndex > 0 && (
+              <button onClick={() => onPrev(allPrinciples[currentIndex - 1].id)}>← Previous</button>
             )}
           </div>
-
-          <button onClick={onOpenGlossary}>Go to Glossary</button>
-
-          <div>
-            {nextPrinciple && (
-              <button onClick={() => onNext(nextPrinciple.id)}>Next →</button>
+          <div className='nav-center'>
+            <button onClick={onOpenGlossary}>Go to Glossary <img src={BookIcon} className="icon"/></button>
+          </div>
+          <div className='nav-right'>
+            {currentIndex < allPrinciples.length - 1 && (
+              <button onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next →</button>
             )}
           </div>
         </div>
@@ -129,12 +150,10 @@ export default function Assessment({
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
               <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
-              <div>
-                {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
-              </div>
+              <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
               {criterion.requirements.map(req => (
                 <div key={req.id}>
-                  <p><strong>{req.text}</strong>  <em>({req.level})</em></p>
+                  <p><strong>{req.text}</strong> <em>({req.level})</em></p>
                   <div className="options">
                     {req.responseOptions.map(option => (
                       <button
@@ -151,13 +170,13 @@ export default function Assessment({
                       type="text"
                       placeholder="Justification"
                       value={answers[req.id]?.justification || ''}
-                      onChange={(e) => handleInputChange(req.id, 'justification', e.target.value)}
+                      onChange={e => handleInputChange(req.id, 'justification', e.target.value)}
                     />
                     <input
                       type="text"
                       placeholder="Feedback"
                       value={answers[req.id]?.feedback || ''}
-                      onChange={(e) => handleInputChange(req.id, 'feedback', e.target.value)}
+                      onChange={e => handleInputChange(req.id, 'feedback', e.target.value)}
                     />
                   </div>
                 </div>
@@ -167,10 +186,8 @@ export default function Assessment({
         ) : (
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
-              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
-              <div>
-                {criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}
-              </div>
+              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.id}: {criterion.text}</strong></p>
+              <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
               <div className="options">
                 {criterion.responseOptions.map(option => (
                   <button
@@ -187,13 +204,13 @@ export default function Assessment({
                   type="text"
                   placeholder="Justification"
                   value={answers[criterion.id]?.justification || ''}
-                  onChange={(e) => handleInputChange(criterion.id, 'justification', e.target.value)}
+                  onChange={e => handleInputChange(criterion.id, 'justification', e.target.value)}
                 />
                 <input
                   type="text"
                   placeholder="Source Reference"
                   value={answers[criterion.id]?.feedback || ''}
-                  onChange={(e) => handleInputChange(criterion.id, 'feedback', e.target.value)}
+                  onChange={e => handleInputChange(criterion.id, 'feedback', e.target.value)}
                 />
               </div>
             </div>
