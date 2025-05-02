@@ -101,7 +101,6 @@ export default function Overview({
       {/* Render each selected assessment type and its categories */}
       {selectedTypes.map(type => (
         <div key={type}>
-          {/* Type header with expand/collapse control */}
           <div
             className="type-header"
             onClick={() => toggleType(type)}
@@ -120,7 +119,6 @@ export default function Overview({
           {expandedTypes[type] && (
             assessmentMap[type]?.map(category => (
               <div key={category.id} className="category-box">
-                {/* Category header with expand/collapse control */}
                 <div
                   className="category-header"
                   onClick={() => toggleCategory(category.id)}
@@ -145,7 +143,6 @@ export default function Overview({
                         onClick={() => onSelectPrinciple(principle.id)}
                       >
                         <div className="principle-label">{principle.title}</div>
-                        {/* Criteria progress */}
                         <div className="criteria-nav">
                           {principle.criteria.map(c => {
                             if (type === 'system') {
