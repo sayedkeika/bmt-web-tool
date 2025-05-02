@@ -16,7 +16,7 @@ export const assessments = {
                         {
                             id: "SS-SS-1",
                             type: ["Scheme","Label"],
-                            text: "The scheme owner makes consultation drafts and final versions of its standards freely available and easily accessible in the scheme’s official languages.",
+                            text: "The scheme owner makes consultation drafts and final versions of its standards freely available and easily accessible in the scheme's official languages.",
                             responseOptions: [
                                 {label: "Yes (publicly, on request (no fee))", score: 2},
                                 {label: "Yes, for a fee", score: 1},
@@ -50,8 +50,8 @@ export const assessments = {
                     title: "Standard-setting process",
                     criteria: [
                         {
-                            id: "c3",
-                            type: ["Scheme"],
+                            id: "SS-SP-1",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner reviews and revises the standards at least once every 5 years.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -62,8 +62,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c4",
-                            type: ["Scheme"],
+                            id: "SS-SP-2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner makes publicly available a public summary that includes the decision-making procedures of how decisions are made and who makes them.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -82,25 +82,25 @@ export const assessments = {
                     title: "Standards consultation",
                     criteria: [
                         {
-                            id: "c5",
-                            type: ["Scheme"],
-                            text: "Standards setting and update is subjected to public consultation.",
+                            id: "SS-SC-1",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner subjects the development of new standards and the revision of existing standards to public consultation.",
                             responseOptions: [
-                                {label: "Yes (with min. number of rounds)", score: 2},
-                                {label: "Yes (unspecified)", score: 1},
+                                {label: "Yes, specified number of rounds", score: 2},
+                                {label: "Yes, unspecified", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "Refers to sharing the standard document in the process of development of updates publicly, whereby stakeholders can openly comment on the standard document and share the opinions with the standard-setting organization.",
-                                "The scheme owner holds public consultations that include:",
-                                "• At least two rounds of input on initial standards development",
+                                "The scheme provides sufficient time and opportunity for stakeholders to participate in the consultation.",
+                                "The ISEAL Code recommends:",
+                                "• At least two rounds of input on initial standards development; and",
                                 "• At least one round of input on standards revision.",
-                                "The usual number of days required for consultation are of 30 (for new standards) or 60 days, as per ISEAL Standard-setting Code."
+                                "60 days and 30 days have generally been considered adequate time to submit comments in first and second rounds of consultation, respectively."
                             ]
                         },
                         {
-                            id: "c6",
-                            type: ["Scheme"],
+                            id: "SS-SC-2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner shall ensure that participation in the consultation process is open to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes, possible", score: 1},
@@ -111,8 +111,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c7",
-                            type: ["Scheme"],
+                            id: "SS-SC-3",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner proactively encourages participation in standard-setting of all stakeholders directly affected.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -123,50 +123,50 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c8",
-                            type: ["Scheme"],
+                            id: "SS-SC-4",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner ensures balanced participation of stakeholder interests in the consultation and decision-making processes.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "The scheme owner ensures participation by independent technical experts and encourages balanced participation by stakeholders in the standard development, revision, and approval process.Documented information on the voting procedure of the highest decision-making body responsible for the standard setting process specifies that all categories of stakeholders are represented.",
+                                "The scheme owner ensures participation by independent technical experts and encourages balanced participation by stakeholders in the standard development, revision, and approval process.",
+                                "Documented information on the voting procedure of the highest decision-making body responsible for the standard setting process specifies that all categories of stakeholders are represented.",
                                 "The procedure shall also ensure that one stakeholder category is not able to dominate decision-making."
                             ]
                         },
                         {
-                            id: "c9",
+                            id: "SS-SC-5",
                             type: ["Scheme"],
-                            text: "The scheme owner ensures that procedures and guidance are in place for adaptation or interpretation of the standard to regional contexts.",
+                            text: "The scheme owner allows for adaptation or interpretation of the standard to regional contexts based on multistakeholder consultation processes.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0},
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "There are procedures in place to ensure that any adaptations of a scheme’s standard (e.g., for national or regional relevance, scale of enterprise, or for specific products or sectors) is developed through a multistakeholder consultation process.",
-                                "Not applicable for schemes that develop different product standards based on a life-cycle and multi-criteria approach (ISO type I labels)",
+                                "There are procedures and guidance in place to ensure that any adaptations of a scheme’s standard (e.g., for national or regional relevance, scale of enterprise, or for specific products or sectors) is developed through a multistakeholder consultation process.",
+                                "“Not applicable” for schemes that develop product-specific standards based on a life-cycle and multi-criteria approach (ISO type I labels) as said approach does not allow for the recognition of local contexts.",
                                 "Either of the following:",
                                 "• Information in the standard about how each of the requirements can be interpreted for application at a local level",
                                 "• Procedure for development of a local adaptation of the standard including stakeholder consultation measures.",
                                 "• The standard organization has country-specific standards",
-                                "In case of ISO Type I labels or other process-based standards this is \"Not applicable\", as its approach does not allow for the recognition of local contexts."
                             ]
                         },
                         {
-                            id: "c10",
-                            type: ["Scheme"],
-                            text: "The scheme owner provides information on how the input received from stakeholder consultations has been included in the final version of the standard.",
+                            id: "SS-SC-6",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner provides information on the input received from stakeholder consultations and how it was used.",
                             responseOptions: [
-                                {label: "Yes, fully", score: 2},
-                                {label: "Yes, partially", score: 1},
+                                {label: "Yes, comments and explanations", score: 2},
+                                {label: "Yes, comments only ", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "The scheme owner provides information on how the input received from stakeholder consultations has been included, making all comments received in a non-attributable way in the consultations publicly available (or at a minimum accurate summaries of these comments), with the final version of the standard through:",
-                                "• documentation of collected feedback from previous public consultations, and/or ",
-                                "• a statement on how the collected feedback was used for the setting or revision of the Standard."
+                                "The scheme owner makes publicly available the comments received during the consultations or, at a minimum, accurate summaries of these comments, along with explanations of how the comments were considered, through:",
+                                "• Documentation of collected feedback from previous public consultations ",
+                                "• A statement on how the collected feedback was used for the setting or revision of the Standard."
                             ]
                         }
                     ]
@@ -182,62 +182,34 @@ export const assessments = {
                     title: "Assurance system",
                     criteria: [
                         {
-                            id: "c11",
-                            type: ["Label"],
-                            text: "The scheme owner outlines specified requirements for Conformity Assessment Bodies (CABs) to assess compliance with the standard.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0}
-                            ],
-                            examples: [
-                                "The scheme provides a documented methodology describing requirements for Conformity Assessment Bodies (CABs) and the assessment procedures (e.g. audit procedures or testing and verification methods).",
-                                "These are verified as part of the accreditation process by the accreditation body."
-                            ]
-                        },
-                        {
-                            id: "c12",
-                            type: ["Scheme"],
-                            text: "The scheme owner ensures that there is a publicly available description of the consistent methodology used to assess complaince with the standard.",
+                            id: "AS-AS-1",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner ensures that there is a publicly available description of the consistent methodology used to assess compliance with the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
                                 "Certification processes are conducted according to consistent methodologies.",
-                                "Refers to the summary of assessment process undertaken in granting or denying licence or certificate to operating unit: ",
+                                "Refers to the summary of assessment process undertaken in granting or denying licence or certificate to operating unit:",
                                 "• Type(s) of assessment employed",
                                 "• How clients are assessed, how often and by whom, and the basis for decisions",
                                 "• Scoring system, applicability of criteria, etc."
                             ]
                         },
                         {
-                            id: "c13",
-                            type: ["Scheme"],
-                            text: "The scheme owner requires CABs to have a documented complaints mechanism in place for compliance decisions.",
-                            responseOptions: [
-                                {label: "Yes, publicly", score: 2},
-                                {label: "Yes (on request)", score: 1},
-                                {label: "No", score: 0}
-                            ],
-                            examples: [
-                                "The complaints resolution procedure defines:",
-                                "• Clear steps, timelines and responsibilities to resolve the complaint",
-                                "• In what form and to whom a complaint needs to be submitted"
-                            ]
-                        },
-                        {
-                            id: "c14",
-                            type: ["Scheme"],
+                            id: "AS-AS-2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner ensures that summary certification/verification reports are made available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
-                                {label: "Yes (on request)/ Confidential", score: 1},
-                                {label: "No, no reports", score: 0}
+                                {label: "Yes (on request)/Confidential", score: 1},
+                                {label: "No", score: 0},
                             ],
                             examples: [
-                                "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual. The report should be made available in a UN and local language.",
+                                "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the Accreditation Body (AB), or in a separate accreditation manual. The report should be made available in a UN and local language.",
                                 "At least basic information about the results of assessments of clients and assurance providers, that includes, at a minimum, information about the client's assurance status should be provided.",
-                                "For schemes where assessment reports are not publicly available online, summary reports are available from CAB upon request (request to verify availability). If assessment reports cannot be shared by the scheme or by CABs due to confidentiality, it is \"confidential\". If no assessment reports are written at all, it is \"No, no reports\"."
+                                "For schemes where assessment reports are not publicly available online, summary reports are available from Conformity Assessment Bodies (CABs) upon request (request to verify availability). If assessment reports cannot be shared by the scheme or by CABs due to confidentiality, it is \"confidential\". If no assessment reports are written at all, it is \"No, no reports\"."
                             ]
                         }
                     ]
@@ -247,21 +219,21 @@ export const assessments = {
                     title: "Conformity assessment",
                     criteria: [
                         {
-                            id: "c15",
-                            type: ["Scheme"],
-                            text: "Minimum level of conformity assessment allowed by the scheme owner.",
+                            id: "AS-CA-1",
+                            type: ["Scheme","Label"],
+                            text: "Minimum level of conformity assessment required by the scheme owner.",
                             responseOptions: [
                                 {label: "3rd party", score: 1},
                                 {label: "2nd party or 1st party", score: 0}
                             ],
                             examples: [
                                 "The most independent level is the 3rd party audit (independent from the client). The 1st party is a self-assessment and the 2nd party is done by an interested stakeholder (e.g. an industry or trade association or NGO).",
-                                "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual."
+                                "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual. "
                             ]
                         },
                         {
-                            id: "c16",
-                            type: ["Scheme"],
+                            id: "AS-CA-2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner requires CABs to have a procedure in place for how clients are required to address non-conformities, including when a certificate or license is suspended or revoked.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -270,7 +242,7 @@ export const assessments = {
                             examples: [
                                 "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual",
                                 "The procedure specifies how different degrees of non-conformity (if applicable) are to be addressed and remediated, verifying corrective actions arising from non-compliances and allowing for appeals of non-compliances, in order to support consistency between CABs.",
-                                "The procedure also specifies the conditions under which certification / the licence may be suspended or withdrawn, partially or in total, for all or part of the scope of certification / the licence."
+                                "The procedure also specifies the conditions under which certification / the licence may be suspended or withdrawn, partially or in total, for all or part of the scope of certification/ the licence."
                             ]
                         }
                     ]
@@ -280,23 +252,23 @@ export const assessments = {
                     title: "Conformity assessment bodies",
                     criteria: [
                         {
-                            id: "c17",
-                            type: ["Scheme"],
-                            text: "The scheme owner requires CABs to be compliant with and accredited according to ISO/IEC 17065, ISO/IEC 17021 or ISO/IEC 17020.",
+                            id: "AS-CB-1",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner requires CABs to be compliant with and accredited according to ISO/IEC 17065, ISO/IEC 17021, ISO/IEC 17020, or equivalent.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
                                 "The scheme owner defines quality requirements:",
-                                "• In certification requirements/methodologies",
-                                "• In the contract/agreement between the scheme owner and the CAB",
+                                "• In certification requirements/methodologies, or",
+                                "• In the contract/agreement between the scheme owner and the CAB, or",
                                 "• In a separate accreditation manual"
                             ]
                         },
                         {
-                            id: "c18",
-                            type: ["Scheme"],
+                            id: "AS-CB-2",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner makes public a list of all accredited/approved CABs.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -308,31 +280,46 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c19",
-                            type: ["Scheme"],
+                            id: "AS-CB-3",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner requires specific qualifications and competencies for auditors of conformity assessment bodies (CABs).",
                             responseOptions: [
-                                {label: "Yes, examination included", score: 2},
-                                {label: "Yes, no examination", score: 1},
+                                {label: "Yes, examination or training included", score: 2},
+                                {label: "Yes, no examination or training", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
                                 "The scheme owner has guidance specifying qualifications and competence criteria for CABs or requires that CABs have these set out.",
-                                "The scheme owner also performs examinations for auditors."
+                                "The scheme owner should also perform examinations for auditors, or trainings and other forms of professional development practices."
                             ]
                         },
                         {
-                            id: "c20",
-                            type: ["Scheme"],
+                            id: "AS-CB-4",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner maintains or requires CABs to maintain a publicly accessible list of certified products/product groups.",
                             responseOptions: [
-                                {label: "Yes, incl. scope of certificate or license", score: 2},
+                                {label: "Yes, incl. scope of certificate/license", score: 2},
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
                                 "A system to show the enterprises producing certified/ verified products is publicly available (for example in a database or by uploaded lists).",
-                                "This system shall be up-to-date and complete (managed by the scheme owner or outsourced to the ABs or CABs). If the management system is outsourced to the ABs or CABs, this is required and described in the contract/agreement between the scheme owner and the AB/CAB, in a separate accreditation manual or for example in certification requirements/methodologies. As a minimum, the certification body shall provide information, upon request, about the validity of a given certification."
+                                "This system shall be up-to-date and complete (managed by the scheme owner or outsourced to the ABs or CABs), including the scope of certificate/license. If the management system is outsourced to the ABs or CABs, this is required and described in the contract/agreement between the scheme owner and the AB/CAB, in a separate accreditation manual or for example in certification requirements/methodologies. As a minimum, the certification body shall provide information, upon request, about the validity of a given certification."
+                            ]
+                        },
+                        {
+                            id: "AS-CB-5",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner requires CABs to have a documented, and publicly available, mechanism for clients who want to appeal compliance decisions.",
+                            responseOptions: [
+                                {label: "Yes, with an appeal overview", score: 2},
+                                {label: "Yes, only submission instructions", score: 1},
+                                {label: "No", score: 0}
+                            ],
+                            examples: [
+                                "The procedure defines:",
+                                "Clear instructions for how clients should submit their request to reconsider the compliance decision; and",
+                                "Overview of the appeal process by which the CAB will assess the request, including timelines."
                             ]
                         }
                     ]
@@ -342,8 +329,8 @@ export const assessments = {
                     title: "Auditing",
                     criteria: [
                         {
-                            id: "c21",
-                            type: ["Scheme"],
+                            id: "AS-AU-1",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner has or requires CABs to have documented procedures for reliable auditing methods.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -353,59 +340,43 @@ export const assessments = {
                                 "The scheme owner/CAB shall have clear procedures that describe how audits are planned, conducted and reported on.",
                                 "Examples of evidence:",
                                 "• Requirements in the contract/agreement between the Scheme Owner and the certification body, in a separate accreditation manual or for e.g. in certification requirements/methodologies",
-                                "• Guidance interpretation specifying auditing methods and risk factors, in order to support consistency between certification bodies"
+                                "• Guidance interpretation specifying auditing methods and risk factors, in order to support consistency between certification bodies."
                             ]
                         },
                         {
-                            id: "c22",
-                            type: ["Scheme"],
-                            text: "The scheme owner defines or requires CABs to define frequency of a full audit process.",
+                            id: "AS-AU-2",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner defines or requires CABs to state frequency of surveillance audits.",
                             responseOptions: [
-                                {label: "At least every 2 years", score: 2},
-                                {label: "3 years or more", score: 1},
+                                {label: "Yes", score: 1},
                                 {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
                             ],
                             examples: [
                                 "The scheme owner/CAB defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual.",
-                                "This question refers to external audits. In a full audit process, all requirements of the standard and the whole system of the client that is to be assessed are verified."
                             ]
                         },
                         {
-                            id: "c23",
-                            type: ["Scheme"],
-                            text: "The scheme owner defines the type of activities CABs are required to undertake during a full audit.",
+                            id: "AS-AU-3",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner defines the type of activities CABs are required to undertake during an initial audit.",
                             responseOptions: [
-                                {label: "Field visit (incl. office visit & doc. review)", score: 2},
-                                {label: "Document review (off-site or onsite) only", score: 1},
+                                {label: "Yes, onsite", score: 2},
+                                {label: "Yes, fully or partly remote", score: 1},
                                 {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
                             ],
                             examples: [
+                                "The scheme owner has to clarify whether CABs are required to perform onsite visits for the initial audit, including premises visit and documents review, or an off-site (remote) documentation review would suffice.",
                                 "The scheme owner defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual."
                             ]
                         },
                         {
-                            id: "c24",
-                            type: ["Scheme"],
-                            text: "The scheme owner or CAB require initial audits of new participants to always be on-site.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0}
-                            ],
-                            examples: [
-                                "The scheme owner/CAB defines this requirement in certification requirements/methodologies, or in the contract/agreement between the scheme owner and the AB, or in a separate accreditation manual."
-                            ]
-                        },
-                        {
-                            id: "c25",
-                            type: ["Scheme"],
+                            id: "AS-AU-4",
+                            type: ["Scheme","Label"],
                             text: "The scheme owner requires or allows CABs to do unscheduled audits.",
                             responseOptions: [
-                                {label: "Required", score: 2},
-                                {label: "Allowed", score: 1},
-                                {label: "Not allowed", score: 0},
-                                {label: "Not applicable", score: null}
+                                {label: "Yes, required", score: 2},
+                                {label: "Yes, allowed", score: 1},
+                                {label: "No", score: 0}
                             ],
                             examples: [
                                 "The Scheme Owner defines this requirement for certification bodies to conduct unscheduled (without significant advance warning) or surprise audits.",
@@ -413,19 +384,18 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c26",
-                            type: ["Scheme"],
-                            text: "The scheme owner ensures or requires CABs to ensure consistency in audit report formats. ",
+                            id: "AS-AU-5",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner ensures or requires CABs to ensure consistency in audit report formats.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
                                 "The scheme owner/CAB defines this requirement with a system for quality control.",
-                                "Examples of evidence:",
-                                "• Contract/agreement between the Scheme Owner and thecertification body/CAB, certification requirements/methodologies",
+                                "Possible sources of evidence:",
                                 "• Guidance specifying formats for audit reports and reporting, mandatory audit templates",
-                                "• Review online audit reports for consistency of report format and reporting, Scheme Owner quality management system for review of audit reports"
+                                "• Review of the online audit reports for consistency of report format and reporting, or the scheme's quality management system."
                             ]
                         }
                     ]
@@ -435,32 +405,36 @@ export const assessments = {
                     title: "Oversight mechanism",
                     criteria: [
                         {
-                            id: "c27",
-                            type: ["Scheme"],
-                            text: "The scheme owner requires a documented oversight of assurance activities and assurance providers.",
+                            id: "AS-OM-1",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner has defined an approach to oversight of assurance activities and assurance providers.",
                             responseOptions: [
-                                {label: "Yes, publicly", score: 1},
-                                {label: "No", score: 0}
+                                {label: "Yes, external Oversight Body", score: 2},
+                                {label: "Yes, internal Oversight Body", score: 1},
+                                {label: "No", score: 0},
+                                {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "There is an oversight function that is independent of the assurance programme and that evaluates implementation of that programme to ensure its consistent and competent implementation.",
-                                "The scheme owner documents the requirement for a documented oversight mechanism in a contract/agreement between the scheme owner and an AB or Oversight Body, in a separate Oversight manual or for example in certification requirements/methodologies."
+                                "The scheme has documented its oversight mechanism, that is independent of the assurance programme, and that evaluates implementation of that programme to ensure its consistent and competent implementation. These can include, but not restricted to: the roles and responsibilities for different oversight functions; the frequency of oversight activities; the oversight procedures to be followed; the process that oversight bodies should follow for assessing the performance of assurance providers.",
+                                "The externality of the Oversight Body ensures independence of the oversight function from assurance.",
+                                "Information on the oversight mechanism may be found in a contract/agreement between the scheme owner and an Accreditation Body or another Oversight Body, in a separate Oversight manual or for example in certification requirements/methodologies.",
+                                "“Not applicable” if it is a government-owned scheme."
                             ]
                         },
                         {
-                            id: "c28",
-                            type: ["Scheme"],
-                            text: "The scheme owner requires oversight bodies to have a publicly available documented complaints mechanism in place for compliance decisions.",
+                            id: "AS-OM-2",
+                            type: ["Scheme","Label"],
+                            text: "The scheme owner requires oversight bodies to have a documented, and publicly available, mechanism on the escalation of appeals for compliance decisions.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0},
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "Only applicable if scheme has an accreditation/oversight mechanism, and if the scheme is not owned by the government, and if the scheme is not based on a life cycle and/or multicriteria approach.",
-                                "The complaints resolution mechanism procedures define:",
-                                "• Clear steps, timelines and responsibilities to resolve the complaint",
-                                "• In what form and to whom a complaint needs to be submitted"
+                                "The documentation should include:",
+                                "• Instructions for how clients should submit the request to reconsider a compliance decision to the oversight mechanism; and",
+                                "• An overview of the process that the oversight body will follow to assess the appeal and make a decision on the request",
+                                "“Not applicable” if there is no Oversight mechanism (government-owned scheme)."
                             ]
                         },
                     ]
@@ -476,8 +450,8 @@ export const assessments = {
                     title: "CoC traceability system",
                     criteria: [
                         {
-                            id: "c29",
-                            type: ["Scheme"],
+                            id: "TC-CT-1",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner has a documented Chain of Custody (CoC) standard or other traceability requirements for checking product flow between links of the supply chain.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -487,26 +461,26 @@ export const assessments = {
                             examples: [
                                 "Either of the following:",
                                 "• A CoC standard document which provides a description of its chain of custody approach",
-                                "• A description of other measures to collect and analyze data from suppliers in order to trace back different certified inputs across different supply chain entities (e.g. data sheets)"
+                                "• A description of other measures to collect and analyze data from suppliers in order to trace back different certified inputs across different supply chain entities (e.g. data sheets)."
                             ]
                         },
                         {
-                            id: "c30",
-                            type: ["Label"],
-                            text: "The scheme owner requires all enterprises that are physically handling the certified product to undergo a CoC audit if the product can be destined for retail sale as a certified, labeled product.",
+                            id: "TC-CT-2",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner requires all enterprises that are physically handling the certified feedstock/product to undergo a CoC audit if intended to be sold as a certified, labeled product.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0},
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required; applicable to certain CoC models)",
-                                "All enterprises that physically handle the certified product are to undergo a CoC audit.",
-                                "This shall be in the form of a written requirement as part of the certification requirements. Possibly review scope of certificates, if available online."
+                                "All enterprises that physically handle and have legal ownership of the certified feedstock or product are to undergo a CoC audit.",
+                                "This shall be in the form of a written requirement as part of the certification requirements. Possibly review scope of certificates, if available online. ",
+                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required; applicable to certain CoC models)."
                             ]
                         },
                         {
-                            id: "c31",
+                            id: "TC-CT-3",
                             type: ["Scheme"],
                             text: "The scheme owner defines procedures for CoC certification of multiple sites of one or several legal entities.",
                             responseOptions: [
@@ -515,15 +489,14 @@ export const assessments = {
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
+                                "The scheme owner defines procedures for multi-sites (under control of one or more entities) and requirements for internal control management system. Those procedures ensure that all sites comply with the CoC certification requirements, and that they undergo a CoC audit. Control can include direct ownership, franchises, or where the entity has a signed agreement or contract with each site.",
+                                "Examples of evidence:",
+                                "• CoC standard, guidance or checklist specifying procedure and internal control system.",
                                 "Only applicable if there is multiple-site CoC certification, OR if the scheme owner allows Chain of Custody of multi-sites.",
-                                "The scheme owner defines procedures that ensure all sites comply with the CoC certification requirements. Control can include direct ownership, franchises, or where the entity has a signed agreement or contract with each site.",
-                                "The scheme owner defines procedure for multi-sites (under control of one or more entities) and requirements for internal control management system.",
-                                "Example of evidence:",
-                                "• CoC standard, guidance or checklist specifying procedure and internal control system."
                             ]
                         },
                         {
-                            id: "c32",
+                            id: "TC-CT-4",
                             type: ["Scheme"],
                             text: "The scheme owner requires subcontractors to meet the CoC requirements.",
                             responseOptions: [
@@ -533,14 +506,14 @@ export const assessments = {
                             ],
                             examples: [
                                 "The scheme owner ensures that certified entity takes full responsibility that all subcontractors fully meet CoC requirements and has a system to demonstrate this.",
-                                "If there is no sub-contracting then this criterion is \"Not Applicable\".",
-                                "Example of evidence:",
+                                "Examples of evidence:",
                                 "• Sub-contract agreements, internal audits.",
+                                "If there is no sub-contracting then this criterion is “Not applicable”."
                             ]
                         },
                         {
-                            id: "c33",
-                            type: ["Scheme"],
+                            id: "TC-CT-5",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner allows different chain of custody models as traceability systems.",
                             responseOptions: [
                                 {label: "Yes, Identity Preservation or Segregation model", score: 2},
@@ -549,72 +522,54 @@ export const assessments = {
                             ],
                             examples: [
                                 "In case of identification and separation of certified and non-certified products, Identity Preserved or Segragated are allowed as models.",
-                                "In case mixing is allowed, applicable system is Mass Balance. If no model is stated or if the model includes decoupling of the claim from the certified product (e.g. Certificate trading, or Book and claim), then it is a \"No\".",
+                                "In case mixing is allowed, applicable system is Mass Balance. If no model is stated or if the model includes decoupling of the claim from the certified product (e.g. Certificate trading, or Book and claim), then it is a “No”.",
                                 "Examples of evidence:",
-                                "• Chain of Custody standards, audit checklists, certification requirements/methodologies specifying requirement",
+                                "• Chain of Custody standards, audit checklists, certification requirements/methodologies specifying requirement.",
                                 "• Chain of Custody audit reports"
                             ]
                         },
                         {
-                            id: "c34",
+                            id: "TC-CT-6",
                             type: ["Scheme"],
-                            text: "The scheme owner has a clear statement in case mixing of certified with uncertified inputs is allowed.",
+                            text: "The scheme provides a clear statement on the handling of certified and uncertified inputs in its traceability system.",
                             responseOptions: [
-                                {label: "Yes", score: 1},
+                                {label: "Yes, prohibits mixing", score: 2},
+                                {label: "Yes, allows mixing but with statement", score: 1},
                                 {label: "No", score: 0},
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "\"Yes\" if:",
-                                "• mixing of certified with uncertified inputs is allowed, then a clear statement on this is needed.",
-                                "\"Not applicable\" if:",
-                                "• Statement telling that it does not allow the mixing of its certified with uncertified ingredients.",
-                                "• It is a product label (ISO type I label, e.g. Blue Angel)",
-                                "If there is no evidence of a written statement, this shall be a \"No\" ."
+                                "Schemes that prohibit mixing and have a clear statement on it receive the highest score, reflecting their stronger traceability and robustness. Schemes that do allow mixing but transparently disclose this, acknowledge their effort to ensure traceability while recognizing that mixing introduces a weaker control system. Finally, if there is a mixing but there is no evidence of a written statement this shall be “No”",
+                                "“Not applicable” if it is a product label (ISO type I label, e.g. Blue Angel)."
                             ]
                         },
                         {
-                            id: "c35",
+                            id: "TC-CT-7",
                             type: ["Scheme"],
-                            text: "Continuous increase of the amount of certified input is encouraged, in case of mixing.",
+                            text: "The scheme owner requires or asks CABs to verify that all enterprises within the supply chain maintain and keep accurate and accessible traceability records.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0},
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "Where the scheme allows mixing of certified with non-certified commodities, the scheme requires continuous/incremental increase of the amount of certfied input.",
-                                "Refers to a public written statement on the ambition of the scheme to get their certificate holders to increase their demand for certified input over time.",
-                                "\"Not applicable\" if the scheme requires segregation or identity preservation."
-                            ]
-                        },
-                        {
-                            id: "c36",
-                            type: ["Scheme"],
-                            text: "The scheme owner requires CABs to verify that all enterprises within the chain maintain and keep accurate and accessible traceability records.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
-                            ],
-                            examples: [
-                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required)",
-                                "The Scheme Owner defines the requirement for CABs that all entities within the supply chain, including those which may not undergo a Chain of Custody audit, maintain up to date, complete and accessible records that may provide a tool to trace products through the supply chain. These include all records relating to shipment, receipt and invoicing.",
+                                "The Scheme Owner defines the requirement that all entities within the supply chain, including those which may not undergo a Chain of Custody audit, maintain up to date, complete and accessible records that may provide a tool to trace products through the supply chain. These include all records relating to shipment, receipt and invoicing.",
                                 "Examples of evidence:",
                                 "• Chain of Custody standard.",
                                 "• Contract/agreement between the Scheme Owner and the certification body, accreditation/certification requirements/methodologies specifying criteria for document control and maintenance, and retention.",
-                                "• Auditor checklists or guidance interpretation."
+                                "• Auditor checklists or guidance interpretation.",
+                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required)"
                             ]
                         },
                     ]
                 },
                 {
                     id: "p10",
-                    title: "Claims and products labelling policy ",
+                    title: "Claims and products labelling policy",
                     criteria: [
                         {
-                            id: "c37",
-                            type: ["Scheme"],
+                            id: "TC-CP-1",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner provides description of its specific policies for products labelling and claims use.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -628,8 +583,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c38",
-                            type: ["Scheme"],
+                            id: "TC-CP-2",
+                            type: ["Scheme", "Label"],
                             text: "Claims and labelling requirements ensure that claims or logos clearly indicate to what they apply.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -640,8 +595,20 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c39",
-                            type: ["Scheme"],
+                            id: "TC-CP-3",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme requires the use of honest marketing and advertising techniques.",
+                            responseOptions: [
+                                {label: "Yes", score: 1},
+                                {label: "No", score: 0},
+                            ],
+                            examples: [
+                                "The scheme specifies clear rules for on-product and off-product communication, including the use of certification claims in marketing and promotional materials. "
+                            ]
+                        },
+                        {
+                            id: "TC-CP-4",
+                            type: ["Scheme", "Label"],
                             text: "The label is accompanied by an explanatory text claim or a link to further information.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -651,13 +618,12 @@ export const assessments = {
                             examples: [
                                 "Refers to either of the following:",
                                 "• A short text next to the logo explaining some detail about the label",
-                                "• A QR code, link or any other form of additional information which helps to understand the label",
-                                "Criterion “Not applicable” if no graphic labels are used."
+                                "• A QR code, link or any other form of additional information which helps to understand the label Criterion “Not applicable” if no graphic labels are used."
                             ]
                         },
                         {
-                            id: "c40",
-                            type: ["Scheme"],
+                            id: "TC-CP-5",
+                            type: ["Scheme", "Label"],
                             text: "Claims and label users are required to use unique license numbers or other tracking mechanisms.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -665,14 +631,14 @@ export const assessments = {
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required)",
-                                "Refers to a visible mechanism to be used by label and claims users which provides the ability to trace back the product to its origins.",
-                                "Example of evidence:",
-                                "• COC-numbers to be applied on claims and logo license numbers to be applied when labels are used."
+                                "Refers to a visible mechanism to be used by label and claims users which provides the ability to trace back the product to its origins. ",
+                                "Example of evidence: ",
+                                "• COC-numbers to be applied on claims and logo license numbers to be applied when labels are used.",
+                                "Only applicable if claims are made regarding the origin of certain ingredients or products (CoC is required)"
                             ]
                         },
                         {
-                            id: "c41",
+                            id: "TC-CP-6",
                             type: ["Scheme"],
                             text: "Claims requirements specify the types of claims that can be made for different types of CoC models, where the scheme owner allows for more than one model.",
                             responseOptions: [
@@ -681,31 +647,15 @@ export const assessments = {
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "The scheme provides a publicly available overview of differences in claims, depending on the types of CoC used.",
-                                "These claims shall accurately reflect the type of CoC.",
+                                "The scheme provides a publicly available overview of differences in claims, depending on the types of CoC used. These claims shall accurately reflect the type of CoC.",
                                 "For example:",
                                 "• Claims on origin can only be made under Identity Preservation model.",
                                 "• Claims on 100% certified material require Segregation model.",
                                 "• When Mass Balance or Controlled Blending models are used, claims need to show that mixing is allowed.",
-                                "• When Certificate Trading (Book & Claim) model is allowed, \"supports sustainable production\" (or similar) is an adequate claim.",
-                                "\"Not applicable\" if: ",
-                                "• It is a product label (ISO type I label, e.g. Blue Angel).",
-                                "• Only use of one CoC model."
-                            ]
-                        },
-                        {
-                            id: "c42",
-                            type: ["Scheme"],
-                            text: "The scheme owner specifies requirements for claims depending on the percentage of certified / verified content in a product.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
-                            ],
-                            examples: [
-                                "Refers to a statement in the scheme's claims policy that different percentage requirements of certified inputs require accurate labeling that reflect these differences.",
-                                "\"Not Applicable\" if:",
-                                "• Claim does not refer to product inputs/single ingredients but rather to the whole/ final product."
+                                "• When Certificate Trading (Book & Claim) model is allowed, “supports sustainable production” (or similar) is an adequate claim.",
+                                "“Not applicable” if:",
+                                "• It is a product label (ISO type I label, e.g. Blue Angel)",
+                                "• Only use of one CoC model.",
                             ]
                         }
                     ]
@@ -715,8 +665,8 @@ export const assessments = {
                     title: "Consequences of misuse of claims",
                     criteria: [
                         {
-                            id: "c43",
-                            type: ["Scheme"],
+                            id: "TC-CM-1",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner has a procedure in place that defines specific consequences of misuse of claims.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -730,8 +680,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c44",
-                            type: ["Scheme"],
+                            id: "TC-CM-2",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner requires surveillance of the accurate use of claims and labels in the market.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -750,9 +700,9 @@ export const assessments = {
                     title: "Minimum percentage claims",
                     criteria: [
                         {
-                            id: "c45",
-                            type: ["Label"],
-                            text: "The scheme owner defines the minimum percentage of a certified / verified input in a single ingredient product for a claim to be allowed for that product.",
+                            id: "TC-CM-3",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner defines the minimum percentage of a certified/verified input in a single ingredient product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 75%", score: 2},
                                 {label: "Less than 75%", score: 1},
@@ -760,17 +710,18 @@ export const assessments = {
                                 {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "Refers to a public written statement on the minimum percentage requirements in a single-ingredient product. Different schemes permit different percentages. Stating the percentages provides transparency and informed decision making.",
-                                "\"No\" if:",
+                                "Refers to a public written statement on the minimum percentage requirements in a single-ingredient product.",
+                                "Different schemes permit different percentages. Stating the percentages provides transparency and informed decision making.",
+                                "“No” if:",
                                 "• No evidence of minimum percentages even though mixing is allowed.",
-                                "\"Not Applicable\" if:",
-                                "• Claim does not refer to product inputs/single ingredients but to the whole/ final product or if % claims are not included in system."
+                                "“Not applicable” if:",
+                                "• Claim does not refer to product inputs/single ingredients but to the whole/final product or if % claims are not included in system."
                             ]
                         },
                         {
-                            id: "c46",
-                            type: ["Scheme"],
-                            text: "The scheme owner defines the minimum percentage of certified / verified material in a composite product for a claim to be allowed for that product.",
+                            id: "TC-CM-4",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner defines the minimum percentage of certified/verified material in a composite product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 50%", score: 2},
                                 {label: "Less than 50%", score: 1},
@@ -779,9 +730,9 @@ export const assessments = {
                             ],
                             examples: [
                                 "Refers to a public written statement on the minimum percentage requirements in a composite product.",
-                                "\"No\" if:",
+                                "“No” if:",
                                 "• No evidence of minimum percentages even though mixing is allowed.",
-                                "\"Not applicable\" if:",
+                                "“Not applicable” if:",
                                 "• Claim does not refer to product inputs/single ingredients but to the whole/final product or if % claims are not included in system."
                             ]
                         }
@@ -792,41 +743,61 @@ export const assessments = {
         },
         {
             id: "cat4",
-            category: "Governance & Management",
+            category: "Governance & Scheme Management",
             principles: [
                 {
                     id: "p13",
                     title: "Scheme scope and objectives",
                     criteria: [
                         {
-                            id: "c47",
-                            type: ["Scheme"],
-                            text: "The scheme owner has a defined scope for certification under its scheme.",
+                            id: "GM-SO-1",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme has a clearly defined scope of its certification programme.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "The scheme owner clearly defines scope that standard covers, for example which feedtsock type, product categories, value chain actors, certifiable units in the chain of custody etc.).",
-                                "Examples of evidence:",
-                                "• Explicit scope definition in certification methodology/requirements, standards, objectives.",
-                                "• Contracts with accreditation bodies, certification bodies and/or certified operations"
+                                "The scheme clearly defines the scope of its certification programme in terms of sector coverage, feedstock type, geography, value chain segment, subject of certification, and sustainability dimensions.",
+                                "Possible source of evidence:",
+                                "• Standard document",
+                                "• Certification requirements (scope definition)",
+                                "• Compliance assessment methodology"
                             ]
                         },
                         {
-                            id: "c48",
-                            type: ["Scheme"],
-                            text: "The scheme has sustainability-defined goals and objectives.",
+                            id: "GM-SO-2",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme makes explicit its sustainability-defined goals and objectives.",
                             responseOptions: [
-                                {label: "Yes, with a detailed strategy", score: 2},
-                                {label: "Yes, elsewhere mentioned", score: 1},
+                                {label: "Yes, with a link between strategies and goals", score: 2},
+                                {label: "Yes, just citing the goals", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "The scheme owner explicitly defines scheme's overall goals, e.g. the mission and vision, either in its statutes or in a separate statement (e.g. a mission statement).",
-                                "This should be a documented strategy that the scheme has defined and uses to ensure that it meets its goals. This entails: clear goals, actions to achieve the goals, and a description of available/needed resources to execute the actions.",
-                                "The objectives should be sustainability-defined, promoting responsible use of resources and improving environmental and/or socio-economic impacts."
+                                "The scheme owner explicitly defines scheme's objectives and overall goals it intends to achieve.",
+                                "The scheme should strive to provide a detailed explanation of how its different strategies and activities contribute to those intended goals.",
+                                "The objectives should be sustainability-defined, promoting responsible use of resources and improving environmental and/or socio-economic impacts.",
+                                "Possible source of evidence:",
+                                "• Scheme website",
+                                "• Strategy document",
+                                "• Theory of Change"
+                            ]
+                        },
+                        {
+                            id: "GM-SO-3",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme has procedures for taking into account the special circumstances of smallholders' operations.",
+                            responseOptions: [
+                                {label: "Yes", score: 1},
+                                {label: "No", score: 0}
+                            ],
+                            examples: [
+                                "The Scheme Owner processes and policies reduce barriers or promote more access of smallholders. This may include specific standards or exemptions that do not lower the requirements of the standards themselves.",
+                                "Examples of evidence:",
+                                "• Separate specific standard for smallholders",
+                                "• Requirements for smallholder certification",
+                                "• Programs such as capacity building and access to finance targeted to smallholders."
                             ]
                         }
                     ]
@@ -836,8 +807,8 @@ export const assessments = {
                     title: "Governance structure",
                     criteria: [
                         {
-                            id: "c49",
-                            type: ["Scheme"],
+                            id: "GM-GS-1",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner is a legal entity, or an organization that is a partnership of legal entities, or a government or inter-governmental agency.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -848,8 +819,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c50",
-                            type: ["Scheme"],
+                            id: "GM-GS-2",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner make its organizational structure available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -862,22 +833,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c51",
-                            type: ["Scheme"],
-                            text: "The scheme owner is economically independent from the certificate holder.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0}
-                            ],
-                            examples: [
-                                "An evidence of a policy which governs the independence of the scheme owner or proof that the scheme owner is not economically dependent on one single certificate holder.",
-                                "Examples of evidence for scheme alignment:",
-                                "• Impartiality policy, impartiality clauses in certification body and accreditation body contracts, management control procedures."
-                            ]
-                        },
-                        {
-                            id: "c52",
-                            type: ["Scheme"],
+                            id: "GM-GS-3",
+                            type: ["Scheme", "Label"],
                             text: "The top decision-making body members are accountable to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -889,8 +846,22 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c53",
-                            type: ["Scheme"],
+                            id: "GM-GS-4",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner has a clear statement in case of a mutual recognition agreement with at least one other scheme.",
+                            responseOptions: [
+                                {label: "Yes", score: 1},
+                                {label: "No", score: 0},
+                                {label: "Not Applicable", score: null}
+                            ],
+                            examples: [
+                                "The mutual recognition conditions should be stated if the scheme owner recognizes an existing standard as partially or fully equivalent to its standard (referring to e.g. harmonized standards content or assessment of client performance). The accepted schemes are the ones approved by the European Commission.",
+                                "Please note: national vis-a-vis international standards of the same scheme owner are not eligible for a “Yes”."
+                            ]
+                        },
+                        {
+                            id: "GM-GS-5",
+                            type: ["Scheme", "Label"],
                             text: "The scheme owner makes quantitative information on the income sources or financing structure of the scheme available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 1},
@@ -900,21 +871,6 @@ export const assessments = {
                                 "An overview of quantitative information on the income sources or financing structure of the scheme (e.g. potentially including type of funding (i.e. financial, assets, manpower, etc), name of funders, amount or %-distribution of income sources).",
                                 "This could be provided in the form of an annex to annual reports."
                             ]
-                        },
-                        {
-                            id: "c54",
-                            type: ["Scheme"],
-                            text: "The scheme owner has a clear statement in case of a mutual recognition agreement with at least one other scheme.",
-                            responseOptions: [
-                                {label: "Yes", score: 1},
-                                {label: "No", score: 0},
-                                {label: "Not applicable", score: null}
-                            ],
-                            examples: [
-                                "The mutual recognition conditions should be stated in an agreement in which the affected parties detail the degree of mutual recognition (referring to e.g. harmonized standards content or audit methodologies).",
-                                "The accepted schemes are the ones approved by the European Commission.",
-                                "Please note: national vis-a-vis international standards of the same scheme owner are not eligible for a \"Yes\"."
-                            ]
                         }
                     ]
                 },
@@ -923,22 +879,24 @@ export const assessments = {
                     title: "Stakeholder participation",
                     criteria: [
                         {
-                            id: "c55",
-                            type: ["Scheme"],
+                            id: "GM-SP-1",
+                            type: ["Scheme", "Label"],
                             text: "Stakeholders have the possibility to participate in or contribute formal input on the scheme's governance.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
-                                {label: "No", score: 0}
+                                {label: "No", score: 0},
+                                {label: "Not applicable", score: null}
                             ],
                             examples: [
-                                "The scheme owner provides freely accessible public information outlining how stakeholders can participate or provide direct input to the top governance body. ",
+                                "The scheme owner provides stakeholders the opportunity to easily contribute input to the governance structures, scheme's intended strategies and impacts, unintended effects, assessment of clients' performance or conformity, and on claims that the scheme makes and allows clients to make.",
+                                "The scheme owner informs stakeholders about these opportunities and how their input will be taken into account.",
                                 "Examples of evidence:",
                                 "• Online process document for submission of input, governance body selection process and stakeholder composition, review of previous stakeholder inputs."
                             ]
                         },
                         {
-                            id: "c56",
-                            type: ["Scheme"],
+                            id: "GM-SP-2",
+                            type: ["Scheme", "Label"],
                             text: "The procedures of the top decision-making body ensure that there is a balanced representation of stakeholder interests, where no single interest predominates.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -951,66 +909,86 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c57",
-                            type: ["Scheme"],
-                            text: "The scheme owner addresses engagement of under-represented stakeholder groups.",
+                            id: "GM-SP-3",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner supports participation of under-represented stakeholders when seeking input from stakeholders.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "The scheme owner proactively seeks contributions of under-engaged and under-represented stakeholders to the scheme's strategies and impacts, unintended effects, monitoring and evaluation activities, assessment of clients' performance or conformity.",
-                                "It is highly recommended that the scheme owner considers how best to seek input from women. This can be done through for e.g. providing funding or standardisation training to targeted actors, such as SMEs, consumer organizations or environmental groups."
+                                "The scheme owner proactively seeks contributions of under-engaged and under-represented stakeholders to the scheme's strategies and impacts, unintended effects, assessment of clients' performance or conformity, and on claims that the scheme makes and allows clients to make.",
+                                "It is highly recommended that the scheme owner considers how best to seek input from women. This can be done through for e.g. providing funding or standardisation training to targeted actors, such as SMEs, consumer organizations or environmental groups. "
                             ]
                         },
                         {
-                            id: "c58",
-                            type: ["Scheme"],
-                            text: "The scheme owner ensures that clients and other affected stakeholders are notified of any changes to any scheme components that might affect them.",
+                            id: "GM-SP-4",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner ensures that clients and implementing partners have adequate time and notice to comply with new requirements.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "There shall be evidence that affected stakeholders are notified on changes to the scheme's operational system that might affect stakeholders (e.g., changes to the standard or scheme requirements).",
-                                "The scheme owner makes sure that procedures are set out when changes will come into effect, allowing adequate time for stakeholders to comply, and also how these changes will be communicated to those affected."
+                                "The scheme has procedures that set out when changes will come into effect and how the changes will be communicated to those affected, allowing adequate time for stakeholders to comply",
+                                "Changes might relate to changes in scheme requirements or the requirements in the standard."
                             ]
                         }
                     ]
                 },
                 {
                     id: "p16",
-                    title: "Complaints and dispute resolution mechanism",
+                    title: "Due diligence",
                     criteria: [
                         {
-                            id: "c59",
-                            type: ["Scheme"],
-                            text: "The scheme owner has a publicly available complaints mechanism in place for appealing decisions and resolving disputes.",
+                            id: "GM-DD-1",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme recognises due diligence as ongoing process to be undertaken by operators.",
                             responseOptions: [
-                                {label: "Yes, at least one policy", score: 2},
-                                {label: "Yes, just a grievance procedure", score: 1},
+                                {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "The scheme owner has a transparent process to assess complaints and dispute resolution policies based on a publicly available grievance procedure for resolving complaints related to governance, scheme management and executive functions.",
-                                "To demonstrate a transparent and robust dispute mechanism, a scheme shall have any of the following policies:",
-                                "• Safeguarding policy",
-                                "• Whistleblower protection policy, and/or",
-                                "• Grievance policy."
+                                "The scheme owner encourages operators to proactively carry out due diligence and to react to changes of circumstances and risks in the supply chain.",
+                                "This can be in form of due diligence policies or procedures, implementation activities, add-on modules, formation of expert working groups, offering trainings on due diligence."
                             ]
                         },
                         {
-                            id: "c60",
-                            type: ["Scheme"],
-                            text: "The scheme owner enables complaints procedures to include appeal mechanisms that are open to any involved party. ",
+                            id: "GM-DD-2",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme expects operators' due diligence activities to be guided by their own risk assessments.",
                             responseOptions: [
-                                {label: "Yes, with an impartiality policy", score: 2},
-                                {label: "Yes, any appeal mechanism", score: 1},
+                                {label: "Yes", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
-                                "Certification and surveillance-related complaints procedures shall include appeal mechanisms open to use by any affected party.",
-                                "To demonstrate a transparent and robust appeal mechanism, a scheme shall have an impartiality policy (which should address conflicts of interest) in place."
+                                "The scheme requires adequate measures for risk assessment and risk mitigation, to ascertain that products are deforestation-free and produced in accordance with relevant legislation in the country of production."
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p17",
+                    title: "Complaints and dispute resolution mechanism",
+                    criteria: [
+                        {
+                            id: "GM-CD-1",
+                            type: ["Scheme", "Label"],
+                            text: "The scheme owner has a open and accessible dispute resolution system to facilitate the impartial handling of complaints and grievances.",
+                            responseOptions: [
+                                {label: "Yes", score: 1},
+                                {label: "No", score: 0}
+                            ],
+                            examples: [
+                                "The system should be open and accessible to all stakeholders.",
+                                "At a minimum, the system accepts complaints and grievances related to standards development and maintenance, assurance processes and decisions, codes of conduct or policies of association for clients or members, and claims processes and controlled claims.",
+                                "Requests by clients to re-consider compliance decisions are not considered complaints but appeals.",
+                                "Possible sources of evidence:",
+                                "• Complaints policy",
+                                "• Grievance policy",
+                                "• Impartiality policy",
+                                "• Safeguarding policy",
+                                "• Whistleblower protection policy"
                             ]
                         }
                     ]

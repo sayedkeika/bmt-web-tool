@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from 'react'
+import DownArrowIcon from '../svgs/down-arrow.svg'
+import UpArrowIcon from '../svgs/up-arrow.svg'
 
 // Map assessment types
 const TYPE_LABELS = {
@@ -16,19 +18,31 @@ export default function Overview({
   onSubmit 
 }) {
 
+  const [expandedTypes, setExpandedTypes] = useState({})
   const [expandedCategories, setExpandedCategories] = useState({})
 
-  // Expand all categories by default or when assessment types/map change
+  // Expand all types and their categories by default or when assessment types/map change
   useEffect(() => {
-    const initiallyExpanded = {}
+    const typesExpanded = {}
+    const categoriesExpanded = {}
     selectedTypes.forEach(type => {
+      typesExpanded[type] = true
       const categories = assessmentMap[type] || []
       categories.forEach(cat => {
-        initiallyExpanded[cat.id] = true
+        categoriesExpanded[cat.id] = true
       })
     })
-    setExpandedCategories(initiallyExpanded)
+    setExpandedTypes(typesExpanded)
+    setExpandedCategories(categoriesExpanded)
   }, [selectedTypes, assessmentMap])
+
+  // Toggle expanded state for a type
+  const toggleType = (type) => {
+    setExpandedTypes(prev => ({
+      ...prev,
+      [type]: !prev[type]
+    }))
+  }
 
   // Toggle expanded state for a category
   const toggleCategory = (categoryId) => {
@@ -77,67 +91,88 @@ export default function Overview({
           <button onClick={onRestart}>← Start New Assessment</button>
         </div>
         <div className='nav-center'>
-          <h1>Assessment Overview</h1>
+          <h1>Overview</h1>
         </div>
         <div className='nav-right'>
-          <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria to submit.' : ''}>Submit →</button>
+          <button onClick={onSubmit} disabled={!isComplete} title={!isComplete ? 'Please complete all criteria before submitting.' : ''}>Submit →</button>
         </div>
       </div>
 
       {/* Render each selected assessment type and its categories */}
       {selectedTypes.map(type => (
         <div key={type}>
-          <div className="type-header">{TYPE_LABELS[type]}</div>
+          {/* Type header with expand/collapse control */}
+          <div
+            className="type-header"
+            onClick={() => toggleType(type)}
+            style={{ cursor: 'pointer', userSelect: 'none', display: 'flex', alignItems: 'center' }}
+          >
+            <span>{TYPE_LABELS[type]}</span>
+            <img
+              src={expandedTypes[type] ? UpArrowIcon : DownArrowIcon}
+              className="icon"
+              alt={expandedTypes[type] ? 'Collapse' : 'Expand'}
+              style={{ marginLeft: 'auto' }}
+            />
+          </div>
 
-          {/* Render categories within the current type */}
-          {assessmentMap[type]?.map(category => (
-            <div key={category.id} className="category-box">
-              {/* Category header with expand/collapse control */}
-              <div
-                className="category-header"
-                onClick={() => toggleCategory(category.id)}
-              >
-                <span>{category.category}</span>
-                <span>{expandedCategories[category.id] ? '▲' : '▼'}</span>
-              </div>
-
-              {/* Render principles in this category */}
-              {expandedCategories[category.id] && (
-                <div className="principle-list">
-                  {category.principles.map(principle => (
-                    <div
-                      key={principle.id}
-                      className="principle-nav-block"
-                      onClick={() => onSelectPrinciple(principle.id)}
-                    >
-                      <div className="principle-label">{principle.title}</div>
-                      {/* Criteria progress */}
-                      <div className="criteria-nav">
-                        {principle.criteria.map(c => {
-                          if (type === 'system') {
-                            return (
-                              <div
-                                key={c.id}
-                                className={`criteria-box ${answers[c.id]?.response ? 'answered' : 'unanswered'}`}
-                              />
-                            )
-                          } else if (type === 'content') {
-                            return c.requirements.map(req => (
-                              <div
-                                key={req.id}
-                                className={`criteria-box ${answers[req.id]?.response ? 'answered' : 'unanswered'}`}
-                              />
-                            ))
-                          }
-                          return null
-                        })}
-                      </div>
-                    </div>
-                  ))}
+          {/* Render categories only if this type is expanded */}
+          {expandedTypes[type] && (
+            assessmentMap[type]?.map(category => (
+              <div key={category.id} className="category-box">
+                {/* Category header with expand/collapse control */}
+                <div
+                  className="category-header"
+                  onClick={() => toggleCategory(category.id)}
+                  style={{ cursor: 'pointer', display: 'flex', alignItems: 'center' }}
+                >
+                  <span>{category.category}</span>
+                  <img
+                    src={expandedCategories[category.id] ? UpArrowIcon : DownArrowIcon}
+                    className="icon"
+                    alt={expandedCategories[category.id] ? 'Collapse' : 'Expand'}
+                    style={{ marginLeft: 'auto' }}
+                  />
                 </div>
-              )}
-            </div>
-          ))}
+
+                {/* Render principles in this category if expanded */}
+                {expandedCategories[category.id] && (
+                  <div className="principle-list">
+                    {category.principles.map(principle => (
+                      <div
+                        key={principle.id}
+                        className="principle-nav-block"
+                        onClick={() => onSelectPrinciple(principle.id)}
+                      >
+                        <div className="principle-label">{principle.title}</div>
+                        {/* Criteria progress */}
+                        <div className="criteria-nav">
+                          {principle.criteria.map(c => {
+                            if (type === 'system') {
+                              return (
+                                <div
+                                  key={c.id}
+                                  className={`criteria-box ${answers[c.id]?.response ? 'answered' : 'unanswered'}`}
+                                />
+                              )
+                            } else if (type === 'content') {
+                              return c.requirements.map(req => (
+                                <div
+                                  key={req.id}
+                                  className={`criteria-box ${answers[req.id]?.response ? 'answered' : 'unanswered'}`}
+                                />
+                              ))
+                            }
+                            return null
+                          })}
+                        </div>
+                      </div>
+                    ))}
+                  </div>
+                )}
+              </div>
+            ))
+          )}
         </div>
       ))}
     </div>

@@ -90,8 +90,8 @@ export default function ContentCharts({ answers }) {
 
   return (
     <div className="content">
-      <h2>Content-Level Assessment</h2>
-
+      <h1>Content-Level Assessment</h1>
+      <h2>Overall Score</h2>
       {/* Minimum Backstop Section */}
       {minimumBackstopCategory && (
         <div className="minimum-backstop">
@@ -151,7 +151,7 @@ export default function ContentCharts({ answers }) {
       </table>
 
       {/* Content-Level Bar Chart */}
-      <div style={{ height: 400, marginTop: '2rem' }}>
+      <div style={{ height: 400, marginTop: '6rem', marginBottom: '6rem' }}>
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={groupedBarData}
@@ -171,9 +171,10 @@ export default function ContentCharts({ answers }) {
         </ResponsiveContainer>
       </div>
 
+      <h2>Detailed Score</h2>
       {/* Principle-Level Tables */}
       {Object.entries(principleScores).map(([category, principles]) => (
-        <div key={category} style={{ marginTop: '2rem' }}>
+        <div key={category} style={{ marginBottom: '4rem' }}>
           <h3>{category}</h3>
           <table className="content-table">
             <thead>

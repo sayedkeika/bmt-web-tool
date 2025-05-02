@@ -91,7 +91,7 @@ export default function Assessment({
             <button onClick={onBackToOverview}>← Overview</button>
           </div>
           <div className='nav-center'>
-            <h2 style={{ textAlign: 'center', flex: 1 }}>{category.category}</h2>
+            <h1 style={{ textAlign: 'center', flex: 1 }}>{category.category}</h1>
           </div>
           <div className='nav-right'>
             <button

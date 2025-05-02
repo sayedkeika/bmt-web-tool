@@ -42,18 +42,24 @@ export default function Start({ onStart }) {
   const toggle = (item, arr, setter) =>
     setter(arr.includes(item) ? arr.filter(x => x !== item) : [...arr, item])
 
+  // Validate if user can start the assessment
+  const isValidSelection = () => {
+    const hasType = selectedTypes.length > 0
+    const hasContext = !selectedTypes.includes('system') || selectedContexts.length > 0
+    const hasContent =
+      !selectedTypes.includes('content') ||
+      (selectedFeedstocks.length > 0 && selectedPhases.length > 0)
+    return hasType && hasContext && hasContent
+  }
+
   // Trigger the assessment start once valid selections are made
   const handleStart = () => {
-    if (
-      selectedTypes.length > 0 &&
-      (!selectedTypes.includes('system') || selectedContexts.length > 0) &&
-      (!selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0))
-    ) {
+    if (isValidSelection()) {
       onStart({
         types: selectedTypes,
         contexts: selectedContexts,
         feedstocks: selectedFeedstocks,
-        phases: selectedPhases
+        phases: selectedPhases,
       })
     }
   }
@@ -76,7 +82,7 @@ export default function Start({ onStart }) {
       {/* System-level filters */}
       {selectedTypes.includes('system') && (
         <div>
-          <h3>Please select atleast one context type</h3>
+          <h3>Please select atleast one applicable type</h3>
           {allContexts.map(ctx => (
             <button
               key={ctx}
@@ -123,11 +129,10 @@ export default function Start({ onStart }) {
       {/* Start button */}
       <button style={{ marginTop: '2rem' }}
         onClick={handleStart}
-        disabled={
-          !(selectedTypes.length > 0 &&
-            (!selectedTypes.includes('system') || selectedContexts.length > 0) &&
-            (!selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0)))
-        }
+        disabled={!isValidSelection()}
+        title={
+          !isValidSelection()
+            ? 'Please select at least one assessment type and the required applicability options.': ''}
       >Start Assessment →</button>
     </div>
   )

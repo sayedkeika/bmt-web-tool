@@ -8,7 +8,7 @@ body {
 }
 
 .container {
-  max-width: 1200px;
+  max-width: 1400px;
   width: 90vw;
   margin: 2rem auto;
   background: white;
@@ -49,13 +49,17 @@ h3 {
   font-size: 1.5rem;
 }
 
+h4 {
+  font-size: 1.1rem;
+}
+
 button {
   padding: 0.5rem 1rem;
   background-color: #e0e0e0;
   border: none;
   border-radius: 1000px;
   cursor: pointer;
-  padding: 15px 22px;
+  padding: 10px 17px;
   width: auto;
   margin: 0.3rem;
   font-weight: 600;
@@ -83,32 +87,33 @@ button:not(:disabled):hover .icon {
   filter: brightness(0) invert(1);
 }
 
+
 /* Overview */
 .type-header {
   background-color: #2e7d32;
   padding: 0.75rem 1.5rem;
-  font-size: 1.25rem;
+  font-size: 1.4rem;
   font-weight: bold;
   color: white;
-  border-radius: 6px;
+  border-radius: 12px;
   margin-bottom: 1rem;
 }
 
 .category-box {
   border: 2px solid #c8e6c9;
-  border-radius: 8px;
+  border-radius: 12px;
   margin-bottom: 1rem;
   background: #f1f8e9;
 }
 
 .category-header {
-  padding: 0.75rem 1rem;
+  padding: 0.75rem 1.5rem;
   background: #dcedc8;
   cursor: pointer;
+  font-size: 1.1rem;
   font-weight: 600;
   display: flex;
   justify-content: space-between;
-  align-items: center;
   border-bottom: 1px solid #c5e1a5;
 }
 
@@ -122,14 +127,14 @@ button:not(:disabled):hover .icon {
 .principle-nav-block {
   background: #ffffff;
   border: 1px solid #a5d6a7;
-  border-radius: 8px;
+  border-radius: 12px;
   padding: 1rem;
   cursor: pointer;
   transition: box-shadow 0.2s;
 }
 
 .principle-nav-block:hover {
-  box-shadow: 0 0 0 2px #388e3c inset;
+  box-shadow: 0 0 0 2px #2e7d32 inset;
 }
 
 .principle-label {
@@ -147,7 +152,7 @@ button:not(:disabled):hover .icon {
   width: 16px;
   height: 16px;
   margin: 2px;
-  border-radius: 3px;
+  border-radius: 12px;
   cursor: pointer;
   background-color: #e8f5e9;
   border: 1px solid #c5e1a5;
@@ -161,10 +166,6 @@ button:not(:disabled):hover .icon {
 .criteria-box.unanswered {
   background-color: #e8f5e9;
   border-color: #c5e1a5;
-}
-
-.criteria-box.current {
-  border: 2px solid #333;
 }
 
 /* Questionnaire */
@@ -195,13 +196,13 @@ button:not(:disabled):hover .icon {
     flex: 0 0 auto;
     display: flex;
     align-items: center;
-    padding: 0.4rem 0.8rem;
-    border-radius: 4px;
+    padding: 0.5rem 1rem;
+    padding: 10px 17px;
+    border-radius: 1000px;
     cursor: pointer;
     user-select: none;
-    transition: background-color 0.2s, color 0.2s;
 
-    &.done   { background-color: #8dc63f; color: white; }
+    &.done   { background-color: #4caf50; color: white; }
     &.todo   { background-color: #eee;   color: #666; }
     &.current{ box-shadow: inset 0 0 0 2px #333; }
 
@@ -271,16 +272,28 @@ button:not(:disabled):hover .icon {
 /* Glossary */
 
 .glossary-term {
-  padding: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  cursor: pointer;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem 1.75rem;
+  border-radius: 16px;
   background-color: #f9f9f9;
-  transition: all 0.3s ease;
+  transition: box-shadow 0.2s ease;
 }
 
 .glossary-term:hover {
-  background-color: #e0e0e0;
+  box-shadow: 0 0 0 2px #ccc inset;
+}
+
+.glossary-header {
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.letter-filter {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-bottom: 2rem;
 }
 
 .letter-button {
@@ -289,14 +302,13 @@ button:not(:disabled):hover .icon {
   background-color: #f0f0f0;
   color: #000;
   border: 1px solid #ccc;
-  border-radius: 4px;
+  border-radius: 10px;
   cursor: pointer;
   font-weight: normal;
-  transition: background-color 0.3s ease, font-weight 0.3s ease;
 }
 
 .letter-button.active {
-  background-color: #388e3c;
+  background-color: #4caf50;
   color: white;
   font-weight: bold;
 }
@@ -305,12 +317,13 @@ select {
   margin-top: 0.5rem;
   margin-left: 0.5rem;
   padding: 0.5rem 1rem;
-  padding: 15px 22px;
+  padding: 10px 17px;
   width: auto;
   border-radius: 1000px;
-  border: 1px solid #ccc;
+  border: 0px;
   background-color: #e0e0e0;
   cursor: pointer;
+  font-weight: 600;
   font-size: 14px;
 }
 
@@ -345,7 +358,7 @@ select {
   text-align: center;
 }
 
-.cell-green { background-color: #388e3c; }
+.cell-green { background-color: #4caf50; }
 .cell-light-green { background-color: #81c784; }
 .cell-yellow { background-color: #FFFF00; }
 .cell-orange { background-color: #FF8C00; }

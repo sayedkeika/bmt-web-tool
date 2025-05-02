@@ -1,16 +1,22 @@
 import React, { useState } from 'react'
 import { glossary } from '../Data'
+import DownArrowIcon from '../svgs/down-arrow.svg'
+import UpArrowIcon from '../svgs/up-arrow.svg'
 
 // Component for displaying list of terms with definitions and sources
 const Glossary = ({ onBack }) => {
     // Local state for filters and active term
-    const [activeTerm, setActiveTerm] = useState(null)
+    const [expandedTerms, setExpandedTerms] = useState([])
     const [filterByTheme, setFilterByTheme] = useState('')
     const [filterByLetter, setFilterByLetter] = useState('')
 
     // Toggles expansion of a glossary term
     const handleTermClick = (term) => {
-        setActiveTerm(prevTerm => (prevTerm === term ? null : term))
+        setExpandedTerms(prev =>
+          prev.includes(term)
+            ? prev.filter(t => t !== term)
+            : [...prev, term]
+        )
     }
 
     // Toggles letter filter
@@ -46,7 +52,7 @@ const Glossary = ({ onBack }) => {
                     <button onClick={onBack}>← Back</button>
                 </div>
                 <div className='nav-center'>
-                    <h2>Glossary</h2>
+                    <h1>Glossary</h1>
                 </div>
                 <div className='nav-right'>
                     <div>
@@ -62,7 +68,7 @@ const Glossary = ({ onBack }) => {
             </div>
 
             {/* Letter Filter */}
-            <div style={{ marginBottom: '1rem' }}>
+            <div className="letter-filter">
                 <button
                 onClick={() => handleLetterClick('0-9')}
                 className={`letter-button ${filterByLetter === '0-9' ? 'active' : ''}`}
@@ -83,32 +89,29 @@ const Glossary = ({ onBack }) => {
 
             {/* Glossary List */}
             <div>
-                {filteredGlossary.map((item, index) => (
-                <div key={index} style={{ marginBottom: '1rem' }}>
+                {filteredGlossary.map((item,index) => (
+                <div key={index} className="glossary-term">
                     <div
-                    className="glossary-term"
-                    onClick={() => handleTermClick(item)}
+                      className="glossary-header"
+                      onClick={() => handleTermClick(item.term)}
                     >
-                    <h3>{item.term}</h3>
-                    {activeTerm && activeTerm.term === item.term && (
-                        <div className="term-details">
-                        <p><strong>Definition:</strong></p>
-                        {item.definition.split('\n').map((line, i) => (
-                        <p key={i}>{line}</p>
-                        ))}
-                        <div>
-                            <h4>References</h4>
-                            {item.references.map((ref, refIndex) => (
-                            <p key={refIndex}>
-                                <a href={ref.url} target="_blank" rel="noopener noreferrer">
-                                {ref.label}
-                                </a>
-                            </p>
-                            ))}
-                        </div>
-                        </div>
-                    )}
+                      <h2>{item.term}</h2>
+                      <img
+                        src={expandedTerms.includes(item.term)? UpArrowIcon: DownArrowIcon}
+                        className="icon"
+                        alt={expandedTerms.includes(item.term)? 'Collapse':'Expand'}
+                      />
                     </div>
+                    {expandedTerms.includes(item.term) && (
+                      <div className="term-details" style={{ marginTop:'0.5rem' }}>
+                        <h4>Definition</h4>
+                        {item.definition.split('\n').map((line,i)=>(<p key={i}>{line}</p>))}
+                        <h4>Reference</h4>
+                        {item.references.map((ref,i)=>(
+                          <p key={i}><a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.label}</a></p>
+                        ))}
+                      </div>
+                    )}
                 </div>
                 ))}
             </div>
