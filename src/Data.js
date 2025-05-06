@@ -1030,7 +1030,7 @@ export const assessments = {
             category: "Environment",
             principles: [
                 {
-                    id: "p17",
+                    id: "p18",
                     title: "Environmental management",
                     criteria: [
                         {
@@ -1066,7 +1066,7 @@ export const assessments = {
                     ]
                 },
                 {
-                    id: "p18",
+                    id: "p19",
                     title: "Climate change management",
                     criteria: [
                         {

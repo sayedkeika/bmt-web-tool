@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { glossary } from '../Data'
 import DownArrowIcon from '../svgs/down-arrow.svg'
 import UpArrowIcon from '../svgs/up-arrow.svg'
@@ -44,78 +44,85 @@ const Glossary = ({ onBack }) => {
     const themes = [...new Set(glossary.map(item => item.theme))]
     const alphabet = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'.split('')
 
+    // Scroll to the top of the page
+    useEffect(() => {
+        window.scrollTo({ top: 0})
+    }, [])
+    
     return (
-        <div className="container">
-            {/* Navigation header */}
-            <div className="nav-header">
-                <div className='nav-left'>
-                    <button onClick={onBack}>← Back</button>
-                </div>
-                <div className='nav-center'>
-                    <h1>Glossary</h1>
-                </div>
-                <div className='nav-right'>
-                    <div>
-                        <label htmlFor="themeFilter">Filter:</label>
-                        <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
-                            <option value="">All</option>
-                            {themes.map((theme, index) => (
-                            <option key={index} value={theme}>{theme}</option>
-                            ))}
-                        </select>
+        <>
+            <div className="header-container">
+                {/* Navigation header */}
+                <div className="nav-header">
+                    <div className='nav-left'>
+                        <button onClick={onBack}>← Back</button>
+                    </div>
+                    <div className='nav-center'>
+                        <h2>Glossary</h2>
+                    </div>
+                    <div className='nav-right'>
+                        <div>
+                            <label htmlFor="themeFilter">Filter:</label>
+                            <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
+                                <option value="">All</option>
+                                {themes.map((theme, index) => (
+                                <option key={index} value={theme}>{theme}</option>
+                                ))}
+                            </select>
+                        </div>
                     </div>
                 </div>
-            </div>
 
-            {/* Letter Filter */}
-            <div className="letter-filter">
-                <button
-                onClick={() => handleLetterClick('0-9')}
-                className={`letter-button ${filterByLetter === '0-9' ? 'active' : ''}`}
-                >
-                0-9
-                </button>
+                {/* Letter Filter */}
+                <div className="letter-filter">
+                    <button
+                    onClick={() => handleLetterClick('0-9')}
+                    className={`letter-button ${filterByLetter === '0-9' ? 'active' : ''}`}
+                    >
+                    #
+                    </button>
 
-                {alphabet.map(letter => (
-                <button
-                    key={letter}
-                    onClick={() => handleLetterClick(letter)}
-                    className={`letter-button ${filterByLetter === letter ? 'active' : ''}`}
-                >
-                    {letter}
-                </button>
-                ))}
+                    {alphabet.map(letter => (
+                    <button
+                        key={letter}
+                        onClick={() => handleLetterClick(letter)}
+                        className={`letter-button ${filterByLetter === letter ? 'active' : ''}`}
+                    >
+                        {letter}
+                    </button>
+                    ))}
+                </div>
             </div>
 
             {/* Glossary List */}
-            <div>
+            <div className="container">
                 {filteredGlossary.map((item,index) => (
                 <div key={index} className="glossary-term">
                     <div
-                      className="glossary-header"
-                      onClick={() => handleTermClick(item.term)}
+                    className="glossary-header"
+                    onClick={() => handleTermClick(item.term)}
                     >
-                      <h2>{item.term}</h2>
-                      <img
+                    <h2>{item.term}</h2>
+                    <img
                         src={expandedTerms.includes(item.term)? UpArrowIcon: DownArrowIcon}
                         className="icon"
                         alt={expandedTerms.includes(item.term)? 'Collapse':'Expand'}
-                      />
+                    />
                     </div>
                     {expandedTerms.includes(item.term) && (
-                      <div className="term-details" style={{ marginTop:'0.5rem' }}>
+                    <div className="term-details" style={{ marginTop:'0.5rem' }}>
                         <h4>Definition</h4>
                         {item.definition.split('\n').map((line,i)=>(<p key={i}>{line}</p>))}
                         <h4>Reference</h4>
                         {item.references.map((ref,i)=>(
-                          <p key={i}><a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.label}</a></p>
+                        <p key={i}><a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.label}</a></p>
                         ))}
-                      </div>
+                    </div>
                     )}
                 </div>
                 ))}
             </div>
-        </div>
+        </>
     )
 }
 export default Glossary

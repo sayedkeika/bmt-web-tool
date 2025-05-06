@@ -1,4 +1,4 @@
-import React, { useRef } from 'react'
+import React, { useRef, useEffect } from 'react'
 import { assessments } from '../Data'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
@@ -12,7 +12,7 @@ const TYPE_LABELS = {
 }
 
 // Component for showing charts and allowing export of results
-export default function Results({ selectedTypes, answers, onRestart, onBackToOverview }) {
+export default function Results({ selectedTypes, answers, onRestart, onBackToAssessment }) {
   const resultsRef = useRef()
   
   // Generates and downloads a PDF of the current results view
@@ -103,13 +103,18 @@ export default function Results({ selectedTypes, answers, onRestart, onBackToOve
     document.body.removeChild(link)
   }
 
+  // Scroll to the top of the page
+  useEffect(() => {
+    window.scrollTo({ top: 0})
+  }, [])
+    
   return (
     <>
       {/* Top navigation */}
-      <div className="container">
+      <div className="header-container">
         <div className="nav-header">
           <div className='nav-left'>
-            <button onClick={onBackToOverview}>← Back to Overview</button>
+            <button onClick={onBackToAssessment}>← Back to Assessment</button>
             <button onClick={handleDownloadPDF}>Download Results as PDF <img src={DownloadIcon} className="icon"/></button>
           </div>
           <div className='nav-center'>

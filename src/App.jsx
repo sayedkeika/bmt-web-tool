@@ -1,7 +1,6 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { assessments } from './Data'
 import Start from './components/Start'
-import Overview from './components/Overview'
 import Assessment from './components/Assessment'
 import Results from './components/Results'
 import Glossary from './components/Glossary'
@@ -20,7 +19,7 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false)
   const [showGlossary, setShowGlossary] = useState(false)
 
-  // Initializes the assessment with user selections 
+  // Initializes the assessment with user selections
   const handleStart = ({ types, contexts, feedstocks, phases }) => {
     setSelectedTypes(types)
     setSelectedContexts(contexts)
@@ -29,8 +28,8 @@ export default function App() {
   }
 
   // Navigation helpers
-  const handleSelectPrinciple = id => setCurrentPrincipleId(id)
-  const handleBackToOverview = () => setCurrentPrincipleId(null)
+  const handleBackToStart = () => setCurrentPrincipleId(null)
+  const handleBackToAssessment = () => setSubmitted(false)
   const handleSubmit = () => setSubmitted(true)
   const handleRestart = () => {
     setAnswers({})
@@ -57,7 +56,7 @@ export default function App() {
           .filter(p => p.criteria.length > 0)
       }))
       .filter(cat => cat.principles.length > 0)
-  
+
   // Filters content-level categories by feedstock and phase applicability
   const filterContentCategories = (cats, feedstocks, phases) =>
     cats
@@ -79,7 +78,7 @@ export default function App() {
           .filter(p => p.criteria.length > 0)
       }))
       .filter(cat => cat.principles.length > 0)
-  
+
   // Build a map of filtered categories per assessment type
   const filteredMap = {}
   if (selectedTypes.includes('system')) {
@@ -95,19 +94,33 @@ export default function App() {
       selectedPhases
     )
   }
-  if (selectedTypes.includes('outcome')) {
-    filteredMap.outcome = assessments.outcome
-  }
 
   // Flatten filtered categories to derive all principles
-  const selectedCategories = selectedTypes.flatMap(
-    type => filteredMap[type] || []
-  )
+  const selectedCategories = selectedTypes.flatMap(type => filteredMap[type] || [])
   const allPrinciples = selectedCategories.flatMap(cat => cat.principles)
   const currentPrinciple = allPrinciples.find(p => p.id === currentPrincipleId)
-  const currentCategory = selectedCategories.find(cat =>
-    cat.principles.some(p => p.id === currentPrincipleId)
-  )
+  const currentCategory = selectedCategories.find(cat => cat.principles.some(p => p.id === currentPrincipleId))
+  const currentType = selectedTypes.find(type => filteredMap[type]?.some(cat => cat.id === currentCategory?.id))
+  
+  // Auto-jump into the first principle when selections change
+  useEffect(() => {
+    if (
+      selectedTypes.length > 0 &&
+      !submitted &&
+      currentPrincipleId === null &&
+      allPrinciples.length > 0
+    ) {
+      setCurrentPrincipleId(allPrinciples[0].id)
+    }
+  }, [
+    selectedTypes,
+    selectedContexts,
+    selectedFeedstocks,
+    selectedPhases,
+    submitted,
+    currentPrincipleId,
+    allPrinciples
+  ])
 
   if (showGlossary) return <Glossary onBack={() => setShowGlossary(false)} />
   if (!selectedTypes.length) return <Start onStart={handleStart} />
@@ -118,19 +131,22 @@ export default function App() {
       selectedTypes={selectedTypes}
       answers={answers}
       onRestart={handleRestart}
-      onBackToOverview={() => { setSubmitted(false); setCurrentPrincipleId(null) }}
+      onBackToAssessment={handleBackToAssessment}
     />
   )
   // If a principle is selected, show questionnaire
-  if (currentPrincipleId) {
+  if (currentPrincipleId && currentCategory && currentPrinciple) {
     return (
       <Assessment
+        type={currentType}
+        selectedTypes={selectedTypes}
+        assessmentMap={filteredMap}
         category={currentCategory}
         principle={currentPrinciple}
         allPrinciples={allPrinciples}
         answers={answers}
         setAnswers={setAnswers}
-        onBackToOverview={handleBackToOverview}
+        onBackToStart={handleRestart}
         onPrev={setCurrentPrincipleId}
         onNext={setCurrentPrincipleId}
         onSubmit={handleSubmit}
@@ -143,21 +159,6 @@ export default function App() {
       />
     )
   }
-  
-  return (
-    <Overview
-      selectedTypes={selectedTypes}
-      assessmentMap={filteredMap}
-      answers={answers}
-      onSelectPrinciple={handleSelectPrinciple}
-      onRestart={handleRestart}
-      onSubmit={handleSubmit}
-      onShowGlossary={() => setShowGlossary(true)}
-      filters={{
-        contexts: selectedContexts,
-        feedstocks: selectedFeedstocks,
-        phases: selectedPhases
-      }}
-    />
-  )
+
+  return null
 }

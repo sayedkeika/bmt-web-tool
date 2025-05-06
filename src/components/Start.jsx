@@ -65,75 +65,92 @@ export default function Start({ onStart }) {
   }
 
   return (
-    <div className="container">
-      <h1>BIOBASEDCERT Monotoring Tool</h1>
-      <h3>Please select atleast one level of assessment you wish to conduct</h3>
-      {/* Assessment selection buttons */}
-      <div>
-        {TYPES.map(({ key, label }) => (
-          <button
-            key={key}
-            onClick={() => toggle(key, selectedTypes, setSelectedTypes)}
-            className={selectedTypes.includes(key) ? 'selected' : ''}
-          >{label}</button>
-        ))}
+    <>
+      <div className="header-container">
+        <div className='nav-header'>
+          <div className='nav-left'></div>
+          <div className='nav-center'>
+              <h1>BIOBASEDCERT Monotoring Tool</h1>
+          </div>
+          <div className='nav-right'></div>
+        </div>
       </div>
-      
-      {/* System-level filters */}
-      {selectedTypes.includes('system') && (
+
+      {/* Assessment selection */}
+      <div className="container">
+        <h3>Please enter the name of scheme or label</h3>
+        <div className="inputs">
+          <input
+            type="text"
+            placeholder="Name"
+          />
+        </div>
+        <h3>Please select atleast one level of assessment you wish to conduct</h3>
         <div>
-          <h3>Please select atleast one applicable type</h3>
-          {allContexts.map(ctx => (
+          {TYPES.map(({ key, label }) => (
             <button
-              key={ctx}
-              onClick={() => toggle(ctx, selectedContexts, setSelectedContexts)}
-              className={selectedContexts.includes(ctx) ? 'selected' : ''}
-            >
-              {ctx}
-            </button>
+              key={key}
+              onClick={() => toggle(key, selectedTypes, setSelectedTypes)}
+              className={selectedTypes.includes(key) ? 'selected' : ''}
+            >{label}</button>
           ))}
         </div>
-      )}
-
-      {/* Content-level filters */}
-      {selectedTypes.includes('content') && (
-        <div>
-          <h3>Please select atleast one applicable feedstock</h3>
+      
+        {/* System-level filters */}
+        {selectedTypes.includes('system') && (
           <div>
-            {allFeedstocks.map(f => (
+            <h3>Please select atleast one applicable type</h3>
+            {allContexts.map(ctx => (
               <button
-                key={f}
-                onClick={() => toggle(f, selectedFeedstocks, setSelectedFeedstocks)}
-                className={selectedFeedstocks.includes(f) ? 'selected' : ''}
+                key={ctx}
+                onClick={() => toggle(ctx, selectedContexts, setSelectedContexts)}
+                className={selectedContexts.includes(ctx) ? 'selected' : ''}
               >
-                {f}
+                {ctx}
               </button>
             ))}
           </div>
+        )}
 
-          <h3>Please select atleast one applicable value chain actor</h3>
+        {/* Content-level filters */}
+        {selectedTypes.includes('content') && (
           <div>
-            {allPhases.map(p => (
-              <button
-                key={p}
-                onClick={() => toggle(p, selectedPhases, setSelectedPhases)}
-                className={selectedPhases.includes(p) ? 'selected' : ''}
-              >
-                {p}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
+            <h3>Please select atleast one applicable feedstock</h3>
+            <div>
+              {allFeedstocks.map(f => (
+                <button
+                  key={f}
+                  onClick={() => toggle(f, selectedFeedstocks, setSelectedFeedstocks)}
+                  className={selectedFeedstocks.includes(f) ? 'selected' : ''}
+                >
+                  {f}
+                </button>
+              ))}
+            </div>
 
-      {/* Start button */}
-      <button style={{ marginTop: '2rem' }}
-        onClick={handleStart}
-        disabled={!isValidSelection()}
-        title={
-          !isValidSelection()
-            ? 'Please select at least one assessment type and the required applicability options.': ''}
-      >Start Assessment →</button>
-    </div>
+            <h3>Please select atleast one applicable value chain actor</h3>
+            <div>
+              {allPhases.map(p => (
+                <button
+                  key={p}
+                  onClick={() => toggle(p, selectedPhases, setSelectedPhases)}
+                  className={selectedPhases.includes(p) ? 'selected' : ''}
+                >
+                  {p}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
+
+        <button style={{ marginTop: '2rem' }}
+          onClick={handleStart}
+          disabled={!isValidSelection()}
+          title={
+            !isValidSelection()
+              ? 'Please select at least one assessment type and the required applicability options.': ''}
+        >Start Assessment →</button>
+      </div>
+    </>
   )
 }

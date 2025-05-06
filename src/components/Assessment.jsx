@@ -1,14 +1,20 @@
 import React, { useRef, useEffect } from 'react'
 import BookIcon from '../svgs/book.svg'
 
+const TYPE_LABELS = {
+  system: 'System-Level Assessment',
+  content: 'Content-Level Assessment',
+}
+
 // Component for rendering the questionnaire and recording user responses
 export default function Assessment({
+  type,
   category,
   principle,
   allPrinciples,
   answers,
   setAnswers,
-  onBackToOverview,
+  onBackToStart,
   onPrev,
   onNext,
   onSubmit,
@@ -82,16 +88,24 @@ export default function Assessment({
     }
   }, [principle.id])
 
+  // Ref for scrolling to the top on principle change
+  const mainContainerRef = useRef(null)
+  useEffect(() => {
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }, [principle.id])
+  
   return (
     <>
       {/* Top navigation */}
-      <div className="container">
+      <div className="header-container">
         <div className='nav-header'>
           <div className='nav-left'>
-            <button onClick={onBackToOverview}>← Overview</button>
+            <button onClick={onBackToStart}>← Start New Assessment</button>
+            <button onClick={onOpenGlossary}>Go to Glossary <img src={BookIcon} className="icon"/></button>
           </div>
           <div className='nav-center'>
-            <h1 style={{ textAlign: 'center', flex: 1 }}>{category.category}</h1>
+            <h4>{TYPE_LABELS[type]}</h4>
+            <h3>{category.category}</h3>
           </div>
           <div className='nav-right'>
             <button
@@ -120,7 +134,7 @@ export default function Assessment({
                   onClick={() => onNext(p.id)}
                   ref={el => (pillRefs.current[p.id] = el)}
                 >
-                  <span className="title">{p.title}</span>
+                  <span>{p.title}</span>
                 </div>
               )
             })}
@@ -130,22 +144,6 @@ export default function Assessment({
 
       {/* Main questionnaire content */}
       <div className="container">
-        <div className='nav-header'>
-          <div className='nav-left'>
-            {currentIndex > 0 && (
-              <button onClick={() => onPrev(allPrinciples[currentIndex - 1].id)}>← Previous</button>
-            )}
-          </div>
-          <div className='nav-center'>
-            <button onClick={onOpenGlossary}>Go to Glossary <img src={BookIcon} className="icon"/></button>
-          </div>
-          <div className='nav-right'>
-            {currentIndex < allPrinciples.length - 1 && (
-              <button onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next →</button>
-            )}
-          </div>
-        </div>
-
         {isContentAssessment ? (
           principle.criteria.map(criterion => (
             <div key={criterion.id} className="criterion-block">
@@ -216,6 +214,20 @@ export default function Assessment({
             </div>
           ))
         )}
+
+        <div className='nav-header'>
+          <div className='nav-left'>
+            {currentIndex > 0 && (
+              <button onClick={() => onPrev(allPrinciples[currentIndex - 1].id)}>← Previous</button>
+            )}
+          </div>
+          <div className='nav-right'>
+            {currentIndex < allPrinciples.length - 1 && (
+              <button onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next →</button>
+            )}
+          </div>
+        </div>
+
       </div>
     </>
   )
