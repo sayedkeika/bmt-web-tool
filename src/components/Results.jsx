@@ -12,7 +12,14 @@ const TYPE_LABELS = {
 }
 
 // Component for showing charts and allowing export of results
-export default function Results({ selectedTypes, answers, onRestart, onBackToAssessment }) {
+export default function Results({
+  selectedTypes,
+  answers,
+  onRestart,
+  filteredSystemCategories,
+  filteredContentCategories,
+  onBackToAssessment
+}) {
   const resultsRef = useRef()
   
   // Generates and downloads a PDF of the current results view
@@ -111,26 +118,41 @@ export default function Results({ selectedTypes, answers, onRestart, onBackToAss
   return (
     <>
       {/* Top navigation */}
-      <div className="header-container">
-        <div className="nav-header">
+      <div className='header-container'>
+        <div className='nav-header'>
           <div className='nav-left'>
-            <button onClick={onBackToAssessment}>← Back to Assessment</button>
-            <button onClick={handleDownloadPDF}>Download Results as PDF <img src={DownloadIcon} className="icon"/></button>
+            <button className='nav' onClick={onBackToAssessment}>← Back to Assessment</button>
+            <button className='nav' onClick={handleDownloadPDF}>Download Results as PDF <img src={DownloadIcon} className='icon'/></button>
           </div>
           <div className='nav-center'>
-            <h1>Results</h1>
+            <h2>Results</h2>
           </div>
           <div className='nav-right'>
-            <button onClick={handleDownloadCSV}>Download Answers as CSV <img src={DownloadIcon} className="icon"/></button>
-            <button onClick={onRestart}>Start New Assessment →</button>
+            <button className='nav' onClick={handleDownloadCSV}>Download Assessment as CSV <img src={DownloadIcon} className='icon'/></button>
+            <button className='nav' onClick={onRestart}>Start New Assessment →</button>
           </div>
         </div>
       </div>
 
       {/* Main results content */}
-      <div className="container" ref={resultsRef}>
-        {selectedTypes.includes('system') && <SystemCharts answers={answers} />}
-        {selectedTypes.includes('content') && <ContentCharts answers={answers} />}
+      <div className='container' ref={resultsRef}>
+        {selectedTypes.includes('system') && (
+          <section className='dashboard-section'>
+            <SystemCharts
+              answers={answers}
+              categories={filteredSystemCategories}
+            />
+          </section>
+        )}
+
+        {selectedTypes.includes('content') && (
+          <section className='dashboard-section'>
+            <ContentCharts 
+              answers={answers} 
+              categories={filteredContentCategories}
+            />
+          </section>
+        )}
       </div>
     </>     
   )

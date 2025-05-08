@@ -4,6 +4,7 @@ import Start from './components/Start'
 import Assessment from './components/Assessment'
 import Results from './components/Results'
 import Glossary from './components/Glossary'
+import ScrollToTop from './components/ScrollToTop'
 
 // Main component for managing the overall workflow
 export default function App() {
@@ -122,41 +123,55 @@ export default function App() {
     allPrinciples
   ])
 
-  if (showGlossary) return <Glossary onBack={() => setShowGlossary(false)} />
+  if (showGlossary) return (
+    <>
+      <Glossary onBack={() => setShowGlossary(false)} />
+      <ScrollToTop />
+    </>
+  )
+
   if (!selectedTypes.length) return <Start onStart={handleStart} />
 
   // After submission, show results
   if (submitted) return (
-    <Results
-      selectedTypes={selectedTypes}
-      answers={answers}
-      onRestart={handleRestart}
-      onBackToAssessment={handleBackToAssessment}
-    />
+    <>
+      <Results
+        selectedTypes={selectedTypes}
+        answers={answers}
+        filteredContentCategories={filteredMap.content}
+        filteredSystemCategories={filteredMap.system}
+        onRestart={handleRestart}
+        onBackToAssessment={handleBackToAssessment}
+      />
+      <ScrollToTop />
+    </>
   )
   // If a principle is selected, show questionnaire
   if (currentPrincipleId && currentCategory && currentPrinciple) {
     return (
-      <Assessment
-        type={currentType}
-        selectedTypes={selectedTypes}
-        assessmentMap={filteredMap}
-        category={currentCategory}
-        principle={currentPrinciple}
-        allPrinciples={allPrinciples}
-        answers={answers}
-        setAnswers={setAnswers}
-        onBackToStart={handleRestart}
-        onPrev={setCurrentPrincipleId}
-        onNext={setCurrentPrincipleId}
-        onSubmit={handleSubmit}
-        onOpenGlossary={() => setShowGlossary(true)}
-        filters={{
-          contexts: selectedContexts,
-          feedstocks: selectedFeedstocks,
-          phases: selectedPhases
-        }}
-      />
+      <>
+        <Assessment
+          type={currentType}
+          selectedTypes={selectedTypes}
+          assessmentMap={filteredMap}
+          category={currentCategory}
+          principle={currentPrinciple}
+          allPrinciples={allPrinciples}
+          answers={answers}
+          setAnswers={setAnswers}
+          onBackToStart={handleRestart}
+          onPrev={setCurrentPrincipleId}
+          onNext={setCurrentPrincipleId}
+          onSubmit={handleSubmit}
+          onOpenGlossary={() => setShowGlossary(true)}
+          filters={{
+            contexts: selectedContexts,
+            feedstocks: selectedFeedstocks,
+            phases: selectedPhases
+          }}
+        />
+        <ScrollToTop />
+      </>
     )
   }
 

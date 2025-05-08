@@ -66,23 +66,23 @@ export default function Start({ onStart }) {
 
   return (
     <>
-      <div className="header-container">
+      <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'></div>
           <div className='nav-center'>
-              <h1>BIOBASEDCERT Monotoring Tool</h1>
+              <h2>BIOBASEDCERT Monotoring Tool</h2>
           </div>
           <div className='nav-right'></div>
         </div>
       </div>
 
       {/* Assessment selection */}
-      <div className="container">
+      <div className='container'>
         <h3>Please enter the name of scheme or label</h3>
-        <div className="inputs">
+        <div className='inputs'>
           <input
-            type="text"
-            placeholder="Name"
+            type='text'
+            placeholder='Name'
           />
         </div>
         <h3>Please select atleast one level of assessment you wish to conduct</h3>
@@ -143,12 +143,14 @@ export default function Start({ onStart }) {
           </div>
         )}
 
-        <button style={{ marginTop: '2rem' }}
+        <button
+          className='nav'
+          style={{ marginTop: '2rem' }}
           onClick={handleStart}
           disabled={!isValidSelection()}
           title={
             !isValidSelection()
-              ? 'Please select at least one assessment type and the required applicability options.': ''}
+              ? 'Please select at least one assessment level and the required applicability options.': ''}
         >Start Assessment →</button>
       </div>
     </>

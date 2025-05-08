@@ -51,20 +51,20 @@ const Glossary = ({ onBack }) => {
     
     return (
         <>
-            <div className="header-container">
+            <div className='header-container'>
                 {/* Navigation header */}
-                <div className="nav-header">
+                <div className='nav-header'>
                     <div className='nav-left'>
-                        <button onClick={onBack}>← Back</button>
+                        <button className='nav' onClick={onBack}>← Back</button>
                     </div>
                     <div className='nav-center'>
                         <h2>Glossary</h2>
                     </div>
                     <div className='nav-right'>
                         <div>
-                            <label htmlFor="themeFilter">Filter:</label>
-                            <select id="themeFilter" value={filterByTheme} onChange={handleThemeFilterChange}>
-                                <option value="">All</option>
+                            <label htmlFor='themeFilter'>Filter:</label>
+                            <select id='themeFilter' value={filterByTheme} onChange={handleThemeFilterChange}>
+                                <option value=''>All</option>
                                 {themes.map((theme, index) => (
                                 <option key={index} value={theme}>{theme}</option>
                                 ))}
@@ -74,7 +74,7 @@ const Glossary = ({ onBack }) => {
                 </div>
 
                 {/* Letter Filter */}
-                <div className="letter-filter">
+                <div className='letter-filter'>
                     <button
                     onClick={() => handleLetterClick('0-9')}
                     className={`letter-button ${filterByLetter === '0-9' ? 'active' : ''}`}
@@ -95,27 +95,27 @@ const Glossary = ({ onBack }) => {
             </div>
 
             {/* Glossary List */}
-            <div className="container">
+            <div className='container'>
                 {filteredGlossary.map((item,index) => (
-                <div key={index} className="glossary-term">
+                <div key={index} className='glossary-term'>
                     <div
-                    className="glossary-header"
+                    className='glossary-header'
                     onClick={() => handleTermClick(item.term)}
                     >
-                    <h2>{item.term}</h2>
+                    <h3>{item.term}</h3>
                     <img
                         src={expandedTerms.includes(item.term)? UpArrowIcon: DownArrowIcon}
-                        className="icon"
+                        className='icon'
                         alt={expandedTerms.includes(item.term)? 'Collapse':'Expand'}
                     />
                     </div>
                     {expandedTerms.includes(item.term) && (
-                    <div className="term-details" style={{ marginTop:'0.5rem' }}>
+                    <div className='term-details' style={{ marginTop:'0.5rem' }}>
                         <h4>Definition</h4>
                         {item.definition.split('\n').map((line,i)=>(<p key={i}>{line}</p>))}
                         <h4>Reference</h4>
                         {item.references.map((ref,i)=>(
-                        <p key={i}><a href={ref.url} target="_blank" rel="noopener noreferrer">{ref.label}</a></p>
+                        <p key={i}><a href={ref.url} target='_blank' rel='noopener noreferrer'>{ref.label}</a></p>
                         ))}
                     </div>
                     )}

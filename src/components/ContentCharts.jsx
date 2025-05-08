@@ -1,34 +1,23 @@
 import React, { useMemo } from 'react'
 import { assessments } from '../Data'
-import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts'
+import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts'
 
 const LEVELS = ['Mandatory', 'Basic', 'Advanced']
 
-// Formats a met/total pair as a percentage string
-const formatPercent = ({ met, total }) =>
-  total > 0 ? `${((met / total) * 100).toFixed(0)}%` : '–'
-
-// Determines CSS class based on percentage thresholds
-const getColorClass = ({ met, total }) => {
-  if (total === 0) return ''
-  const percentage = (met / total) * 100
-  if (percentage >= 80) return 'cell-green'
-  if (percentage >= 60) return 'cell-light-green'
-  if (percentage >= 40) return 'cell-yellow'
-  if (percentage >= 20) return 'cell-orange'
-  return 'cell-red'
+const LEVEL_COLORS = {
+  Mandatory: '#8884d8',
+  Basic:     '#82ca9d',
+  Advanced:  '#ffc658'
 }
 
 // Computes scores per category and per principle based on answers
-const computeContentScores = (answers) => {
+const computeContentScores = (answers, categories) => {
   const scoreByCategory = {}
   const principleScores = {}
 
-  const categories = assessments['content'] || []
-
   categories.forEach(cat => {
     // Handle Minimum Backstop separately
-    if (cat.category === "Minimum Backstop") return
+    if (cat.category === 'Minimum Backstop') return
 
     // Initialize score tracking for this category
     if (!scoreByCategory[cat.category]) {
@@ -69,70 +58,175 @@ const computeContentScores = (answers) => {
     })
   })
 
-  return { scoreByCategory, principleScores }
+  // Transform into pie
+  const pieDataByCategory = Object.fromEntries(
+    Object.entries(scoreByCategory).map(([category, levels]) => [
+      category,
+      LEVELS.map(level => {
+        const { met, total } = levels[level]
+        return {
+          level,
+          data: [
+            { name: 'Requirements met', value: met },
+            { name: 'Requirements unmet', value: total - met }
+          ]
+        }
+      })
+    ])
+  )
+
+  // Transform into bar
+  const principleBarData = []
+    Object.entries(principleScores).forEach(([category, principles]) => {
+      Object.entries(principles).forEach(([title, levels]) => {
+        const metM = levels.Mandatory.met,   totM = levels.Mandatory.total
+        const metB = levels.Basic.met,       totB = levels.Basic.total
+        const metA = levels.Advanced.met,    totA = levels.Advanced.total
+
+        principleBarData.push({
+          category,
+          principle: title,
+          Mandatory: totM > 0 ? (metM / totM) * 100 : 0,
+          Basic:     totB > 0 ? (metB / totB) * 100 : 0,
+          Advanced:  totA > 0 ? (metA / totA) * 100 : 0
+        })
+      })
+    })
+
+  return { scoreByCategory, principleScores, pieDataByCategory, principleBarData }
 }
 
 // Component for displaying visual results for content-level scores
-export default function ContentCharts({ answers }) {
-  const { scoreByCategory, principleScores } = useMemo(() => computeContentScores(answers), [answers])
+export default function ContentCharts({ answers, categories }) {
+  const { scoreByCategory, principleScores, pieDataByCategory, principleBarData } = useMemo(() => computeContentScores(answers, categories), [answers, categories])
 
-  const minimumBackstopCategory = assessments['content']?.find(cat => cat.category === "Minimum Backstop")
-
-  // Transform into grouped bar dataset
-  const groupedBarData = Object.entries(scoreByCategory).map(([category, levels]) => {
-    const entry = { category }
-    LEVELS.forEach(level => {
-      const { met, total } = levels[level]
-      entry[level] = total > 0 ? (met / total) * 100 : 0
-    })
-    return entry
-  })
+  const minimumBackstopCategory = assessments['content']?.find(cat => cat.category === 'Minimum Backstop')
 
   return (
-    <div className="content">
-      <h1>Content-Level Assessment</h1>
-      <h2>Overall Score</h2>
-      {/* Minimum Backstop Section */}
-      {minimumBackstopCategory && (
-        <div className="minimum-backstop">
-          {minimumBackstopCategory.principles.map(principle => (
-            <div key={principle.id}> 
-              <table className="content-table">
-                <thead>
-                  <tr>
-                    <th>Minimum Backstop Criterion</th>
-                    <th>Requirements Met</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  {principle.criteria.map(criterion => (
-                    <tr key={criterion.id}>
-                      <td>{criterion.text}</td>
-                      {criterion.requirements.map(req => {
-                        const a = answers[req.id]
-                        const met = a?.response === 'Yes' ? 1 : 0
-                        const total = 1
-                        return (
-                          <td key={req.id} className={getColorClass({ met, total })}>
-                            {formatPercent({ met, total })}
-                          </td>
-                        )
-                      })}
-                    </tr>
-                  ))}
-                </tbody>
-              </table>
+    <div>
+      <h2>Content-Level</h2>
+
+      {/* Pie Charts Section */}
+      <section className='dashboard-section'>
+        <h3>Average Score Per Category</h3>
+        
+        {/* Minimum Backstop */}
+        {minimumBackstopCategory && (
+          <section className='dashboard-section'>
+            <div className='chart-grid'>
+              {minimumBackstopCategory.principles.map(principle => {
+                const reqs = principle.criteria.flatMap(c => c.requirements)
+                const total = reqs.length
+                const met = reqs.reduce(
+                  (sum, req) => sum + (answers[req.id]?.response === 'Yes' ? 1 : 0),
+                  0
+                )
+                const data = [
+                  { name: 'Requirements met', value: met },
+                  { name: 'Requirements unmet', value: total - met }
+                ]
+                const percent = total > 0 ? Math.round((met / total) * 100) : 0
+
+                return (
+                  <div className='chart-card' key={principle.id}>
+                    <h4>{principle.title}</h4>
+                    <ResponsiveContainer width='100%' height={150}>
+                      <PieChart>
+                        <Pie
+                          data={data}
+                          dataKey='value'
+                          cx='50%'
+                          cy='50%'
+                          innerRadius={40}
+                          outerRadius={60}
+                          startAngle={90}
+                          endAngle={-270}
+                          paddingAngle={0}
+                          stroke='none'
+                        >
+                          <Cell fill={LEVEL_COLORS.Mandatory} />
+                          <Cell fill='#e0e0e0' />
+                        </Pie>
+                        <Tooltip formatter={(value) => `${value}`} />
+                        <text
+                          x='50%'
+                          y='50%'
+                          fill='#000'
+                          textAnchor='middle'
+                          dominantBaseline='middle'
+                          style={{ fontSize: '1rem', fontWeight: 600 }}
+                        >
+                          {percent + '%'}
+                        </text>
+                      </PieChart>
+                    </ResponsiveContainer>
+                  </div>
+                )
+              })}
+            </div>
+          </section>
+        )}
+
+        <div className='chart-grid'>
+          {Object.entries(pieDataByCategory).map(([category, pies]) => (
+            <div className='chart-card' key={category}>
+              <h4>{category}</h4>
+              <div className='pie-grid'>
+                {pies.map(({ level, data }) => {
+                  const met = data[0].value
+                  const total = met + data[1].value
+                  const percent = total > 0 ? Math.round((met / total) * 100) : 0
+
+                  return (
+                    <div key={level} style={{ flex: 1, textAlign: 'center' }}>
+                      <h5>{level}</h5>
+                      <ResponsiveContainer width='100%' height={120}>
+                        <PieChart>
+                          <Pie
+                            data={data}
+                            dataKey='value'
+                            cx='50%'
+                            cy='50%'
+                            innerRadius={40}
+                            outerRadius={60}
+                            startAngle={90}
+                            endAngle={-270}
+                            paddingAngle={0}
+                            stroke='none'
+                          >
+                            <Cell fill={LEVEL_COLORS[level]} />
+                            <Cell fill='#e0e0e0' />
+                          </Pie>
+                          <Tooltip
+                            formatter={(value) => `${value}`}
+                          />
+                          <text
+                            x='50%'
+                            y='50%'
+                            fill='#000'
+                            textAnchor='middle'
+                            dominantBaseline='middle'
+                            style={{ fontSize: '1rem', fontWeight: 600 }}
+                          >
+                            {percent + '%'}
+                          </text>
+                        </PieChart>
+                      </ResponsiveContainer>
+                    </div>
+                  )
+                })}
+              </div>
             </div>
           ))}
         </div>
-      )}
+      </section>
 
       {/* Content-Level Assessment Table */}
-      <table className="content-table">
+      <table className='content-table'>
         <thead>
           <tr>
-            <th rowSpan="2">Category</th>
-            <th colSpan="3">% of Requirements Met</th>
+            <th rowSpan='2'>Category</th>
+            <th colSpan='3'>Fraction of applicable requirements covered</th>
           </tr>
           <tr>
             {LEVELS.map(level => <th key={level}>{level}</th>)}
@@ -142,45 +236,77 @@ export default function ContentCharts({ answers }) {
           {Object.entries(scoreByCategory).map(([category, levels]) => (
             <tr key={category}>
               <td>{category}</td>
-              {LEVELS.map(level => (
-                <td key={level} className={getColorClass(levels[level])}>{formatPercent(levels[level])}</td>
-              ))}
+              {LEVELS.map(level => {
+                const { met, total } = levels[level]
+                return (
+                  <td key={level}>
+                    {`${met}/${total}`}
+                  </td>
+                )
+              })}
             </tr>
           ))}
         </tbody>
       </table>
 
-      {/* Content-Level Bar Chart */}
-      <div style={{ height: 400, marginTop: '6rem', marginBottom: '6rem' }}>
-        <ResponsiveContainer width="100%" height="100%">
+      <h3>Average Score Per Principle</h3>
+
+      <section className='dashboard-section'>
+        <ResponsiveContainer
+          width='100%'
+          height={Math.max(principleBarData.length * 50 + 80, 600)}
+        >
           <BarChart
-            data={groupedBarData}
-            barCategoryGap={40}
-            barGap={8}
-            margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+            data={principleBarData}
+            layout='vertical'
+            margin={{ left: 200, top: 20, right: 20, bottom: 20 }}
+            barCategoryGap='20%'
           >
-            <CartesianGrid strokeDasharray="3 3" />
-            <XAxis dataKey="category" tick={{ fontSize: 16 }} />
-            <YAxis domain={[0, 100]} tickFormatter={(v) => `${v}%`} />
-            <Tooltip formatter={(val) => `${val.toFixed(0)}%`} />
+            <CartesianGrid strokeDasharray='3 3' />
+            <XAxis
+              type='number'
+              domain={[0, 100]}
+              tickFormatter={v => `${v.toFixed(0)}%`}
+            />
+            <YAxis
+              dataKey='principle'
+              type='category'
+              width={200}
+              tick={{ fontSize: 14 }}
+            />
+            <Tooltip formatter={v => `${v.toFixed(0)}%`} />
             <Legend />
-            <Bar dataKey="Mandatory" fill="#8884d8" name="Mandatory" barSize={40} />
-            <Bar dataKey="Basic" fill="#82ca9d" name="Basic" barSize={40} />
-            <Bar dataKey="Advanced" fill="#ffc658" name="Advanced" barSize={40} />
+            <Bar
+              dataKey='Mandatory'
+              fill='#8884d8'
+              name='Mandatory'
+              barSize={20}
+            />
+            <Bar
+              dataKey='Basic'
+              fill='#82ca9d'
+              name='Basic'
+              barSize={20}
+            />
+            <Bar
+              dataKey='Advanced'
+              fill='#ffc658'
+              name='Advanced'
+              barSize={20}
+            />
           </BarChart>
         </ResponsiveContainer>
-      </div>
+      </section>
 
-      <h2>Detailed Score</h2>
       {/* Principle-Level Tables */}
       {Object.entries(principleScores).map(([category, principles]) => (
-        <div key={category} style={{ marginBottom: '4rem' }}>
-          <h3>{category}</h3>
-          <table className="content-table">
+        <div key={category}>
+          <h4>{category}</h4>
+          <table className='content-table'>
             <thead>
               <tr>
-                <th rowSpan="2">Principle</th>
-                <th colSpan="3">% of Requirements Met</th>
+                <th rowSpan='2'>Principle</th>
+                <th colSpan='3'>Fraction of applicable requirements covered</th>
               </tr>
               <tr>
                 {LEVELS.map(level => <th key={level}>{level}</th>)}
@@ -190,9 +316,14 @@ export default function ContentCharts({ answers }) {
               {Object.entries(principles).map(([title, levels]) => (
                 <tr key={title}>
                   <td>{title}</td>
-                  {LEVELS.map(level => (
-                    <td key={level} className={getColorClass(levels[level])}>{formatPercent(levels[level])}</td>
-                  ))}
+                  {LEVELS.map(level => {
+                    const { met, total } = levels[level]
+                    return (
+                      <td key={level}>
+                        {`${met}/${total}`}
+                      </td>
+                    )
+                  })}
                 </tr>
               ))}
             </tbody>

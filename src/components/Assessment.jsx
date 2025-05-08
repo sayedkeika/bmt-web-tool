@@ -1,5 +1,7 @@
 import React, { useRef, useEffect } from 'react'
 import BookIcon from '../svgs/book.svg'
+import LeftArrowIcon from '../svgs/left-arrow.svg'
+import RightArrowIcon from '../svgs/right-arrow.svg'
 
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
@@ -76,6 +78,18 @@ export default function Assessment({
   const breadcrumbsRef = useRef(null)
   const pillRefs = useRef({})
 
+  // Scroll pill navigation
+  const scrollStep = 500
+  const scrollLeft = () => {
+    if (!breadcrumbsRef.current) return
+    breadcrumbsRef.current.scrollBy({ left: -scrollStep, behavior: 'smooth' })
+  }
+  const scrollRight = () => {
+    if (!breadcrumbsRef.current) return
+    breadcrumbsRef.current.scrollBy({ left:  scrollStep, behavior: 'smooth' })
+  }
+
+
   // Center the active pill
   useEffect(() => {
     const el = pillRefs.current[principle.id]
@@ -88,8 +102,7 @@ export default function Assessment({
     }
   }, [principle.id])
 
-  // Ref for scrolling to the top on principle change
-  const mainContainerRef = useRef(null)
+  // Scroll to the top of the page
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }, [principle.id])
@@ -97,11 +110,11 @@ export default function Assessment({
   return (
     <>
       {/* Top navigation */}
-      <div className="header-container">
+      <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
-            <button onClick={onBackToStart}>← Start New Assessment</button>
-            <button onClick={onOpenGlossary}>Go to Glossary <img src={BookIcon} className="icon"/></button>
+            <button className='nav' onClick={onBackToStart}>← New Assessment</button>
+            <button className='nav' onClick={onOpenGlossary}>Glossary <img src={BookIcon} className='icon'/></button>
           </div>
           <div className='nav-center'>
             <h4>{TYPE_LABELS[type]}</h4>
@@ -109,8 +122,9 @@ export default function Assessment({
           </div>
           <div className='nav-right'>
             <button
+                className='nav'
                 onClick={onSubmit}
-                disabled={!allAnswered}
+                //disabled={!allAnswered}
                 title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
               >
                 Submit →
@@ -120,8 +134,15 @@ export default function Assessment({
         
 
         {/* Breadcrumb‐style stepper and progress header */}
-        <div className="progress-header">
-          <div className="stepper-breadcrumbs" ref={breadcrumbsRef}>
+        <div className='progress-header'>
+          <img
+            className='scroll-btn left'
+            src={LeftArrowIcon}
+            alt='◄'
+            onClick={scrollLeft}
+          />
+
+          <div className='stepper-breadcrumbs' ref={breadcrumbsRef}>
             {allPrinciples.map((p, idx) => {
               const done = isPrincipleCompleted(p)
               const isCurrent = idx === currentIndex
@@ -139,20 +160,28 @@ export default function Assessment({
               )
             })}
           </div>
+
+          <img
+            className='scroll-btn right'
+            src={RightArrowIcon}
+            alt='►'
+            onClick={scrollRight}
+          />
+
         </div>
       </div>
 
       {/* Main questionnaire content */}
-      <div className="container">
+      <div className='container'>
         {isContentAssessment ? (
           principle.criteria.map(criterion => (
-            <div key={criterion.id} className="criterion-block">
+            <div key={criterion.id} className='criterion-block'>
               <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
               <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
               {criterion.requirements.map(req => (
                 <div key={req.id}>
                   <p><strong>{req.text}</strong> <em>({req.level})</em></p>
-                  <div className="options">
+                  <div className='options'>
                     {req.responseOptions.map(option => (
                       <button
                         key={option.label}
@@ -163,16 +192,16 @@ export default function Assessment({
                       </button>
                     ))}
                   </div>
-                  <div className="inputs">
+                  <div className='inputs'>
                     <input
-                      type="text"
-                      placeholder="Justification"
+                      type='text'
+                      placeholder='Justification'
                       value={answers[req.id]?.justification || ''}
                       onChange={e => handleInputChange(req.id, 'justification', e.target.value)}
                     />
                     <input
-                      type="text"
-                      placeholder="Feedback"
+                      type='text'
+                      placeholder='Source Reference'
                       value={answers[req.id]?.feedback || ''}
                       onChange={e => handleInputChange(req.id, 'feedback', e.target.value)}
                     />
@@ -183,10 +212,10 @@ export default function Assessment({
           ))
         ) : (
           principle.criteria.map(criterion => (
-            <div key={criterion.id} className="criterion-block">
+            <div key={criterion.id} className='criterion-block'>
               <p style={{ fontSize: '1.1rem' }}><strong>{criterion.id}: {criterion.text}</strong></p>
               <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
-              <div className="options">
+              <div className='options'>
                 {criterion.responseOptions.map(option => (
                   <button
                     key={option.label}
@@ -197,16 +226,16 @@ export default function Assessment({
                   </button>
                 ))}
               </div>
-              <div className="inputs">
+              <div className='inputs'>
                 <input
-                  type="text"
-                  placeholder="Justification"
+                  type='text'
+                  placeholder='Justification'
                   value={answers[criterion.id]?.justification || ''}
                   onChange={e => handleInputChange(criterion.id, 'justification', e.target.value)}
                 />
                 <input
-                  type="text"
-                  placeholder="Source Reference"
+                  type='text'
+                  placeholder='Source Reference'
                   value={answers[criterion.id]?.feedback || ''}
                   onChange={e => handleInputChange(criterion.id, 'feedback', e.target.value)}
                 />

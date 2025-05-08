@@ -3,142 +3,125 @@ import { assessments } from '../Data'
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, CartesianGrid, Legend } from 'recharts'
 
 // Formats a numeric value as a percentage string
-const formatPercent = (v) => `${v.toFixed(0)}%`
+const formatPercent = v => `${v.toFixed(0)}%`
 
-// Computes data structures required for system-level charts (Radar and Bar)
-const computeSystemCharts = (answers) => {
-  const chartsByType = {}
-  const allPrinciplesChart = {}
-  const barChartByType = {}
+// Computes data structures required for system‐level charts (Radar and Bar)
+const computeSystemScores = (answers, categories) => {
+  const allPrinciplesChart = []
+  const barChartData = []
 
-  const type = 'system'
-  const categories = assessments[type] || []
-  const chartCategories = {}
-  const barChartData = {}
-
-  // Iterate each category in system assessment
   categories.forEach(cat => {
     let categoryScoreTotal = 0
     let categoryMaxTotal = 0
 
-    // Process each principle
     cat.principles.forEach(principle => {
-      const items = principle.criteria
-
-      // Filter only those criteria that have been answered and have a score
-      const answeredCriteria = items.filter(item => {
-        const answer = answers[item.id]
-        const matched = answer?.response && item.responseOptions?.find(o => o.label === answer.response)
-        return matched?.score !== undefined
+      // only count those criteria that remain after filtering
+      const answeredCriteria = principle.criteria.filter(item => {
+        const a = answers[item.id]?.response
+        const opt = item.responseOptions?.find(o => o.label === a)
+        return opt?.score != null
       })
 
-      // Only include principles with at least one answered criterion
-      if (answeredCriteria.length > 0) {
-        // Convert each answered criterion to a percent of its max
-        const percentages = answeredCriteria.map(item => {
-          const matched = item.responseOptions.find(o => o.label === answers[item.id]?.response)
-          const score = matched?.score ?? 0
-          const maxScore = Math.max(...item.responseOptions.map(o => o.score ?? 0))
-          return (score / maxScore) * 100
-        })
+      if (!answeredCriteria.length) return
 
-        // Average percentage for this principle
-        const principlePercentage = percentages.reduce((sum, p) => sum + p, 0) / percentages.length
+      // compute avg % for this principle
+      const percentages = answeredCriteria.map(item => {
+        const match = item.responseOptions.find(o => o.label === answers[item.id]?.response)
+        const score = match?.score ?? 0
+        const maxScore = Math.max(...item.responseOptions.map(o => o.score ?? 0))
+        return (score / maxScore) * 100
+      })
+      const principlePct = percentages.reduce((s, p) => s + p, 0) / percentages.length
 
-        // Accumulate category totals
-        categoryScoreTotal += principlePercentage
-        categoryMaxTotal += 100
+      allPrinciplesChart.push({
+        principle: principle.title,
+        score: principlePct
+      })
 
-        // Append to category-specific radar data
-        if (!chartCategories[cat.category]) chartCategories[cat.category] = []
-        chartCategories[cat.category].push({ principle: principle.title, score: principlePercentage })
-
-        // Append to overall radar data
-        if (!allPrinciplesChart[type]) allPrinciplesChart[type] = []
-        allPrinciplesChart[type].push({ principle: principle.title, score: principlePercentage })
-      }
+      categoryScoreTotal += principlePct
+      categoryMaxTotal += 100
     })
 
-    // If there were any scored principles, compute bar chart entry
     if (categoryMaxTotal > 0) {
-      barChartData[cat.category] = {
+      barChartData.push({
         category: cat.category,
         score: (categoryScoreTotal / categoryMaxTotal) * 100
-      }
+      })
     }
   })
 
-  // Final assembly
-  chartsByType[type] = chartCategories
-  barChartByType[type] = Object.values(barChartData)
-
-  return { allPrinciplesChart, barChartByType, chartsByType }
+  return { allPrinciplesChart, barChartData }
 }
 
-// Section wrapper to add a title and spacing around each chart block
-const ChartSection = ({ title, children }) => (
-  <div style={{ marginBottom: '3rem' }}>
-    <h3>{title}</h3>
-    {children}
-  </div>
-)
-
-// Wraps RadarChart in a ResponsiveContainer for automatic sizing
-const RadarChartWrapper = ({ data }) => (
-  <ResponsiveContainer width="100%" height={500}>
-    <RadarChart cx="50%" cy="50%" outerRadius="70%" data={data}>
-      <PolarGrid />
-      <PolarAngleAxis dataKey="principle" tick={{ fontSize: 14 }} />
-      <PolarRadiusAxis domain={[0, 100]} tickFormatter={formatPercent} axisLine={false} tickLine={false} />
-      <Tooltip formatter={formatPercent} />
-      <Radar name="Score" dataKey="score" stroke="#8884d8" fill="#8884d8" fillOpacity={0.6} />
-    </RadarChart>
-  </ResponsiveContainer>
-)
-
-// Wraps BarChart for category score overview
-const BarChartWrapper = ({ data }) => (
-  <ResponsiveContainer width="100%" height={400}>
-    <BarChart data={data} layout="vertical" margin={{ left: 50, right: 30 }}>
-      <CartesianGrid strokeDasharray="3 3" />
-      <XAxis type="number" domain={[0, 100]} tickFormatter={formatPercent} />
-      <YAxis dataKey="category" type="category" tick={{ fontSize: 14 }} width={150} />
-      <Tooltip formatter={formatPercent} />
-      <Legend />
-      <Bar dataKey="score" fill="#8884d8" name="Score (%)" />
-    </BarChart>
-  </ResponsiveContainer>
-)
-
 // Component for displaying visual results for system-level scores
-export default function SystemCharts({ answers }) {
+export default function SystemCharts({ answers, categories }) {
   // Compute chart data once per change in answers
-  const { allPrinciplesChart, barChartByType, chartsByType } = useMemo(() => computeSystemCharts(answers), [answers])
+  const { allPrinciplesChart, barChartData } = useMemo(() => computeSystemScores(answers, categories), [answers, categories])
 
   return (
-    <section className="section-box">
-      <h2>System-Level Assessment</h2>
+    <section className='dashboard-section'>
+      <h2>System-Level</h2>
 
-      {/* Overview radar if data exists */}
-      {allPrinciplesChart.system?.length > 0 && (
-        <ChartSection title="All Principles Overview">
-          <RadarChartWrapper data={allPrinciplesChart.system} />
-        </ChartSection>
+      {allPrinciplesChart.length > 0 && (
+        <div className='chart-card'>
+          <h3>Average Score Per Principle</h3>
+          <ResponsiveContainer width='100%' height={600}>
+            <RadarChart data={allPrinciplesChart}>
+              <PolarGrid />
+              <PolarAngleAxis dataKey='principle' tick={{ fontSize: 14 }} />
+              <PolarRadiusAxis
+                domain={[0, 100]}
+                tickFormatter={formatPercent}
+                axisLine={false}
+                tickLine={false}
+              />
+              <Tooltip formatter={formatPercent} />
+              <Legend />
+              <Radar
+                name='Score (%)'
+                dataKey='score'
+                stroke='#8884d8'
+                fill='#8884d8'
+                fillOpacity={0.6}
+              />
+            </RadarChart>
+          </ResponsiveContainer>
+        </div>
       )}
 
-      {/* Category score bar chart */}
-      {barChartByType.system?.length > 0 && (
-        <ChartSection title="Category Score Overview">
-          <BarChartWrapper data={barChartByType.system} />
-        </ChartSection>
+      {barChartData.length > 0 && (
+        <div className='chart-card' style={{ marginTop: '3rem' }}>
+          <h3>Average Score Per Category</h3>
+          <ResponsiveContainer width='100%' height={400}>
+            <BarChart
+              data={barChartData}
+              layout='vertical'
+              margin={{ left: 20, right: 20 }}
+            >
+              <CartesianGrid strokeDasharray='3 3' />
+              <XAxis
+                type='number'
+                domain={[0, 100]}
+                tickFormatter={formatPercent}
+              />
+              <YAxis
+                dataKey='category'
+                type='category'
+                tick={{ fontSize: 14 }}
+                width={140}
+              />
+              <Tooltip formatter={formatPercent} />
+              <Legend />
+              <Bar
+              dataKey='score'
+              fill='#8884d8'
+              name='Score (%)'
+              barSize={55}
+              />
+            </BarChart>
+          </ResponsiveContainer>
+        </div>
       )}
-
-      {/* Detailed radar per category */}
-      {Object.entries(chartsByType.system || {}).map(([category, data]) => (
-        <ChartSection key={category} title={category}>
-          <RadarChartWrapper data={data} />
-        </ChartSection>
-      ))}
     </section>
   )
 }
