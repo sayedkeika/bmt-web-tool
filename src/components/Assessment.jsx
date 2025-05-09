@@ -1,5 +1,4 @@
 import React, { useRef, useEffect } from 'react'
-import BookIcon from '../svgs/book.svg'
 import LeftArrowIcon from '../svgs/left-arrow.svg'
 import RightArrowIcon from '../svgs/right-arrow.svg'
 
@@ -20,7 +19,6 @@ export default function Assessment({
   onPrev,
   onNext,
   onSubmit,
-  onOpenGlossary
 }) {
   // Save a response value for a criterion or requirement
   const handleAnswer = (criterionId, value) => {
@@ -113,8 +111,7 @@ export default function Assessment({
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
-            <button className='nav' onClick={onBackToStart}>← New Assessment</button>
-            <button className='nav' onClick={onOpenGlossary}>Glossary <img src={BookIcon} className='icon'/></button>
+            <button className='nav' onClick={onBackToStart} title='Start a new assessment'>← New Assessment</button>
           </div>
           <div className='nav-center'>
             <h4>{TYPE_LABELS[type]}</h4>
@@ -124,7 +121,7 @@ export default function Assessment({
             <button
                 className='nav'
                 onClick={onSubmit}
-                //disabled={!allAnswered}
+                disabled={!allAnswered}
                 title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
               >
                 Submit →

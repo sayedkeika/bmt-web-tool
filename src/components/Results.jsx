@@ -122,13 +122,13 @@ export default function Results({
         <div className='nav-header'>
           <div className='nav-left'>
             <button className='nav' onClick={onBackToAssessment}>← Back to Assessment</button>
-            <button className='nav' onClick={handleDownloadPDF}>Download Results as PDF <img src={DownloadIcon} className='icon'/></button>
+            <button className='nav download-pdf' onClick={handleDownloadPDF} title='Download as PDF'><img src={DownloadIcon} alt='Open Glossary' style={{ filter: 'brightness(0) invert(1)' }}/></button>
           </div>
           <div className='nav-center'>
             <h2>Results</h2>
           </div>
           <div className='nav-right'>
-            <button className='nav' onClick={handleDownloadCSV}>Download Assessment as CSV <img src={DownloadIcon} className='icon'/></button>
+            {/* <button className='nav' onClick={handleDownloadCSV}>Download Assessment as CSV <img src={DownloadIcon} className='icon'/></button> */}
             <button className='nav' onClick={onRestart}>Start New Assessment →</button>
           </div>
         </div>

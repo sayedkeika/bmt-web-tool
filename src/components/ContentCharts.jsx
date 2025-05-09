@@ -76,22 +76,22 @@ const computeContentScores = (answers, categories) => {
   )
 
   // Transform into bar
-  const principleBarData = []
-    Object.entries(principleScores).forEach(([category, principles]) => {
-      Object.entries(principles).forEach(([title, levels]) => {
-        const metM = levels.Mandatory.met,   totM = levels.Mandatory.total
-        const metB = levels.Basic.met,       totB = levels.Basic.total
-        const metA = levels.Advanced.met,    totA = levels.Advanced.total
-
-        principleBarData.push({
-          category,
+  const principleBarData = Object.fromEntries(
+    Object.entries(principleScores).map(([category, principles]) => [
+      category,
+      Object.entries(principles).map(([title, levels]) => {
+        const { met: metM, total: totM } = levels.Mandatory
+        const { met: metB, total: totB } = levels.Basic
+        const { met: metA, total: totA } = levels.Advanced
+        return {
           principle: title,
           Mandatory: totM > 0 ? (metM / totM) * 100 : 0,
           Basic:     totB > 0 ? (metB / totB) * 100 : 0,
           Advanced:  totA > 0 ? (metA / totA) * 100 : 0
-        })
+        }
       })
-    })
+    ])
+  )
 
   return { scoreByCategory, principleScores, pieDataByCategory, principleBarData }
 }
@@ -106,11 +106,12 @@ export default function ContentCharts({ answers, categories }) {
     <div>
       <h2>Content-Level</h2>
 
-      {/* Pie Charts Section */}
+      {/* Per Category Section */}
       <section className='dashboard-section'>
-        <h3>Average Score Per Category</h3>
+        <h3>Score Per Category</h3>
         
         {/* Minimum Backstop */}
+        {/**
         {minimumBackstopCategory && (
           <section className='dashboard-section'>
             <div className='chart-grid'>
@@ -166,7 +167,37 @@ export default function ContentCharts({ answers, categories }) {
             </div>
           </section>
         )}
+        */}
 
+        {/* Per Category Table */}
+        <table className='content-table'>
+          <thead>
+            <tr>
+              <th rowSpan='2'>Category</th>
+              <th colSpan='3'>Fraction of applicable requirements covered</th>
+            </tr>
+            <tr>
+              {LEVELS.map(level => <th key={level}>{level}</th>)}
+            </tr>
+          </thead>
+          <tbody>
+            {Object.entries(scoreByCategory).map(([category, levels]) => (
+              <tr key={category}>
+                <td>{category}</td>
+                {LEVELS.map(level => {
+                  const { met, total } = levels[level]
+                  return (
+                    <td key={level}>
+                      {`${met}/${total}`}
+                    </td>
+                  )
+                })}
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        
+        {/* Per Category Pie Charts */}
         <div className='chart-grid'>
           {Object.entries(pieDataByCategory).map(([category, pies]) => (
             <div className='chart-card' key={category}>
@@ -220,116 +251,97 @@ export default function ContentCharts({ answers, categories }) {
           ))}
         </div>
       </section>
+      
+      {/* Per Principle Section */}
+      <h3>Score Per Principle</h3>
+      
+      {Object.entries(principleScores).map(([category, principles]) => {
+        const data = principleBarData [category]
+        const BAR_SIZE = 45
+        const BAR_GAP = 40
+        const PADDING = 70
+        const height = data.length * (BAR_SIZE + BAR_GAP) + PADDING
+        
+        return (
+          <div key={category} className='dashboard-section'>
+            <h4>{category}</h4>
 
-      {/* Content-Level Assessment Table */}
-      <table className='content-table'>
-        <thead>
-          <tr>
-            <th rowSpan='2'>Category</th>
-            <th colSpan='3'>Fraction of applicable requirements covered</th>
-          </tr>
-          <tr>
-            {LEVELS.map(level => <th key={level}>{level}</th>)}
-          </tr>
-        </thead>
-        <tbody>
-          {Object.entries(scoreByCategory).map(([category, levels]) => (
-            <tr key={category}>
-              <td>{category}</td>
-              {LEVELS.map(level => {
-                const { met, total } = levels[level]
-                return (
-                  <td key={level}>
-                    {`${met}/${total}`}
-                  </td>
-                )
-              })}
-            </tr>
-          ))}
-        </tbody>
-      </table>
-
-      <h3>Average Score Per Principle</h3>
-
-      <section className='dashboard-section'>
-        <ResponsiveContainer
-          width='100%'
-          height={Math.max(principleBarData.length * 50 + 80, 600)}
-        >
-          <BarChart
-            data={principleBarData}
-            layout='vertical'
-            margin={{ left: 200, top: 20, right: 20, bottom: 20 }}
-            barCategoryGap='20%'
-          >
-            <CartesianGrid strokeDasharray='3 3' />
-            <XAxis
-              type='number'
-              domain={[0, 100]}
-              tickFormatter={v => `${v.toFixed(0)}%`}
-            />
-            <YAxis
-              dataKey='principle'
-              type='category'
-              width={200}
-              tick={{ fontSize: 14 }}
-            />
-            <Tooltip formatter={v => `${v.toFixed(0)}%`} />
-            <Legend />
-            <Bar
-              dataKey='Mandatory'
-              fill='#8884d8'
-              name='Mandatory'
-              barSize={20}
-            />
-            <Bar
-              dataKey='Basic'
-              fill='#82ca9d'
-              name='Basic'
-              barSize={20}
-            />
-            <Bar
-              dataKey='Advanced'
-              fill='#ffc658'
-              name='Advanced'
-              barSize={20}
-            />
-          </BarChart>
-        </ResponsiveContainer>
-      </section>
-
-      {/* Principle-Level Tables */}
-      {Object.entries(principleScores).map(([category, principles]) => (
-        <div key={category}>
-          <h4>{category}</h4>
-          <table className='content-table'>
-            <thead>
-              <tr>
-                <th rowSpan='2'>Principle</th>
-                <th colSpan='3'>Fraction of applicable requirements covered</th>
-              </tr>
-              <tr>
-                {LEVELS.map(level => <th key={level}>{level}</th>)}
-              </tr>
-            </thead>
-            <tbody>
-              {Object.entries(principles).map(([title, levels]) => (
-                <tr key={title}>
-                  <td>{title}</td>
-                  {LEVELS.map(level => {
-                    const { met, total } = levels[level]
-                    return (
-                      <td key={level}>
-                        {`${met}/${total}`}
-                      </td>
-                    )
-                  })}
+            {/* Tables */}
+            <table className='content-table'>
+              <thead>
+                <tr>
+                  <th rowSpan='2'>Principle</th>
+                  <th colSpan='3'>Fraction of applicable requirements covered</th>
                 </tr>
-              ))}
-            </tbody>
-          </table>
-        </div>
-      ))}
+                <tr>
+                  {LEVELS.map(level => <th key={level}>{level}</th>)}
+                </tr>
+              </thead>
+              <tbody>
+                {Object.entries(principles).map(([title, levels]) => (
+                  <tr key={title}>
+                    <td>{title}</td>
+                    {LEVELS.map(level => {
+                      const { met, total } = levels[level]
+                      return (
+                        <td key={level}>
+                          {`${met}/${total}`}
+                        </td>
+                      )
+                    })}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            
+            {/* Bar Charts */}
+            <ResponsiveContainer
+              width='100%'
+              height={height}
+            >
+              <BarChart
+                data={data}
+                layout='vertical'
+                margin={{ left: 20, top: 20, right: 20, bottom: 20 }}
+                barCategoryGap={`${BAR_GAP}px`}
+              >
+                <CartesianGrid strokeDasharray='3 3' />
+                <XAxis
+                  type='number'
+                  domain={[0, 100]}
+                  tickFormatter={v => `${v.toFixed(0)}%`}
+                />
+                <YAxis
+                  dataKey='principle'
+                  type='category'
+                  width={140}
+                  tick={{ fontSize: 14 }}
+                />
+                <Tooltip formatter={v => `${v.toFixed(0)}%`} />
+                <Legend />
+                <Bar
+                  dataKey='Mandatory'
+                  fill='#8884d8'
+                  name='Mandatory'
+                  barSize={BAR_SIZE}
+                />
+                <Bar
+                  dataKey='Basic'
+                  fill='#82ca9d'
+                  name='Basic'
+                  barSize={BAR_SIZE}
+                />
+                <Bar
+                  dataKey='Advanced'
+                  fill='#ffc658'
+                  name='Advanced'
+                  barSize={BAR_SIZE}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        )
+      })}
     </div>
   )
 }

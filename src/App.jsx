@@ -5,6 +5,7 @@ import Assessment from './components/Assessment'
 import Results from './components/Results'
 import Glossary from './components/Glossary'
 import ScrollToTop from './components/ScrollToTop'
+import GlossaryToggle from './components/GlossaryToggle.jsx'
 
 // Main component for managing the overall workflow
 export default function App() {
@@ -130,8 +131,13 @@ export default function App() {
     </>
   )
 
-  if (!selectedTypes.length) return <Start onStart={handleStart} />
-
+  if (!selectedTypes.length) return (
+    <>
+      <Start onStart={handleStart} />
+      <GlossaryToggle onClick={() => setShowGlossary(true)} />
+      <ScrollToTop />
+    </>
+  )
   // After submission, show results
   if (submitted) return (
     <>
@@ -143,6 +149,7 @@ export default function App() {
         onRestart={handleRestart}
         onBackToAssessment={handleBackToAssessment}
       />
+      <GlossaryToggle onClick={() => setShowGlossary(true)} />
       <ScrollToTop />
     </>
   )
@@ -170,6 +177,7 @@ export default function App() {
             phases: selectedPhases
           }}
         />
+        <GlossaryToggle onClick={() => setShowGlossary(true)} />
         <ScrollToTop />
       </>
     )
