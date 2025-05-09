@@ -66,7 +66,7 @@ export default function SystemCharts({ answers, categories }) {
         {allPrinciplesChart.length > 0 && (
           <div>
             <h3>Score Per Principle</h3>
-            <ResponsiveContainer width='100%' height={500}>
+            <ResponsiveContainer width='100%' height={600}>
               <RadarChart data={allPrinciplesChart}>
                 <PolarGrid />
                 <PolarAngleAxis dataKey='principle' tick={{ fontSize: 14 }} />
