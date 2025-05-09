@@ -11,7 +11,7 @@ export const assessments = {
             principles: [
                 {
                     id: "p1",
-                    title: "Standards content",
+                    title: "Standards Content",
                     criteria: [
                         {
                             id: "SS-SS-1",
@@ -47,7 +47,7 @@ export const assessments = {
                 },
                 {
                     id: "p2",
-                    title: "Standard-setting process",
+                    title: "Standard-Setting Process",
                     criteria: [
                         {
                             id: "SS-SP-1",
@@ -79,7 +79,7 @@ export const assessments = {
                 },
                 {
                     id: "p3",
-                    title: "Standards consultation",
+                    title: "Standards Consultation",
                     criteria: [
                         {
                             id: "SS-SC-1",
@@ -179,7 +179,7 @@ export const assessments = {
             principles: [
                 {
                     id: "p4",
-                    title: "Assurance system",
+                    title: "Assurance System",
                     criteria: [
                         {
                             id: "AS-AS-1",
@@ -216,7 +216,7 @@ export const assessments = {
                 },
                 {
                     id: "p5",
-                    title: "Conformity assessment",
+                    title: "Conformity Assessment",
                     criteria: [
                         {
                             id: "AS-CA-1",
@@ -249,7 +249,7 @@ export const assessments = {
                 },
                 {
                     id: "p6",
-                    title: "Conformity assessment bodies",
+                    title: "Conformity Assessment Bodies",
                     criteria: [
                         {
                             id: "AS-CB-1",
@@ -402,7 +402,7 @@ export const assessments = {
                 },
                 {
                     id: "p8",
-                    title: "Oversight mechanism",
+                    title: "Oversight Mechanism",
                     criteria: [
                         {
                             id: "AS-OM-1",
@@ -747,7 +747,7 @@ export const assessments = {
             principles: [
                 {
                     id: "p13",
-                    title: "Scheme scope and objectives",
+                    title: "Scheme Scope and Objectives",
                     criteria: [
                         {
                             id: "GM-SO-1",
@@ -804,7 +804,7 @@ export const assessments = {
                 },
                 {
                     id: "p14",
-                    title: "Governance structure",
+                    title: "Governance Structure",
                     criteria: [
                         {
                             id: "GM-GS-1",
@@ -876,7 +876,7 @@ export const assessments = {
                 },
                 {
                     id: "p15",
-                    title: "Stakeholder participation",
+                    title: "Stakeholder Participation",
                     criteria: [
                         {
                             id: "GM-SP-1",
@@ -938,7 +938,7 @@ export const assessments = {
                 },
                 {
                     id: "p16",
-                    title: "Due diligence",
+                    title: "Due Diligence",
                     criteria: [
                         {
                             id: "GM-DD-1",
@@ -969,7 +969,7 @@ export const assessments = {
                 },
                 {
                     id: "p17",
-                    title: "Complaints and dispute resolution mechanism",
+                    title: "Complaints and Dispute Resolution Mechanism",
                     criteria: [
                         {
                             id: "GM-CD-1",
@@ -1008,7 +1008,7 @@ export const assessments = {
                     title: "Compliance",
                     criteria: [
                         {
-                            id: "c0",
+                            id: "COMPL-1",
                             text: "The scheme requires adherence to all applicable regional, national and international laws, regulations and agreements.",
                             requirements: [
                                 {
@@ -1031,10 +1031,10 @@ export const assessments = {
             principles: [
                 {
                     id: "p18",
-                    title: "Environmental management",
+                    title: "Environmental Management",
                     criteria: [
                         {
-                            id: "c61",
+                            id: "EN-EM-1",
                             text: "The scheme a requires an environmental management plan for relevant environmental topics.",
                             requirements: [
                                 {
@@ -1067,10 +1067,10 @@ export const assessments = {
                 },
                 {
                     id: "p19",
-                    title: "Climate change management",
+                    title: "Climate Change Management",
                     criteria: [
                         {
-                            id: "c62",
+                            id: "EN-CC-1",
                             text: "The scheme requires activities that reduce GHG emissions.",
                             examples: [
                                 "GHG emissions reductions activities can include, for example, increasing the use of renewable energy; increasing energy efficiency; increasing/stock soil carbon content; promoting activities such as forest restoration on working land."
@@ -1087,7 +1087,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c63",
+                            id: "EN-CC-2",
                             text: "The scheme requires quantification and disclosure of the certified product's lifecycle greenhouse gas emissions (GHG).",
                             examples: [
                                 "• Examples of existing standards and legislation include the EU Product Environmental Footprint.",
@@ -1121,7 +1121,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c64",
+                            id: "EN-CC-3",
                             text: "The scheme requires quantification and disclosure of the operator's total GHG emissions.",
                             examples: [
                                 "• Examples of existing standard and legislation include the GHG Protocol, ESRS E1-6",
@@ -1155,7 +1155,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c65",
+                            id: "EN-CC-4",
                             text: "The scheme requires a roadmap for reduction of the certified products' lifecycle GHG emissions.",
                             examples: [
                                 "• An example of interim targets include setting targets, for example, -10% by 2030, -50% by 2040, and -100% by 2050.",
@@ -1189,7 +1189,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c66",
+                            id: "EN-CC-5",
                             text: "The scheme requires a roadmap for reduction of the total GHG emissions of the operator.",
                             examples: [
                                 "See glossary for definition of \"carbon neutrality\", \"scope 1\", \"scope 2\" and \"scope 3\""
@@ -1231,6 +1231,997 @@ export const assessments = {
                         }
                     ]
                 },
+                {
+                    id: "p20",
+                    title: "Sustainable Land Use Management",
+                    criteria: [
+                        {
+                            id: "EN-LUM-1",
+                            text: "The scheme requires that no raw material is obtained from high-carbon stock areas.",
+                            examples: [
+                                "See glossary for definitions of \"High carbon stock areas\", \"raw material\", \"wetland\", \"continuously forested areas\", \"biomass\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r18",
+                                    level: "Mandatory",
+                                    text: "i. Biobased products produced from agricultural biomass shall not be made from raw material obtained from land with high-carbon stock, namely land that had one of the following statuses in January 2008 and no longer has that status: (a) wetlands; (b) continuously forested areas; (c) land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10% and 30%.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-2",
+                            text: "The scheme prohibits the degradation and/or drainage of peatlands and cultivation expansion into them.",
+                            examples: [
+                                "See glossary for definitions of \"raw material\", \"peatland\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r19",
+                                    level: "Mandatory",
+                                    text: "i. Raw material (here: agricultural biomass) shall not be obtained from land that was peatland in January 2008, unless evidence is provided that the cultivation and harvesting of that raw material does not involve drainage of previously undrained soil.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-3",
+                            text: "The scheme requires a monitoring and enforcement system to ensure the sustainability of harvesting operations. ",
+                            requirements: [
+                                {
+                                    id: "r20",
+                                    level: "Mandatory",
+                                    text: "i. The monitoring and enforcement system ensures:\n(1) the legality of harvesting operations;\n(2) forest regeneration of harvested areas;\n(3) that areas designated by international or national law or by the relevant competent authority for nature protection purposes are protected;\n(4) that harvesting is carried out considering maintenance of soil quality and biodiversity with the aim of minimising negative impacts; and\n(5) that harvesting maintains or improves the long-term production capacity of the forest",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-4",
+                            text: "The scheme requires that procured forest biomass originates from an area with climate plans guided by international agreements.",
+                            examples: [
+                                "See glossary for definition of \"LULUCF\", \"biomass\", \"carbon sink, \"carbon stock\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r21",
+                                    level: "Mandatory",
+                                    text: "i. The biobased materials are produced from forest biomass originating in a country or regional economic integration organisation that\n(a) is a Party to the Paris Agreement;\n(b) has submitted a nationally determined contribution (NDC) to the United Nations Framework Convention on Climate Change (UNFCCC), covering emissions and removals from agriculture, forestry and land use which ensures that changes in carbon stock associated with biomass harvest are accounted towards the country's commitment to reduce or limit greenhouse gas emissions as specified in the NDC; OR\n(c) has national or sub-national laws in place, in accordance with Article 5 of the Paris Agreement, applicable in the area of harvest, to conserve and enhance carbon stocks and sinks, and providing evidence that reported LULUCF-sector emissions do not exceed removals.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-5",
+                            text: "The scheme requires the development, implementation and monitoring of a forest management plan.",
+                            examples: [
+                                "The forest management plan can include for example the following: participation and consultation of relevant stakeholders; zoning or stratifying the forest area; calculating sustainable yields."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r22",
+                                    level: "Mandatory",
+                                    text: "i. A written forest management plan, which includes a forest resource assessment, is developed.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r23",
+                                    level: "Basic",
+                                    text: "ii. The plan must contain targets for sustainable forest management and a strategy to maintain and improve forest health.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r24",
+                                    level: "Basic",
+                                    text: "iii.  The plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-6",
+                            text: "The scheme requires that land use management is conducted using a relevant and credible methodology in forested areas.",
+                            examples: [
+                                "• Examples of recognised methodologies are the High Carbon Stock Approach, Closer to Nature Forest Management, Pro Silva principles",
+                                "• See glossary for definitions for \"Land use management\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r25",
+                                    level: "Basic",
+                                    text: "i. Land use management is conducted using a relevant and credible methodology in forested areas.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-7",
+                            text: "The scheme requires agro-ecological/regenerative practices to preserve and promote biodiversity.",
+                            examples: [
+                                "• Examples of regenerative agro-ecological practices include maintaining crop diversity at a certain percentage of arable land, maintaining permanent grasslands, maintaining cover crops between harvests that promote nutrient cycling/ nitrogen fixing.",
+                                "• Appropriate practices for local circumstances can include considerations regarding soil type and the local climate.",
+                                "• See glossary for definition of \"Regenerative agriculture and forestry\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r26",
+                                    level: "Basic",
+                                    text: "i. Appropriate regenerative/agro-ecological practices are in place with the goal of preserving and promoting biodiversity.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-8",
+                            text: "The scheme requires that forest regeneration is maintained or strengthened over the long term.",
+                            examples: [
+                                "• Regeneration methods are used to regenerate vegetation cover to pre-harvesting or more natural conditions.",
+                                "• The level of harvesting is sustained at the level or below the permanent natural replenishing rate of the forest."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r27",
+                                    level: "Basic",
+                                    text: "i. Regeneration methods are used to regenerate vegetation cover to pre-harvesting or more natural conditions. ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r28",
+                                    level: "Basic",
+                                    text: "ii. The level of harvesting is sustained at the level or below the permanent natural replenishing rate of the forest ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-9",
+                            text: "The scheme requires that raw material is not obtained or procured from deforested areas.",
+                            examples: [
+                                "• The EU Deforestation Regulation (EUDR) sets a cut-off date on 31 December 2020, meaning that only products that have been produced on land that has not been subject to deforestation or forest degradation after 31 December 2020 will be allowed on the EU market or to be exported from the EU.",
+                                "• See glossary for \"raw material\", \"forest degradation\" and \"deforestation\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r29",
+                                    level: "Basic",
+                                    text: "i. Raw material is obtained or procured from land that has not been subject to deforestation, and the wood has been harvested from the forest without inducing forest degradation.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-10",
+                            text: "The scheme requires that forest biomass produced with regenerative forest practices is prioritised in procurement processes and policies.",
+                            examples: [
+                                "See glossary for definition of \"regenerative agriculture and forestry\", \"biomass\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r30",
+                                    level: "Advanced",
+                                    text: "i. Forest biomass produced through regenerative forestry practices is prioritised in procurement processes and practices over biomass produced through non-regenerative practices.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Forest"],
+                                    applicablePhases: ["Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-11",
+                            text: "The scheme requires a management plan and strategies to reach low ILUC risk level.",
+                            examples: [
+                                "See glossary for definition of \"indirect land use change\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r31",
+                                    level: "Advanced",
+                                    text: "i. An ILUC risk assessment is conducted and documented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r32",
+                                    level: "Advanced",
+                                    text: "ii. A strategy to reach a low ILUC risk level is established.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-LUM-12",
+                            text: "The scheme requires that there is low indirect land use change (ILUC) risk.",
+                            examples: [
+                                "• A yield increase may be a result of improved agricultural practices, such as mechanisation/ automation (precision farming), increase in organic matter content, reduction of soil compaction/erosion, decrease in pests, intercropping or agroforestry, crop rotation, improved pollination, reduction of post-harvest losses etc.",
+                                "• See glossary for definition of \"biomass\"; \"indirect land use change\"; \supply chain\", \"abandoned land\", \"unused land\", \"severely degraded land\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r33",
+                                    level: "Advanced",
+                                    text: "i.Low ILUC risk is demonstrated by meeting at least one of the following:\na) Additional biomass is produced through an increase in yield without additional land conversion and any yield increase techniques applied do not create negative environmental trade-offs concerning for example soil quality or protection of biodiversity.\nb) The biomass used for biobased products production is a waste or a residue with low ILUC risk level.\c) The biomass used for biobased product production is derived from unused, abandoned or severely degraded land.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p21",
+                    title: "Protection of Biodiversity",
+                    criteria: [
+                        {
+                            id: "EN-BD-1",
+                            text: "The scheme requires identification and documentation of the high biodiversity value(s) in or near potential or existing operations.",
+                            examples: [
+                                "• High conservation values can be used for identification.",
+                                "• See glossary for definitions for \"land with high biodiversity value\" and \"high conservation value\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r34",
+                                    level: "Mandatory",
+                                    text: "i. The high biodiversity value(s) in or near potential or existing operations are identified and documented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-2",
+                            text: "The scheme prohibits cultivation of land with high biodiversity value.",
+                            examples: [
+                                "• Land with high biodiversity or conservation value can be used for operations if feedstock production or processing operations are legally authorised as part of the conservation management for the area concerned.",
+                                "• See glossary for definition(s) of \"land with high biodiversity value\", \"raw material\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r35",
+                                    level: "Mandatory",
+                                    text: "i. Biobased products produced from agricultural biomass shall not be made from raw material obtained from land with a high biodiversity value, in or after January 2008",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-3",
+                            text: "The scheme requires a baseline assessment of biodiversity.",
+                            examples: [
+                                "A baseline biodiversity assessment can include descriptions of, for example,  the production system, productive land, natural habitats, and presence of native, rare and endangered species."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r36",
+                                    level: "i. A baseline biodiversity assessment is conducted at site level.",
+                                    text: "Basic",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r37",
+                                    level: "ii. The baseline biodiversity assessment is reconducted regularly to monitor progress.",
+                                    text: "Basic",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-4",
+                            text: "The scheme prohibits the use of fire as a land-clearing method.",
+                            examples: [
+                                "An exception can be granted if (a) there is proof and permission from the competent authority that the use of fire is necessary to enhance or maintain ecosystem services and biodiversity and permitted by a competent authority (b) authority (e.g. local, regional or national) has granted an exemption for plant health reasons."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r38",
+                                    level: "Basic",
+                                    text: "i. Burning is prohibited as a method of land preparation and post-harvest disposal of residues, except in exceptional cases.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-5",
+                            text: "The scheme requires that field margins, buffer zones, boundaries and waterways are maintained and restored.",
+                            requirements: [
+                                {
+                                    id: "r39",
+                                    level: "Basic",
+                                    text: "i. Field margins, boundaries and watercourses are maintained and restored to support the conservation of native birds and animals in a way that takes into consideration local conditions.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-6",
+                            text: "The scheme requires measures to minimise habitat fragmentation.",
+                            examples: [
+                                "• Ecological corridors are examples of ways to minimise habitat fragmentation.",
+                                "• See glossary for definition of \"ecological corridor\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r40",
+                                    level: "Basic",
+                                    text: "i. Measures to minimise habitat fragmentation are taken.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-7",
+                            text: "The scheme requires careful management of the introduction, cultivation and use of invasive species in case of introduction.",
+                            examples: [
+                                "Check glossary for definition of \"invasive species\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r41",
+                                    level: "Basic",
+                                    text: "i. Practices are put in place to avoid invasive genetic variations (contaminants) in biomass planting material.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r42",
+                                    level: "Basic",
+                                    text: "ii. An invasive species management plan is established.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r43",
+                                    level: "Basic",
+                                    text: "iii. If using invasive species, due diligence research is to be conducted about the invasiveness of the species.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r44",
+                                    level: "Basic",
+                                    text: "iv. If a species is considered as highly invasive, the species shall not be used.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r45",
+                                    level: "Basic",
+                                    text: "v. In cases where invasive speciess are used, the traceability and proper labeling of these varieties must be ensured.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-8",
+                            text: "The scheme requires that genetically modified species are utilised with care and consideration.",
+                            requirements: [
+                                {
+                                    id: "r46",
+                                    level: "Basic",
+                                    text: "i. If using genetically modified species, due diligence research is to be conducted about the invasiveness of the species.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r47",
+                                    level: "Basic",
+                                    text: "ii. In cases where genetically modified varieties are used, the traceability and proper labeling of these varieties must be ensured.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-9",
+                            text: "The scheme requires measures for enhancing local wild genetic diversity.",
+                            requirements: [
+                                {
+                                    id: "r48",
+                                    level: "Advanced",
+                                    text: "i  Measures are taken for the enhancement of local wild genetic diversity.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-BD-10",
+                            text: "The scheme requires maintenance and/or rehabilitation of pollinator habitats.",
+                            requirements: [
+                                {
+                                    id: "r49",
+                                    level: "Advanced",
+                                    text: "i. Measures are taken to maintain and/or rehabilitate pollinator habitats on the premises.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p22",
+                    title: "Chemical Use Management",
+                    criteria: [
+                        {
+                            id: "EN-CM-1",
+                            text: "The scheme requires the development, implementation and monitoring of an Integrated Pest Management plan",
+                            examples: [
+                                "See glossary for definition of \"plant protection products\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r50",
+                                    level: "Mandatory",
+                                    text: "i. A written Integrated Pest Management Plan (IPM) is in place",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r51",
+                                    level: "Basic",
+                                    text: "ii. The plan must contain targets for reducing the use of plant protection products.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r52",
+                                    level: "Basic",
+                                    text: "iii.  The plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-CM-2",
+                            text: "The scheme requires proper application of plant protection products and fertiliser as well as appropriate equipment maintenance.",
+                            examples: [
+                                "See glossary for definition of \"plant protection products\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r53",
+                                    level: "Mandatory",
+                                    text: "i. Records are kept of the application of plant protection products and fertilisers, showing type of chemical, application time, and amount.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r54",
+                                    level: "Mandatory",
+                                    text: "ii. Only plant protection products that are officially registered and permitted in the production country for the respective crops are used.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r55",
+                                    level: "Basic",
+                                    text: "iii. Best practices are respected considering, for example,  (a) the timing and concentration of application; (b) maximum authorised rates of application; (c) restricted entry intervals; and (d) pre-harvest intervals. ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r56",
+                                    level: "Basic",
+                                    text: "iv. Maintenance of chemical application equipment is conducted regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-CM-3",
+                            text: "The scheme requires safe handling and disposal of substances.",
+                            examples: [
+                                "See glossary for definition of \"procedure\": \"hazardous substances\", \"substance\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r57",
+                                    level: "Mandatory",
+                                    text: "i. Storage, handling, use and disposal of substances is conducted based on the manufacturer's safety instructions.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r58",
+                                    level: "Basic",
+                                    text: "ii. Procedures are in place on how to handle cases of hazardous substance spills.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-CM-4",
+                            text: "The scheme prohibits and/or regulates the use of hazardous substances.",
+                            examples: [
+                                "• Specifically referring to: WHO's 1a and 1b lists, Annex III of the Rotterdam Convention, Stockholm Convention on Persistent Organic Pollutants, Montreal Protocol on Substances that Deplete the Ozone Layer.",
+                                "• See glossary for definition of \"substances of very high concern\", \"hazardous substances\", \"substances\"; \"substances that are carcinogenic, mutagenic or toxic to reproduction\".",
+                                "• Criteria laid down in Article 57 can be found at https://reachonline.eu/reach/en/title-vii-chapter-1-article-57.html"
+                            ],
+                            requirements: [
+                                {
+                                    id: "r59",
+                                    level: "Mandatory",
+                                    text: "i. The use of substances addressed by WHO, Rotterdam Convention, or the Stockholm Convention are prohibited.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r60",
+                                    level: "Basic",
+                                    text: "ii. The use of substances addressed by the Montreal Protocol is prohibited.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r61",
+                                    level: "Basic",
+                                    text: "iii.The use of substances classified as carcinogenic (category 1a or 1b), mutagenic (category 1a or 1b) or reprotoxic (category 1a or 1b) by the Globally Harmonized System of Classification and Labelling of Chemicals (GHS) is prohibited.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r62",
+                                    level: "Basic",
+                                    text: "iv. The use of substances meeting the criteria laid down in Article 57 of the EU REACH regulation, notably substances meeting the criteria for classification as carcinogenic, mutagenic or toxic for reproduction, is prohibited for some or all applications.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r63",
+                                    level: "Advanced",
+                                    text: "v. The use of substances identified as \"substances of very high concern\" under the EU REACH regulation is prohibited.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-CM-5",
+                            text: "The scheme requires a plan to phase out hazardous substances.",
+                            examples: [
+                                "See glossary for \"hazardous substances\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r64",
+                                    level: "Advanced",
+                                    text: "i. A plan to phase out hazardous substances as comprehensively as possible is set out.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r65",
+                                    level: "Advanced",
+                                    text: "ii. The plan must contain targets to reduce the use of hazardous substances.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r66",
+                                    level: "Advanced",
+                                    text: "iii. The plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p23",
+                    title: "Soil Management",
+                    criteria: [
+                        {
+                            id: "EN-SM-1",
+                            text: "The scheme requires that the use of agrarian and forestry residues for biobased products shall not be at the expense of soil quality and soil carbon.",
+                            examples: [
+                                "Traditional uses can include fodder, natural fertiliser, material or local fuel."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r67",
+                                    level: "Mandatory",
+                                    text: "i. The use of agrarian and forestry residual products does not occur at the expense of the soil nutrient balance, soil organic matter balance or important traditional uses.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-SM-2",
+                            text: "The scheme requires implementation of practices to maintain or enhance soil quality.",
+                            examples: [
+                                "• Examples of conservation and rehabilitation practices include increased soil coverage, crop diversification, minimum tillage, use of cover crops, increasing organic matter, minimisation of soil disturbance, and protection of soil physical integrity through prevention and minimisation of soil erosion, compaction and drainage.",
+                                "• Examples of measures to prevent water loss and improving soil water holding capacity, proper tillage methods, increased soil organic matter, using cover crops etc.",
+                                "• Analysis of soil organic matter from periodic sampling of soil on the feedstock production site can help evaluate the effect of the soil management plan on the organic matter content.",
+                                "• See glossary for definition of \"runoff\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r68",
+                                    level: "Mandatory",
+                                    text: "i. The health and/or quality of soil organic matter is maintained or enhanced through rehabilitation measures.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r69",
+                                    level: "Mandatory",
+                                    text: "ii. Soil structure is maintained or enhanced including the prevention and mitigation of compaction and degradation.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r70",
+                                    level: "Basic",
+                                    text: "iii. Samples of soil organic matter are taken and stored on-site in appropriate conditions (e.g. method, temperature, duration).",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r71",
+                                    level: "Basic",
+                                    text: "iv. Actions are taken to improve soil water holding capacity with the aim of preventing water loss through runoff or evaporation.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r72",
+                                    level: "Advanced",
+                                    text: "v. Measures are taken to maintain and/or improve soil biodiversity.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-SM-3",
+                            text: "The scheme requires that measures are taken and cultivation techniques are used to reduce the risk of soil erosion.",
+                            requirements: [
+                                {
+                                    id: "r73",
+                                    level: "Basic",
+                                    text: "i. Topographic risks are accounted for in soil management and activities are avoided in and around areas where these risks have been identified. ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-SM-4",
+                            text: "The scheme requires the use of minimal intervention techniques to minimise damages to soil.",
+                            examples: [
+                                "The impact of heavy machinery and the building of access roads can lead to superficial and deep impacts, such as: soil erosion; soil removal; soil displacement; soil compaction; rutting; puddling and consequent hydromorphology; soil asphyxiation; the stimulation of germination of competing social herbaceous or semi-ligneous species. All these impacts hamper the natural regeneration of forest soil."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r74",
+                                    level: "Mandatory",
+                                    text: "i. Minimal intervention techniques are used when building and utilising infrastructure.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r75",
+                                    level: "Advanced",
+                                    text: "ii. Soil scarification is only used in exceptional cases if required to achieve sufficient regeneration.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r76",
+                                    level: "Advanced",
+                                    text: "iii. The lightest appropriate soil scarification method is used to minimise impacts on soil and lichen.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-SM-5",
+                            text: "The scheme requires the development, implementation and monitoring of a nutrient management plan.",
+                            examples: [
+                                "See glossary for definition of \"4R principle for nutrient stewardship\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r77",
+                                    level: "Basic",
+                                    text: "i. A written nutrient management plan is established.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r78",
+                                    level: "Basic",
+                                    text: "ii.  The plan is updated and progress is monitored regularly ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                },
+                                {
+                                    id: "r79",
+                                    level: "Advanced",
+                                    text: "iii. The nutrient management plan is based on the 4Rs principle.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p24",
+                    title: "Air Quality",
+                    criteria: [
+                        {
+                            id: "EN-AQ-1",
+                            text: "The scheme requires measures to limit the emission of harmful substances into the air.",
+                            examples: [
+                                "Harmful substances can include carbon monoxide, nitrous oxides (NOx), volatile organic compounds (VOC), particulate matter (PM2.5), sulphur compounds, ozone (O3), sulphur dioxide (SO2), smoke, odors and dioxins."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r80",
+                                    level: "Mandatory",
+                                    text: "i. Measures are taken to limit the emission of harmful substances into the air.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r81",
+                                    level: "Basic",
+                                    text: "ii. Air quality is measured regularly in the area of operation and analysed.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                    ]
+                },
+                {
+                    id: "p25",
+                    title: "Water Quality and Conservation",
+                    criteria: [
+                        {
+                            id: "EN-WQ-1",
+                            text: "The scheme requires that water use does not exceed the natural replenishment rate.",
+                            examples: [
+                                "Examples of ways to ensure that water consumption does not exceed natural replenishment capacities include recycling gray water and rain water collection."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r82",
+                                    level: "Mandatory",
+                                    text: "i. The water consumption and withdrawals of the operator do not exceed the natural replenishment rate.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-WQ-2",
+                            text: "The scheme requires measures for optimising water use efficiency.",
+                            requirements: [
+                                {
+                                    id: "r83",
+                                    level: "Mandatory",
+                                    text: "i. Water is used efficiently and good water management measures are implemented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-WQ-3",
+                            text: "The scheme requires measures for water pollution prevention or minimisation.",
+                            examples: [
+                                "See glossary for definitions for \"point source pollution\", \"nonpoint source pollution\", \"sewage\", \"sludge\" and \"slurry\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r84",
+                                    level: "Mandatory",
+                                    text: "i. Measures are in place to prevent or minimise point and nonpoint source pollution.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r85",
+                                    level: "Basic",
+                                    text: "ii. The use and discharge of untreated sewage, sludge and slurry of human origin is prohibited.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r86",
+                                    level: "Basic",
+                                    text: "iii. Buffer zones are installed along natural watercourses",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-WQ-4",
+                            text: "The scheme requires records of water use and quality.",
+                            requirements: [
+                                {
+                                    id: "r87",
+                                    level: "Basic",
+                                    text: "i. Water consumption is evidenced by water monitoring records.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r88",
+                                    level: "Basic",
+                                    text: "ii. The quality of water is tested regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r89",
+                                    level: "Advanced",
+                                    text: "iii. Water quality is evidenced by water quality monitoring records.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p26",
+                    title: "Energy Use & Efficiency",
+                    criteria: [
+                        {
+                            id: "EN-EE-1",
+                            text: "The scheme requires the development, implementation and monitoring of an energy management plan, including energy use reduction and increasing the share of renewable energy.",
+                            examples: [
+                                "See definition in glossary for \"renewable energy\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r90",
+                                    level: "Advanced",
+                                    text: "i. A written energy management plan is in place that considers energy use reduction and increasing the share of renewable energy.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r91",
+                                    level: "Advanced",
+                                    text: "ii. The energy manamagent plan contains targets for energy use reduction and for increasing the share of renewable energy.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r92",
+                                    level: "Advanced",
+                                    text: "iii. The energy management plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "EN-EE-2",
+                            text: "The scheme requires that a certain percentage of the operator's total direct energy use derives from renewable energy sources.",
+                            examples: [
+                                "See definition in glossary for \"renewable energy\"."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r93",
+                                    level: "Advanced",
+                                    text: "i. A certain percentage of the operator's total direct energy derives from renewable energy sources.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                    ]
+                }
             ]
         },
         {
@@ -1238,11 +2229,11 @@ export const assessments = {
             category: "Circularity",
             principles: [
                 {
-                    id: "p26",
-                    title: "Circular resource use",
+                    id: "p27",
+                    title: "Circular Resource Use",
                     criteria: [
                         {
-                            id: "c106",
+                            id: "CR-CRU-1",
                             text: "The scheme requires the 9R framework and/or the cascading use principle to be the main guiding principle of resource use.",
                             examples: [
                                 "See glossary for definitions for \"9R framework\" and \"cascading use principle\""
@@ -1259,7 +2250,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c107",
+                            id: "CR-CRU-2",
                             text: "The scheme requires that virgin biomass is harvested at levels that ensure regeneration.",
                             examples: [
                                 "See glossary for definitions for \"virgin biomass\""
@@ -1276,8 +2267,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c108",
-                            text: "The scheme requires a plan for the improvement of the share of circular inflows in production ",
+                            id: "CR-CRU-3",
+                            text: "The scheme requires a plan for the improvement of the share of circular inflows in production.",
                             examples: [
                                 "• The industry average can be calculated using existing test methodologies; or obtained from reference literature.",
                                 "• See glossary for definitions for \"circular inflow\", \"inflow\"."
@@ -1310,7 +2301,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c109",
+                            id: "CR-CRU-4",
                             text: "The scheme requires the development and implementation of a circular procurement plan ",
                             examples: [
                                 "• Circular material inflows are materials that are produced in accordance with the principles of circular economy. These include recycled material and virgin biomass that is regeneratively produced.",
@@ -1326,9 +2317,15 @@ export const assessments = {
                                     applicablePhases: ["Final product manufacturer"]
                                 }
                             ]
-                        },
+                        }
+                    ]
+                },
+                {
+                    id: "p28",
+                    title: "Circular Design & Material Cycling",
+                    criteria: [
                         {
-                            id: "c110",
+                            id: "CR-CD-1",
                             text: "The scheme requires re-using or recycling of residual flows in a sustainable manner.",
                             examples: [
                                 "• Residual flows and waste can be used for energy generation in certain circumstances  where (1) the use for material purposes is not possible (e.g. no market is accessible) and (2) the use provides a greenhouse gas benefit in comparison to the alternative.",
@@ -1346,7 +2343,7 @@ export const assessments = {
                                 {
                                     id: "r101",
                                     level: "Advanced",
-                                    text: "ii. Residual flows and waste are used for energy generation only in certain circumstances. ",
+                                    text: "ii. Residual flows and waste are used for energy generation only in certain circumstances.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
@@ -1354,13 +2351,13 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c111",
-                            text: "The scheme requires measures to increase material efficiency in production processes",
+                            id: "CR-CD-2",
+                            text: "The scheme requires measures to increase material efficiency in production processes.",
                             requirements: [
                                 {
                                     id: "r102",
                                     level: "Basic",
-                                    text: "i. Measures are taken to reduce the material intensity of production per unit. ",
+                                    text: "i. Measures are taken to reduce the material intensity of production per unit.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
@@ -1368,7 +2365,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c112",
+                            id: "CR-CD-3",
                             text: "The scheme requires products to be designed for repairability and reusability, when possible.",
                             examples: [
                                 "• Examples of repairability and reusability practices include: (A) Spare parts essential to the functionality of the products are accessible at a reasonable  price;  (B) Designed for easy inspecting, non-destructive dismantling, and replaceability with commonly available tools ; (C) Spare parts are not unnecessarily bundled, (D) Use of standardised components and tools, (E) Access to repair and maintenance manuals and documentation.",
@@ -1379,7 +2376,7 @@ export const assessments = {
                                 {
                                     id: "r103",
                                     level: "Advanced",
-                                    text: "i. Product is designed for repairability and reusability. ",
+                                    text: "i. Product is designed for repairability and reusability.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Final product manufacturer"]
@@ -1403,10 +2400,10 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c113",
-                            text: "The scheme requires products to be designed for high-quality recyclability",
+                            id: "CR-CD-4",
+                            text: "The scheme requires products to be designed for high-quality recyclability.",
                             examples: [
-                                "See glossary for definition of \"high-quality recycling\", \"recycling\", \"9R framework\""
+                                "See glossary for definition of \"high-quality recycling\", \"recycling\", \"9R framework\"."
                             ],
                             requirements: [
                                 {
@@ -1430,12 +2427,12 @@ export const assessments = {
                     ]
                 },
                 {
-                    id: "p27",
-                    title: "Responsible waste management",
+                    id: "p29",
+                    title: "Responsible Waste Management",
                     criteria: [
                         {
-                            id: "c114",
-                            text: "The scheme requires safe and proper storage, transportation and disposal of waste. ",
+                            id: "CR-WM-1",
+                            text: "The scheme requires safe and proper storage, transportation and disposal of waste.",
                             requirements: [
                                 {
                                     id: "r108",
@@ -1448,7 +2445,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c115",
+                            id: "CR-WM-2",
                             text: "The scheme does not allow the use of landfills or open-air burning for waste disposal or for burning residues and by-products.",
                             examples: [
                                 "• The scheme can allow the following exceptions for instances where open-air burning is acceptable in a limited fashion: health and safety of workers is at risk; there are no viable alternatives in terms of availability or cost; burning may prevent natural fires; OR the cultivation of the crop require regular burning for its long-term viability and there are no equivalent alternatives.",
@@ -1482,11 +2479,11 @@ export const assessments = {
             category: "Social",
             principles: [
                 {
-                    id: "p28",
-                    title: "Labour and human rights",
+                    id: "p30",
+                    title: "Labour and Human Rights",
                     criteria: [
                         {
-                            id: "c116",
+                            id: "SOC-LR-1",
                             text: "The scheme requires adherence and commitment to the Universal Declaration of Human Rights and the ILO Core Conventions.",
                             examples: [
                                 "See glossary for \"ILO Core Conventions\""
@@ -1511,8 +2508,8 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c117",
-                            text: "The scheme requires effective management of ILO Core Conventions in its own operations",
+                            id: "SOC-LR-2",
+                            text: "The scheme requires effective management of ILO Core Conventions in its own operations.",
                             examples: [
                                 "See glossary for definition of \"ILO Core Conventions\""
                             ],
@@ -1568,7 +2565,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c118",
+                            id: "SOC-LR-3",
                             text: "The scheme requires the operator to ensure that there is no child labour in its own operations. (C138, C182)",
                             examples: [
                                 "See glossary for definition of \"child labour\""
@@ -1609,7 +2606,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c119",
+                            id: "SOC-LR-4",
                             text: "The scheme requires the operator to ensure that there is no forced labour in its own operations (C105, C029)",
                             examples: [
                                 "See glossary for definition of \"forced labour\""
@@ -1626,7 +2623,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c120",
+                            id: "SOC-LR-5",
                             text: "The scheme requires that the rights of all workers to freedom of association and collective bargaining are respected, free from interference. (C087, C098)",
                             examples: [
                                 "See glossary for definition of \"collective bargaining\", \"freedom of association\""
@@ -1649,6 +2646,1007 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 }
                             ]
+                        },
+                        {
+                            id: "SOC-LR-6",
+                            text: "The scheme requires fair remuneration of workers.",
+                            examples: [
+                                "• Payment based on objective appraisal can be based on, for example, hours worked and volume produced.",
+                                "• See glossary for definition of \"collective bargaining\", \"living wage\", \"supply chain\"",
+                                "• Examples of practices to be limited include employing temporary workers for permanent or ongoing tasks; not compensating curtailed days (by management or due to workplace incidents/injuries) as full days; voluntary wage deductions such as advance payments, union membership, or loans without written or verbal consent from the worker; wage deductions as a disciplinary measure; deductions for work-related to tools, equipment or gear (unless permitted by applicable law); in-kind benefits exceeding 30% of the total remuneration; piece-rate workers not guaranteed at least the minimum wage including benefits for all workers or temporary workers employed inappropriately for permanent or ongoing tasks."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r126",
+                                    level: "Mandatory",
+                                    text: "i. The worker is paid at least a living wage or the wage negotiated through a collective bargaining agreement (whichever is higher).",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r127",
+                                    level: "Basic",
+                                    text: "ii. Work is compensated based on an objective appraisal of performance (C100).",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r128",
+                                    level: "Basic",
+                                    text: "iii. Workers are provided with proof of payment for each paycheck.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r129",
+                                    level: "Advanced",
+                                    text: "iv. Measures are taken to limit the reduction of workers’ pay and/or benefits.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r130",
+                                    level: "Advanced",
+                                    text: "v. A plan is established  for raising wages to living wage or beyond from members of the direct upstream supply chain.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-7",
+                            text: "The scheme requires an effective grievance mechanism to be in place that enables stakeholders to raise concerns related to the operator's activities.",
+                            examples: [
+                                "• Complaints can relate to a variety of issues, and may be any measure or situation which concerns the relations between the operator and the worker or which affects or may affect the conditions of employment of one or several workers in the operation when that measure or situation contradicts an applicable collective agreement, law or regulation or otherwise.",
+                                "• The grievance mechanism may be provided by the operator or by a third party.",
+                                "• See glossary for definition of \"conflict resolution\", \"grievance mechanism\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r131",
+                                    level: "Mandatory",
+                                    text: "i. A grievance mechanism is in place that is easily accessible to all parties who may be adversely impacted by the operations.(R130)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r132",
+                                    level: "Basic",
+                                    text: "ii. All workers are aware of the rules and practices governing the grievance mechanism.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r133",
+                                    level: "Basic",
+                                    text: "iii. Grievances are solved in an effective, timely and appropriate manner, ensuring anonymity and confidentiality of complainants when requested, without risk of reprisal or intimidation.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r134",
+                                    level: "Basic",
+                                    text: "iv. A conflict resolution mechanism is in place that includes the option of access to independent legal and technical advice, the ability for complainants to choose individuals or groups to support them or act as observers, or the option of a third-party mediator. (R130)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r135",
+                                    level: "Basic",
+                                    text: "v. The worker who submitted a grievance is kept informed of the steps being taken under the procedure and the action taken on their grievance. (R130)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-8",
+                            text: "The scheme requires a written disciplinary procedure.",
+                            examples: [
+                                "See glossary for definition of \"procedure\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r136",
+                                    level: "Advanced",
+                                    text: "i. A written disciplinary procedure is available.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r137",
+                                    level: "Advanced",
+                                    text: "ii. Records are kept of disciplinary procedures taken.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-9",
+                            text: "The scheme requires fair contract practices.",
+                            examples: [
+                                "Contracts can include the following information:\n(a) job duties;\n(b) location of the job;\n(c) working hours;\n(d) pay rate and/or method of calculation;\n(e) overtime pay rate;\n(f) frequency or schedule of payment;\n(g) deductions and benefits provided such as in-kind benefits;\n(h) paid leave;\n(i) medical leave and protections in case of illness, disability or accident; and\n(j) notice period for contract termination. "
+                            ],
+                            requirements: [
+                                {
+                                    id: "r138",
+                                    level: "Mandatory",
+                                    text: "i. All employees have a written or oral contract.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r139",
+                                    level: "Basic",
+                                    text: "ii. The operator keeps records of the contracts.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r140",
+                                    level: "Basic",
+                                    text: "iii. All workers understand the content of their employment contracts prior to the start of employment and have ongoing access to their contract. ",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r141",
+                                    level: "Basic",
+                                    text: "iv. Changes to the contract/employment terms document are recorded, communicated and accepted by the worker.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-10",
+                            text: "The scheme requires the operator to ensure there is no discrimination of any kind, whether in employment or opportunity (C111, C100)",
+                            examples: [
+                                "See glossary for definition of \"discrimination\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r142",
+                                    level: "Mandatory",
+                                    text: "i. Work of equal value is remunerated with equal pay without discrimination. (C111, C100)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r143",
+                                    level: "Basic",
+                                    text: "ii. Workers have equal access to trainings, benefits and opportunities",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-11",
+                            text: "The scheme requires the promotion of gender equality.",
+                            examples: [
+                                "• Examples of policies, processes and practices include records of internal equal opportunity policies; protocols and regulations; records of internal communication; records of worker exposure campaigns, applicable to e.g., recruitment, remuneration, and access to training, promotion and facilities.",
+                                "• See glossary for definition of \"gender equality\", \"skilled positions\", \"equal opportunity\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r144",
+                                    level: "Mandatory",
+                                    text: "i. There are practices in place to ensure the safety of female workers as well as equality with male workers.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r145",
+                                    level: "Basic",
+                                    text: "ii. Recruitment operations to encourage women’s presence across the operations are promoted.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r146",
+                                    level: "Advanced",
+                                    text: "iii. An objective is set for female representation in management and skilled positions.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-12",
+                            text: "The scheme requires that workers do not suffer from abuse, harassment, or violence. (C190)",
+                            requirements: [
+                                {
+                                    id: "r147",
+                                    level: "Basic",
+                                    text: "i. Practices are in place to prevent all forms of abuse, harassement and violence. (C190)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-13",
+                            text: "The scheme requires that employees are provided with opportunities to increase their skills and knowledge.",
+                            examples: [
+                                "Under this indicator, H&S training is not considered as vocational and/or occupational skills training."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r148",
+                                    level: "Basic",
+                                    text: "i. Vocational and/or occupational skills training is provided.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r149",
+                                    level: "Advanced",
+                                    text: "ii. Training time is treated as work time and compensated accordingly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-14",
+                            text: "The scheme requires that permanent workers are entitled to paid maternity leave, rights and benefits. (C183)",
+                            requirements: [
+                                {
+                                    id: "r150",
+                                    level: "Mandatory",
+                                    text: "i. Right to maternity leave is ensured as defined by ILO C183.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r151",
+                                    level: "Mandatory",
+                                    text: "ii. Workers that have taken maternity leave can return to their job after leave on the same terms and conditions. (C183)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-15",
+                            text: "The scheme requires provision of social security benefits.",
+                            requirements: [
+                                {
+                                    id: "r152",
+                                    level: "Basic",
+                                    text: "i. Workers are provided with information on health topics, medical leave policies, and the availability of primary/maternal/reproductive health services of the operator.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r153",
+                                    level: "Advanced",
+                                    text: "ii. Workers' access to social security benefits such as healthcare, sickness benefits, retirement benefits, invalidity and death benefits is ensured.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-16",
+                            text: "The scheme requires that only legitimate employment agencies and subcontractors are used.",
+                            requirements: [
+                                {
+                                    id: "r154",
+                                    level: "Advanced",
+                                    text: "i. All contracted employment agencies and labour subcontractors used by the operator are legally authorised to operate and registered with labour authorities.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-LR-17",
+                            text: "The scheme requires effective management of labour rights for subcontractors and subsidiaries as defined by the  Universal Declaration of Human Rights and the ILO Core Conventions.",
+                            examples: [
+                                "See glossary for definition of \"subcontractor\", \supply chain\", \"ILO Core Conventions\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r155",
+                                    level: "Basic",
+                                    text: "i. The scheme requires that subsidiaries and subcontractors are contractually required to uphold labor rights.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r156",
+                                    level: "Advanced",
+                                    text: "ii. The subsidiary/subcontractors have a policy on labour rights.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r157",
+                                    level: "Advanced",
+                                    text: "iii. Risk assessment on labour rights in supply chain is conducted regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r158",
+                                    level: "Advanced",
+                                    text: "iv. Mitigation measures based on risk assessment for labour rights are identified for supply chain.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r159",
+                                    level: "Advanced",
+                                    text: "v. The progress and effectiveness of the mitigation measures for the supply chain are monitored at a regular interval.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p31",
+                    title: "Healthy and Safe Working Conditions",
+                    criteria: [
+                        {
+                            id: "SOC-HS-1",
+                            text: "The scheme requires effective management and documentation of H&S hazards and risks",
+                            examples: [
+                                "• See glossary for definition of \"incident\", \"lost-time accident\", \"hazard\"",
+                                "• Examples of H&S hazards and risks to be assessed include occupational risks, environmental risks, heat stress, and pre-existing medical, mental and cognitive health issues.",
+                                "• Examples of occupational ill health include acute, recurring, chronic health problems such as muscoskeletal disorders and skin and respiratory diseases."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r160",
+                                    level: "Mandatory",
+                                    text: "i. A written H&S management plan is required.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r161",
+                                    level: "Basic",
+                                    text: "ii. The plan contains targets for improving the H&S of employees.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r162",
+                                    level: "Basic",
+                                    text: "iii. The plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r163",
+                                    level: "Basic",
+                                    text: "iv. H&S assessments are carried out regularly for all types of work on the premises.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r164",
+                                    level: "Basic",
+                                    text: "v. The results of the H&S assessment are communicated to employees in an accessible manner.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r165",
+                                    level: "Basic",
+                                    text: "vi. Employees are provided with the sufficient training and information to perform their job in a healthy and safe manner.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r166",
+                                    level: "Basic",
+                                    text: "vii. Cases of ill health that employees have developed due to their work tasks are recorded.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r167",
+                                    level: "Basic",
+                                    text: "viii. All incidents, non-fatal injuries and occupational fatalities are recorded.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r168",
+                                    level: "Advanced",
+                                    text: "ix. Workers who are exposed to conditions with a heightened H&S risk receive a medical examination at regular intervals.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r169",
+                                    level: "Advanced",
+                                    text: "x. Workers have access to the results of their medical examination.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r170",
+                                    level: "Advanced",
+                                    text: "xi. The number of lost-time accidents is lower than the sector average or a similar appropriate benchmark.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r171",
+                                    level: "Advanced",
+                                    text: "xii. An occupational H&S committee or individual, elected by the workforce, participates in or carries out regular occupational H&S reviews, and its findings and decisions are considered in the updating and implementation of the H&S risk assessment.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-HS-2",
+                            text: "The scheme requires that health and safety are ensured on the work premises",
+                            examples: [
+                                "See glossary for definition of \"personal protective equipment\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r173",
+                                    level: "Mandatory",
+                                    text: "i. All workers are provided with required personal protective equipment (PPE) in good condition. (C155)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r174",
+                                    level: "Basic",
+                                    text: "ii. A system is implemented to enforce the effective use of PPE.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r175",
+                                    level: "Basic",
+                                    text: "iii. Workers may leave situations of imminent danger without being penalized. (C184;C155)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r176",
+                                    level: "Basic",
+                                    text: "iv. Machines have clear instructions on safe usage that can be understood by the workers, and dangerous parts are guarded or encased. (C184)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r177",
+                                    level: "Basic",
+                                    text: "v. Machinery and other equipment are stored safely when not in use. (C184)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-HS-3",
+                            text: "The scheme requires that effective first aid and emergency responses are ensured on the work floor. (C155)",
+                            requirements: [
+                                {
+                                    id: "r178",
+                                    level: "Mandatory",
+                                    text: "i. Injured or ill persons receive medical treatment.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r179",
+                                    level: "Basic",
+                                    text: "ii. A written emergency response procedure is established and communicated to workers in an accessible manner.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r180",
+                                    level: "Basic",
+                                    text: "iii. The accident and emergency procedure includes information on marked fire exits, evacuation maps, and emergency drills.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r181",
+                                    level: "Basic",
+                                    text: "iv. First aid supplies are available in central locations and checked for quality.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r182",
+                                    level: "Basic",
+                                    text: "v. Dedicated personnel are trained to use these first aid supplies, and are present during working hours.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r183",
+                                    level: "Advanced",
+                                    text: "vi. There is firefighting equipment and equipment to remediate spillage of materials.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r184",
+                                    level: "Advanced",
+                                    text: "vii. Dedicated personnel are trained to use the firefighting and spillage equipment, and are present during working hours.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-HS-4",
+                            text: "The scheme requires that all workers have access to safe water and adequate sanitation facilities",
+                            examples: [
+                                "See glossary for definition of \"safe drinking water\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r185",
+                                    level: "Mandatory",
+                                    text: "i. Free and safe drinking water is provided to all workers.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r186",
+                                    level: "Mandatory",
+                                    text: "ii. Access is provided to free and safe water for e.g., hand washing, and skin cooling.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r187",
+                                    level: "Mandatory",
+                                    text: "iii. Access is provided to sufficient, clean and functioning toilet facilities.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-HS-5",
+                            text: "The scheme requires that working hours allow the workers to safely and healthily carry out their work.",
+                            examples: [
+                                "• A way for workers to safely carry out their work includes safe and healthy work operations in accordance with ILO Convention 1.",
+                                "• Adequate rest periods include: short breaks during working hours, sufficient breaks for meals, daily or nightly rest, weekly rest.",
+                                "• Challenging conditions con include night work, adverse weather conditions etc."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r188",
+                                    level: "Mandatory",
+                                    text: "i. Working hours allow the workers to safely carry out their work.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r189",
+                                    level: "Basic",
+                                    text: "ii. Adequate rest periods are provided (notwithstanding occasional exceptional circumstances).",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r190",
+                                    level: "Basic",
+                                    text: "iii. The scheme requires restrictions on hours of work for individuals working in challenging conditions.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r191",
+                                    level: "Basic",
+                                    text: "iv. Overtime is only permitted if it is voluntary and requested in a timely manner.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r192",
+                                    level: "Basic",
+                                    text: "v. Overwork is only permitted if the nature of the work and the workload allow work to be carried out without increased risk to safety and health.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r193",
+                                    level: "Basic",
+                                    text: "vi. A record of the number of regular hours and overtime hours of each worker is kept. (R116)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r194",
+                                    level: "Advanced",
+                                    text: "vii. Workers have safe transport home after work.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-HS-6",
+                            text: "The scheme requires that if accommodation is provided to workers, it is safe, clean, and satisfies their basic needs.",
+                            examples: [
+                                "• The requirements stated in ILO R115 can be considered as inspiration. Examples of characteristics of clean, safe accommodation include access to clean food storage areas, designated dining areas, hand washing facilities (including soap), safe, potable water, and hygienic toilets, and where necessary protection (e.g. mosquito nets). Housing should have a sound roof, windows and doors to provide shelter to its residents.",
+                                "• Examples of evidence that the operator may use to demonstrate legal rights and FPIC consultation include geographically referenced lists of participating communities and individuals; documentation of stakeholder consultation process;  reference to land title documents.",
+                                "• Examples of valid dispute of land use rights include cases of past dispossession, forced abandonment or illegal action.",
+                                "• See glossary for definition of \"consultation\",  \"Free, prior and informed consent\", \"Indigenous\", \"conflict resolution\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r195",
+                                    level: "Basic",
+                                    text: "i. If accommodation is provided, it meets local sanitary and regulatory standards.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r196",
+                                    level: "Basic",
+                                    text: "ii. If accomodation is provided, it satisfies basic needs  (e.g. shelter, access to drinking water, provision of sanitary, laundry and cooking facilities, possibility for children to attend schools)",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p32",
+                    title: "Wellbeing of the Local Community",
+                    criteria: [
+                        {
+                            id: "SOC-WLC-1",
+                            text: "The scheme requires a substantiated legal and legitimate right to use the land and water.",
+                            examples: [
+                                "• Examples of evidence that the operator may use to demonstrate legal rights and FPIC consultation include geographically referenced lists of participating communities and individuals; documentation of stakeholder consultation process;  reference to land title documents.",
+                                "• Examples of valid dispute of land use rights include cases of past dispossession, forced abandonment or illegal action.",
+                                "• See glossary for definition of \"consultation\",  \"Free, prior and informed consent\", \"Indigenous\", \"conflict resolution\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r197",
+                                    level: "Mandatory",
+                                    text: "i. Land tenure rights are secure and registered according to legal requirements",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r198",
+                                    level: "Mandatory",
+                                    text: "ii. Where traditional land and water use rights are applicable, there is documented evidence of a FPIC consultation process.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r199",
+                                    level: "Mandatory",
+                                    text: "iii. Where traditional land and water use rights are applicable, there is documented evidence of a positive FPIC (i.e approval) from local stakeholders.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r200",
+                                    level: "Basic",
+                                    text: "iv. If the validity of the operator's use of the land and water is disputed, the operator\n(a) demonstrates its legitimate right to use the land and water;\n(b) conducts and ensures acceptance of a conflict resolution and remediation process;\n(c) engages in good faith in applicable legal processes; and\n(d)if the dispute involves indigenous peoples and local communities, follows a Free, prior, and informed consent (FPIC) process aligned with the UN Declaration on the Rights of Indigenous People (UNDRIP) or a more ambitious process.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WLC-2",
+                            text: "The scheme requires stakeholder mapping and establishing a stakeholder engagement plan.",
+                            examples: [
+                                "See glossary for definition of \"stakeholder\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r201",
+                                    level: "Mandatory",
+                                    text: "i. A stakeholder mapping is conducted, including the identification and prioritisation of stakeholders.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r202",
+                                    level: "Mandatory",
+                                    text: "ii. A written stakeholder engagement plan is established and implemented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r203",
+                                    level: "Basic",
+                                    text: "iii. The stakeholder engagement plan contains targets and goals.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r204",
+                                    level: "Basic",
+                                    text: "iv. The stakeholder engagement plan is updated and progress is monitored regularly.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WLC-3",
+                            text: "The scheme requires engagement with nearby communities  that are likely to be affected by operations.",
+                            examples: [
+                                "See glossary for definition of \"stakeholder\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r205",
+                                    level: "Mandatory",
+                                    text: "i. The operator engages with communities within or near the premises that are likely to be affected by operations.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r206",
+                                    level: "Mandatory",
+                                    text: "ii. Stakeholders' concerns and interests related to operations are identified.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r207",
+                                    level: "Basic",
+                                    text: "iii. Stakeholders are informed about the possibility to file complaints.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WLC-4",
+                            text: "The scheme requires that impacts on local food security are pre-emptively identified and managed.",
+                            examples: [
+                                "See glossary for definition of \"food security\", \"Free, prior and informed consent\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r208",
+                                    level: "Mandatory",
+                                    text: "i. Procedures are in place to identify risks of the direct effects of land use change on local food security.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r209",
+                                    level: "Mandatory",
+                                    text: "ii. Where potential direct effects on local food security from land use change resulting from the operator's operations has been identified, free, prior and informed consent (FPIC) has been sought from local stakeholders.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r210",
+                                    level: "Mandatory",
+                                    text: "iii. Measures are taken to minimise impact on local food security.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r211",
+                                    level: "Mandatory",
+                                    text: "iv. Any direct land use change effects and their impact on local food security are documented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WLC-5",
+                            text: "The scheme requires identification of potential impacts on water resources in the local community.",
+                            examples: [
+                                "See glossary for definition of \"water security\", \"Free, prior and informed consent\""
+                            ],
+                            requirements: [
+                                {
+                                    id: "r212",
+                                    level: "Mandatory",
+                                    text: "i. Procedures are in place to identify risks of the direct effects of operations on water availability, quantity, and quality in the local community.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r213",
+                                    level: "Mandatory",
+                                    text: "ii. Where potential direct effects on local water security resulting from the operator's operations has been identified, free, prior and informed consent (FPIC) has been sought from local stakeholders.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r214",
+                                    level: "Basic",
+                                    text: "iii. Any direct effects on local water security are documented.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r215",
+                                    level: "Mandatory",
+                                    text: "iv. Measures are taken to minimise impact on local water security.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Crop", "Forest"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WLC-6",
+                            text: "The scheme requires supporting local development.",
+                            examples: [
+                                "• Community development projects to which an organization can contribute can include, for example, (a) creating employment through expanding and diversifying economic activities and technological development; (b) social investments in wealth and income creation through local economic development initiatives; (c) expanding education and skills development programs; (d) promoting and preserving culture and arts; (e) providing and/or promoting community health services; (f) institutional strengthening of the community, its groups and collective forums, cultural, social and environmental programs and local networks involving multiple institutions.",
+                                "• Local development should take place respecting local traditions and culture."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r216",
+                                    level: "Basic",
+                                    text: "i. The operator engages in projects to support the local development of the communities it operates in.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r217",
+                                    level: "Basic",
+                                    text: "ii. Local suppliers are prioritised in the procurement policy when considering other suppliers with similar or equal characteristics.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                },
+                                {
+                                    id: "r218",
+                                    level: "Advanced",
+                                    text: "iii. Hiring local candidates is prioritised when considering other candidates with similar skills, profile, and conditions.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    id: "p33",
+                    title: "Wellbeing of Consumers",
+                    criteria: [
+                        {
+                            id: "SOC-WCO-1",
+                            text: "The scheme requires the operator to ensure that end users can provide feedback about its operations.",
+                            examples: [
+                                "The following evidence can be provided to ensure measures are taken to retrieve feedback from users: (a) evidence that a feedback mechanism is in place; (b) evidence that efforts are made to improve the feedback mechanism; (c) evidence that, if there are surveys related to customers satisfaction, actions are taken in response to the results of these surveys."
+                            ],
+                            requirements: [
+                                {
+                                    id: "r219",
+                                    level: "Basic",
+                                    text: "i. The operator ensures that users can provide feedback about its operations.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Final product manufacturer"]
+                                }
+                            ]
+                        },
+                        {
+                            id: "SOC-WCO-2",
+                            text: "The scheme requires risk assessment calculations of chemicals used in the product to ensure consumer safety. ",
+                            requirements: [
+                                {
+                                    id: "r220",
+                                    level: "Advanced",
+                                    text: "i. Risk assessment calculations are performed for dermal, oral, and inhalative exposure routes.",
+                                    responseOptions: YES_NO,
+                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
+                                    applicablePhases: ["Final product manufacturer"]
+                                }
+                            ]
                         }
                     ]
                 }
@@ -1659,18 +3657,18 @@ export const assessments = {
             category: "Economic",
             principles: [
                 {
-                    id: "p32",
-                    title: "Economic and financial viability",
+                    id: "p34",
+                    title: "Economic and Financial Viability",
                     criteria: [
                         {
-                            id: "c147",
+                            id: "ECO-EF-1",
                             text: "The scheme requires a business plan to ensure economic viability.",
                             examples: [
-                                "Business plans can include the revenue streams, a growth plan, and an operational action plan that projects the generation of financial resources for the future. "
+                                "Business plans can include the revenue streams, a growth plan, and an operational action plan that projects the generation of financial resources for the future."
                             ],
                             requirements: [
                                 {
-                                    id: "r220",
+                                    id: "r221",
                                     level: "Basic",
                                     text: "i. A business plan or another document exists articulating the long-term economic viability is established.",
                                     responseOptions: YES_NO,
@@ -1680,11 +3678,11 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c148",
+                            id: "ECO-EF-2",
                             text: "The scheme requires maintaining business records.",
                             requirements: [
                                 {
-                                    id: "r221",
+                                    id: "r222",
                                     level: "Basic",
                                     text: "i. A documentation system exists with information on, for example, production volumes, sales revenues, expenses and profitability.",
                                     responseOptions: YES_NO,
@@ -1692,7 +3690,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r222",
+                                    id: "r223",
                                     level: "Basic",
                                     text: "ii. The documentation system is kept up to date and the data is stored for at least five years.",
                                     responseOptions: YES_NO,
@@ -1704,18 +3702,18 @@ export const assessments = {
                     ]
                 },
                 {
-                    id: "p33",
-                    title: "Fair business practice",
+                    id: "p35",
+                    title: "Fair Business Practice",
                     criteria: [
                         {
-                            id: "c149",
+                            id: "ECO-FBP-1",
                             text: "The scheme requires fighting against fraudulent, deceptive and dishonest practices within the organization.",
                             examples: [
                                 "These fradulent, deceptive and dishonest practices include bribery, corruption, extortion, and embezzlement, including - but not limited to - promising, offering, giving, or accepting any improper incentives, monetary or otherwise. See glossary for definition of \"policy\", \"procedure\""
                             ],
                             requirements: [
                                 {
-                                    id: "r223",
+                                    id: "r224",
                                     level: "Mandatory",
                                     text: "i. Policies/procedures are established prohibiting and measures are taken to combat fraudulent, deceptive and dishonest practices.",
                                     responseOptions: YES_NO,
@@ -1723,7 +3721,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r224",
+                                    id: "r225",
                                     level: "Mandatory",
                                     text: "ii. Potential risks for fraudulent, deceptive and dishonest practices are systematically identified.",
                                     responseOptions: YES_NO,
@@ -1731,7 +3729,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r225",
+                                    id: "r226",
                                     level: "Basic",
                                     text: "iii. Staff training on fair business practices relevant to their work is provided and a record is kept of the trainings.",
                                     responseOptions: YES_NO,
@@ -1741,11 +3739,11 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c150",
+                            id: "ECO-FBP-2",
                             text: "The scheme requires keeping records of any cases of fraudulent, deceptive or dishonest practices.",
                             requirements: [
                                 {
-                                    id: "r226",
+                                    id: "r227",
                                     level: "Basic",
                                     text: "i. Record is kept of any lawsuits and results thereof related to fraudulent, deceptive or dishonest practices that have been brought against the organization or employees of the organization.",
                                     responseOptions: YES_NO,
@@ -1753,7 +3751,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r227",
+                                    id: "r228",
                                     level: "Basic",
                                     text: "ii. Record is kept of incidents where employees have been subject to disciplinary measures due to fraudulent, deceptive or dishonest behaviour.",
                                     responseOptions: YES_NO,
@@ -1761,7 +3759,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r228",
+                                    id: "r229",
                                     level: "Basic",
                                     text: "iii. Record is kept of incidents where contracts with business contracts were not renewed due to fair business practice breaches.",
                                     responseOptions: YES_NO,
@@ -1771,11 +3769,11 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c151",
+                            id: "ECO-FBP-3",
                             text: "The scheme requires that business relationships are based on written contracts.",
                             requirements: [
                                 {
-                                    id: "r229",
+                                    id: "r230",
                                     level: "Advanced",
                                     text: "i. Written contracts or agreements exist of the business relationships with suppliers and buyers.",
                                     responseOptions: YES_NO,
@@ -1787,18 +3785,18 @@ export const assessments = {
                     ]
                 },
                 {
-                    id: "p34",
-                    title: "Risk management",
+                    id: "p36",
+                    title: "Risk Management",
                     criteria: [
                         {
-                            id: "c152",
+                            id: "ECO-RM-1",
                             text: "The scheme requires management of financial and economic risks.",
                             examples: [
                                 "Financial and economic risks could be related to competition, capital availability, or assets of the operator."
                             ],
                             requirements: [
                                 {
-                                    id: "r230",
+                                    id: "r231",
                                     level: "Basic",
                                     text: "i. Potential financial risks along with measures to address them are systematically identified.",
                                     responseOptions: YES_NO,
@@ -1808,7 +3806,7 @@ export const assessments = {
                             ]
                         },
                         {
-                            id: "c153",
+                            id: "ECO-RM-2",
                             text: "The scheme requires minimising the operator's level of vulnerability.",
                             examples: [
                                 "• Examples of strategic measures for supply shortage include maintaining ongoing business relationships with suppliers and ensuring access to alternative procurement channels.",
@@ -1818,7 +3816,7 @@ export const assessments = {
                             ],
                             requirements: [
                                 {
-                                    id: "r231",
+                                    id: "r232",
                                     level: "Advanced",
                                     text: "i. Procedures are in place to analyse the level of vulnerability of the operator e.g., to supply shortages, income generation, financial liquidity.",
                                     responseOptions: YES_NO,
@@ -1826,7 +3824,7 @@ export const assessments = {
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
                                 },
                                 {
-                                    id: "r232",
+                                    id: "r233",
                                     level: "Advanced",
                                     text: "ii. Measures are taken to minimize the risks described.",
                                     responseOptions: YES_NO,

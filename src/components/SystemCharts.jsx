@@ -59,69 +59,73 @@ export default function SystemCharts({ answers, categories }) {
   const { allPrinciplesChart, barChartData } = useMemo(() => computeSystemScores(answers, categories), [answers, categories])
 
   return (
-    <section className='dashboard-section'>
+    <div>
       <h2>System-Level</h2>
 
-      {allPrinciplesChart.length > 0 && (
-        <div className='chart-card'>
-          <h3>Average Score Per Principle</h3>
-          <ResponsiveContainer width='100%' height={600}>
-            <RadarChart data={allPrinciplesChart}>
-              <PolarGrid />
-              <PolarAngleAxis dataKey='principle' tick={{ fontSize: 14 }} />
-              <PolarRadiusAxis
-                domain={[0, 100]}
-                tickFormatter={formatPercent}
-                axisLine={false}
-                tickLine={false}
-              />
-              <Tooltip formatter={formatPercent} />
-              <Legend />
-              <Radar
-                name='Score (%)'
+      <section className='dashboard-section'>
+        {allPrinciplesChart.length > 0 && (
+          <div>
+            <h3>Score Per Principle</h3>
+            <ResponsiveContainer width='100%' height={500}>
+              <RadarChart data={allPrinciplesChart}>
+                <PolarGrid />
+                <PolarAngleAxis dataKey='principle' tick={{ fontSize: 14 }} />
+                <PolarRadiusAxis
+                  domain={[0, 100]}
+                  tickFormatter={formatPercent}
+                  axisLine={false}
+                  tickLine={false}
+                />
+                <Tooltip formatter={formatPercent} />
+                <Legend />
+                <Radar
+                  name='Average Score (in %)'
+                  dataKey='score'
+                  stroke='#8884d8'
+                  fill='#8884d8'
+                  fillOpacity={0.6}
+                />
+              </RadarChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+      </section>
+      <section className='dashboard-section'>
+        {barChartData.length > 0 && (
+          <div>
+            <h3>Score Per Category</h3>
+            <ResponsiveContainer width='100%' height={300}>
+              <BarChart
+                data={barChartData}
+                layout='vertical'
+                margin={{ left: 20, right: 20 }}
+              >
+                <CartesianGrid strokeDasharray='3 3' />
+                <XAxis
+                  type='number'
+                  domain={[0, 100]}
+                  tickFormatter={formatPercent}
+                />
+                <YAxis
+                  dataKey='category'
+                  type='category'
+                  tick={{ fontSize: 14 }}
+                  width={140}
+                />
+                <Tooltip formatter={formatPercent} />
+                <Legend />
+                <Bar
                 dataKey='score'
-                stroke='#8884d8'
                 fill='#8884d8'
-                fillOpacity={0.6}
-              />
-            </RadarChart>
-          </ResponsiveContainer>
-        </div>
-      )}
-
-      {barChartData.length > 0 && (
-        <div className='chart-card' style={{ marginTop: '3rem' }}>
-          <h3>Average Score Per Category</h3>
-          <ResponsiveContainer width='100%' height={400}>
-            <BarChart
-              data={barChartData}
-              layout='vertical'
-              margin={{ left: 20, right: 20 }}
-            >
-              <CartesianGrid strokeDasharray='3 3' />
-              <XAxis
-                type='number'
-                domain={[0, 100]}
-                tickFormatter={formatPercent}
-              />
-              <YAxis
-                dataKey='category'
-                type='category'
-                tick={{ fontSize: 14 }}
-                width={140}
-              />
-              <Tooltip formatter={formatPercent} />
-              <Legend />
-              <Bar
-              dataKey='score'
-              fill='#8884d8'
-              name='Score (%)'
-              barSize={55}
-              />
-            </BarChart>
-          </ResponsiveContainer>
-        </div>
-      )}
-    </section>
+                name='Average Score (in %)'
+                barSize={45}
+                />
+              </BarChart>
+            </ResponsiveContainer>
+          </div>
+        )}
+      </section>
+      
+    </div>
   )
 }
