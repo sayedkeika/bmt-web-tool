@@ -121,7 +121,7 @@ export default function Assessment({
             <button
                 className='nav'
                 onClick={onSubmit}
-                disabled={!allAnswered}
+                //disabled={!allAnswered}
                 title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
               >
                 Submit →

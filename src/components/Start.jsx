@@ -78,14 +78,14 @@ export default function Start({ onStart }) {
 
       {/* Assessment selection */}
       <div className='container'>
-        <h3>Please enter the name of scheme or label</h3>
+        <h4>Please enter the name of scheme or label</h4>
         <div className='inputs'>
           <input
             type='text'
             placeholder='Name'
           />
         </div>
-        <h3>Please select atleast one level of assessment you wish to conduct</h3>
+          <h4>Please select atleast one level of assessment you wish to conduct</h4>
         <div>
           {TYPES.map(({ key, label }) => (
             <button
@@ -99,7 +99,7 @@ export default function Start({ onStart }) {
         {/* System-level filters */}
         {selectedTypes.includes('system') && (
           <div>
-            <h3>Please select atleast one applicable type</h3>
+            <h4>Please select atleast one applicable type</h4>
             {allContexts.map(ctx => (
               <button
                 key={ctx}
@@ -115,7 +115,7 @@ export default function Start({ onStart }) {
         {/* Content-level filters */}
         {selectedTypes.includes('content') && (
           <div>
-            <h3>Please select atleast one applicable feedstock</h3>
+            <h4>Please select atleast one applicable feedstock</h4>
             <div>
               {allFeedstocks.map(f => (
                 <button
@@ -128,7 +128,7 @@ export default function Start({ onStart }) {
               ))}
             </div>
 
-            <h3>Please select atleast one applicable value chain actor</h3>
+            <h4>Please select atleast one applicable value chain actor</h4>
             <div>
               {allPhases.map(p => (
                 <button
