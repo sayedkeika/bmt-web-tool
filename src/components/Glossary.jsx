@@ -58,7 +58,7 @@ const Glossary = ({ onBack }) => {
                         <button className='nav' onClick={onBack}>← Back</button>
                     </div>
                     <div className='nav-center'>
-                        <h2>Glossary</h2>
+                        <h1>Glossary</h1>
                     </div>
                     <div className='nav-right'>
                         <div>

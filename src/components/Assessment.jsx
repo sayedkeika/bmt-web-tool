@@ -1,10 +1,12 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import LeftArrowIcon from '../svgs/left-arrow.svg'
 import RightArrowIcon from '../svgs/right-arrow.svg'
+import PopupDialog from './PopupDialog'
 
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
   content: 'Content-Level Assessment',
+  outcome: 'Outcome-Level Assessment'
 }
 
 // Component for rendering the questionnaire and recording user responses
@@ -18,8 +20,18 @@ export default function Assessment({
   onBackToStart,
   onPrev,
   onNext,
-  onSubmit,
+  onSubmit
 }) {
+  const [showConfirm, setShowConfirm] = useState(false)
+
+  // Confirm or cancel popup
+  const handleRestartClick = () => setShowConfirm(true)
+  const confirmRestart   = () => {
+    setShowConfirm(false)
+    onBackToStart()
+  }
+  const cancelRestart   = () => setShowConfirm(false)
+  
   // Save a response value for a criterion or requirement
   const handleAnswer = (criterionId, value) => {
     setAnswers(prev => {
@@ -27,10 +39,8 @@ export default function Assessment({
       const next = { ...prev }
 
       if (current === value) {
-        // deselect
         delete next[criterionId]
       } else {
-        // select
         next[criterionId] = {
           ...prev[criterionId],
           response: value
@@ -67,8 +77,8 @@ export default function Assessment({
   const allCriteria = allPrinciples.flatMap(flatCriteriaOf)
   const allAnswered = allCriteria.every(c => answers[c.id]?.response)
 
-  // Check if this is a content-level principle (has requirements)
-  const isContentAssessment = principle.criteria.some(c =>
+  // Check if this is a content or outcome (has requirements)
+  const isRichAssessment = principle.criteria.some(c =>
     Array.isArray(c.requirements)
   )
 
@@ -107,11 +117,20 @@ export default function Assessment({
   
   return (
     <>
+      {/* Confirmation Dialog */}
+      {showConfirm && (
+        <PopupDialog
+          message='Are you sure you want to start a new assessment? All progress will be lost.'
+          onCancel={cancelRestart}
+          onConfirm={confirmRestart}
+        />
+      )}
+
       {/* Top navigation */}
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
-            <button className='nav' onClick={onBackToStart} title='Start a new assessment'>← New Assessment</button>
+            <button className='nav' onClick={handleRestartClick} title='Start a new assessment'>← New Assessment</button>
           </div>
           <div className='nav-center'>
             <h4>{TYPE_LABELS[type]}</h4>
@@ -123,14 +142,13 @@ export default function Assessment({
                 onClick={onSubmit}
                 //disabled={!allAnswered}
                 title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
-              >
-                Submit →
-              </button>
+              >Submit →
+            </button>
           </div>           
         </div>
         
 
-        {/* Breadcrumb‐style stepper and progress header */}
+        {/* Breadcrumb‐style stepper and progress progress bar */}
         <div className='progress-header'>
           <img
             className='scroll-btn left'
@@ -166,18 +184,59 @@ export default function Assessment({
           />
 
         </div>
+
+        {/* Progress bar */}
+          <div className='progress-container'>
+            {(() => {
+              const allItems = allCriteria.length
+              const doneItems = allCriteria.filter(c => !!answers[c.id]?.response).length
+              const pct = allItems ? Math.round((doneItems / allItems) * 100) : 0
+              return <div className='progress-fill' style={{ width: `${pct}%` }} />
+            })()}
+          </div>
       </div>
 
       {/* Main questionnaire content */}
       <div className='container'>
-        {isContentAssessment ? (
+        {/* Content & Outcome */}
+        {isRichAssessment ? (
           principle.criteria.map(criterion => (
             <div key={criterion.id} className='criterion-block'>
-              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.text}</strong></p>
-              <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
+              <p style={{ fontSize: '1.1rem' }}>
+                <strong>
+                  {criterion.id}: {criterion.text}
+                </strong>
+              </p>
+
+              {/* Render examples differently */}
+              {type === 'content' && (
+                <div>
+                  {criterion.examples?.map((ex, i) => (
+                    <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>
+                  ))}
+                </div>
+              )}
+
               {criterion.requirements.map(req => (
                 <div key={req.id}>
-                  <p><strong>{req.text}</strong> <em>({req.level})</em></p>
+                  <p>
+                    <strong>
+                      {type === 'outcome'
+                        ? `${req.id}: ${req.text}`
+                        : req.text
+                      }
+                    </strong>
+                    {type === 'content' && <em> ({req.level})</em>}
+                  </p>
+                  
+                  {type === 'outcome' && (
+                    <div>
+                      {req.examples?.map((ex, i) => (
+                        <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>
+                      ))}
+                    </div>
+                  )}
+
                   <div className='options'>
                     {req.responseOptions.map(option => (
                       <button
@@ -189,6 +248,7 @@ export default function Assessment({
                       </button>
                     ))}
                   </div>
+
                   <div className='inputs'>
                     <input
                       type='text'
@@ -208,10 +268,12 @@ export default function Assessment({
             </div>
           ))
         ) : (
+          // System
           principle.criteria.map(criterion => (
             <div key={criterion.id} className='criterion-block'>
-              <p style={{ fontSize: '1.1rem' }}><strong>{criterion.id}: {criterion.text}</strong></p>
-              <div>{criterion.examples?.map((ex, i) => <p key={i} style={{ fontStyle: 'italic' }}>{ex}</p>)}</div>
+              <p style={{ fontSize: '1.1rem' }}>
+                <strong>{criterion.id}: {criterion.text}</strong>
+              </p>
               <div className='options'>
                 {criterion.responseOptions.map(option => (
                   <button

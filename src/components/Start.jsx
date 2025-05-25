@@ -2,25 +2,35 @@ import React, { useState, useMemo } from 'react'
 import { assessments } from '../Data'
 
 const TYPES = [
-  { key: 'system', label: 'System-Level Assessment' },
-  { key: 'content', label: 'Content-Level Assessment' },
+  { key: 'system', label: 'System-Level' },
+  { key: 'content', label: 'Content-Level' },
+  { key: 'outcome', label: 'Outcome-Level' }
 ]
 
 // Component for selecting assessment types and applying context filters
 export default function Start({ onStart }) {
+  const [schemeName, setSchemeName] = useState('')
   const [selectedTypes, setSelectedTypes] = useState([])
-  const [selectedContexts, setSelectedContexts] = useState([])
   const [selectedFeedstocks, setSelectedFeedstocks] = useState([])
   const [selectedPhases, setSelectedPhases] = useState([])
+  const [selectedContentCats, setSelectedContentCats] = useState([])
+  const [selectedApplicability, setSelectedApplicability] = useState([])
 
   // Derive filter options from the data
-  const allContexts = useMemo(
-    () => Array.from(new Set(
-      assessments.system.flatMap(cat => cat.principles)
-        .flatMap(p => p.criteria)
-        .flatMap(c => c.type)
-    )), []
-  )
+  const allApplicability = useMemo(() => {
+    const fromSystem  = assessments.system
+      .flatMap(cat => cat.principles)
+      .flatMap(p   => p.criteria)
+      .flatMap(c   => c.type)
+
+    const fromOutcome = assessments.outcome
+      .flatMap(cat => cat.principles)
+      .flatMap(p   => p.criteria)
+      .flatMap(c   => c.requirements)
+      .flatMap(r   => r.type)
+
+    return Array.from(new Set([...fromSystem, ...fromOutcome]))
+  }, [])
   const allFeedstocks = useMemo(
     () => Array.from(new Set(
       assessments.content.flatMap(cat => cat.principles)
@@ -37,6 +47,12 @@ export default function Start({ onStart }) {
         .flatMap(r => r.applicablePhases)
     )), []
   )
+  const allContentCats = useMemo(
+    () => assessments.content
+        .filter(cat => cat.category !== 'Minimum Backstop')
+        .map(cat => cat.category),
+    []
+  )
 
   // Toggle an item in an array
   const toggle = (item, arr, setter) =>
@@ -44,22 +60,24 @@ export default function Start({ onStart }) {
 
   // Validate if user can start the assessment
   const isValidSelection = () => {
+    const hasName = schemeName.trim().length > 0
     const hasType = selectedTypes.length > 0
-    const hasContext = !selectedTypes.includes('system') || selectedContexts.length > 0
-    const hasContent =
-      !selectedTypes.includes('content') ||
-      (selectedFeedstocks.length > 0 && selectedPhases.length > 0)
-    return hasType && hasContext && hasContent
+    const hasApplicability = !selectedTypes.includes('system') && !selectedTypes.includes('outcome') ? true : selectedApplicability.length > 0
+    const hasContentCats = !selectedTypes.includes('content') || selectedContentCats.length > 0
+    const hasContent = !selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0)
+    return hasName && hasType && hasApplicability && hasContentCats && hasContent
   }
 
   // Trigger the assessment start once valid selections are made
   const handleStart = () => {
     if (isValidSelection()) {
       onStart({
+        schemeName,
         types: selectedTypes,
-        contexts: selectedContexts,
+        applicability: selectedApplicability,
         feedstocks: selectedFeedstocks,
         phases: selectedPhases,
+        contentCategories: selectedContentCats
       })
     }
   }
@@ -70,7 +88,7 @@ export default function Start({ onStart }) {
         <div className='nav-header'>
           <div className='nav-left'></div>
           <div className='nav-center'>
-              <h2>BIOBASEDCERT Monotoring Tool</h2>
+              <h1 style={{ marginTop: '2rem', marginBottom: '2rem'}} >BIOBASEDCERT Monotoring Tool</h1>
           </div>
           <div className='nav-right'></div>
         </div>
@@ -78,14 +96,16 @@ export default function Start({ onStart }) {
 
       {/* Assessment selection */}
       <div className='container'>
-        <h4>Please enter the name of scheme or label</h4>
+        <h5>Please enter the name of scheme or label</h5>
         <div className='inputs'>
           <input
             type='text'
+            value={schemeName}
+            onChange={e => setSchemeName(e.target.value)}
             placeholder='Name'
           />
         </div>
-          <h4>Please select atleast one level of assessment you wish to conduct</h4>
+          <h5>Please select atleast one level of assessment you wish to conduct</h5>
         <div>
           {TYPES.map(({ key, label }) => (
             <button
@@ -96,17 +116,23 @@ export default function Start({ onStart }) {
           ))}
         </div>
       
-        {/* System-level filters */}
-        {selectedTypes.includes('system') && (
+        {/* System-level & Outcome-level filters */}
+        {(selectedTypes.includes('system') || selectedTypes.includes('outcome')) && (
           <div>
-            <h4>Please select atleast one applicable type</h4>
-            {allContexts.map(ctx => (
+            <h5>Please select an applicable type</h5>
+            {allApplicability.map(opt => (
               <button
-                key={ctx}
-                onClick={() => toggle(ctx, selectedContexts, setSelectedContexts)}
-                className={selectedContexts.includes(ctx) ? 'selected' : ''}
+                key={opt}
+                onClick={() =>
+                  setSelectedApplicability(prev =>
+                    prev[0] === opt ? [] : [opt]
+                  )
+                }
+                className={
+                  selectedApplicability[0] === opt ? 'selected' : ''
+                }
               >
-                {ctx}
+                {opt}
               </button>
             ))}
           </div>
@@ -115,7 +141,7 @@ export default function Start({ onStart }) {
         {/* Content-level filters */}
         {selectedTypes.includes('content') && (
           <div>
-            <h4>Please select atleast one applicable feedstock</h4>
+            <h5>Please select atleast one applicable feedstock</h5>
             <div>
               {allFeedstocks.map(f => (
                 <button
@@ -128,7 +154,7 @@ export default function Start({ onStart }) {
               ))}
             </div>
 
-            <h4>Please select atleast one applicable value chain actor</h4>
+            <h5>Please select atleast one applicable value chain actor</h5>
             <div>
               {allPhases.map(p => (
                 <button
@@ -140,6 +166,19 @@ export default function Start({ onStart }) {
                 </button>
               ))}
             </div>
+
+            <h5>Which content-level categories would you like to assess?</h5>
+            <div>
+              {allContentCats.map(cat => (
+                <button
+                  key={cat}
+                  onClick={() => toggle(cat, selectedContentCats, setSelectedContentCats)}
+                  className={selectedContentCats.includes(cat) ? 'selected' : ''}
+                >
+                  {cat}
+                </button>
+              ))}
+            </div>
           </div>
         )}
 
@@ -148,9 +187,11 @@ export default function Start({ onStart }) {
           style={{ marginTop: '2rem' }}
           onClick={handleStart}
           disabled={!isValidSelection()}
-          title={
-            !isValidSelection()
-              ? 'Please select at least one assessment level and the required applicability options.': ''}
+          title={!isValidSelection()
+            ? (!schemeName.trim()
+                ? 'Please enter a name.'
+                : 'Please select at least one assessment level and the required applicability options.')
+            : ''}
         >Start Assessment →</button>
       </div>
     </>

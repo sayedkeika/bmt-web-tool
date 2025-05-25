@@ -15,7 +15,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "SS-SS-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner makes consultation drafts and final versions of its standards freely available and easily accessible in the scheme's official languages.",
                             responseOptions: [
                                 {label: "Yes (publicly, on request (no fee))", score: 2},
@@ -32,7 +32,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SS-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner ensures that guidance is in place to support consistent interpretation of the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -51,7 +51,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "SS-SP-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner reviews and revises the standards at least once every 5 years.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -63,7 +63,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SP-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner makes publicly available a public summary that includes the decision-making procedures of how decisions are made and who makes them.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -83,7 +83,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "SS-SC-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner subjects the development of new standards and the revision of existing standards to public consultation.",
                             responseOptions: [
                                 {label: "Yes, specified number of rounds", score: 2},
@@ -100,7 +100,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SC-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner shall ensure that participation in the consultation process is open to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes, possible", score: 1},
@@ -112,7 +112,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SC-3",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner proactively encourages participation in standard-setting of all stakeholders directly affected.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -124,7 +124,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SC-4",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner ensures balanced participation of stakeholder interests in the consultation and decision-making processes.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -156,7 +156,7 @@ export const assessments = {
                         },
                         {
                             id: "SS-SC-6",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner provides information on the input received from stakeholder consultations and how it was used.",
                             responseOptions: [
                                 {label: "Yes, comments and explanations", score: 2},
@@ -183,7 +183,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "AS-AS-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner ensures that there is a publicly available description of the consistent methodology used to assess compliance with the standard.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -199,7 +199,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-AS-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner ensures that summary certification/verification reports are made available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -220,7 +220,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "AS-CA-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "Minimum level of conformity assessment required by the scheme owner.",
                             responseOptions: [
                                 {label: "3rd party", score: 1},
@@ -233,7 +233,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-CA-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires CABs to have a procedure in place for how clients are required to address non-conformities, including when a certificate or license is suspended or revoked.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -253,7 +253,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "AS-CB-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires CABs to be compliant with and accredited according to ISO/IEC 17065, ISO/IEC 17021, ISO/IEC 17020, or equivalent.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -268,7 +268,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-CB-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner makes public a list of all accredited/approved CABs.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -281,7 +281,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-CB-3",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires specific qualifications and competencies for auditors of conformity assessment bodies (CABs).",
                             responseOptions: [
                                 {label: "Yes, examination or training included", score: 2},
@@ -295,7 +295,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-CB-4",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner maintains or requires CABs to maintain a publicly accessible list of certified products/product groups.",
                             responseOptions: [
                                 {label: "Yes, incl. scope of certificate/license", score: 2},
@@ -309,7 +309,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-CB-5",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires CABs to have a documented, and publicly available, mechanism for clients who want to appeal compliance decisions.",
                             responseOptions: [
                                 {label: "Yes, with an appeal overview", score: 2},
@@ -330,7 +330,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "AS-AU-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner has or requires CABs to have documented procedures for reliable auditing methods.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -345,7 +345,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-AU-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner defines or requires CABs to state frequency of surveillance audits.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -357,7 +357,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-AU-3",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner defines the type of activities CABs are required to undertake during an initial audit.",
                             responseOptions: [
                                 {label: "Yes, onsite", score: 2},
@@ -371,7 +371,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-AU-4",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires or allows CABs to do unscheduled audits.",
                             responseOptions: [
                                 {label: "Yes, required", score: 2},
@@ -385,7 +385,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-AU-5",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner ensures or requires CABs to ensure consistency in audit report formats.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -406,7 +406,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "AS-OM-1",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner has defined an approach to oversight of assurance activities and assurance providers.",
                             responseOptions: [
                                 {label: "Yes, external Oversight Body", score: 2},
@@ -423,7 +423,7 @@ export const assessments = {
                         },
                         {
                             id: "AS-OM-2",
-                            type: ["Scheme","Label"],
+                            type: ["Scheme","Ecolabel"],
                             text: "The scheme owner requires oversight bodies to have a documented, and publicly available, mechanism on the escalation of appeals for compliance decisions.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -451,7 +451,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "TC-CT-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner has a documented Chain of Custody (CoC) standard or other traceability requirements for checking product flow between links of the supply chain.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -466,7 +466,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CT-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner requires all enterprises that are physically handling the certified feedstock/product to undergo a CoC audit if intended to be sold as a certified, labeled product.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -513,7 +513,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CT-5",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner allows different chain of custody models as traceability systems.",
                             responseOptions: [
                                 {label: "Yes, Identity Preservation or Segregation model", score: 2},
@@ -569,7 +569,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "TC-CP-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner provides description of its specific policies for products labelling and claims use.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -584,7 +584,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CP-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "Claims and labelling requirements ensure that claims or logos clearly indicate to what they apply.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -596,7 +596,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CP-3",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme requires the use of honest marketing and advertising techniques.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -608,7 +608,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CP-4",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The label is accompanied by an explanatory text claim or a link to further information.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -623,7 +623,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CP-5",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "Claims and label users are required to use unique license numbers or other tracking mechanisms.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -666,7 +666,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "TC-CM-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner has a procedure in place that defines specific consequences of misuse of claims.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -681,7 +681,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CM-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner requires surveillance of the accurate use of claims and labels in the market.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -701,7 +701,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "TC-CM-3",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner defines the minimum percentage of a certified/verified input in a single ingredient product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 75%", score: 2},
@@ -720,7 +720,7 @@ export const assessments = {
                         },
                         {
                             id: "TC-CM-4",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner defines the minimum percentage of certified/verified material in a composite product for a claim to be allowed for that product.",
                             responseOptions: [
                                 {label: "More or equal 50%", score: 2},
@@ -751,7 +751,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "GM-SO-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme has a clearly defined scope of its certification programme.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -767,7 +767,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-SO-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme makes explicit its sustainability-defined goals and objectives.",
                             responseOptions: [
                                 {label: "Yes, with a link between strategies and goals", score: 2},
@@ -786,7 +786,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-SO-3",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme has procedures for taking into account the special circumstances of smallholders' operations.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -808,7 +808,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "GM-GS-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner is a legal entity, or an organization that is a partnership of legal entities, or a government or inter-governmental agency.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -820,7 +820,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-GS-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner make its organizational structure available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 2},
@@ -834,7 +834,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-GS-3",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The top decision-making body members are accountable to all stakeholders.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -847,7 +847,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-GS-4",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner has a clear statement in case of a mutual recognition agreement with at least one other scheme.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -861,7 +861,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-GS-5",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner makes quantitative information on the income sources or financing structure of the scheme available.",
                             responseOptions: [
                                 {label: "Yes, publicly", score: 1},
@@ -880,7 +880,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "GM-SP-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "Stakeholders have the possibility to participate in or contribute formal input on the scheme's governance.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -896,7 +896,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-SP-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The procedures of the top decision-making body ensure that there is a balanced representation of stakeholder interests, where no single interest predominates.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -910,7 +910,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-SP-3",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner supports participation of under-represented stakeholders when seeking input from stakeholders.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -923,7 +923,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-SP-4",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner ensures that clients and implementing partners have adequate time and notice to comply with new requirements.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -942,7 +942,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "GM-DD-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme recognises due diligence as ongoing process to be undertaken by operators.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -955,7 +955,7 @@ export const assessments = {
                         },
                         {
                             id: "GM-DD-2",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme expects operators' due diligence activities to be guided by their own risk assessments.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -973,7 +973,7 @@ export const assessments = {
                     criteria: [
                         {
                             id: "GM-CD-1",
-                            type: ["Scheme", "Label"],
+                            type: ["Scheme", "Ecolabel"],
                             text: "The scheme owner has a open and accessible dispute resolution system to facilitate the impartial handling of complaints and grievances.",
                             responseOptions: [
                                 {label: "Yes", score: 1},
@@ -999,32 +999,6 @@ export const assessments = {
     ],
   
     content: [
-        {
-            id: "cat0",
-            category: "Minimum Backstop",
-            principles: [
-                {
-                    id: "p0",
-                    title: "Compliance",
-                    criteria: [
-                        {
-                            id: "COMPL-1",
-                            text: "The scheme requires adherence to all applicable regional, national and international laws, regulations and agreements.",
-                            requirements: [
-                                {
-                                    id: "r0",
-                                    level: "-",
-                                    text: "i. The scheme requires implementing and maintaining a system to ensure compliance with all relevant international, national, and regional laws and regulations.",
-                                    responseOptions: YES_NO,
-                                    applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
-                                    applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
-                                }
-                            ]
-                        }
-                    ]
-                }
-            ]
-        },
         {
             id: "cat5",
             category: "Environment",
@@ -3830,6 +3804,484 @@ export const assessments = {
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    ],
+
+    outcome: [
+        {
+            id: "cat9",
+            category: "Measurable Progress of Operators",
+            principles: [
+                {
+                    id: "p37",
+                    title: "Measurable Progress of Operators",
+                    criteria: [
+                        {
+                            id: "A.1",
+                            text: "The scheme requires a systematic approach to address critical sustainability issues and monitors the approach's effectiveness to achieve the intended sustainability goals.",
+                            requirements: [
+                                {
+                                    id: "A.1.1",
+                                    text: "The scheme requires operators to systematically address critical sustainability issues by either:\n1. Developing a measurable, time-bound sustainability plan aligned with the organization's mission. The plan must address environmental, social, and economic dimensions, demonstrate progress toward sustainability goals\nOR\n2. A structured risk mitigation framework that identifies key sustainability risks and outlines specific measures to address them\nEither approach should show how it has guided key decisions and outcomes.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Example of evidence:",
+                                        "Requirements in the scheme documents (e.g. Requirements for Operators/Principle and Criteria document)"
+                                    ],
+                                },
+                                {
+                                    id: "A.1.2",
+                                    text: "The scheme requires the operators to assess and demonstrate the effectiveness of the measures taken to meet the sustainability goals, by establishing (a) what needs to be monitored and measured; (b) the methods for monitoring, measurement, analysis and evaluation, as applicable, to ensure valid results; (c) when the monitoring and measuring shall be performed; and (d) when the results from monitoring and measurement shall be analyzed and evaluated.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Example of evidence:",
+                                        "Requirements in the scheme documents (e.g. Requirements for Operators/Principle and Criteria document)"
+                                    ],
+                                },
+                                {
+                                    id: "A.1.3",
+                                    text: "The operator management regularly monitors and reviews all activities and takes actions to continuously improve with respect to sustainability risks and/or environmental, social and economic sustainable development. ",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Support indicator A.1.1 and A.1.3"
+                                    ],
+                                },
+                                {
+                                    id: "A.1.4",
+                                    text: "'The scheme monitors the implementation and effectiveness of risk mitigation measures and/or sustainability plans by operators. This process shall be an integral part of the auditing procedures.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Support indicator A.1.1 and A.1.3"
+                                    ],
+                                },
+                                {
+                                    id: "A.1.5",
+                                    text: "The scheme has a clear impact assessment policy, utilize appropriate assessment tools, and demonstrate that these tools are actively used to inform decision-making for long-term sustainability outcomes.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Support indicator A.1.1 and A.1.3"
+                                    ],
+                                },
+                                {
+                                    id: "A.1.6",
+                                    text: "The scheme shall conduct impact assessment focusing on impacts from sustainability hotspots in the value chain.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Support indicator A.1.1 and A.1.3"
+                                    ],
+                                },
+                                {
+                                    id: "Add-on-A-1",
+                                    text: "The scheme requires the operator to conduct an initial screening or assessment to evaluate its baseline conditions. This assessment should provide a comprehensive understanding of the operator's starting point in terms of sustainability performance.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme"],
+                                    examples: [
+                                        "Add-on indicator",
+                                        "Support indicator A.1.1 and A.1.3",
+                                        "In many cases, improvements to meet the standard requirements are done before operators apply for certification. In the Explanation column, please explain what the initial assessment or screening by the CSL entails and list data points or information gathered through the initial screening or assessment."
+                                    ],
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            id: "cat10",
+            category: "Measurable Progress of Certification Scheme and Label",
+            principles: [
+                {
+                    id: "p38",
+                    title: "Impact Monitoring of Own Scheme",
+                    criteria: [
+                        {
+                            id: "B.1",
+                            text: "The scheme clearly defines its impact in alignment with its mission and establishes a framework to achieve those impacts.",
+                            requirements: [
+                                {
+                                    id: "B.1.1",
+                                    text: "The scheme has a clear definition of their intended impacts in line with their mission.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "The scheme owner explicitly defines scheme's overall goals, e.g. the mission and vision, either in its statutes or in a separate statement (e.g. a mission statement). The scheme owner has publicly available performance indicators related to scheme goals.",
+                                        "The objectives should be sustainability-defined, promoting responsible use of resources and improving environmental and/or socio-economic impacts."
+                                    ],
+                                },
+                                {
+                                    id: "B.1.2",
+                                    text: "The scheme establishes causal pathways, theory of change or a similar framework that describe their intended impacts and how their intervention or strategies will lead to intended changes.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "This should be a documented strategy that the scheme has defined and uses to ensure that it meets its goals. This entails: clear goals, actions to achieve the goals, and a description of available/needed resources to execute the actions."
+                                    ],
+                                }
+                            ]
+                        },
+                        {
+                            id: "B.2",
+                            text: "The scheme regularly measures their progress towards intended social, economic, and environmental impacts through performance, outcome, and impact evaluation.",
+                            requirements: [
+                                {
+                                    id: "B.2.1",
+                                    text: "Monitoring and evaluation procedure which contains indicators that the scheme uses to measure its outputs, outcomes, and impacts is made publicly available.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "See the following definition of outputs, outcomes, and impacts below (as stated in the report of ISEAL on Performance metrics for key sustainability issues)",
+                                        "• Outputs\nThe products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
+                                        "• Outcomes\nThe short-term and medium-term effects of an intervention on the sustainability issue in question.",
+                                        "• Impacts\n Long-term effects (direct or indirect, intended or unintended) on the sustainability issue produced as the result of an intervention.",
+                                        "For ISO type I labels, the most relevant impact is usually introduced prior to the development of criteria by conducting a life cycle based impact study. The resulting criteria are developed to reduce these impacts. The design of this approach therefore also includes the measurement of impact and is eligible for a 'Fully'."
+                                    ],
+                                },
+                                {
+                                    id: "B.2.2",
+                                    text: "The scheme conducts both performance monitoring and outcome evaluation annually.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "Indicator fulfilment",
+                                        "A \"Fully\" rating is assigned if:\nThe scheme conducts both performance monitoring and outcome evaluation on an annual basis. Evidence of this may include a monitoring and evaluation procedure, an annual impact report, or any relevant publications available on the scheme’s website. At a minimum, there should be documentation demonstrating that performance monitoring and outcome evaluation are carried out annually and made available to internal stakeholders.",
+                                        "A \"Partial\" rating is assigned if:\n• The scheme conducts only one of the two activities (performance monitoring or outcome evaluation) annually; and/or\n• The frequency of either activity is less than once per year.• ",
+                                        "A \"Missing\" rating is assigned if:\nNeither performance monitoring nor outcome evaluation is conducted, or there is no available evidence to demonstrate these activities.",
+                                        "Definitions\nSee the following definition of performance monitoring and outcome evaluation (as stated in the ISEAL Impact Code of Good Practice)",
+                                        "• Performance monitoring:\nA continuing function that uses systematic collection of data on specified indicators to provide indications of the extent to which outputs and short and medium term results are being achieved. (Adapted from OECD Glossary,2002).\nExamples of performance indicators: number of certificate holders, number of workers protected under the standard, amount of certified materials",
+                                        "• Outcome evaluation:\nSystematic and objective in depth ex-post assessment of the short-term and medium-term results or effects from the implementation of a standards system.\nThese studies seek to shed light on the extent to which standards system’s desired changes are occurring as well as why the system is or is not working. Unlike impact evaluations, outcome evaluations are not designed to draw conclusions about the extent to which an intervention can be attributed to the intervention of a standards system.\nExamples of indicators for outcome evaluations: GHG emissions, energy uses"
+                                    ],
+                                },
+                                {
+                                    id: "B.2.3",
+                                    text: "The scheme conducts impact evaluation at least every 5 years.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "Impact Evaluation:\nA systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)",
+                                        "• The frequency of impact evaluation (at least every 5 year) should be explicitly mentioned in the monitoring and evaluation procedure or other scheme documents.",
+                                        "• There should be evidence that shows the scheme conducts impact evaluation every 5 years. Example of evidence: Impact Evaluation Report"
+                                    ],
+                                },
+                                {
+                                    id: "B.2.4",
+                                    text: "The scheme quantitatively measures at least one indicator related to climate change every year. ",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "The purpose of this indicator is to evaluate how far the scheme has been able to measure its progress towards their intended impacts quantitatively.",
+                                    ],
+                                },
+                                {
+                                    id: "B.2.5",
+                                    text: "The scheme quantitatively measures 2-3 indicators related to environmental, social, and economic impacts besides the climate change indicators.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "The purpose of this indicator is to evaluate how far the scheme has been able to measure its progress towards their intended impacts quantitatively.",
+                                        "For Type I ecolabels, requirements on social and economic impacts are applicable if they cover these aspects."
+                                    ],
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {   
+                    id: "p39",
+                    title: "Procedure to Validate Impacts",
+                    criteria: [
+                        {
+                            id: "C.1",
+                            text: "The scheme conducts verification of impact monitoring data to ensure reliability and accuracy of the data.",
+                            requirements: [
+                                {
+                                    id: "C.1.1",
+                                    text: "The scheme has a clear procedure for verifying impact monitoring data, which includes:\n- what data is verified\n- where the data comes from\n- how data is verified\n- parties involved in verification",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "A \"Fully\" rating is assigned if the scheme has an explicit and publicly available procedure for verifying impact monitoring data that addresses all four key elements:\n- What data is verified\n- Where the data comes from\n- How the data is verified\n- Which parties are involved in the verification process",
+                                        "A \"Partial\" rating is assigned if:\n- The procedure addresses fewer than all four elements; and/or\n- The procedure is not publicly available, but can be accessed upon reques",
+                                        "A \"Missing\" rating is assigned if the scheme does not have a documented procedure for verifying impact monitoring data."
+                                    ],
+                                },
+                                {
+                                    id: "C.1.2",
+                                    text: "Verification of impact monitoring data is conducted by independent parties.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "We seek to evaluate the extent to which the CSL owners ensure the accuracy and reliability of impact monitoring data and how independent the process is."
+                                    ],
+                                }
+                            ]
+                        },
+                        {
+                            id: "Add-on-C-2",
+                            text: "In the case of establishing one-way or mutual recognition with other schemes, the scheme must implement monitoring and requirements for the recognized schemes. It should clearly define the scope of its own assessments versus those covered by the recognized standards and ensure that the impacts of third-party certification are adequately evaluated.",
+                            requirements: [
+                                {
+                                    id: "Add-on-C-2",
+                                    text: "In the case of establishing one-way or mutual recognition with other schemes, the scheme must implement monitoring and requirements for the recognized schemes. It should clearly define the scope of its own assessments versus those covered by the recognized standards and ensure that the impacts of third-party certification are adequately evaluated.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "Add-on indicator",
+                                        "Not applicable if the scheme does not have one-way or mutual recognition with other schemes."
+                                    ],
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {   
+                    id: "p40",
+                    title: "Reporting or Demonstration of Impacts",
+                    criteria: [
+                        {
+                            id: "D.1",
+                            text: "The scheme publicly reports the monitoring and evaluation results.",
+                            requirements: [
+                                {
+                                    id: "D.1.1",
+                                    text: "The scheme shall publish a monitoring and evaluation report regularly which contains indicators that the scheme owner uses to measure its outputs and outcomes.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "See the following definition of outputs, outcomes, and impacts below (as stated in the report of ISEAL on Performance metrics for key sustainability issues)",
+                                        "Outputs\nThe products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
+                                        "Outcomes\nThe short-term and medium-term effects of an intervention on the sustainability issue in question.",
+                                        "Ideally, reporting should be done annually; however, at a minimum, it should occur at regular intervals (e.g., bi-annually)."
+                                    ],
+                                },
+                                {
+                                    id: "D.1.2",
+                                    text: "The report shall cover a management response that includes an explanation of the changes and improvements to the scheme that have been and will be made as a result.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"]
+                                },
+                                {
+                                    id: "D.1.3",
+                                    text: "The monitoring and evaluation report shall features quantitative results of monitoring indicators.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "At the minimum, quantitative results are presented for an indicator related to GHG emissions and 2-3 other indicators on environmental, social, or economic dimensions.",
+                                        "For Type I ecolabels:\nThe ecolabel shall publish quantitative results of the hotspot analysis as part of standard updates. The methodology must be transparently documented in the report, and if using literature review, the references must be up-to-date."
+                                    ],
+                                },
+                                {
+                                    id: "D.1.4",
+                                    text: "If the monitoring and evaluation system has been established for more than two years, the monitoring and evaluation report shall features results on similar indicators every year to allow comparison of progress.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"]
+                                },
+                                {
+                                    id: "D.1.5",
+                                    text: "'The scheme publishes impact evaluation results.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "Impact Evaluation:\nA systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)"
+                                    ],
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {   
+                    id: "p41",
+                    title: "Continuous Improvement of Scheme",
+                    criteria: [
+                        {
+                            id: "E.1",
+                            text: "The standard revision process updates requirements or indicators, considering the progress made by operators in advancing the certification scheme or label's goals.",
+                            requirements: [
+                                {
+                                    id: "E.1.1",
+                                    text: "The scheme establishes and publishes a clear procedure on how the progress of operators in advancing the certification scheme and label goals is evaluated and how the feedback is fed into the standard revision.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"]
+                                },
+                                {
+                                    id: "E.1.2",
+                                    text: "Progress evaluation as part of the standard revision is conducted through quantitative assessment for at least one or ideally more sustainability dimensions.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "The aim of this indicator is to evaluate the extent to which the scheme is able to quantify progress over time and demonstrate measurable improvements, particularly in GHG emissions, throughout the value chain. ",
+                                        "Note: For ISO type I labels, the most relevant impact is usually introduced prior to the development of criteria by conducting a life cycle based impact study. The resulting criteria are developed to reduce these impacts. Evaluation should therefore include a life cycle based impact study based on the performance of the operators."
+                                    ],
+                                }
+                            ]
+                        },
+                        {
+                            id: "F.1",
+                            text: "The scheme incorporates the feedback from certification bodies and certification support consultant, policy makers, non-governmental organizations, other public entities, and the development in science to facilitate  learning and improvements of the standard.",
+                            requirements: [
+                                {
+                                    id: "F.1.1",
+                                    text: "The scheme establishes a clear and transparent feedback mechanisms to gather input from certification bodies, certification support consultants, non-governmental organizations, other public entities, policymakers as well as the development in science for standard revision. The procedure shall be made publicly available.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "Feedback from certification bodies and certification support consultants should reflect the lessons learned from audit or the implementation of supporting programs, whether conducted in preparation for certification or during the certification process.",
+                                        "A \"Fully\" rating is granted if the scheme fulfills the following conditions:\n- the scheme collects feedback from all sources in the indicator (certification bodies, certification support consultants, non-governmental organizations, other public entities, policymakers as well as the development in science), AND\n- the procedure shall be made publicly available.",
+                                        "A \"Partly\" rating is assigned if:\n- the scheme only collects feedback from some of the mentioned sources, and/or\n- the procedure is not made publicly available",
+                                        "A \"Missing\" rating is assigned if:\n- the scheme does not collect feedback from the mentioned sources as part of the standard revision."
+                                    ],
+                                },
+                                {
+                                    id: "F.1.2",
+                                    text: "The scheme shall regularly incorporate feedback from certification bodies, certification support consultants, policymakers, and the development in science to facilitate learning and improvements of the standards. The process shall be documented to ensure that the updated standard reflects the received feedback and the latest development, and shall be made publicly available.",
+                                    responseOptions: [
+                                        {label: "Fully", score: 2},
+                                        {label: "Partly", score: 1},
+                                        {label: "Missing", score: 0},
+                                        {label: "Not Applicable", score: null}
+                                    ],
+                                    type: ["Scheme","Ecolabel"],
+                                    examples: [
+                                        "The scheme regularly feeds in the results of monitoring & evaluation in its internal processes (e.g. records of inclusion on the agenda of meetings, policy for when results are considered).\nAlternatively, the scheme owner shall at least annually communicate MEL activity findings, insights, and recommendations to the Board, executive leadership, standards committee, and staff overseeing risk management and all scheme components.",
+                                        "Example of evidence:\nEvaluation reports or data about sustainability performance, scheme effectiveness, and unintended negative effects."
+                                    ],
                                 }
                             ]
                         }

@@ -1,6 +1,5 @@
 import React, { useMemo } from 'react'
-import { assessments } from '../Data'
-import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, CartesianGrid } from 'recharts'
+import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts'
 
 const LEVELS = ['Mandatory', 'Basic', 'Advanced']
 
@@ -16,15 +15,12 @@ const computeContentScores = (answers, categories) => {
   const principleScores = {}
 
   categories.forEach(cat => {
-    // Handle Minimum Backstop separately
-    if (cat.category === 'Minimum Backstop') return
-
     // Initialize score tracking for this category
     if (!scoreByCategory[cat.category]) {
       scoreByCategory[cat.category] = {
         Mandatory: { met: 0, total: 0 },
-        Basic: { met: 0, total: 0 },
-        Advanced: { met: 0, total: 0 }
+        Basic:     { met: 0, total: 0 },
+        Advanced:  { met: 0, total: 0 }
       }
     }
 
@@ -34,8 +30,8 @@ const computeContentScores = (answers, categories) => {
       if (!principleScores[cat.category][principle.title]) {
         principleScores[cat.category][principle.title] = {
           Mandatory: { met: 0, total: 0 },
-          Basic: { met: 0, total: 0 },
-          Advanced: { met: 0, total: 0 }
+          Basic:     { met: 0, total: 0 },
+          Advanced:  { met: 0, total: 0 }
         }
       }
 
@@ -76,19 +72,17 @@ const computeContentScores = (answers, categories) => {
   )
 
   // Transform into bar
-  const principleBarData = Object.fromEntries(
+   const principleBarData = Object.fromEntries(
     Object.entries(principleScores).map(([category, principles]) => [
       category,
       Object.entries(principles).map(([title, levels]) => {
-        const { met: metM, total: totM } = levels.Mandatory
-        const { met: metB, total: totB } = levels.Basic
-        const { met: metA, total: totA } = levels.Advanced
-        return {
-          principle: title,
-          Mandatory: totM > 0 ? (metM / totM) * 100 : 0,
-          Basic:     totB > 0 ? (metB / totB) * 100 : 0,
-          Advanced:  totA > 0 ? (metA / totA) * 100 : 0
-        }
+        return LEVELS.reduce((acc, level) => {
+          const { met, total } = levels[level]
+          acc.principle = title
+          acc[`${level}Percent`] = total > 0 ? (met / total) * 100 : null
+          acc[`${level}Total`]   = total
+          return acc
+        }, {})
       })
     ])
   )
@@ -98,76 +92,16 @@ const computeContentScores = (answers, categories) => {
 
 // Component for displaying visual results for content-level scores
 export default function ContentCharts({ answers, categories }) {
-  const { scoreByCategory, principleScores, pieDataByCategory, principleBarData } = useMemo(() => computeContentScores(answers, categories), [answers, categories])
-
-  const minimumBackstopCategory = assessments['content']?.find(cat => cat.category === 'Minimum Backstop')
+  const { scoreByCategory, principleScores, pieDataByCategory, principleBarData } =
+    useMemo(() => computeContentScores(answers, categories), [answers, categories])
 
   return (
     <div>
-      <h2>Content-Level</h2>
+      <h3>Content-Level</h3>
 
       {/* Per Category Section */}
       <section className='dashboard-section'>
-        <h3>Score Per Category</h3>
-        
-        {/* Minimum Backstop */}
-        {/**
-        {minimumBackstopCategory && (
-          <section className='dashboard-section'>
-            <div className='chart-grid'>
-              {minimumBackstopCategory.principles.map(principle => {
-                const reqs = principle.criteria.flatMap(c => c.requirements)
-                const total = reqs.length
-                const met = reqs.reduce(
-                  (sum, req) => sum + (answers[req.id]?.response === 'Yes' ? 1 : 0),
-                  0
-                )
-                const data = [
-                  { name: 'Requirements met', value: met },
-                  { name: 'Requirements unmet', value: total - met }
-                ]
-                const percent = total > 0 ? Math.round((met / total) * 100) : 0
-
-                return (
-                  <div className='chart-card' key={principle.id}>
-                    <h4>{principle.title}</h4>
-                    <ResponsiveContainer width='100%' height={150}>
-                      <PieChart>
-                        <Pie
-                          data={data}
-                          dataKey='value'
-                          cx='50%'
-                          cy='50%'
-                          innerRadius={40}
-                          outerRadius={60}
-                          startAngle={90}
-                          endAngle={-270}
-                          paddingAngle={0}
-                          stroke='none'
-                        >
-                          <Cell fill={LEVEL_COLORS.Mandatory} />
-                          <Cell fill='#e0e0e0' />
-                        </Pie>
-                        <Tooltip formatter={(value) => `${value}`} />
-                        <text
-                          x='50%'
-                          y='50%'
-                          fill='#000'
-                          textAnchor='middle'
-                          dominantBaseline='middle'
-                          style={{ fontSize: '1rem', fontWeight: 600 }}
-                        >
-                          {percent + '%'}
-                        </text>
-                      </PieChart>
-                    </ResponsiveContainer>
-                  </div>
-                )
-              })}
-            </div>
-          </section>
-        )}
-        */}
+        <h4>Score Per Category</h4>
 
         {/* Per Category Table */}
         <table className='content-table'>
@@ -187,9 +121,7 @@ export default function ContentCharts({ answers, categories }) {
                 {LEVELS.map(level => {
                   const { met, total } = levels[level]
                   return (
-                    <td key={level}>
-                      {`${met}/${total}`}
-                    </td>
+                    <td key={level}>{`${met}/${total}`}</td>
                   )
                 })}
               </tr>
@@ -228,9 +160,7 @@ export default function ContentCharts({ answers, categories }) {
                             <Cell fill={LEVEL_COLORS[level]} />
                             <Cell fill='#e0e0e0' />
                           </Pie>
-                          <Tooltip
-                            formatter={(value) => `${value}`}
-                          />
+                          <Tooltip formatter={(value) => `${value}`} />
                           <text
                             x='50%'
                             y='50%'
@@ -251,20 +181,20 @@ export default function ContentCharts({ answers, categories }) {
           ))}
         </div>
       </section>
-      
+
       {/* Per Principle Section */}
-      <h3>Score Per Principle</h3>
-      
+      <h4>Score Per Principle</h4>
+
       {Object.entries(principleScores).map(([category, principles]) => {
-        const data = principleBarData [category]
+        const data = principleBarData[category]
         const BAR_SIZE = 45
         const BAR_GAP = 40
         const PADDING = 70
         const height = data.length * (BAR_SIZE + BAR_GAP) + PADDING
-        
+
         return (
-          <div key={category} className='dashboard-section'>
-            <h4>{category}</h4>
+          <section key={category} className='dashboard-section'>
+            <h5>{category}</h5>
 
             {/* Tables */}
             <table className='content-table'>
@@ -284,9 +214,7 @@ export default function ContentCharts({ answers, categories }) {
                     {LEVELS.map(level => {
                       const { met, total } = levels[level]
                       return (
-                        <td key={level}>
-                          {`${met}/${total}`}
-                        </td>
+                        <td key={level}>{`${met}/${total}`}</td>
                       )
                     })}
                   </tr>
@@ -295,51 +223,40 @@ export default function ContentCharts({ answers, categories }) {
             </table>
             
             {/* Bar Charts */}
-            <ResponsiveContainer
-              width='100%'
-              height={height}
-            >
+            <ResponsiveContainer width='100%' height={height}>
               <BarChart
                 data={data}
                 layout='vertical'
-                margin={{ left: 20, top: 20, right: 20, bottom: 20 }}
+                margin={{ left:20, top:20, right:50, bottom:20 }}
                 barCategoryGap={`${BAR_GAP}px`}
               >
-                <CartesianGrid strokeDasharray='3 3' />
-                <XAxis
-                  type='number'
-                  domain={[0, 100]}
-                  tickFormatter={v => `${v.toFixed(0)}%`}
+                <XAxis type='number' domain={[0,100]} tickFormatter={v => `${v.toFixed(0)}%`} />
+                <YAxis dataKey='principle' type='category' width={140} tick={{ fontSize:15 }} />
+                <Tooltip
+                  formatter={(value,name,{payload}) =>
+                    payload[`${name}Total`] === 0
+                      ? ['Not Applicable', name]
+                      : [`${value.toFixed(0)}%`, name]
+                  }
                 />
-                <YAxis
-                  dataKey='principle'
-                  type='category'
-                  width={140}
-                  tick={{ fontSize: 14 }}
-                />
-                <Tooltip formatter={v => `${v.toFixed(0)}%`} />
                 <Legend />
-                <Bar
-                  dataKey='Mandatory'
-                  fill='#8884d8'
-                  name='Mandatory'
-                  barSize={BAR_SIZE}
-                />
-                <Bar
-                  dataKey='Basic'
-                  fill='#82ca9d'
-                  name='Basic'
-                  barSize={BAR_SIZE}
-                />
-                <Bar
-                  dataKey='Advanced'
-                  fill='#ffc658'
-                  name='Advanced'
-                  barSize={BAR_SIZE}
-                />
+                {LEVELS.map(lvl => (
+                  <Bar
+                    key={lvl}
+                    dataKey={`${lvl}Percent`}
+                    name={lvl}
+                    barSize={BAR_SIZE}
+                    fill={LEVEL_COLORS[lvl]}
+                    label={{
+                      position: 'right',
+                      fill: LEVEL_COLORS[lvl], 
+                      formatter: value => `${value.toFixed(0)}%`
+                    }}
+                  />
+                ))}
               </BarChart>
             </ResponsiveContainer>
-          </div>
+          </section>
         )
       })}
     </div>

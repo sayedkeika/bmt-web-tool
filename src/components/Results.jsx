@@ -1,25 +1,31 @@
-import React, { useRef, useEffect } from 'react'
+import React, { useRef, useEffect, useState} from 'react'
 import { assessments } from '../Data'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import SystemCharts from './SystemCharts'
 import ContentCharts from './ContentCharts'
+import OutcomeCharts from './OutcomeCharts'
 import DownloadIcon from '../svgs/data-download.svg'
+import PopupDialog from './PopupDialog'
 
 const TYPE_LABELS = {
   system: 'System-Level Assessment',
-  content: 'Content-Level Assessment'
+  content: 'Content-Level Assessment',
+  outcome: 'Outcome-Level Assessment'
 }
 
 // Component for showing charts and allowing export of results
 export default function Results({
+  schemeName,
   selectedTypes,
   answers,
-  onRestart,
+  onBackToStart,
   filteredSystemCategories,
   filteredContentCategories,
+  filteredOutcomeCategories,
   onBackToAssessment
 }) {
+  const [showConfirm, setShowConfirm] = useState(false)
   const resultsRef = useRef()
   
   // Generates and downloads a PDF of the current results view
@@ -58,7 +64,8 @@ export default function Results({
       }
 
       // Save and restore original styles
-      pdf.save('assessment-results.pdf')
+      const filename = schemeName?.trim() || 'assessment-results'
+      pdf.save(`${filename}.pdf`)
       input.style.overflow = originalOverflow
       input.style.height = originalHeight
     })
@@ -104,7 +111,8 @@ export default function Results({
     const url = URL.createObjectURL(blob)
     const link = document.createElement('a')
     link.href = url
-    link.setAttribute('download', 'assessment-results.csv')
+    const filename = schemeName?.trim() || 'assessment-responses'
+    link.setAttribute('download', `${filename}.csv`)
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -114,22 +122,49 @@ export default function Results({
   useEffect(() => {
     window.scrollTo({ top: 0})
   }, [])
-    
+  
+  // Confirm or cancel popup
+  const handleRestartClick = () => setShowConfirm(true)
+  const confirmRestart = () => {
+    setShowConfirm(false)
+    onBackToStart()
+  }
+  const cancelRestart = () => setShowConfirm(false)
+
   return (
     <>
+      {/* Confirmation Dialog */}
+      {showConfirm && (
+        <PopupDialog
+          message='Are you sure you want to start a new assessment? All progress will be lost.'
+          onCancel={cancelRestart}
+          onConfirm={confirmRestart}
+        />
+      )}
+
       {/* Top navigation */}
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
             <button className='nav' onClick={onBackToAssessment}>← Back to Assessment</button>
-            <button className='nav download-pdf' onClick={handleDownloadPDF} title='Download as PDF'><img src={DownloadIcon} alt='Open Glossary' style={{ filter: 'brightness(0) invert(1)' }}/></button>
+            <button
+              className='nav floating-button download-pdf'
+              onClick={handleDownloadPDF}>
+              <img src={DownloadIcon} className='icon'/>
+              <span className='label'>Results as PDF</span>
+            </button>
+            <button
+              className='nav floating-button download-csv'
+              onClick={handleDownloadCSV}>
+              <img src={DownloadIcon} className='icon'/>
+              <span className='label'>Responses as CSV</span>
+            </button>
           </div>
           <div className='nav-center'>
-            <h2>Results</h2>
+            <h1 style={{ marginTop: '2rem', marginBottom: '2rem'}} >Results</h1>
           </div>
           <div className='nav-right'>
-            {/* <button className='nav' onClick={handleDownloadCSV}>Download Assessment as CSV <img src={DownloadIcon} className='icon'/></button> */}
-            <button className='nav' onClick={onRestart}>Start New Assessment →</button>
+            <button className='nav' onClick={handleRestartClick}>Start New Assessment →</button>
           </div>
         </div>
       </div>
@@ -150,6 +185,15 @@ export default function Results({
             <ContentCharts 
               answers={answers} 
               categories={filteredContentCategories}
+            />
+          </section>
+        )}
+
+        {selectedTypes.includes('outcome') && (
+          <section className='dashboard-section'>
+            <OutcomeCharts
+              answers={answers}
+              categories={filteredOutcomeCategories}
             />
           </section>
         )}
