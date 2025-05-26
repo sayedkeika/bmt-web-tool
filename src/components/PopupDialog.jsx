@@ -10,8 +10,12 @@ export default function PopupDialog({
       <div className='popup-panel'>
         <p>{message}</p>
         <div>
-          <button onClick={onConfirm}>Yes</button>
-          <button onClick={onCancel}>Cancel</button>
+          <button onClick={onConfirm}>
+            {onCancel ? 'Yes' : 'Ok'}
+          </button>
+          {onCancel && (
+            <button onClick={onCancel}>Cancel</button>
+          )}
         </div>
       </div>
     </div>

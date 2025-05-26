@@ -23,15 +23,25 @@ export default function Assessment({
   onSubmit
 }) {
   const [showConfirm, setShowConfirm] = useState(false)
+  const [showSubmitWarning, setShowSubmitWarning] = useState(false)
 
   // Confirm or cancel popup
   const handleRestartClick = () => setShowConfirm(true)
-  const confirmRestart   = () => {
+  const confirmRestart = () => {
     setShowConfirm(false)
     onBackToStart()
   }
-  const cancelRestart   = () => setShowConfirm(false)
-  
+  const cancelRestart = () => setShowConfirm(false)
+
+  const handleSubmitClick = () => {
+    if (!allAnswered) {
+      setShowSubmitWarning(true)
+    } else {
+      onSubmit()
+    }
+  }
+  const closeSubmitWarning = () => setShowSubmitWarning(false)
+
   // Save a response value for a criterion or requirement
   const handleAnswer = (criterionId, value) => {
     setAnswers(prev => {
@@ -117,7 +127,7 @@ export default function Assessment({
   
   return (
     <>
-      {/* Confirmation Dialog */}
+      {/* Restart Popup */}
       {showConfirm && (
         <PopupDialog
           message='Are you sure you want to start a new assessment? All progress will be lost.'
@@ -126,11 +136,19 @@ export default function Assessment({
         />
       )}
 
+      {/* Submit Popup */}
+      {showSubmitWarning && (
+        <PopupDialog
+          message='Please complete the assessment before submitting.'
+          onConfirm={closeSubmitWarning}
+        />
+      )}
+
       {/* Top navigation */}
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
-            <button className='nav' onClick={handleRestartClick} title='Start a new assessment'>← New Assessment</button>
+            <button className='nav' onClick={handleRestartClick} title='Start a new assessment'>New Assessment</button>
           </div>
           <div className='nav-center'>
             <h4>{TYPE_LABELS[type]}</h4>
@@ -139,14 +157,11 @@ export default function Assessment({
           <div className='nav-right'>
             <button
                 className='nav'
-                onClick={onSubmit}
-                //disabled={!allAnswered}
-                title={!allAnswered ? 'Please complete all criteria before submitting.' : ''}
-              >Submit →
+                onClick={handleSubmitClick}
+              >Submit
             </button>
           </div>           
         </div>
-        
 
         {/* Breadcrumb‐style stepper and progress progress bar */}
         <div className='progress-header'>
@@ -186,14 +201,21 @@ export default function Assessment({
         </div>
 
         {/* Progress bar */}
-          <div className='progress-container'>
-            {(() => {
-              const allItems = allCriteria.length
-              const doneItems = allCriteria.filter(c => !!answers[c.id]?.response).length
-              const pct = allItems ? Math.round((doneItems / allItems) * 100) : 0
-              return <div className='progress-fill' style={{ width: `${pct}%` }} />
-            })()}
-          </div>
+        <div className='progress-wrapper'>
+          {(() => {
+            const total = allCriteria.length
+            const done = allCriteria.filter(c => !!answers[c.id]?.response).length
+            const pct = total ? Math.round((done / total) * 100) : 0
+            return (
+              <>
+                <div className='progress-container'>
+                  <div className='progress-fill' style={{ width: `${pct}%` }} />
+                </div>
+                <span className='progress-label'>{pct}%</span>
+              </>
+            )
+          })()}
+        </div>
       </div>
 
       {/* Main questionnaire content */}

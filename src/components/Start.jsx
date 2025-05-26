@@ -1,5 +1,6 @@
 import React, { useState, useMemo } from 'react'
 import { assessments } from '../Data'
+import PopupDialog from './PopupDialog'
 
 const TYPES = [
   { key: 'system', label: 'System-Level' },
@@ -15,6 +16,7 @@ export default function Start({ onStart }) {
   const [selectedPhases, setSelectedPhases] = useState([])
   const [selectedContentCats, setSelectedContentCats] = useState([])
   const [selectedApplicability, setSelectedApplicability] = useState([])
+  const [showStartWarning, setShowStartWarning] = useState(false)
 
   // Derive filter options from the data
   const allApplicability = useMemo(() => {
@@ -58,16 +60,29 @@ export default function Start({ onStart }) {
   const toggle = (item, arr, setter) =>
     setter(arr.includes(item) ? arr.filter(x => x !== item) : [...arr, item])
 
+  // Validity flags
+  const hasName = schemeName.trim().length > 0
+  const hasType = selectedTypes.length > 0
+  const hasApplicability = !selectedTypes.includes('system') && !selectedTypes.includes('outcome') ? true : selectedApplicability.length > 0
+  const hasContentCats = !selectedTypes.includes('content') || selectedContentCats.length > 0
+  const hasContent = !selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0)
+
   // Validate if user can start the assessment
-  const isValidSelection = () => {
-    const hasName = schemeName.trim().length > 0
-    const hasType = selectedTypes.length > 0
-    const hasApplicability = !selectedTypes.includes('system') && !selectedTypes.includes('outcome') ? true : selectedApplicability.length > 0
-    const hasContentCats = !selectedTypes.includes('content') || selectedContentCats.length > 0
-    const hasContent = !selectedTypes.includes('content') || (selectedFeedstocks.length > 0 && selectedPhases.length > 0)
-    return hasName && hasType && hasApplicability && hasContentCats && hasContent
+  const isValidSelection = () => hasName && hasType && hasApplicability && hasContentCats && hasContent
+ 
+  const startWarningMessage = () => {
+    if (!hasName) return 'Please enter a name.'
+    if (!hasType) return 'Please select at least one assessment level.'
+    return 'Please complete all required selections.'
   }
 
+  const handleStartClick = () => {
+    if (!isValidSelection()) {
+      setShowStartWarning(true)
+    } else {
+      handleStart()
+    }
+  }
   // Trigger the assessment start once valid selections are made
   const handleStart = () => {
     if (isValidSelection()) {
@@ -84,6 +99,14 @@ export default function Start({ onStart }) {
 
   return (
     <>
+      {/* Start Popup */}
+      {showStartWarning && (
+        <PopupDialog
+          message={startWarningMessage()}
+          onConfirm={() => setShowStartWarning(false)}
+        />
+      )}
+
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'></div>
@@ -185,14 +208,9 @@ export default function Start({ onStart }) {
         <button
           className='nav'
           style={{ marginTop: '2rem' }}
-          onClick={handleStart}
-          disabled={!isValidSelection()}
-          title={!isValidSelection()
-            ? (!schemeName.trim()
-                ? 'Please enter a name.'
-                : 'Please select at least one assessment level and the required applicability options.')
-            : ''}
-        >Start Assessment →</button>
+          onClick={handleStartClick}
+        >Start Assessment
+        </button>
       </div>
     </>
   )
