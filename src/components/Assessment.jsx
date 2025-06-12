@@ -157,7 +157,7 @@ export default function Assessment({
           <div className='nav-right'>
             <button
                 className='nav'
-                onClick={handleSubmitClick}
+                onClick={onSubmit}
               >Submit
             </button>
           </div>           
@@ -335,7 +335,7 @@ export default function Assessment({
             {currentIndex < allPrinciples.length - 1 ? (
               <button className='page-button' onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next</button>
             ) : (
-              <button className='nav' onClick={handleSubmitClick}>Submit</button>
+              <button className='nav' onClick={onSubmit}>Submit</button>
             )}
           </div>
         </div>
