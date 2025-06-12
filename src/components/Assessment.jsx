@@ -157,7 +157,7 @@ export default function Assessment({
           <div className='nav-right'>
             <button
                 className='nav'
-                onClick={onSubmit}
+                onClick={handleSubmitClick}
               >Submit
             </button>
           </div>           
