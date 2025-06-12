@@ -1,5 +1,5 @@
 import React, { useMemo } from 'react'
-import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend } from 'recharts'
+import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, LabelList, CartesianGrid } from 'recharts'
 
 const LEVELS = ['Mandatory', 'Basic', 'Advanced']
 
@@ -97,7 +97,7 @@ export default function ContentCharts({ answers, categories }) {
 
   return (
     <div>
-      <h3>Content-Level</h3>
+      <h3>Content Level</h3>
 
       {/* Per Category Section */}
       <section className='dashboard-section'>
@@ -230,8 +230,20 @@ export default function ContentCharts({ answers, categories }) {
                 margin={{ left:20, top:20, right:50, bottom:20 }}
                 barCategoryGap={`${BAR_GAP}px`}
               >
-                <XAxis type='number' domain={[0,100]} tickFormatter={v => `${v.toFixed(0)}%`} />
-                <YAxis dataKey='principle' type='category' width={140} tick={{ fontSize:15 }} />
+                <CartesianGrid strokeDasharray='3 3' horizontal={false} />
+                
+                <XAxis
+                  type='number'
+                  domain={[0,100]}
+                  tickFormatter={v => `${v.toFixed(0)}%`}
+                  ticks={[0, 20, 40, 60, 80, 100]}
+                />
+                <YAxis
+                  dataKey='principle'
+                  type='category'
+                  width={140}
+                  tick={{ fontSize:15 }}
+                />
                 <Tooltip
                   formatter={(value,name,{payload}) =>
                     payload[`${name}Total`] === 0
@@ -247,12 +259,26 @@ export default function ContentCharts({ answers, categories }) {
                     name={lvl}
                     barSize={BAR_SIZE}
                     fill={LEVEL_COLORS[lvl]}
-                    label={{
-                      position: 'right',
-                      fill: LEVEL_COLORS[lvl], 
-                      formatter: value => `${value.toFixed(0)}%`
-                    }}
-                  />
+                  >
+                    <LabelList
+                      dataKey={`${lvl}Percent`}
+                      position='right'
+                      content={props => {
+                        const { x, y, value } = props;
+                        const display = value == null ? 'N/A' : `${value.toFixed(0)}%`;
+                        return (
+                          <text
+                            x={x+4}
+                            y={y+18}
+                            fill={LEVEL_COLORS[lvl]}
+                            fontSize={15}
+                          >
+                            {display}
+                          </text>
+                        )
+                      }}
+                    />
+                  </Bar>     
                 ))}
               </BarChart>
             </ResponsiveContainer>

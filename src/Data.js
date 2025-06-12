@@ -1250,7 +1250,7 @@ export const assessments = {
                                 {
                                     id: "r20",
                                     level: "Mandatory",
-                                    text: "i. The monitoring and enforcement system ensures:\n(1) the legality of harvesting operations;\n(2) forest regeneration of harvested areas;\n(3) that areas designated by international or national law or by the relevant competent authority for nature protection purposes are protected;\n(4) that harvesting is carried out considering maintenance of soil quality and biodiversity with the aim of minimising negative impacts; and\n(5) that harvesting maintains or improves the long-term production capacity of the forest",
+                                    text: "i. The monitoring and enforcement system ensures:(1) the legality of harvesting operations; (2) forest regeneration of harvested areas; (3) that areas designated by international or national law or by the relevant competent authority for nature protection purposes are protected; (4) that harvesting is carried out considering maintenance of soil quality and biodiversity with the aim of minimising negative impacts; and (5) that harvesting maintains or improves the long-term production capacity of the forest",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Forest"],
                                     applicablePhases: ["Biomass producer"]
@@ -1267,7 +1267,7 @@ export const assessments = {
                                 {
                                     id: "r21",
                                     level: "Mandatory",
-                                    text: "i. The biobased materials are produced from forest biomass originating in a country or regional economic integration organisation that\n(a) is a Party to the Paris Agreement;\n(b) has submitted a nationally determined contribution (NDC) to the United Nations Framework Convention on Climate Change (UNFCCC), covering emissions and removals from agriculture, forestry and land use which ensures that changes in carbon stock associated with biomass harvest are accounted towards the country's commitment to reduce or limit greenhouse gas emissions as specified in the NDC; OR\n(c) has national or sub-national laws in place, in accordance with Article 5 of the Paris Agreement, applicable in the area of harvest, to conserve and enhance carbon stocks and sinks, and providing evidence that reported LULUCF-sector emissions do not exceed removals.",
+                                    text: "i. The biobased materials are produced from forest biomass originating in a country or regional economic integration organisation that (a) is a Party to the Paris Agreement; (b) has submitted a nationally determined contribution (NDC) to the United Nations Framework Convention on Climate Change (UNFCCC), covering emissions and removals from agriculture, forestry and land use which ensures that changes in carbon stock associated with biomass harvest are accounted towards the country's commitment to reduce or limit greenhouse gas emissions as specified in the NDC; OR (c) has national or sub-national laws in place, in accordance with Article 5 of the Paris Agreement, applicable in the area of harvest, to conserve and enhance carbon stocks and sinks, and providing evidence that reported LULUCF-sector emissions do not exceed removals.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Forest"],
                                     applicablePhases: ["Industrial processor", "Final product manufacturer"]
@@ -1441,7 +1441,7 @@ export const assessments = {
                                 {
                                     id: "r33",
                                     level: "Advanced",
-                                    text: "i.Low ILUC risk is demonstrated by meeting at least one of the following:\na) Additional biomass is produced through an increase in yield without additional land conversion and any yield increase techniques applied do not create negative environmental trade-offs concerning for example soil quality or protection of biodiversity.\nb) The biomass used for biobased products production is a waste or a residue with low ILUC risk level.\c) The biomass used for biobased product production is derived from unused, abandoned or severely degraded land.",
+                                    text: "i.Low ILUC risk is demonstrated by meeting at least one of the following: a) Additional biomass is produced through an increase in yield without additional land conversion and any yield increase techniques applied do not create negative environmental trade-offs concerning for example soil quality or protection of biodiversity. b) The biomass used for biobased products production is a waste or a residue with low ILUC risk level. c) The biomass used for biobased product production is derived from unused, abandoned or severely degraded land.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
@@ -1499,16 +1499,16 @@ export const assessments = {
                             requirements: [
                                 {
                                     id: "r36",
-                                    level: "i. A baseline biodiversity assessment is conducted at site level.",
-                                    text: "Basic",
+                                    level: "Basic",
+                                    text: "i. A baseline biodiversity assessment is conducted at site level.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Crop", "Forest"],
                                     applicablePhases: ["Biomass producer"]
                                 },
                                 {
                                     id: "r37",
-                                    level: "ii. The baseline biodiversity assessment is reconducted regularly to monitor progress.",
-                                    text: "Basic",
+                                    level: "Basic",
+                                    text: "ii. The baseline biodiversity assessment is reconducted regularly to monitor progress.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Crop", "Forest"],
                                     applicablePhases: ["Biomass producer"]
@@ -2752,7 +2752,7 @@ export const assessments = {
                             id: "SOC-LR-9",
                             text: "The scheme requires fair contract practices.",
                             examples: [
-                                "Contracts can include the following information:\n(a) job duties;\n(b) location of the job;\n(c) working hours;\n(d) pay rate and/or method of calculation;\n(e) overtime pay rate;\n(f) frequency or schedule of payment;\n(g) deductions and benefits provided such as in-kind benefits;\n(h) paid leave;\n(i) medical leave and protections in case of illness, disability or accident; and\n(j) notice period for contract termination. "
+                                "Contracts can include the following information: (a) job duties; (b) location of the job; (c) working hours; (d) pay rate and/or method of calculation; (e) overtime pay rate; (f) frequency or schedule of payment; (g) deductions and benefits provided such as in-kind benefits; (h) paid leave; (i) medical leave and protections in case of illness, disability or accident; and (j) notice period for contract termination. "
                             ],
                             requirements: [
                                 {
@@ -3388,7 +3388,7 @@ export const assessments = {
                                 {
                                     id: "r200",
                                     level: "Basic",
-                                    text: "iv. If the validity of the operator's use of the land and water is disputed, the operator\n(a) demonstrates its legitimate right to use the land and water;\n(b) conducts and ensures acceptance of a conflict resolution and remediation process;\n(c) engages in good faith in applicable legal processes; and\n(d)if the dispute involves indigenous peoples and local communities, follows a Free, prior, and informed consent (FPIC) process aligned with the UN Declaration on the Rights of Indigenous People (UNDRIP) or a more ambitious process.",
+                                    text: "iv. If the validity of the operator's use of the land and water is disputed, the operator (a) demonstrates its legitimate right to use the land and water; (b) conducts and ensures acceptance of a conflict resolution and remediation process; (c) engages in good faith in applicable legal processes; and (d)if the dispute involves indigenous peoples and local communities, follows a Free, prior, and informed consent (FPIC) process aligned with the UN Declaration on the Rights of Indigenous People (UNDRIP) or a more ambitious process.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Agrarian and forestry residues", "Crop", "Forest", "Waste and residues"],
                                     applicablePhases: ["Biomass producer", "Industrial processor", "Final product manufacturer"]
@@ -3828,7 +3828,7 @@ export const assessments = {
                             requirements: [
                                 {
                                     id: "A.1.1",
-                                    text: "The scheme requires operators to systematically address critical sustainability issues by either:\n1. Developing a measurable, time-bound sustainability plan aligned with the organization's mission. The plan must address environmental, social, and economic dimensions, demonstrate progress toward sustainability goals\nOR\n2. A structured risk mitigation framework that identifies key sustainability risks and outlines specific measures to address them\nEither approach should show how it has guided key decisions and outcomes.",
+                                    text: "The scheme requires operators to systematically address critical sustainability issues by either:1. Developing a measurable, time-bound sustainability plan aligned with the organization's mission. The plan must address environmental, social, and economic dimensions, demonstrate progress toward sustainability goals OR 2. A structured risk mitigation framework that identifies key sustainability risks and outlines specific measures to address them Either approach should show how it has guided key decisions and outcomes.",
                                     responseOptions: [
                                         {label: "Fully", score: 2},
                                         {label: "Partly", score: 1},
@@ -3993,9 +3993,9 @@ export const assessments = {
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
                                         "See the following definition of outputs, outcomes, and impacts below (as stated in the report of ISEAL on Performance metrics for key sustainability issues)",
-                                        "• Outputs\nThe products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
-                                        "• Outcomes\nThe short-term and medium-term effects of an intervention on the sustainability issue in question.",
-                                        "• Impacts\n Long-term effects (direct or indirect, intended or unintended) on the sustainability issue produced as the result of an intervention.",
+                                        "• Outputs The products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
+                                        "• Outcomes The short-term and medium-term effects of an intervention on the sustainability issue in question.",
+                                        "• Impacts  Long-term effects (direct or indirect, intended or unintended) on the sustainability issue produced as the result of an intervention.",
                                         "For ISO type I labels, the most relevant impact is usually introduced prior to the development of criteria by conducting a life cycle based impact study. The resulting criteria are developed to reduce these impacts. The design of this approach therefore also includes the measurement of impact and is eligible for a 'Fully'."
                                     ],
                                 },
@@ -4011,12 +4011,12 @@ export const assessments = {
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
                                         "Indicator fulfilment",
-                                        "A \"Fully\" rating is assigned if:\nThe scheme conducts both performance monitoring and outcome evaluation on an annual basis. Evidence of this may include a monitoring and evaluation procedure, an annual impact report, or any relevant publications available on the scheme’s website. At a minimum, there should be documentation demonstrating that performance monitoring and outcome evaluation are carried out annually and made available to internal stakeholders.",
-                                        "A \"Partial\" rating is assigned if:\n• The scheme conducts only one of the two activities (performance monitoring or outcome evaluation) annually; and/or\n• The frequency of either activity is less than once per year.• ",
-                                        "A \"Missing\" rating is assigned if:\nNeither performance monitoring nor outcome evaluation is conducted, or there is no available evidence to demonstrate these activities.",
-                                        "Definitions\nSee the following definition of performance monitoring and outcome evaluation (as stated in the ISEAL Impact Code of Good Practice)",
-                                        "• Performance monitoring:\nA continuing function that uses systematic collection of data on specified indicators to provide indications of the extent to which outputs and short and medium term results are being achieved. (Adapted from OECD Glossary,2002).\nExamples of performance indicators: number of certificate holders, number of workers protected under the standard, amount of certified materials",
-                                        "• Outcome evaluation:\nSystematic and objective in depth ex-post assessment of the short-term and medium-term results or effects from the implementation of a standards system.\nThese studies seek to shed light on the extent to which standards system’s desired changes are occurring as well as why the system is or is not working. Unlike impact evaluations, outcome evaluations are not designed to draw conclusions about the extent to which an intervention can be attributed to the intervention of a standards system.\nExamples of indicators for outcome evaluations: GHG emissions, energy uses"
+                                        "A \"Fully\" rating is assigned if: The scheme conducts both performance monitoring and outcome evaluation on an annual basis. Evidence of this may include a monitoring and evaluation procedure, an annual impact report, or any relevant publications available on the scheme’s website. At a minimum, there should be documentation demonstrating that performance monitoring and outcome evaluation are carried out annually and made available to internal stakeholders.",
+                                        "A \"Partial\" rating is assigned if: • The scheme conducts only one of the two activities (performance monitoring or outcome evaluation) annually; and/or • The frequency of either activity is less than once per year.• ",
+                                        "A \"Missing\" rating is assigned if: Neither performance monitoring nor outcome evaluation is conducted, or there is no available evidence to demonstrate these activities.",
+                                        "Definitions See the following definition of performance monitoring and outcome evaluation (as stated in the ISEAL Impact Code of Good Practice)",
+                                        "• Performance monitoring: A continuing function that uses systematic collection of data on specified indicators to provide indications of the extent to which outputs and short and medium term results are being achieved. (Adapted from OECD Glossary,2002). Examples of performance indicators: number of certificate holders, number of workers protected under the standard, amount of certified materials",
+                                        "• Outcome evaluation: Systematic and objective in depth ex-post assessment of the short-term and medium-term results or effects from the implementation of a standards system. These studies seek to shed light on the extent to which standards system’s desired changes are occurring as well as why the system is or is not working. Unlike impact evaluations, outcome evaluations are not designed to draw conclusions about the extent to which an intervention can be attributed to the intervention of a standards system. Examples of indicators for outcome evaluations: GHG emissions, energy uses"
                                     ],
                                 },
                                 {
@@ -4030,7 +4030,7 @@ export const assessments = {
                                     ],
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
-                                        "Impact Evaluation:\nA systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)",
+                                        "Impact Evaluation: A systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)",
                                         "• The frequency of impact evaluation (at least every 5 year) should be explicitly mentioned in the monitoring and evaluation procedure or other scheme documents.",
                                         "• There should be evidence that shows the scheme conducts impact evaluation every 5 years. Example of evidence: Impact Evaluation Report"
                                     ],
@@ -4078,7 +4078,7 @@ export const assessments = {
                             requirements: [
                                 {
                                     id: "C.1.1",
-                                    text: "The scheme has a clear procedure for verifying impact monitoring data, which includes:\n- what data is verified\n- where the data comes from\n- how data is verified\n- parties involved in verification",
+                                    text: "The scheme has a clear procedure for verifying impact monitoring data, which includes: - what data is verified - where the data comes from - how data is verified - parties involved in verification",
                                     responseOptions: [
                                         {label: "Fully", score: 2},
                                         {label: "Partly", score: 1},
@@ -4087,8 +4087,8 @@ export const assessments = {
                                     ],
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
-                                        "A \"Fully\" rating is assigned if the scheme has an explicit and publicly available procedure for verifying impact monitoring data that addresses all four key elements:\n- What data is verified\n- Where the data comes from\n- How the data is verified\n- Which parties are involved in the verification process",
-                                        "A \"Partial\" rating is assigned if:\n- The procedure addresses fewer than all four elements; and/or\n- The procedure is not publicly available, but can be accessed upon reques",
+                                        "A \"Fully\" rating is assigned if the scheme has an explicit and publicly available procedure for verifying impact monitoring data that addresses all four key elements: - What data is verified - Where the data comes from - How the data is verified - Which parties are involved in the verification process",
+                                        "A \"Partial\" rating is assigned if: - The procedure addresses fewer than all four elements; and/or - The procedure is not publicly available, but can be accessed upon reques",
                                         "A \"Missing\" rating is assigned if the scheme does not have a documented procedure for verifying impact monitoring data."
                                     ],
                                 },
@@ -4151,8 +4151,8 @@ export const assessments = {
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
                                         "See the following definition of outputs, outcomes, and impacts below (as stated in the report of ISEAL on Performance metrics for key sustainability issues)",
-                                        "Outputs\nThe products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
-                                        "Outcomes\nThe short-term and medium-term effects of an intervention on the sustainability issue in question.",
+                                        "Outputs The products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
+                                        "Outcomes The short-term and medium-term effects of an intervention on the sustainability issue in question.",
                                         "Ideally, reporting should be done annually; however, at a minimum, it should occur at regular intervals (e.g., bi-annually)."
                                     ],
                                 },
@@ -4179,7 +4179,7 @@ export const assessments = {
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
                                         "At the minimum, quantitative results are presented for an indicator related to GHG emissions and 2-3 other indicators on environmental, social, or economic dimensions.",
-                                        "For Type I ecolabels:\nThe ecolabel shall publish quantitative results of the hotspot analysis as part of standard updates. The methodology must be transparently documented in the report, and if using literature review, the references must be up-to-date."
+                                        "For Type I ecolabels: The ecolabel shall publish quantitative results of the hotspot analysis as part of standard updates. The methodology must be transparently documented in the report, and if using literature review, the references must be up-to-date."
                                     ],
                                 },
                                 {
@@ -4204,7 +4204,7 @@ export const assessments = {
                                     ],
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
-                                        "Impact Evaluation:\nA systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)"
+                                        "Impact Evaluation: A systematic, objective and in depth, ex-post assessment of the medium or long-term effects; positive or negative, intended or unintended, of the implementation of a standards system. Impact evaluations employ methodologies that are designed to enable evaluation users to understand the extent to which an observed change can be attributed to the standard system or another intervention. (Adapted from 3ie Impact Evaluation Glossary, 2012 and World Bank)"
                                     ],
                                 }
                             ]
@@ -4263,9 +4263,9 @@ export const assessments = {
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
                                         "Feedback from certification bodies and certification support consultants should reflect the lessons learned from audit or the implementation of supporting programs, whether conducted in preparation for certification or during the certification process.",
-                                        "A \"Fully\" rating is granted if the scheme fulfills the following conditions:\n- the scheme collects feedback from all sources in the indicator (certification bodies, certification support consultants, non-governmental organizations, other public entities, policymakers as well as the development in science), AND\n- the procedure shall be made publicly available.",
-                                        "A \"Partly\" rating is assigned if:\n- the scheme only collects feedback from some of the mentioned sources, and/or\n- the procedure is not made publicly available",
-                                        "A \"Missing\" rating is assigned if:\n- the scheme does not collect feedback from the mentioned sources as part of the standard revision."
+                                        "A \"Fully\" rating is granted if the scheme fulfills the following conditions: - the scheme collects feedback from all sources in the indicator (certification bodies, certification support consultants, non-governmental organizations, other public entities, policymakers as well as the development in science), AND - the procedure shall be made publicly available.",
+                                        "A \"Partly\" rating is assigned if: - the scheme only collects feedback from some of the mentioned sources, and/or - the procedure is not made publicly available",
+                                        "A \"Missing\" rating is assigned if: - the scheme does not collect feedback from the mentioned sources as part of the standard revision."
                                     ],
                                 },
                                 {
@@ -4279,8 +4279,8 @@ export const assessments = {
                                     ],
                                     type: ["Scheme","Ecolabel"],
                                     examples: [
-                                        "The scheme regularly feeds in the results of monitoring & evaluation in its internal processes (e.g. records of inclusion on the agenda of meetings, policy for when results are considered).\nAlternatively, the scheme owner shall at least annually communicate MEL activity findings, insights, and recommendations to the Board, executive leadership, standards committee, and staff overseeing risk management and all scheme components.",
-                                        "Example of evidence:\nEvaluation reports or data about sustainability performance, scheme effectiveness, and unintended negative effects."
+                                        "The scheme regularly feeds in the results of monitoring & evaluation in its internal processes (e.g. records of inclusion on the agenda of meetings, policy for when results are considered). Alternatively, the scheme owner shall at least annually communicate MEL activity findings, insights, and recommendations to the Board, executive leadership, standards committee, and staff overseeing risk management and all scheme components.",
+                                        "Example of evidence: Evaluation reports or data about sustainability performance, scheme effectiveness, and unintended negative effects."
                                     ],
                                 }
                             ]
@@ -4293,87 +4293,6 @@ export const assessments = {
 }
 
 export const glossary = [
-    {
-        theme: "Feedstock",
-        term: "Crop",
-        definition: "Vegetable biological organism used for biomass production and the biomass produced based on this plant.",
-        references: [
-            {
-                label: "RSB Glossary of terms",
-                url: "https://rsb.org/wp-content/uploads/2020/06/RSB-STD-01-002-v.1.5-RSB-Glossary-of-Terms.pdf"
-            }
-        ]
-    },
-    {
-        theme: "Feedstock",
-        term: "Forest",
-        definition: "Forests are lands of more than 0.5 hectares, with a tree canopy cover of more than 10 percent, which are not primarily under agricultural or urban land use. Forests are determined both by the presence of trees and the absence of other predominant land uses. The term specifically excludes trees planted primarily for agricultural production, for example in fruit plantations and agroforestry systems.",
-        references: [
-            {
-                label: "FAO: Forest Resources Assessment 2000 On definitions of forest and forest change",
-                url: "https://www.fao.org/4/ad665e/ad665e00.htm#TopOfPage"
-            }
-        ]
-    },
-    {
-        theme: "Feedstock",
-        term: "Waste and residues",
-        definition: "Waste: Any substance or object which the holder discards or intends or is required to discard; Residue: A substance that is not the end product(s) that a production process directly seeks to produce;it is not a primary aim of the production process and the process has not been deliberately modified to produce it.",
-        references: [
-            {
-                label: "Directive 2008/98/EC of the European Parliament and of the Council of 19 November 2008",
-                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02008L0098-20180705"
-            }
-        ]
-    },
-    {
-        theme: "Feedstock",
-        term: "Agrarian and forestry residues",
-        definition: "Residues that are directly generated by agriculture or forestry and that do not include residues from related industries or processing. Agricultural residues include, for example,  rice straw, wheat straw, rice husk, and corn stover, which are mostly left on the fields after harvests and used for fodder and landfill material or burnt. Forestry residues consist of branches, leaves, bark, and other portions of wood, among others.",
-        references: [
-            {
-                label: "Encyclopedia of Materials: Science and Technology, 2001",
-                url: "https://www.sciencedirect.com/topics/chemistry/agricultural-residues#:~:text=1.1%20Agricultural%20and%20Forestry%20Residues,and%20other%20portions%20of%20wood."
-            }
-        ]
-    },
-    {
-        theme: "Phases of value chain",
-        term: "Biomass Producer",
-        definition: "A legal entity such as a farm operators and a plantation owner, which gathers biomass feedstock such as crops or woody material for conversion into an end product.",
-        references: [
-            {
-                label: "RSB-STD-01-002 Glossary of Terms",
-                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
-            },
-            {
-                label: "SBP Glossary of Terms and Definitions",
-                url: "https://sbpcert.wpenginepowered.com/wp-content/uploads/2019/03/SBP-Glossary-of-Terms-and-Definitions-v1.1-15Jan2019-FINAL.pdf"
-            }
-        ]
-    },
-    {
-        theme: "Phases of value chain",
-        term: "Industrial processor",
-        definition: "A legal entity that processes biomass and/or intermediates/semifinished products for further use in the supply chain.",
-        references: [
-            {
-                label: "RSB-STD-01-002 Glossary of Terms",
-                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
-            }
-        ]
-    },
-    {
-        theme: "Phases of value chain",
-        term: "Final product producer",
-        definition: " A legal entity conducting the final steps of processing to biofuels/bioliquids/biomaterials and/or valorise (processed) biomass for application in finished products.",
-        references: [
-            {
-                label: "RSB-STD-01-002 Glossary of Terms",
-                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
-            }
-        ]
-    },
     {
         theme: "Term",
         term: "4R principle for nutrient stewardship",
@@ -4409,12 +4328,104 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Accountability",
+        definition: "The obligation to demonstrate that the work has been carried out in accordance with the agreed rules and standards, or to report properly and accurately on the performance results to the commissioners. This may require a careful, even legally defensible, demonstration of the work's compliance with the terms of the contract.",
+        references: [{ label: "IUCN, OECD" }]
+    },
+    {
+        theme: "Term",
+        term: "Accreditation",
+        definition: "Third-party attestation related to a conformity assessment body (CAB) conveying formal demonstration of its competence to carry out specific conformity assessment tasks.",
+        references: [{ label: "ISO/IEC 17000" }]
+    },
+    {
+        theme: "Term",
+        term: "Accreditation body",
+        definition: "An organisation that assesses whether or not CABs are competent to carry out conformity assessments against specified standards. (ISO/IEC 17000:2004) Authoritative body that performs accreditation (Source: ISO/IEC 17011/2017). (RSB Glossary of Terms)",
+        references: []
+    },
+    {
+        theme: "Feedstock",
+        term: "Agrarian and forestry residues",
+        definition: "Residues that are directly generated by agriculture or forestry and that do not include residues from related industries or processing. Agricultural residues include, for example,  rice straw, wheat straw, rice husk, and corn stover, which are mostly left on the fields after harvests and used for fodder and landfill material or burnt. Forestry residues consist of branches, leaves, bark, and other portions of wood, among others.",
+        references: [
+            {
+                label: "Encyclopedia of Materials: Science and Technology, 2001",
+                url: "https://www.sciencedirect.com/topics/chemistry/agricultural-residues#:~:text=1.1%20Agricultural%20and%20Forestry%20Residues,and%20other%20portions%20of%20wood."
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Assessor",
+        definition: "A person appointed by an accreditation body to carry out, alone or as part of an assessment team, the assessment of a conformity assessment body.",
+        references: [{ label: "ISO 17011" }]
+    },
+    {
+        theme: "Term",
+        term: "Assurance",
+        definition: "Demonstrable evidence that specified requirements relating to a product, process, system, person or body are fulfilled.",
+        references: [{ label: "ISEAL Credibility Principles, adapted from ISO 17000" }]
+    },
+    {
+        theme: "Term",
+        term: "Audit",
+        definition: "Systematic, independent and documented process for obtaining audit evidence and evaluating it objectively to determine the extent to which the client meets the relevant standard. (ISO 9000) Systematic, independent and documented process for obtaining audit evidence and evaluating it objectively to determine the extent to which the audit criteria are fulfilled (Source: ISO 19011:2011). (RSB Glossary of Terms)",
+        references: []
+    },
+    {
+        theme: "Term",
+        term: "Audit by third parties",
+        definition: "Control activity performed by a person or body independent of the person or organisation providing the test object and of the user interests in that object.",
+        references: [{ label: "Derived from ISO 17000" }]
+    },
+    {
+        theme: "Term",
+        term: "Bio-based",
+        definition: "The term bio-based product refers to products wholly or partly derived from biomass, such as plants, trees or animals (the biomass can have undergone physical, chemical or biological treatment).",
+        references: [{ label: "CEN/TC 411, EN 16575, published by CEN in August 2014" }]
+    },
+    {
+        theme: "Term",
+        term: "Bio-based product",
+        definition: "Product wholly or partly derived from biomass. The bio-based product is normally characterized by the bio-based carbon content or the bio-based content.",
+        references: [{ label: "InnProBio Glossary" }]
+    },
+    {
+        theme: "Term",
+        term: "Biodegradation",
+        definition: "Degradation caused by biological activity, especially by enzymatic action, leading to a significant change in the chemical structure of a material.",
+        references: [{ label: "CEN/TC 411 2014" }]
+    },
+    {
+        theme: "Term",
+        term: "Biological feedstock",
+        definition: "Bio-waste and any biological feedstock from secondary raw materials from rural/urban/industrial activities.",
+        references: [{ label: "HORIZON-CL6-2021-ZEROPOLLUTION-01-07" }]
+    },
+    {
+        theme: "Term",
         term: "Biomass",
         definition: "Raw material of biological origin",
         references: [
             {
                 label: "ISO 13065:2014 - Retrieved from ISO14021:1999/Amd1:2011, 3.1.1",
                 url: "https://www.iso.org/standard/52528.html"
+            }
+        ]
+    },
+    {
+        theme: "Phases of value chain",
+        term: "Biomass Producer",
+        definition: "A legal entity such as a farm operators and a plantation owner, which gathers biomass feedstock such as crops or woody material for conversion into an end product.",
+        references: [
+            {
+                label: "RSB-STD-01-002 Glossary of Terms",
+                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
+            },
+            {
+                label: "SBP Glossary of Terms and Definitions",
+                url: "https://sbpcert.wpenginepowered.com/wp-content/uploads/2019/03/SBP-Glossary-of-Terms-and-Definitions-v1.1-15Jan2019-FINAL.pdf"
             }
         ]
     },
@@ -4464,8 +4475,56 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Certificate",
+        definition: "A document which demonstrates to the buyer that the supplier complies with certain standards.",
+        references: [{ label: "FAO, 2003" }]
+    },
+    {
+        theme: "Term",
+        term: "Certification",
+        definition: "A procedure by which a third party (independent certification body) gives written assurance that a product, process or service is in conformity with certain standards.",
+        references: [{ label: "ISO, 1996" }]
+    },
+    {
+        theme: "Term",
+        term: "Certification report",
+        definition: "Report on the certification evaluation process, certification evaluation findings and conclusions, and certification decision.",
+        references: [{ label: "RSB Glossary" }]
+    },
+    {
+        theme: "Term",
+        term: "Certification scheme",
+        definition: "The system of rules, procedures and management for carrying out certification, including the standards against which it is being certified.",
+        references: [{ label: "FAO, 2003" }]
+    },
+    {
+        theme: "Term",
+        term: "Certification scheme (program)",
+        definition: "Certification system related to specified products, to which the same specified requirements, specific rules and procedures apply",
+        references: [{ label: "ISO/IEC 17065:2012 (RSB Glossary of Terms)" }]
+    },
+    {
+        theme: "Term",
+        term: "Certification system",
+        definition: "Rules, procedures and management for carrying out certification.",
+        references: [{ label: "ISO/IEC 17000:2004" }]
+    },
+    {
+        theme: "Term",
+        term: "Certifier",
+        definition: "An individual or organization who assesses compliance of an entity against a standard or set of criteria, and issues a certificate if deemed successful.",
+        references: [{ label: "Ecolabel Index Glossary" }]
+    },
+    {
+        theme: "Term",
+        term: "Chain of Custody",
+        definition: "The custodial sequence that occurs as ownership or control of the material supply is transferred from one custodian to another in the supply chain.",
+        references: [{ label: "adapted from: WB, WWF Alliance for Forest Conservation and Sustainable Use, 2002" }]
+    },
+    {
+        theme: "Term",
         term: "Child labour",
-        definition: "Work that deprives children of their childhood, their potential, and their dignity, and that is harmful to their physical and mental development. Child labour refers to work that is mentally, physically, socially or morally dangerous and harmful to children; and interferes with their schooling by depriving them of the opportunity to attend school; obliging them to leave school prematurely; or requiring them to attempt to combine school attendance with excessively long and heavy work.\nInternational standards set the general minimum age for admission to employment or work at 15 years (13 for light work) and the minimum age for hazardous work at 18 (16 under certain strict conditions). They provide for the possibility of initially setting the general minimum age at 14 (12 for light work) where the economy and educational facilities are insufficiently developed. Children between the ages of 13 and 15 years old may do light work. Light work is defined as work that is not likely to be harmful to a child’s health or development and does not interfere with attendance at school or participation in vocational orientation or training programmes or a child’s capacity to benefit from the instruction received.",
+        definition: "Work that deprives children of their childhood, their potential, and their dignity, and that is harmful to their physical and mental development. Child labour refers to work that is mentally, physically, socially or morally dangerous and harmful to children; and interferes with their schooling by depriving them of the opportunity to attend school; obliging them to leave school prematurely; or requiring them to attempt to combine school attendance with excessively long and heavy work.\n International standards set the general minimum age for admission to employment or work at 15 years (13 for light work) and the minimum age for hazardous work at 18 (16 under certain strict conditions). They provide for the possibility of initially setting the general minimum age at 14 (12 for light work) where the economy and educational facilities are insufficiently developed. Children between the ages of 13 and 15 years old may do light work. Light work is defined as work that is not likely to be harmful to a child’s health or development and does not interfere with attendance at school or participation in vocational orientation or training programmes or a child’s capacity to benefit from the instruction received.",
         references: [
             {
                 label: "Accountability Framework Initiative;  ILO Convention 138, Article 7 (1973); ILO Recommendation 190; ISO 13065:2014; ILO Convention 138, Article 7",
@@ -4476,7 +4535,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "Circular economy",
-        definition: "A systems solution framework that tackles global challenges like climate change, biodiversity loss, waste, and pollution. It is based on three principles, driven by design: eliminate waste and pollution, circulate products and materials (at their highest value), and regenerate nature.\nIt is underpinned by a transition to renewable energy and materials. Transitioning to a circular economy entails decoupling economic activity from the consumption of finite resources. This represents a systemic shift that builds long-term resilience, generates business and economic opportunities, and provides environmental and societal benefits.",
+        definition: "A systems solution framework that tackles global challenges like climate change, biodiversity loss, waste, and pollution. It is based on three principles, driven by design: eliminate waste and pollution, circulate products and materials (at their highest value), and regenerate nature.\n It is underpinned by a transition to renewable energy and materials. Transitioning to a circular economy entails decoupling economic activity from the consumption of finite resources. This represents a systemic shift that builds long-term resilience, generates business and economic opportunities, and provides environmental and societal benefits.",
         references: [
             {
                 label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation ",
@@ -4497,6 +4556,18 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Claim",
+        definition: "Written or pictorial statement about the sustainability attributes of a product, process, service or organisation. They can act as filters that provide people with information about the social and environmental attributes of a product or service, which can influence the decision to buy a particular product.",
+        references: [{ label: "ISEAL Credibility Criteria, ISEAL challenge the label" }]
+    },
+    {
+        theme: "Term",
+        term: "Code of conduct (or Code of Ethics)",
+        definition: "Voluntary expressions of commitment made by an organisation (private company, association of companies, NGOs, inter- government organizations) to influence its processes and activities for the benefit of the organisation itself and for the communities in which it operates, covering sustainability issues.",
+        references: [{ label: "Adapted from OECD Working Papers on International Investment Codes of Corporate Conduct" }]
+    },
+    {
+        theme: "Term",
         term: "Collective bargaining",
         definition: "All negotiations which take place between an employer, a group of employers or one or more employers’ organisations and one or more workers’ organisations for: (i) determining working conditions and terms of employment; and/or (ii) regulating relations between employers and workers; and/or (iii) regulating relations between employers or their organisations and a workers’ organisation or workers’ organisations.",
         references: [
@@ -4505,6 +4576,24 @@ export const glossary = [
                 url: "https://accountability-framework.org/fileadmin/uploads/afi/Documents/Definitions_doc/Definitions-2020-5.pdf"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Compliance",
+        definition: "State of an organization that meets prescribed specifications, contract terms, regulations or standards. Compliance obligations can arise from mandatory requirements, such as applicable laws and regulations, or voluntary commitments.",
+        references: [{ label: "ASQ Quality Glossary, ISO 37101, Management system for sustainable development" }]
+    },
+    {
+        theme: "Term",
+        term: "Compliance audit",
+        definition: "A compliance audit checks to see if the entity is still meeting the standard or set of criteria of an ecolabel, and is correctly using the label in its marketing.",
+        references: [{ label: "Ecolabel Index Glossary" }]
+    },
+    {
+        theme: "Term",
+        term: "Composite product",
+        definition: "A composite or multi-ingredient product is defined as one that includes more than one ingredient.",
+        references: [{ label: "Rainforest Alliance 2020 Labeling and Trademarks Policy" }]
     },
     {
         theme: "Term",
@@ -4519,6 +4608,24 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Conformity",
+        definition: "Fulfilment of a need or expectation that is stated, generally implied, or obligatory.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Conformity assessment",
+        definition: "A process which demonstrates whether a product, service, process, claim, system or person meets the relevant requirements. Such requirements are stated in standards, regulations, contracts, programmes, or other normative documents.",
+        references: [{ label: "ISO Glossary" }]
+    },
+    {
+        theme: "Term",
+        term: "Conformity assessment body (CAB) / Certification body (CB)",
+        definition: "Body that performs conformity assessment services and that can be the object of accreditation.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
         term: "Consultation",
         definition: "Land spanning more than one hectares with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ",
         references: [
@@ -4530,14 +4637,55 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Corrective measures",
+        definition: "Measures to eliminate the cause of a non-conformity and prevent its recurrence.",
+        references: [{ label: "ISO 9000" }]
+    },
+    {
+        theme: "Term",
+        term: "Criterion",
+        definition: "A requirement that describes what is to be assessed.",
+        references: [{ label: "BS EN 16751:2016" }]
+    },
+    {
+        theme: "Feedstock",
+        term: "Crop",
+        definition: "Vegetable biological organism used for biomass production and the biomass produced based on this plant.",
+        references: [
+            {
+                label: "RSB Glossary of terms",
+                url: "https://rsb.org/wp-content/uploads/2020/06/RSB-STD-01-002-v.1.5-RSB-Glossary-of-Terms.pdf"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Customer",
+        definition: "Individual, company or other legal entity receiving products, goods or services from an operator.",
+        references: [{ label: "RSB Glossary of Terms" }]
+    },
+    {
+        theme: "Term",
         term: "Discrimination",
-        definition: "The term discrimination includes (a) any distinction, exclusion or preference made on the basis of race, colour, sex, religion, political opinion, national extraction or social origin, which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation; (b) such other distinction, exclusion or preference which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation as may be determined by the individual concerned after consultation with representative employers’ and workers’ organisations and with other appropriate bodies.\nAny distinction, exclusion or preference in respect of a particular job based on the inherent requirements thereof shall not be deemed to be discrimination. Discrimination can be based on race, colour, gender identity, age, language, religion, property/ wealth, nationality, ethnic/social origin, caste, disability, pregnancy, indigeneity, union affiliation, political affiliation, marital/family status, personal relationships, health status, sexual orientation or other non-valid reasons that are irrelevant to the skills, capabilities, qualities and medical fitness for the job.",
+        definition: "The term discrimination includes (a) any distinction, exclusion or preference made on the basis of race, colour, sex, religion, political opinion, national extraction or social origin, which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation; (b) such other distinction, exclusion or preference which has the effect of nullifying or impairing equality of opportunity or treatment in employment or occupation as may be determined by the individual concerned after consultation with representative employers’ and workers’ organisations and with other appropriate bodies.\n Any distinction, exclusion or preference in respect of a particular job based on the inherent requirements thereof shall not be deemed to be discrimination. Discrimination can be based on race, colour, gender identity, age, language, religion, property/ wealth, nationality, ethnic/social origin, caste, disability, pregnancy, indigeneity, union affiliation, political affiliation, marital/family status, personal relationships, health status, sexual orientation or other non-valid reasons that are irrelevant to the skills, capabilities, qualities and medical fitness for the job.",
         references: [
             {
                 label: "ILO Convention C111, Article 1",
                 url: "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12100:0::NO::P12100_INSTRUMENT_ID:312256"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "E-LCA",
+        definition: "A tool that forecasts potential environmental impacts of a product or service. This is possible by assessing all energy, water and raw material inputs, and all air, water and soil outputs, as well as co-products throughout the entire life cycle of a product or service.",
+        references: [{ label: "Bioeconomy Smart Systems" }]
+    },
+    {
+        theme: "Term",
+        term: "Ecolabel",
+        definition: "A label that conforms to the principles described in ISO 14020:2000 Environmental labels and declarations --General principles. The Type III Environmental Label is trademarked by a certification scheme and licensed for use on products and to promote products certified by a certification body accredited to the certification scheme.",
+        references: []
     },
     {
         theme: "Term",
@@ -4567,6 +4715,18 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "End-of-life product",
+        definition: "Material with low economic value that the holder discards or intends or is required to discard and that was not primarily produced or intended for the production of advanced fuels or advanced products and has reached the end of its intended supply chain, as it has been consumed, used, spoiled etc.",
+        references: [{ label: "RSB Glossary of Terms" }]
+    },
+    {
+        theme: "Term",
+        term: "Environmental labelling",
+        definition: "Provides an indication of the environmental impact-related characteristics of a product, typically on the package containing the product.",
+        references: [{ label: "OECD, 2006" }]
+    },
+    {
+        theme: "Term",
         term: "Equal opportunity",
         definition: "Principle of non-discrimination which emphasizes that opportunities in education, employment, advancement, benefits and resource distribution, and other areas should be freely available to all citizens irrespective of their age, race, sex, religion, political association, ethnic origin, or any other individual or group characteristic unrelated to ability, performance, and qualification.",
         references: [
@@ -4579,7 +4739,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "EU Product Environmental Footprint",
-        definition: "The Product Environmental Footprint (PEF) method is as a common way of measuring environmental performance. The PEF is an EU recommended Life Cycle Assessment (LCA) based method to quantify the environmental impacts of products (goods or services).\nThe overarching purpose of PEF information is to reduce the environmental impacts of goods, services and organisations by taking into account supply chain activities. This purpose is achieved through the provision of detailed requirements for modelling the environmental impacts of the flows of material/energy and the emissions and waste streams associated with a product or an organisation throughout the life cycle.",
+        definition: "The Product Environmental Footprint (PEF) method is as a common way of measuring environmental performance. The PEF is an EU recommended Life Cycle Assessment (LCA) based method to quantify the environmental impacts of products (goods or services).\n The overarching purpose of PEF information is to reduce the environmental impacts of goods, services and organisations by taking into account supply chain activities. This purpose is achieved through the provision of detailed requirements for modelling the environmental impacts of the flows of material/energy and the emissions and waste streams associated with a product or an organisation throughout the life cycle.",
         references: [
             {
                 label: "European Commission",
@@ -4588,6 +4748,23 @@ export const glossary = [
             {
                 label: "European Commission",
                 url: "https://eplca.jrc.ec.europa.eu/EnvironmentalFootprint.html"
+            }
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Feedstock",
+        definition: "Biomass product resulting from primary production.",
+        references: [{ label: "RSB Glossary of Terms" }]
+    },
+    {
+        theme: "Phases of value chain",
+        term: "Final product producer",
+        definition: " A legal entity conducting the final steps of processing to biofuels/bioliquids/biomaterials and/or valorise (processed) biomass for application in finished products.",
+        references: [
+            {
+                label: "RSB-STD-01-002 Glossary of Terms",
+                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
             }
         ]
     },
@@ -4614,6 +4791,17 @@ export const glossary = [
         ]
     },
     {
+        theme: "Feedstock",
+        term: "Forest",
+        definition: "Forests are lands of more than 0.5 hectares, with a tree canopy cover of more than 10 percent, which are not primarily under agricultural or urban land use. Forests are determined both by the presence of trees and the absence of other predominant land uses. The term specifically excludes trees planted primarily for agricultural production, for example in fruit plantations and agroforestry systems.",
+        references: [
+            {
+                label: "FAO: Forest Resources Assessment 2000 On definitions of forest and forest change",
+                url: "https://www.fao.org/4/ad665e/ad665e00.htm#TopOfPage"
+            }
+        ]
+    },
+    {
         theme: "Term",
         term: "Forest degradation",
         definition: "Structural changes to forest cover, taking the form of the conversion of: (a) primary forests or naturally regenerating forests into plantation forests or into other wooded land; or (b) primary forests into planted forests.",
@@ -4626,8 +4814,14 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Fossil baseline",
+        definition: "Lifecycle GHG emissions of the fossil comparator (e.g. fossil fuel) determined for a given (baseline) date.",
+        references: [{ label: "RSB Glossary of Terms" }]
+    },
+    {
+        theme: "Term",
         term: "Free, Prior, Informed Consent",
-        definition: "Collective human right of Indigenous Peoples and Local Communities (IP/LC) to give or withhold their consent prior to the commencement of any activity that may affect their rights, land, resources, territories, livelihoods and food security.\n- Free: Consent is given by the affected IP/LC voluntarily without coercion, duress or intimidation.\n- Prior: The consent is given before the specified activity is authorised or commenced.\n- Informed: The consent is given after the IP/LC have received the relevant, timely and culturally appropriate information necessary to make a fully informed decision. Consent: The IP/LC take a collective decision to grant or withhold approval of each activity that may impact IP/LCs.",
+        definition: "Collective human right of Indigenous Peoples and Local Communities (IP/LC) to give or withhold their consent prior to the commencement of any activity that may affect their rights, land, resources, territories, livelihoods and food security.\n - Free: Consent is given by the affected IP/LC voluntarily without coercion, duress or intimidation.\n - Prior: The consent is given before the specified activity is authorised or commenced.\n - Informed: The consent is given after the IP/LC have received the relevant, timely and culturally appropriate information necessary to make a fully informed decision. Consent: The IP/LC take a collective decision to grant or withhold approval of each activity that may impact IP/LCs.",
         references: [
             {
                 label: "Accountability Framework Initiative",
@@ -4670,6 +4864,12 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Harmonised Standards",
+        definition: "A European standard developed by a recognised European Standards Organisation: CEN, CENELEC, or ETSI. It was created following a request from the European Commission to one of these organisations. European Standards are thereby under the responsibility of the European Standardisation Organisations (CEN, CENELEC, ETSI) and can be used to support EU legislation and policies.",
+        references: [{ label: "Official Journal of the European Union" }]
+    },
+    {
+        theme: "Term",
         term: "Hazard",
         definition: "A process, phenomenon or human activity that may cause loss of life, injury or other health impacts, property damage, social and economic disruption or environmental degradation.",
         references: [
@@ -4704,7 +4904,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "High carbon stock areas",
-        definition: "Land that had one of the following statuses in January 2008 and no longer has that status:\n(a) wetlands, namely land that is covered with or saturated by water permanently or for a significant part of the year;\n(b) continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;\n(c) land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ.",
+        definition: "Land that had one of the following statuses in January 2008 and no longer has that status:\n (a) wetlands, namely land that is covered with or saturated by water permanently or for a significant part of the year;\n (b) continuously forested areas, namely land spanning more than one hectare with trees higher than five metres and a canopy cover of more than 30 %, or trees able to reach those thresholds in situ;\n (c) land spanning more than one hectare with trees higher than five metres and a canopy cover of between 10 % and 30 %, or trees able to reach those thresholds in situ.",
         references: [
             {
                 label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources",
@@ -4715,7 +4915,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "High Conservation Value",
-        definition: "Biological, ecological, social or cultural values which are considered outstandingly significant or critically important at the national, regional or global level. All natural habitats possess some inherent conservation values, including the presence of rare or endemic species, provision of ecosystem services, sacred sites or resources harvested by local residents. However, some values are more significant or critical than others, and it is the HCV approach which offers an objective way of identifying those values to be maintained or enhanced.\n\nThe six High Conservation Values:\n(1) HCV 1 Species diversity\n(2) HCV 2 Landscape-level ecosystems, ecosystem mosaics and IFL\n(3) HCV 3 Ecosystems and habitats\n(4) HCV 4 Ecosystem services\n(5)HCV 5 Community needs\n(6) HCV 6 Cultural valueS",
+        definition: "Biological, ecological, social or cultural values which are considered outstandingly significant or critically important at the national, regional or global level. All natural habitats possess some inherent conservation values, including the presence of rare or endemic species, provision of ecosystem services, sacred sites or resources harvested by local residents. However, some values are more significant or critical than others, and it is the HCV approach which offers an objective way of identifying those values to be maintained or enhanced.\n The six High Conservation Values:\n (1) HCV 1 Species diversity\n (2) HCV 2 Landscape-level ecosystems, ecosystem mosaics and IFL\n (3) HCV 3 Ecosystems and habitats\n (4) HCV 4 Ecosystem services\n (5)HCV 5 Community needs\n (6) HCV 6 Cultural valueS",
         references: [
             {
                 label: "HCV Common Guidance for Identification",
@@ -4726,7 +4926,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "High-quality recycling",
-        definition: "High-quality recycling preserves the characteristics of materials which make them most useful. This includes consideration of mechanical, chemical and organic recyclability of the bio-based product.\n\nThe idea of ‘quality’ for secondary raw materials is captured by two interlinked concepts:\n(1) ‘Virgin-like’ secondary raw materials – how closely comparable the secondary raw materials from a recycling chain is to the virgin material originally used in the product being recycled. Subsequently, how substitutable the secondary raw materials is for virgin material with little or no detrimental impact on the final product.\n(2) ‘High value’ secondary raw materials – the extent to which secondary raw materials produced is of comparable value to virgin polymer, in terms of value to the user, and associated monetary value.",
+        definition: "High-quality recycling preserves the characteristics of materials which make them most useful. This includes consideration of mechanical, chemical and organic recyclability of the bio-based product.\n The idea of ‘quality’ for secondary raw materials is captured by two interlinked concepts:\n (1) ‘Virgin-like’ secondary raw materials – how closely comparable the secondary raw materials from a recycling chain is to the virgin material originally used in the product being recycled. Subsequently, how substitutable the secondary raw materials is for virgin material with little or no detrimental impact on the final product.\n (2) ‘High value’ secondary raw materials – the extent to which secondary raw materials produced is of comparable value to virgin polymer, in terms of value to the user, and associated monetary value.",
         references: [
             {
                 label: "Quality of recycling: Towards and operational definition (European Commission)",
@@ -4736,14 +4936,32 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Human Rights",
+        definition: "Basic international standards aimed at securing dignity and equality for all. Every human being is entitled to enjoy them without discrimination. They include the right to life and liberty, freedom from slavery and torture, freedom of opinion and expression, the right to work and education.",
+        references: [{ label: "Adapted from UNGP Guidelines on Business and Human Rights" }]
+    },
+    {
+        theme: "Term",
+        term: "Identification code",
+        definition: "A sequence of numbers, letters or signs used as a unique reference to a batch or unit of separately packed, stored or processed product (e.g. sack, pack, net, load, batch).",
+        references: [{ label: "RSB Standard" }]
+    },
+    {
+        theme: "Term",
         term: "ILO Core Conventions",
-        definition: "C029 - Forced Labour Convention, 1930 (No. 29)\nC087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87)\nC098 - Right to Organise and Collective Bargaining Convention, 1949 (No. 98)\nC100 - Equal Remuneration Convention, 1951 (No. 100)\nC105 - Abolition of Forced Labour Convention, 1957 (No. 105)\nC111 - Discrimination (Employment and Occupation) Convention, 1958 (No. 111)\nC138 - Minimum Age Convention, 1973 (No. 138)\nC155 - Occupational Safety and Health Convention, 1981 (No. 155)\nC182 - Worst Forms of Child Labour Convention, 1999 (No. 182)\nC187 - Promotional Framework for Occupational Safety and Health Convention, 2006 (No. 187)",
+        definition: "C029 - Forced Labour Convention, 1930 (No. 29)\n C087 - Freedom of Association and Protection of the Right to Organise Convention, 1948 (No. 87)\n C098 - Right to Organise and Collective Bargaining Convention, 1949 (No. 98)\n C100 - Equal Remuneration Convention, 1951 (No. 100)\n C105 - Abolition of Forced Labour Convention, 1957 (No. 105)\n C111 - Discrimination (Employment and Occupation) Convention, 1958 (No. 111)\n C138 - Minimum Age Convention, 1973 (No. 138)\n C155 - Occupational Safety and Health Convention, 1981 (No. 155)\n C182 - Worst Forms of Child Labour Convention, 1999 (No. 182)\n C187 - Promotional Framework for Occupational Safety and Health Convention, 2006 (No. 187)",
         references: [
             {
                 label: "ILO Labour Standards - Conventions",
                 url: "https://normlex.ilo.org/dyn/nrmlx_en/f?p=NORMLEXPUB:12000:0::NO:::"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Impact category",
+        definition: "Class representing environmental issues of concern to which life cycle inventory analysis results may be assigned.",
+        references: [{ label: "ISO 14040:2006" }]
     },
     {
         theme: "Term",
@@ -4755,6 +4973,12 @@ export const glossary = [
                 url: "https://webapps.ilo.org/public/english/standards/relm/ilc/ilc90/rep-v-1.htm"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Indicator",
+        definition: "A quantitative, qualitative or binary variable that can be measured or described to assess an aspect of a defined criterion.",
+        references: [{ label: "BS EN 16751:2016" }]
     },
     {
         theme: "Term",
@@ -4779,6 +5003,17 @@ export const glossary = [
         ]
     },
     {
+        theme: "Phases of value chain",
+        term: "Industrial processor",
+        definition: "A legal entity that processes biomass and/or intermediates/semifinished products for further use in the supply chain.",
+        references: [
+            {
+                label: "RSB-STD-01-002 Glossary of Terms",
+                url: "https://rsb.org/wp-content/uploads/2024/06/RSB-STD-01-002-v.1.5_RSB-Glossary-of-Terms.pdf"
+            }
+        ]
+    },
+    {
         theme: "Term",
         term: "Inflows",
         definition: "Resources that enter the company, including materials, parts or products (depending on a company's position within the supply chain).",
@@ -4788,6 +5023,18 @@ export const glossary = [
                 url: "https://www.wbcsd.org/Programs/Circular-Economy/Metrics-Measurement/Resources/Circular-Transition-Indicators-v4.0-Metrics-for-business-by-business"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Inspection",
+        definition: "Examination of a product design, product, process or installation and determination of its conformity with specific requirements or, on the basis of professional judgement, with general requirements.",
+        references: [{ label: "ISO/IEC 17020:2012" }]
+    },
+    {
+        theme: "Term",
+        term: "International standard",
+        definition: "A standard that is adopted by an international standardising/standards organisation and made available to the public.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
     },
     {
         theme: "Term",
@@ -4802,14 +5049,74 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "ISO",
+        definition: "ISO (International Organization for Standardization) is an independent, non-governmental, international organization that develops standards to ensure the quality, safety, and efficiency of products, services, and systems",
+        references: []
+    },
+    {
+        theme: "Term",
+        term: "Label",
+        definition: "Any document, certificate or attestation confirming that the works, products, services, processes or procedures in question meet certain requirements.",
+        references: [{ label: "Recitals 74, 75 and Articles 2, 43 of EU Directive 2014/24/EU" }]
+    },
+    {
+        theme: "Term",
+        term: "Label (certification)",
+        definition: "A certification label is a label or symbol indicating that compliance with standards has been verified.",
+        references: [{ label: "FAO, 2003" }]
+    },
+    {
+        theme: "Term",
+        term: "Label (environmental)",
+        definition: "They identify products that have been produced in an environmentally friendly way.",
+        references: [{ label: "Siegelklarheit, SSCT" }]
+    },
+    {
+        theme: "Term",
+        term: "Label (social)",
+        definition: "They identify products that were produced in a socially responsible manner.",
+        references: [{ label: "Siegelklarheit, SSCT" }]
+    },
+    {
+        theme: "Term",
+        term: "Labour rights",
+        definition: "Fundamental and universal rights at work: Freedom of association, Collective bargaining, Abolition of forced or compulsory labour, Equality of opportunity and treatment in employment and occupation, Protection of children and young persons.",
+        references: [{ label: "ILO Conventions" }]
+    },
+    {
+        theme: "Term",
         term: "Land with high biodiversity value",
-        definition: "Land that had one of the following statuses in or after January 2008, whether or not the land continues to have that status:\na) primary forest and other wooded land, namely forest and other wooded land of native species, where there is no clearly visible indication of human activity and the ecological processes are not significantly disturbed;\nb) highly biodiverse forest and other wooded land which is species-rich and not degraded, or has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\nc) areas designated: (i) by law or by the relevant competent authority for nature protection purposes; or (ii) for the protection of rare, threatened or endangered ecosystems or species recognised by international agreements or included in lists drawn up by intergovernmental organisations or the International Union for the Conservation of Nature, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\nd) highly biodiverse grassland spanning more than one hectare that is: (i) natural, namely grassland that would remain grassland in the absence of human intervention and that maintains the natural species composition and ecological characteristics and processes; or (ii) non-natural, namely grassland that would cease to be grassland in the absence of human intervention and that is species-rich and not degraded and has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the harvesting of the raw material is necessary to preserve its status as highly biodiverse grassland.\n\nNationally, regionally, or internationally legally protected areas including but not limited to those designated by any of the of the following: (a) The World Conservation Union “IUCN” Category I-IV protected areas; (b) Wetlands of International Importance designated under the Ramsar Convention; (c) World Heritage Sites designated under the UNESCO World Heritage Convention; (d) Biosphere Reserves designated under the UNESCO Man and the Biosphere Programme; (e) Other legally protected areas ; (f) Primary Forest, i.e. naturally regenerated forest, where there are no clearly visible indication of human activities and the ecological processes are not significantly disturbed, (g) Natural or non-natural highly biodiverse grassland; (e) Any other defined High Conservation value Area",
+        definition: "Land that had one of the following statuses in or after January 2008, whether or not the land continues to have that status:\n a) primary forest and other wooded land, namely forest and other wooded land of native species, where there is no clearly visible indication of human activity and the ecological processes are not significantly disturbed;\n b) highly biodiverse forest and other wooded land which is species-rich and not degraded, or has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\n c) areas designated: (i) by law or by the relevant competent authority for nature protection purposes; or (ii) for the protection of rare, threatened or endangered ecosystems or species recognised by international agreements or included in lists drawn up by intergovernmental organisations or the International Union for the Conservation of Nature, unless evidence is provided that the production of that raw material did not interfere with those nature protection purposes;\n d) highly biodiverse grassland spanning more than one hectare that is: (i) natural, namely grassland that would remain grassland in the absence of human intervention and that maintains the natural species composition and ecological characteristics and processes; or (ii) non-natural, namely grassland that would cease to be grassland in the absence of human intervention and that is species-rich and not degraded and has been identified as being highly biodiverse by the relevant competent authority, unless evidence is provided that the harvesting of the raw material is necessary to preserve its status as highly biodiverse grassland.\n Nationally, regionally, or internationally legally protected areas including but not limited to those designated by any of the of the following: (a) The World Conservation Union “IUCN” Category I-IV protected areas; (b) Wetlands of International Importance designated under the Ramsar Convention; (c) World Heritage Sites designated under the UNESCO World Heritage Convention; (d) Biosphere Reserves designated under the UNESCO Man and the Biosphere Programme; (e) Other legally protected areas ; (f) Primary Forest, i.e. naturally regenerated forest, where there are no clearly visible indication of human activities and the ecological processes are not significantly disturbed, (g) Natural or non-natural highly biodiverse grassland; (e) Any other defined High Conservation value Area",
         references: [
             {
                 label: "DIRECTIVE (EU) 2018/2001 OF THE EUROPEAN PARLIAMENT AND OF THE COUNCIL of 11 December 2018 on the promotion of the use of energy from renewable sources; Protected Planet; Ramsar; UNESCO",
                 url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32018L2001%20;%20http://www.protectedplanet.net%20;%20http://ramsar.wetlands.org%20;%20Http://whc.unesco.org/en/list%20;%20http://www.unesco.org/new/en/natural-sciences/environment/ecological-sciences/biosphere-reserves/"
             }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Legal requirements",
+        definition: "Any present or future law, regulation, directive, instruction, direction or rule of any competent authority including any amendment, extension or replacement thereof which is from time to time in force.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Life cycle",
+        definition: "All consecutive and/or interlinked stages, including research and development to be carried out, production, trading and its conditions, transport, use and maintenance, throughout the existence of the product or the works or the provision of the service, from raw material acquisition or generation of resources to disposal, clearance and end of service or utilisation.",
+        references: [{ label: "Recitals 74, 95, 96, 97 and Articles 2, 42, 67, 68 of EU Directive 2014/24/EU" }]
+    },
+    {
+        theme: "Term",
+        term: "Life Cycle Assessment (LCA)",
+        definition: "The compilation and evaluation of the inputs, outputs and potential environmental impacts of a product system throughout its life cycle.",
+        references: [{ label: "EN-ISO 14040:2006; EN-ISO 14044:2006" }]
+    },
+    {
+        theme: "Term",
+        term: "Life Cycle Costing (LCC)",
+        definition: "Life-cycle costing is an award criterion which covers parts or all of the following costs over the life cycle of a product, service or works.",
+        references: [{ label: "EU Directive 2014/24/EU" }]
     },
     {
         theme: "Term",
@@ -4857,12 +5164,24 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Monitoring",
+        definition: "Systematic repetition of conformity assessment activities as a basis for maintaining the validity of the declaration of conformity. Monitoring activities of false claims and misuse of claims and labels to support quality assurance.",
+        references: [{ label: "ISO 17000, ISEAL Assurance Code" }]
+    },
+    {
+        theme: "Term",
+        term: "Monitoring and evaluation system",
+        definition: "An ongoing process through which an organisation draws conclusions about its contribution to intended outcomes and impacts. A monitoring and evaluation system consists of a set of interconnected functions, processes and activities, including systematic collection of monitoring data on specified indicators and the implementation of outcome and impact evaluations.",
+        references: [{ label: "Alliance for Water Stewardship" }]
+    },
+    {
+        theme: "Term",
         term: "Natural replenishing rate",
         definition: "Replenishment of a natural resource at a rate that is equal to or faster than the rate at which they are consumed.",
         references: [
             { 
                 label: "Natural Resources Canada (adjusted)",
-                url: "-" 
+                url: "" 
             }
         ]
     },
@@ -4879,11 +5198,23 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Norm",
+        definition: "A formal rule or standard laid-down by an authority (government, international standards organizations) that guides or mandates behaviour towards conformity.",
+        references: [{ label: "Ecolabel Index Glossary" }]
+    },
+    {
+        theme: "Term",
         term: "Operator",
         definition: "Individual or organization that has ownership or control of one or more parts of the supply chain.",
         references: [
-            { label: "ISO 13065:2014", url: "-" }
+            { label: "ISO 13065:2014"}
         ]
+    },
+    {
+        theme: "Term",
+        term: "Oversight",
+        definition: "Assessment of an assurance provider’s demonstration of competence to carry out specific assurance tasks.",
+        references: [{ label: "adapted from ISO 17000 and ISEAL, 2016" }]
     },
     {
         theme: "Term",
@@ -4892,6 +5223,12 @@ export const glossary = [
         references: [
             { label: "2019 Refinement to the 2006 IPCC Guidelines for National Greenhouse Gas Inventories", url: "https://www.ipcc.ch/site/assets/uploads/2019/12/19R_V0_02_Glossary.pdf" }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Performance monitoring",
+        definition: "A continuing function that uses systematic collection of data on specified indicators to provide indications of the extent to which outputs and short and medium-term results are being achieved.",
+        references: [{ label: "Adapted from: OECD Glossary, 2002" }]
     },
     {
         theme: "Term",
@@ -4927,24 +5264,60 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Precautionary approach",
+        definition: "The precautionary approach shall be interpreted to mean being cautious when information is uncertain, unreliable or inadequate and that the absence of adequate scientific information shall not be used as a reason for postponing or failing to take conservation and management measures.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Preventive action",
+        definition: "Action to eliminate the cause of a potential non-conformity or other undesirable potential situation.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Principle",
+        definition: "Aspirational goal that governs decisions or behaviour.",
+        references: [{ label: "BS EN 16751:2016" }]
+    },
+    {
+        theme: "Term",
         term: "Procedure",
         definition: "Specified way to carry out an activity or a process. Procedures can be documented or not. When a procedure is documented, the term “written procedure” or “documented procedure” is frequently used. The document that contains a procedure can be called a “procedure document.”",
         references: [
-            { label: "ISO 13065:2014 - ISO 9000:2005, 3.4.5", url: "-" }
+            { label: "ISO 13065:2014 - ISO 9000:2005, 3.4.5"}
         ]
+    },
+    {
+        theme: "Term",
+        term: "Quality management system",
+        definition: "The part of a management system that relates to the quality of a standard, organisation, product or service.",
+        references: [{ label: "ISO 9000" }]
+    },
+    {
+        theme: "Term",
+        term: "Qualitative data",
+        definition: "Data describing the attributes or properties that an object possesses. The properties are categorised into classes that may be assigned numeric values. However, there is no significance to the data values themselves, they simply represent attributes of the object concerned.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Quantitative data",
+        definition: "Data expressing a certain quantity, amount or range. Usually, there are measurement units associated with the data.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
     },
     {
         theme: "Term",
         term: "Raw material",
         definition: "Primary or secondary material that is used to produce a product. Secondary material includes recycled material. Raw material also includes agricultural, forest and processing residues.",
         references: [
-            { label: "ISO 13065:2014; ISO 14040:2006, 3.15", url: "-" }
+            { label: "ISO 13065:2014; ISO 14040:2006, 3.15"}
         ]
     },
     {
         theme: "Term",
         term: "Recycling",
-        definition: "Any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes. It includes the reprocessing of organic material but does not include energy recovery and the reprocessing into materials that are to be used as fuels or for backfilling operations. Recycling can involve mechanical, physical, chemical processes or biological processes or a combination of these processes. Not all resources should be recycled though, as hazardous substances can accumulate during successive cycles, increasing net toxicity.",
+        definition: "Any recovery operation by which waste materials are reprocessed into products, materials or substances whether for the original or other purposes. It includes the reprocessing of organic material but does not include energy recovery and the reprocessing into materials that are to be used as fuels or for backfilling operations.\n Recycling can involve mechanical, physical, chemical processes or biological processes or a combination of these processes. Not all resources should be recycled though, as hazardous substances can accumulate during successive cycles, increasing net toxicity.",
         references: [
             { label: "EU Waste Framework Directive", url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:32008L0098" },
             { label: "ISO 59004:2024 Circular economy — Vocabulary, principles and guidance for implementation", url: "https://www.iso.org/standard/80648.html" }
@@ -4953,7 +5326,7 @@ export const glossary = [
     {
         theme: "Term",
         term: "Regenerative agriculture and forestry",
-        definition: "Regenerative production provides biomass in ways that support positive outcomes for nature, which include but are not limited to healthy and stable soils, improved local biodiversity, improved air and water quality, as well as improved societal outcomes. The method and production systems that can achieve these outcomes are context-dependent – so there is no such thing as a 'regenerative practice' that works everywhere.\nIn agriculture, there are different schools of thought that can be leaned on, including agroecology, organic, agroforestry, and conservation agriculture – as long as the emphasis is on those positive outcomes. This concept applies beyond land-based agriculture to aquatic farms and fisheries as well.\nIn forestry, there are likewise several definitions for regenerative forestry. In general, regenerative forestry is a whole system approach, delivering benefits for climate, nature and people. The goal is to ensure that forests are diverse, resilient, adaptive, and support high levels of engagement people and delivering strong livelihoods.",
+        definition: "Regenerative production provides biomass in ways that support positive outcomes for nature, which include but are not limited to healthy and stable soils, improved local biodiversity, improved air and water quality, as well as improved societal outcomes. The method and production systems that can achieve these outcomes are context-dependent – so there is no such thing as a 'regenerative practice' that works everywhere.\n In agriculture, there are different schools of thought that can be leaned on, including agroecology, organic, agroforestry, and conservation agriculture – as long as the emphasis is on those positive outcomes. This concept applies beyond land-based agriculture to aquatic farms and fisheries as well.\n In forestry, there are likewise several definitions for regenerative forestry. In general, regenerative forestry is a whole system approach, delivering benefits for climate, nature and people. The goal is to ensure that forests are diverse, resilient, adaptive, and support high levels of engagement people and delivering strong livelihoods.",
         references: [
             { label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation", url: "https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/glossary" },
             { label: "The Regenerative Forestry Report, Soil Association", url: "https://www.soilassociation.org/media/23626/regenerative-forestry-report-final.pdf" }
@@ -4978,6 +5351,30 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Requirement",
+        definition: "Need or expectation that is stated, generally implied or obligatory, describing a desired performance level or target to be achieved. It can make specific demands on how that level/target should be reached. A requirement can be based on practice, processes/systems, and outcome.",
+        references: [{ label: "adapted from UNE-EN ISO 37101:2022" }]
+    },
+    {
+        theme: "Term",
+        term: "Residue",
+        definition: "A substance that is not the end product that a production process directly seeks to produce; it is not a primary aim of the production process and the process has not been deliberately modified to produce it. (EU Directive 2009/72/EC)\n There are two streams of residues:\n 1) Agricultural, aquaculture, fisheries and forestry residues: Residues that are directly generated by agriculture, aquaculture, fisheries and forestry and that do not include residues from related industries or processing.\n 2) (Process) residue: Substance that is not the end product(s) that a production process directly seeks to produce; it is not a primary aim of the production process and the process has not been deliberately modified to produce it.",
+        references: []
+    },
+    {
+        theme: "Term",
+        term: "Review",
+        definition: "Activity of reviewing a normative document to determine whether it should be reaffirmed, amended or withdrawn.",
+        references: [{ label: "ISO Guide 2" }]
+    },
+    {
+        theme: "Term",
+        term: "Revision",
+        definition: "Introduction of all necessary changes to the content and presentation of a normative document. The results of the revision are made available by the publication of a new edition of the normative document.",
+        references: [{ label: "ISO Guide 2" }]
+    },
+    {
+        theme: "Term",
         term: "Runoff",
         definition: "Runoff is the movement of water and any contaminants across the soil surface. Water running off the land towards canals, streams, rivers, and lakes can also move chemicals, such as pesticides and fertilizers. Pesticides may be moving with the runoff water if dissolved in the water or adsorbed to eroding soil particles.",
         references: [
@@ -4986,11 +5383,29 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "S-LCA",
+        definition: "A social and socio-economic Life Cycle Assessment (S-LCA) is a social impact (and potential impact) assessment technique that aims to assess the social and socio-economic aspects of products and their potential positive and negative impacts along their life cycle encompassing extraction and processing of raw materials; manufacturing; distribution; use; re-use; maintenance; recycling; and final disposal.",
+        references: [{ label: "UNEP SETAC, 2009" }]
+    },
+    {
+        theme: "Term",
         term: "Safe drinking water",
         definition: "Safe drinking water complies with the microbiological, physical, and chemical and other parameters established in applicable country legislation or, in their absence, the critical parameters defined by the World Health Organization.",
         references: [
             { label: "World Health Organisation", url: "https://www.who.int/teams/environment-climate-change-and-health/water-sanitation-and-health/water-safety-and-quality/drinking-water-quality-guidelines" }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Scheme Management",
+        definition: "Determines the objectives and scope of the scheme, as well as the rules for how the scheme will operate and the standards against which conformance will be assessed.",
+        references: [{ label: "Adapted from the ISEAL Credibility Principles v1 June 2013" }]
+    },
+    {
+        theme: "Term",
+        term: "Scheme owner",
+        definition: "Organisation that determines the objectives and scope of the standards system, as well as the rules for how the scheme will operate and the standards against which conformance will be assessed. It can be a voluntary standard-setting organisation, a company, a governmental authority, a trade association or another body.",
+        references: [{ label: "Adapted from ITC Standards Map" }]
     },
     {
         theme: "Term",
@@ -5018,6 +5433,30 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Scope of certification",
+        definition: "Specific activities and products for which certification is sought or has been granted.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Scoring elements",
+        definition: "A list of matters that are to be taken into account when determining the performance score on an indicator; also the matters used in determining a scoring guidepost benchmark.",
+        references: [{ label: "adapted from: MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Scoring guidepost",
+        definition: "The benchmark level of performance established by the team in respect of each numeric score or rating for each indicator sub-criterion.",
+        references: [{ label: "MSC-MSCI Vocabulary" }]
+    },
+    {
+        theme: "Term",
+        term: "Self-assessment",
+        definition: "Statement issued by an organization, on behalf of itself, and based on its own determination, that states its status against specified conformance requirements of a standard.",
+        references: [{ label: "Adapted from ISO 14001" }]
+    },
+    {
+        theme: "Term",
         term: "Severely degraded land",
         definition: "Land that, for a significant period of time, has either been significantly alienated or presented significantly low organic matter content and has been severely eroded.",
         references: [
@@ -5031,6 +5470,12 @@ export const glossary = [
         references: [
             { label: "UNEP", url: "https://www.unep.org/cep/wastewater-sewage-and-sanitation" }
         ]
+    },
+    {
+        theme: "Term",
+        term: "Single-ingredient product",
+        definition: "A single-ingredient product is defined as a product that contains only one crop or ingredient.",
+        references: [{ label: "Rainforest Alliance 2020 Labeling and Trademarks Policy" }]
     },
     {
         theme: "Term",
@@ -5058,11 +5503,35 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Sourcing",
+        definition: "Process of buying goods and services from the international market across geopolitical boundaries. Sustainable sourcing refers to the integration of social, ethical and environmental performance factors into the process of selecting suppliers, services and goods.",
+        references: [{ label: "ITC Standards Map, adapted from OECD definition" }]
+    },
+    {
+        theme: "Term",
         term: "Stakeholder",
         definition: "An individual or group that has an interest in any decision or activity of an organisation. Stakeholders may include suppliers, internal staff such as employees and workers, seasonal or migratory workers, members, customers, shareholders, investors, consumers, regulators, local and regional communities.",
         references: [
-            { label: "ISO 26000:2010", url: "-" }
+            { label: "ISO 26000:2010"}
         ]
+    },
+    {
+        theme: "Term",
+        term: "Stakeholders",
+        definition: "Persons, groups or organisations who are directly or indirectly affected by or who can affect an activity, but also includes people and organisations who have concerns about the activity, or who might be responsible agents.",
+        references: [{ label: "RSB Glossary of Terms" }]
+    },
+    {
+        theme: "Term",
+        term: "Standards",
+        definition: "Documented agreements containing technical specifications or other precise criteria to be used consistently as rules, guidelines or definitions, to ensure that materials, products, processes and services are fit for their purpose. (FAO, 2003)\n Technical specifications defining requirements for products, production processes, services or test-methods. These specifications are voluntary. They are developed by industry and market actors following some basic principles such as consensus, openness, transparency and non-discrimination. Standards ensure interoperability and safety, reduce costs and facilitate companies' integration in the value chain and trade.",
+        references: [{ label: "European Commission website" }]
+    },
+    {
+        theme: "Term",
+        term: "Standard-setting Organisation",
+        definition: "The organization responsible for creating and maintaining the set of criteria that makes up a standard.",
+        references: [{ label: "Ecolabel Index Glossary" }]
     },
     {
         theme: "Term",
@@ -5113,11 +5582,81 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Standards System",
+        definition: "The collective of organisations responsible for the activities involved in the implementation of a standard, including standard-setting, capacity building, assurance, labelling, and monitoring and evaluation.",
+        references: [{ label: "ISEAL Credibility Principles" }]
+    },
+    {
+        theme: "Term",
         term: "Supply chain",
         definition: "Upstream supply chain of the product in scope of the certification.",
-        references: [
-            { label: "-", url: "-" }
-        ]
+        references: []
+    },
+    {
+        theme: "Term",
+        term: "Supervision",
+        definition: "Assessment of the competence of a conformity assessment provider to carry out specific conformity assessment activities. Supervision can be carried out by an accreditation body, as well as by the standard-setting organisation.",
+        references: [{ label: "I ISEAL Assurance Code (adopted from ISO 17000)" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainability",
+        definition: "Operating practices that meet the needs of present users without compromising the ability of future generations to meet their own needs. Sustainable practices support ecological, human, and economic health and vitality. ",
+        references: [{ label: "UCLA Sustainability Committee, adapted from definition of UN World Commission on Environment and Development" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainability claim",
+        definition: "A message used to set apart and promote a product, process, business or service with reference to one or more of the three pillars of sustainability (social, economic and/or environmental). Claims may be consumer facing or business to business. Claims which are not clear and accurate may provide the user with misleading or even false information. ",
+        references: [{ label: "ISEAL Credibility Principles" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainability data",
+        definition: "The data carrying the proof of meeting certain sustainability criteria, i.e. evidence that the material has originated from a source that has been ‘monitored’ or ‘certified’ against a sustainability standard, as distinct from commercial data.",
+        references: [{ label: "ISEAL Alliance, Chain of custody models and definitions" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainability indicators",
+        definition: "Quantitative and/or qualitative measures that aim to interrelate and assess different areas of social, environmental, economic, institutional, and territorial development.",
+        references: [{ label: "Moreno-Pires, 2014" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainability standards (voluntary)",
+        definition: "Voluntary guidelines used by producers, manufacturers, traders, retailers, and service providers to demonstrate their commitment to good environmental, social, ethical, and food safety practices.",
+        references: [{ label: "UNFSS, 2012" }]
+    },
+    {
+        theme: "Term",
+        term: "Sustainable use",
+        definition: "Use of resources in a way and at a rate that does not lead to the long-term degradation of the environment, thereby maintaining its potential to meet the needs and aspirations of present and future generations.",
+        references: [{ label: "Glossary of terms to negotiators or MEAs, 2007" }]
+    },
+    {
+        theme: "Term",
+        term: "Third-party assurance",
+        definition: "Assurance activity that is performed by a person or body that is independent of the person or organisation that provides the object of assurance and of user interests in that object ",
+        references: [{ label: "adapted from: ISO 17000" }]
+    },
+    {
+        theme: "Term",
+        term: "Threshold",
+        definition: "Scientific and/or official values, which should not be exceeded.",
+        references: [{ label: "UNECE and FAO, 2017" }]
+    },
+    {
+        theme: "Term",
+        term: "Traceability",
+        definition: "The ability to verify the history, location, or application of an item by means of documented recorded identification.",
+        references: [{ label: "ISO, 1994" }]
+    },
+    {
+        theme: "Term",
+        term: "Traceability system",
+        definition: "The methods and tools employed to record and follow the trail as products, parts, and materials come from suppliers and are processed and ultimately distributed as end products. May be electronic, but does not have to be.",
+        references: [{ label: "adapted from: ISO 9001, 2005" }]
     },
     {
         theme: "Term",
@@ -5129,10 +5668,33 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Transparency",
+        definition: "Environment in which the objectives, framework, data and information of a policy are provided to stakeholders in a comprehensible, accessible, and timely manner.",
+        references: [{ label: "ITC (adapted from OECD Procurement ToolBox)" }]
+    },
+    {
+        theme: "Term",
+        term: "Value chain",
+        definition: "The entire sequence of activities or parties that provide or receive value in the form of products or services (e.g. suppliers, outsource workers, contractors, investors, R&D, customers, consumers, members).",
+        references: [{ label: "ISO14001 CD2, 2013" }]
+    },
+    {
+        theme: "Term",
         term: "Virgin biomass",
         definition: "Biomass that have not yet been used in the economy. These include both finite materials and renewable resources.",
         references: [
             { label: "Finding a common language — the circular economy glossary, Ellen MacArthur Foundation", url: "https://www.ellenmacarthurfoundation.org/topics/circular-economy-introduction/glossary" }
+        ]
+    },
+    {
+        theme: "Feedstock",
+        term: "Waste and residues",
+        definition: "Waste: Any substance or object which the holder discards or intends or is required to discard; Residue: A substance that is not the end product(s) that a production process directly seeks to produce;it is not a primary aim of the production process and the process has not been deliberately modified to produce it.",
+        references: [
+            {
+                label: "Directive 2008/98/EC of the European Parliament and of the Council of 19 November 2008",
+                url: "https://eur-lex.europa.eu/legal-content/EN/TXT/PDF/?uri=CELEX:02008L0098-20180705"
+            }
         ]
     },
     {

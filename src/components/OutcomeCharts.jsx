@@ -1,18 +1,9 @@
 import React, { useMemo } from 'react'
-import {
-  ResponsiveContainer,
-  BarChart,
-  Bar,
-  XAxis,
-  YAxis,
-  Tooltip,
-  Legend,
-  Cell
-} from 'recharts'
+import { ResponsiveContainer, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, Cell, CartesianGrid } from 'recharts'
 
 const RESPONSES = ['Fully', 'Partly', 'Missing', 'Not Applicable']
 
-const COLORS    = {
+const COLORS = {
   Fully:           '#0077b2',
   Partly:          '#66b5dc',
   Missing:         '#cce6f3',
@@ -60,7 +51,7 @@ export default function OutcomeCharts({ answers, categories }) {
 
   return (
     <div className='dashboard-section'>
-      <h3>Outcome-Level</h3>
+      <h3>Outcome Level</h3>
       <h4>Score Per Criterion</h4>
       <ResponsiveContainer width='100%' height={chartHeight}>
         <BarChart
@@ -69,10 +60,13 @@ export default function OutcomeCharts({ answers, categories }) {
           margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
           barCategoryGap='20%'
         >
+          <CartesianGrid strokeDasharray='3 3' horizontal={false} />
+
           <XAxis
             type='number'
             domain={[0, 100]}
             tickFormatter={v => `${v}%`}
+            ticks={[0, 20, 40, 60, 80, 100]}
           />
           <YAxis
             dataKey='criterion'
@@ -89,6 +83,7 @@ export default function OutcomeCharts({ answers, categories }) {
               stackId='a'
               fill={COLORS[label]}
               name={label}
+              barSize={35}
             >
               {data.map((_, idx) => (
                 <Cell key={idx} fill={COLORS[label]} />

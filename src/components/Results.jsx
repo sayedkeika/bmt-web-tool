@@ -5,13 +5,13 @@ import html2canvas from 'html2canvas'
 import SystemCharts from './SystemCharts'
 import ContentCharts from './ContentCharts'
 import OutcomeCharts from './OutcomeCharts'
-import DownloadIcon from '../svgs/data-download.svg'
 import PopupDialog from './PopupDialog'
+import BioBasedCertLogo from '../images/BioBasedCertLogo.png'
 
 const TYPE_LABELS = {
-  system: 'System-Level Assessment',
-  content: 'Content-Level Assessment',
-  outcome: 'Outcome-Level Assessment'
+  system: 'System Level Assessment',
+  content: 'Content Level Assessment',
+  outcome: 'Outcome Level Assessment'
 }
 
 // Component for showing charts and allowing export of results
@@ -29,46 +29,72 @@ export default function Results({
   const resultsRef = useRef()
   
   // Generates and downloads a PDF of the current results view
-  const handleDownloadPDF = () => {
-    const input = resultsRef.current
-    const originalOverflow = input.style.overflow
-    const originalHeight = input.style.height
+  const handleDownloadPDF = async () => {
+    const container = resultsRef.current
+    const pdf = new jsPDF('p','mm','a4')
+    const fullWidth = pdf.internal.pageSize.getWidth()
+    const margin = 15
+    const pageWidth = fullWidth - margin * 2
+    const pageHeight = pdf.internal.pageSize.getHeight()
+    const date = new Date().toLocaleDateString()
 
-    input.style.overflow = 'visible'
-    input.style.height = 'auto'
+    const logoImg = new Image()
+    logoImg.src = BioBasedCertLogo
+    await new Promise(resolve => { logoImg.onload = resolve })
 
-    // Use html2canvas to render the DOM to a canvas
-    html2canvas(input, { scale: 2, useCORS: true }).then(canvas => {
-      const imgData = canvas.toDataURL('image/png')
-      const pdf = new jsPDF('p', 'mm', 'a4')
-      const pageWidth = pdf.internal.pageSize.getWidth()
-      const pageHeight = pdf.internal.pageSize.getHeight()
+    const logoHeight = 10
+    const logoWidth  = (logoImg.naturalWidth / logoImg.naturalHeight) * logoHeight
 
-      // Calculate image dimensions maintaining aspect ratio
+    // Helper to render one DOM node to PDF page
+    async function renderNode(node, addPage = false) {
+      const canvas = await html2canvas(node, { scale:2, useCORS:true })
+      const img = canvas.toDataURL('image/png')
+      if (addPage) pdf.addPage()
+
+      // Logo
+      const logoX = (fullWidth - logoWidth) / 2
+      pdf.addImage(BioBasedCertLogo, 'PNG', logoX, 5, logoWidth, logoHeight)
+
+      // Date
+      pdf.setFontSize(8)
+      pdf.text(`Created: ${date}`, fullWidth - margin, 12, { align:'right' })
+
+      // Body image
       const imgWidth = pageWidth
-      const imgHeight = (canvas.height * imgWidth) / canvas.width
+      const imgHeight = (canvas.height * imgWidth)/canvas.width
+      pdf.addImage(img,'PNG', margin, 30, imgWidth, imgHeight)
+    }
 
-      let heightLeft = imgHeight
-      let position = 0
+    const jobs = []
 
-      // Add initial image
-      pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-      heightLeft -= pageHeight
+    // Entire wrapper
+    if (selectedTypes.includes('system')) {
+      const sys = container.querySelector('.result-system')
+      if (sys) jobs.push(sys)
+    }
 
-      // Continue adding pages if content exceeds one page
-      while (heightLeft > 0) {
-        position -= pageHeight
-        pdf.addPage()
-        pdf.addImage(imgData, 'PNG', 0, position, imgWidth, imgHeight)
-        heightLeft -= pageHeight
+    // Each inner section
+    if (selectedTypes.includes('content')) {
+      const contentRoot = container.querySelector('.result-content')
+      if (contentRoot) {
+        contentRoot
+          .querySelectorAll('.dashboard-section')
+          .forEach(sec => jobs.push(sec))
       }
+    }
 
-      // Save and restore original styles
-      const filename = schemeName?.trim() || 'assessment-results'
-      pdf.save(`${filename}.pdf`)
-      input.style.overflow = originalOverflow
-      input.style.height = originalHeight
-    })
+    // Entire wrapper
+    if (selectedTypes.includes('outcome')) {
+      const out = container.querySelector('.result-outcome')
+      if (out) jobs.push(out)
+    }
+
+    // Render one-by-one
+    for (let i = 0; i < jobs.length; i++) {
+      await renderNode(jobs[i], i > 0)
+    }
+
+    pdf.save(`${schemeName.trim()||'assessment-results'}.pdf`)
   }
 
   // Generates and downloads a CSV file of the raw responses
@@ -146,25 +172,25 @@ export default function Results({
       <div className='header-container'>
         <div className='nav-header'>
           <div className='nav-left'>
-            <button className='nav' onClick={onBackToAssessment}>← Back to Assessment</button>
+            <button className='nav' onClick={onBackToAssessment}>Back to Assessment</button>
             <button
               className='nav floating-button download-pdf'
               onClick={handleDownloadPDF}>
-              <img src={DownloadIcon} className='icon'/>
-              <span className='label'>Results as PDF</span>
+              <span className='label'>Download Results</span>
+              <span className='label-sub'>as PDF</span>
             </button>
             <button
               className='nav floating-button download-csv'
               onClick={handleDownloadCSV}>
-              <img src={DownloadIcon} className='icon'/>
-              <span className='label'>Responses as CSV</span>
+              <span className='label'>Download Responses</span>
+              <span className='label-sub'>as CSV</span>
             </button>
           </div>
           <div className='nav-center'>
             <h1 style={{ marginTop: '2rem', marginBottom: '2rem'}} >Results</h1>
           </div>
           <div className='nav-right'>
-            <button className='nav' onClick={handleRestartClick}>Start New Assessment →</button>
+            <button className='nav' onClick={handleRestartClick}>Start New Assessment</button>
           </div>
         </div>
       </div>
@@ -172,7 +198,7 @@ export default function Results({
       {/* Main results content */}
       <div className='container' ref={resultsRef}>
         {selectedTypes.includes('system') && (
-          <section className='dashboard-section'>
+          <section className='dashboard-section result-section result-system'>
             <SystemCharts
               answers={answers}
               categories={filteredSystemCategories}
@@ -181,7 +207,7 @@ export default function Results({
         )}
 
         {selectedTypes.includes('content') && (
-          <section className='dashboard-section'>
+          <section className='dashboard-section result-section result-content'>
             <ContentCharts 
               answers={answers} 
               categories={filteredContentCategories}
@@ -190,7 +216,7 @@ export default function Results({
         )}
 
         {selectedTypes.includes('outcome') && (
-          <section className='dashboard-section'>
+          <section className='dashboard-section result-section result-outcome'>
             <OutcomeCharts
               answers={answers}
               categories={filteredOutcomeCategories}

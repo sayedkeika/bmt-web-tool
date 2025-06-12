@@ -7,6 +7,7 @@ import Glossary from './components/Glossary'
 import ScrollToTop from './components/ScrollToTop'
 import GlossaryToggle from './components/GlossaryToggle'
 import Backstop from './components/Backstop'
+import PopupDialog from './components/PopupDialog'
 
 // Main component for managing the overall workflow
 export default function App() {
@@ -25,6 +26,9 @@ export default function App() {
   const [currentPrincipleId, setCurrentPrincipleId] = useState(null)
   const [submitted, setSubmitted] = useState(false)
   const [showGlossary, setShowGlossary] = useState(false)
+
+  const [backstopDialogMessage, setBackstopDialogMessage] = useState(null);
+  const [showBackstopDialog,   setShowBackstopDialog]   = useState(false);
 
   // Initializes the assessment with user selections
   const handleStart = ({ schemeName, types, applicability, feedstocks, phases, contentCategories }) => {
@@ -61,9 +65,22 @@ export default function App() {
   // Remove content assessment if backstop criteria not met
   const handleBackstopAnswer = (ok) => {
     if (!ok) {
-      setSelectedTypes(ts => ts.filter(t => t !== 'content'))
+      // decide which message to show
+      if (selectedTypes.length > 1) {
+        setBackstopDialogMessage(
+          'Complying with this backstop criterion is required to start the content-level assessment. ' +
+          'Since multiple levels are selected, the assessment will proceed  without content-level.'
+        )
+      } else {
+        setBackstopDialogMessage(
+          'Complying with this backstop criterion is required to start the content-level assessment. ' +
+          'You will be returned to the start page.'
+        )
+      }
+      setShowBackstopDialog(true);
+    } else {
+      setContentAllowed(true);
     }
-    setContentAllowed(ok)
   }
 
   // Filters system-level categories by type applicability
@@ -188,6 +205,17 @@ export default function App() {
     return (
       <>
         <Backstop onAnswer={handleBackstopAnswer} onBackToStart={handleRestart} />
+        {showBackstopDialog && (
+          <PopupDialog
+            message={backstopDialogMessage}
+            onConfirm={() => {
+              setShowBackstopDialog(false)
+              setSelectedTypes(ts => ts.filter(t => t !== 'content'))
+              setContentAllowed(true)
+              setCurrentPrincipleId(null)
+            }}
+          />
+        )}
         <GlossaryToggle onClick={() => setShowGlossary(true)} />
         <ScrollToTop />
       </>

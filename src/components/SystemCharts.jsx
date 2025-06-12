@@ -1,6 +1,13 @@
 import React, { useMemo } from 'react'
 import { assessments } from '../Data'
-import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, Legend } from 'recharts'
+import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid } from 'recharts'
+
+const CATEGORY_COLORS = {
+  'Standard Setting': '#8884d8',
+  'Assurance': '#82ca9d',
+  'Traceability & Claims': '#ffc658',
+  'Governance & Scheme Management': '#ff7043'
+}
 
 // Formats a numeric value as a percentage string
 const formatPercent = v => `${v.toFixed(0)}%`
@@ -35,7 +42,8 @@ const computeSystemScores = (answers, categories) => {
 
       allPrinciplesChart.push({
         principle: principle.title,
-        score: principlePct
+        score: principlePct,
+        category: cat.category
       })
 
       categoryScoreTotal += principlePct
@@ -50,7 +58,7 @@ const computeSystemScores = (answers, categories) => {
     }
   })
 
-  return { allPrinciplesChart, barChartData }
+  return { allPrinciplesChart, barChartData}
 }
 
 // Component for displaying visual results for system-level scores
@@ -58,9 +66,17 @@ export default function SystemCharts({ answers, categories }) {
   // Compute chart data once per change in answers
   const { allPrinciplesChart, barChartData } = useMemo(() => computeSystemScores(answers, categories), [answers, categories])
 
+  const titleToCategory = useMemo(() => {
+    const m = {}
+    allPrinciplesChart.forEach(d => {
+      m[d.principle] = d.category
+    })
+    return m
+  }, [allPrinciplesChart])
+  
   return (
     <div>
-      <h3>System-Level</h3>
+      <h3>System Level</h3>
 
       <section className='dashboard-section'>
         {allPrinciplesChart.length > 0 && (
@@ -69,7 +85,20 @@ export default function SystemCharts({ answers, categories }) {
             <ResponsiveContainer width='100%' height={600}>
               <RadarChart data={allPrinciplesChart}>
                 <PolarGrid />
-                <PolarAngleAxis dataKey='principle' tick={{ fontSize: 15 }} />
+                <PolarAngleAxis
+                  dataKey='principle'
+                  tick={props => {
+                    const { x, y, payload, textAnchor } = props
+                    // payload.value is the principle title
+                    const cat = titleToCategory[payload.value]
+                    const color = CATEGORY_COLORS[cat] || '#333'
+                    return (
+                      <text x={x} y={y} textAnchor={textAnchor} fill={color} fontSize={15}>
+                        {payload.value}
+                      </text>
+                    )
+                  }}
+                />
                 <PolarRadiusAxis
                   domain={[0, 100]}
                   tickFormatter={formatPercent}
@@ -77,13 +106,29 @@ export default function SystemCharts({ answers, categories }) {
                   tickLine={false}
                 />
                 <Tooltip formatter={formatPercent} />
-                <Legend />
+                <Legend
+                  payload={[
+                    {
+                      value: 'Average Score (in %)',
+                      type: 'square',
+                      id: 'series',
+                      color: '#808080'
+                    },
+                    ...Object.entries(CATEGORY_COLORS).map(([cat, color]) => ({
+                      value: cat,
+                      type: 'square',
+                      id: cat,
+                      color
+                    }))
+                  ]}
+                />
                 <Radar
                   name='Average Score (in %)'
                   dataKey='score'
-                  stroke='#8884d8'
-                  fill='#8884d8'
+                  stroke='#808080'
+                  fill='#808080'
                   fillOpacity={0.6}
+                  strokeWidth={2}
                 />
               </RadarChart>
             </ResponsiveContainer>
@@ -100,10 +145,13 @@ export default function SystemCharts({ answers, categories }) {
                 layout='vertical'
                 margin={{ left: 20, right: 20 }}
               >
+                <CartesianGrid strokeDasharray='3 3' horizontal={false} />
+                
                 <XAxis
                   type='number'
                   domain={[0, 100]}
                   tickFormatter={formatPercent}
+                  ticks={[0, 20, 40, 60, 80, 100]}
                 />
                 <YAxis
                   dataKey='category'
@@ -115,9 +163,12 @@ export default function SystemCharts({ answers, categories }) {
                 <Legend />
                 <Bar
                 dataKey='score'
-                fill='#8884d8'
+                fill='#808080'
+                stroke='#808080'
+                fillOpacity={0.6}
+                strokeWidth={2}
                 name='Average Score (in %)'
-                barSize={45}
+                barSize={35}
                 />
               </BarChart>
             </ResponsiveContainer>

@@ -55,7 +55,7 @@ const Glossary = ({ onBack }) => {
                 {/* Navigation header */}
                 <div className='nav-header'>
                     <div className='nav-left'>
-                        <button className='nav' onClick={onBack}>← Back</button>
+                        <button className='nav' onClick={onBack}>Back</button>
                     </div>
                     <div className='nav-center'>
                         <h1>Glossary</h1>
@@ -110,13 +110,33 @@ const Glossary = ({ onBack }) => {
                     />
                     </div>
                     {expandedTerms.includes(item.term) && (
-                    <div className='term-details' style={{ marginTop:'0.5rem' }}>
-                        <h4>Definition</h4>
+                    <div className='term-details'>
+                        <h5>Definition</h5>
                         {item.definition.split('\n').map((line,i)=>(<p key={i}>{line}</p>))}
-                        <h4>Reference</h4>
-                        {item.references.map((ref,i)=>(
-                        <p key={i}><a href={ref.url} target='_blank' rel='noopener noreferrer'>{ref.label}</a></p>
-                        ))}
+                        {item.references && item.references.length > 0 && (
+                            <>
+                            <h5>Reference</h5>
+                            {item.references.map((ref, i) => (
+                                <p key={i}>
+                                {ref.url
+                                    ? (
+                                    <a
+                                        href={ref.url}
+                                        target='_blank'
+                                        rel='noopener noreferrer'
+                                    >
+                                        {ref.label}
+                                    </a>
+                                    ) : (
+                                    <span className='glossary-no-link'>
+                                        {ref.label}
+                                    </span>
+                                    )
+                                }
+                                </p>
+                            ))}
+                            </>
+                        )}
                     </div>
                     )}
                 </div>

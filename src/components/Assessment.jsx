@@ -4,9 +4,9 @@ import RightArrowIcon from '../svgs/right-arrow.svg'
 import PopupDialog from './PopupDialog'
 
 const TYPE_LABELS = {
-  system: 'System-Level Assessment',
-  content: 'Content-Level Assessment',
-  outcome: 'Outcome-Level Assessment'
+  system: 'System Level',
+  content: 'Content Level',
+  outcome: 'Outcome Level'
 }
 
 // Component for rendering the questionnaire and recording user responses
@@ -151,13 +151,13 @@ export default function Assessment({
             <button className='nav' onClick={handleRestartClick} title='Start a new assessment'>New Assessment</button>
           </div>
           <div className='nav-center'>
-            <h4>{TYPE_LABELS[type]}</h4>
+            <h4 style={{ fontSize: '1.1rem' }}>{TYPE_LABELS[type]}</h4>
             <h3>{category.category}</h3>
           </div>
           <div className='nav-right'>
             <button
                 className='nav'
-                onClick={handleSubmitClick}
+                onClick={onSubmit}
               >Submit
             </button>
           </div>           
@@ -166,7 +166,7 @@ export default function Assessment({
         {/* Breadcrumb‐style stepper and progress progress bar */}
         <div className='progress-header'>
           <img
-            className='scroll-btn left'
+            className='scroll-button left'
             src={LeftArrowIcon}
             alt='◄'
             onClick={scrollLeft}
@@ -192,7 +192,7 @@ export default function Assessment({
           </div>
 
           <img
-            className='scroll-btn right'
+            className='scroll-button right'
             src={RightArrowIcon}
             alt='►'
             onClick={scrollRight}
@@ -328,12 +328,14 @@ export default function Assessment({
         <div className='nav-header'>
           <div className='nav-left'>
             {currentIndex > 0 && (
-              <button onClick={() => onPrev(allPrinciples[currentIndex - 1].id)}>← Previous</button>
+              <button className='page-button' onClick={() => onPrev(allPrinciples[currentIndex - 1].id)}>Previous</button>
             )}
           </div>
           <div className='nav-right'>
-            {currentIndex < allPrinciples.length - 1 && (
-              <button onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next →</button>
+            {currentIndex < allPrinciples.length - 1 ? (
+              <button className='page-button' onClick={() => onNext(allPrinciples[currentIndex + 1].id)}>Next</button>
+            ) : (
+              <button className='nav' onClick={handleSubmitClick}>Submit</button>
             )}
           </div>
         </div>

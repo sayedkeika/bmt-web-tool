@@ -98,7 +98,7 @@ h5 {
 button {
   padding: 0.5rem 1rem;
   background-color: #e0e0e0;
-  border: none;
+  border: 1px solid #b3b3b3;
   border-radius: 30px;
   cursor: pointer;
   padding: 10px 17px;
@@ -109,13 +109,15 @@ button {
 }
 
 button:not(:disabled):hover {
-  background-color: #e59200;
+  background-color: #4caf50;
   color: #ffffff;
+  border: 1px solid #2d6930;
 }
 
 button.selected {
   background-color: #4caf50;
   color: #ffffff;
+  border: 1px solid #2d6930;
 }
 
 button .icon {
@@ -129,10 +131,12 @@ button .icon {
 button.nav {
   background-color: #e59200;
   color: #ffffff;
+  border: 1px solid #a06600;
 }
 
 button.nav:not(:disabled):hover {
   background-color: #008c97;
+  border: 1px solid #006269;
 }
 
 button.nav:disabled {
@@ -143,7 +147,7 @@ button.nav:disabled {
 
 .scroll-to-top {
   position: fixed;
-  right: 2rem;
+  right: 1rem;
   bottom: 2rem;
   z-index: 1000;
   width: 4rem;
@@ -151,54 +155,59 @@ button.nav:disabled {
   padding: 0.5rem;
 }
 
+.page-button {
+  padding: 0.5rem 1rem;
+  background-color: #e0e0e0;
+  border: 1px solid #b3b3b3;
+  border-radius: 30px;
+  cursor: pointer;
+  padding: 10px 17px;
+  width: auto;
+  margin: 0.3rem;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.page-button:not(:disabled):hover {
+  background-color: #e59200;
+  color: #ffffff;
+  border: 1px solid #a06600;
+}
+
 .floating-button {
   position: fixed;
-  right: 2rem;
+  right: 1rem;
   z-index: 1000;
   display: inline-flex;
   align-items: center;
+  flex-direction: column;
   justify-content: center;
-  width: 4rem;
-  height: 3.2rem;
-  padding: 0.5rem;
+  width: 14rem;
+  height: 3rem;
   overflow: hidden;
   border-radius: 30px;
-  transition: width 0.3s ease;
-}
-
-.floating-button .icon {
-  width: 2rem;
-  height: 2rem;
 }
 
 .floating-button .label {
-  display: none;
-  margin-left: 0.5rem;
+  font-size: 0.95rem;
   white-space: nowrap;
 }
 
-.floating-button:hover {
-  width: 12rem;
-}
-
-.floating-button:hover .icon {
-  display: none;
-}
-
-.floating-button:hover .label {
-  display: inline-block;
+.floating-button .label-sub {
+  font-weight: 100;
+  font-size: 0.85rem;
 }
 
 .download-pdf {
-  top: 8rem;
+  top: 10rem;
 }
 
 .download-csv {
-  top: 12rem;
+  top: 14rem;
 }
 
 .glossary-toggle {
-  top: 16rem;
+  top: 20rem;
 }
 
 .popup-overlay {
@@ -226,7 +235,7 @@ button.nav:disabled {
 }
 
 .criterion-block {
-  border-bottom: 1px solid #e0e0e0;
+  border-bottom: 3px solid #e0e0e0;
   padding-bottom: 1rem;
   margin-bottom: 2rem;
 }
@@ -242,7 +251,7 @@ button.nav:disabled {
   align-items: center;
   margin-bottom: 1.35rem;
 
-  .scroll-btn {
+  .scroll-button {
     flex: 0 0 auto;
     width: 1.5rem;
     height: 1.5rem;
@@ -403,7 +412,7 @@ button.nav:disabled {
   padding: 8px 12px;
   background-color: #f0f0f0;
   color: #000;
-  border: 1px solid #ccc;
+  border: 1px solid #b3b3b3;
   border-radius: 10px;
   cursor: pointer;
   font-weight: normal;
@@ -412,6 +421,7 @@ button.nav:disabled {
 .letter-button.active {
   background-color: #4caf50;
   color: #ffffff;
+  border: 1px solid #2d6930;
   font-weight: bold;
 }
 
@@ -424,6 +434,7 @@ select {
   border-radius: 30px;
   border: 0px;
   background-color: #e0e0e0;
+  border: 1px solid #b3b3b3;
   cursor: pointer;
   font-weight: 600;
   font-size: 14px;
@@ -438,6 +449,11 @@ select {
 .term-details a:hover {
   color: #0056b3;
   text-decoration: underline;
+}
+
+.term-details .glossary-no-link {
+  color: inherit;
+  text-decoration: none;
 }
 
 /* Results */
