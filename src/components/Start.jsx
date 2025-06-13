@@ -174,7 +174,7 @@ export default function Start({ onStart }) {
             placeholder='Name'
           />
         </div>
-          <h5>Please select at least one level of assessment you wish to conduct</h5>
+          <h5>Please select one or more levels of assessment you wish to conduct</h5>
         <div>
           {TYPES.map(({ key, label }) => (
             <button
@@ -210,7 +210,7 @@ export default function Start({ onStart }) {
         {/* Content-level filters */}
         {selectedTypes.includes('content') && (
           <div>
-            <h5>Please select at least one applicable feedstock</h5>
+            <h5>Please select all feedstocks that fall within the scope of your standard</h5>
             <div>
               {allFeedstocks.map(f => (
                 <button
@@ -223,7 +223,7 @@ export default function Start({ onStart }) {
               ))}
             </div>
 
-            <h5>Please select at least one applicable value chain actor</h5>
+            <h5>Please select all value chain actors that fall within the scope of your standard</h5>
             <div>
               {allPhases.map(p => (
                 <button
@@ -236,7 +236,7 @@ export default function Start({ onStart }) {
               ))}
             </div>
 
-            <h5>Please select at least one content-level category would you like to assess?</h5>
+            <h5>Please select one or more content level categories you wish to assess</h5>
             <div>
               {allContentCats.map(cat => (
                 <button

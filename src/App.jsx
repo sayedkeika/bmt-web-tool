@@ -68,12 +68,12 @@ export default function App() {
       // decide which message to show
       if (selectedTypes.length > 1) {
         setBackstopDialogMessage(
-          'Complying with this backstop criterion is required to start the content-level assessment. ' +
-          'Since multiple levels are selected, the assessment will proceed  without content-level.'
+          'Complying with this backstop criterion is required to start the content level assessment. ' +
+          'Since multiple levels are selected, the assessment will proceed without content level.'
         )
       } else {
         setBackstopDialogMessage(
-          'Complying with this backstop criterion is required to start the content-level assessment. ' +
+          'Complying with this backstop criterion is required to start the content level assessment. ' +
           'You will be returned to the start page.'
         )
       }
