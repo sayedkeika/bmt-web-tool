@@ -4959,6 +4959,12 @@ export const glossary = [
     },
     {
         theme: "Term",
+        term: "Impacts",
+        definition: "Long-term effects (direct or indirect, intended or unintended) on the sustainability issue produced as the result of an intervention.",
+        references: [{ label: "ISEAL Impact Code of Good Practice Version 2.0" }]
+    },
+    {
+        theme: "Term",
         term: "Impact category",
         definition: "Class representing environmental issues of concern to which life cycle inventory analysis results may be assigned.",
         references: [{ label: "ISO 14040:2006" }]
@@ -5208,6 +5214,30 @@ export const glossary = [
         definition: "Individual or organization that has ownership or control of one or more parts of the supply chain.",
         references: [
             { label: "ISO 13065:2014"}
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Outcomes",
+        definition: "The short-term and medium-term effects of an intervention on the sustainability issue in question.",
+        references: [
+            { label: "ISEAL Impact Code of Good Practice Version 2.0"}
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Outcomes",
+        definition: "Systematic and objective in depth ex-post assessment of the short-term and medium-term results or effects from the implementation of a standards system.\n These studies seek to shed light on the extent to which standards system’s desired changes are occurring as well as why the system is or is not working. Unlike impact evaluations, outcome evaluations are not designed to draw conclusions about the extent to which an intervention can be attributed to the intervention of a standards system.",
+        references: [
+            { label: "ISEAL Impact Code of Good Practice Version 2.0"}
+        ]
+    },
+    {
+        theme: "Term",
+        term: "Outputs",
+        definition: "The products, capital goods and services which result from an intervention; may also include changes resulting from the intervention which are relevant to the achievement of outcomes.",
+        references: [
+            { label: "ISEAL Impact Code of Good Practice Version 2.0"}
         ]
     },
     {
