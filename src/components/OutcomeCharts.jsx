@@ -13,6 +13,10 @@ const COLORS = {
 // Requirements to exclude
 const ADD_ON_IDS = new Set(['Add-on-A-1', 'Add-on-C-2'])
 
+// Truncate helper for the tooltip
+const truncate = (str, max=30) =>
+  str.length > max ? str.slice(0, max) + '…' : str
+
 // Component for displaying visual results for outcome-level scores
 export default function OutcomeCharts({ answers, categories }) {
   const data = useMemo(() => {
@@ -60,8 +64,11 @@ export default function OutcomeCharts({ answers, categories }) {
           margin={{ top: 20, right: 20, bottom: 20, left: 10 }}
           barCategoryGap='20%'
         >
-          <CartesianGrid strokeDasharray='3 3' horizontal={false} />
-
+          <CartesianGrid
+            strokeDasharray='3 3'
+            horizontal={false}
+            vertical={true}
+          />
           <XAxis
             type='number'
             domain={[0, 100]}
@@ -74,7 +81,10 @@ export default function OutcomeCharts({ answers, categories }) {
             width={450}
             tick={{ fontSize: 14 }}
           />
-          <Tooltip formatter={(value, name) => [`${value}%`, name]} />
+          <Tooltip
+            formatter={(value, name) => [`${value}%`, name]}
+            labelFormatter={label => truncate(label, 50)}
+          />
           <Legend />
           {RESPONSES.map(label => (
             <Bar
