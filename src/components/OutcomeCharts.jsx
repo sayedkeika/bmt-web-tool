@@ -41,7 +41,8 @@ export default function OutcomeCharts({ answers, categories }) {
 
           const row = { criterion: `${cr.id}: ${cr.text}` }
           RESPONSES.forEach(label => {
-            row[label] = Math.round((counts[label] / total) * 100)
+            const pct = (counts[label] / total) * 100
+            row[label] = Math.round(pct * 10) / 10
           })
           rows.push(row)
         })

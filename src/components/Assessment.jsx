@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react'
 import LeftArrowIcon from '../svgs/left-arrow.svg'
 import RightArrowIcon from '../svgs/right-arrow.svg'
+import InfoIcon from '../svgs/c-info.svg'
 import PopupDialog from './PopupDialog'
 
 const TYPE_LABELS = {
@@ -119,6 +120,9 @@ export default function Assessment({
       })
     }
   }, [principle.id])
+
+  // Tooltip formatter
+  const formatList = arr => arr?.length ? arr.join(', ') : 'None'
 
   // Scroll to the top of the page
   useEffect(() => {
@@ -248,7 +252,18 @@ export default function Assessment({
                         : req.text
                       }
                     </strong>
-                    {type === 'content' && <em> ({req.level})</em>}
+                    {type === 'content' && (
+                      <>
+                        <div className='tooltip-container'>
+                          <img src={InfoIcon} className='info-icon' alt='info' />
+                          <div className='tooltip-box'>
+                            <p><strong>Requirement level:</strong> {req.level}</p>
+                            <p><strong>Applicable feedstocks:</strong> {formatList(req.applicableFeedstocks)}</p>
+                            <p><strong>Applicable value chain actors:</strong> {formatList(req.applicablePhases)}</p>
+                          </div>
+                        </div>
+                      </>
+                    )}
                   </p>
                   
                   {type === 'outcome' && (

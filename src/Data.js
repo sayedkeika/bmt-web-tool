@@ -3760,7 +3760,7 @@ export const assessments = {
                 },
                 {
                     id: "p36",
-                    title: "Risk Management",
+                    title: "Economic Risk Management",
                     criteria: [
                         {
                             id: "ECO-RM-1",
@@ -5214,14 +5214,6 @@ export const glossary = [
         definition: "Individual or organization that has ownership or control of one or more parts of the supply chain.",
         references: [
             { label: "ISO 13065:2014"}
-        ]
-    },
-    {
-        theme: "Term",
-        term: "Outcomes",
-        definition: "The short-term and medium-term effects of an intervention on the sustainability issue in question.",
-        references: [
-            { label: "ISEAL Impact Code of Good Practice Version 2.0"}
         ]
     },
     {

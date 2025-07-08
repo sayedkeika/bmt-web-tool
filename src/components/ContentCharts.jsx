@@ -121,7 +121,9 @@ export default function ContentCharts({ answers, categories }) {
                 {LEVELS.map(level => {
                   const { met, total } = levels[level]
                   return (
-                    <td key={level}>{`${met}/${total}`}</td>
+                    <td key={level}>
+                      {total === 0 ? 'N/A' : `${met}/${total}`}
+                    </td>
                   )
                 })}
               </tr>
@@ -214,7 +216,9 @@ export default function ContentCharts({ answers, categories }) {
                     {LEVELS.map(level => {
                       const { met, total } = levels[level]
                       return (
-                        <td key={level}>{`${met}/${total}`}</td>
+                        <td key={level}>
+                          {total === 0 ? 'N/A' : `${met}/${total}`}
+                        </td>
                       )
                     })}
                   </tr>

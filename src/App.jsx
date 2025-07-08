@@ -19,6 +19,7 @@ export default function App() {
   const [selectedPhases, setSelectedPhases] = useState([])
   const [selectedContentCats, setSelectedContentCats] = useState([])
   const [selectedOutcomeTypes, setSelectedOutcomeTypes] = useState([])
+  const [excludedContentPrinciples, setExcludedContentPrinciples] = useState([])
 
   // Answer state
   const [answers, setAnswers] = useState({})
@@ -31,7 +32,7 @@ export default function App() {
   const [showBackstopDialog,   setShowBackstopDialog]   = useState(false);
 
   // Initializes the assessment with user selections
-  const handleStart = ({ schemeName, types, applicability, feedstocks, phases, contentCategories }) => {
+  const handleStart = ({ schemeName, types, applicability, feedstocks, phases, contentCategories, excludedPrinciples  }) => {
     setSchemeName(schemeName)
     setSelectedTypes(types)
     setSelectedContexts(applicability)
@@ -39,6 +40,7 @@ export default function App() {
     setSelectedPhases(phases)
     setSelectedContentCats(contentCategories)
     setSelectedOutcomeTypes(applicability)
+    setExcludedContentPrinciples(excludedPrinciples)
     if (types.includes('content')) {
       setContentAllowed(null)
     } else {
@@ -117,7 +119,7 @@ export default function App() {
               }))
               .filter(c => c.requirements.length > 0)
           }))
-          .filter(p => p.criteria.length > 0)
+          .filter(p => p.criteria.length > 0 && !excludedContentPrinciples.includes(p.id))
       }))
       .filter(cat => cat.principles.length > 0)
     

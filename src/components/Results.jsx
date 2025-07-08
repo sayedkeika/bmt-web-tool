@@ -173,18 +173,6 @@ export default function Results({
         <div className='nav-header'>
           <div className='nav-left'>
             <button className='nav' onClick={onBackToAssessment}>Back to Assessment</button>
-            <button
-              className='nav floating-button download-pdf'
-              onClick={handleDownloadPDF}>
-              <span className='label'>Download Results</span>
-              <span className='label-sub'>as PDF</span>
-            </button>
-            <button
-              className='nav floating-button download-csv'
-              onClick={handleDownloadCSV}>
-              <span className='label'>Download Responses</span>
-              <span className='label-sub'>as CSV</span>
-            </button>
           </div>
           <div className='nav-center'>
             <h1 style={{ marginTop: '2rem', marginBottom: '2rem'}} >Results</h1>
@@ -197,6 +185,20 @@ export default function Results({
 
       {/* Main results content */}
       <div className='container' ref={resultsRef}>
+        <div>
+          <button
+              className='nav floating-button download-pdf'
+              onClick={handleDownloadPDF}>
+              <span className='label'>Download Results</span>
+              <span className='label-sub'>as PDF</span>
+            </button>
+            <button
+              className='nav floating-button download-csv'
+              onClick={handleDownloadCSV}>
+              <span className='label'>Download Responses</span>
+              <span className='label-sub'>as CSV</span>
+            </button>
+        </div>
         {selectedTypes.includes('system') && (
           <section className='dashboard-section result-section result-system'>
             <SystemCharts

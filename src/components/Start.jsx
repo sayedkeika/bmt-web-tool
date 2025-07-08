@@ -20,6 +20,7 @@ export default function Start({ onStart }) {
   const [selectedPhases, setSelectedPhases] = useState([])
   const [selectedContentCats, setSelectedContentCats] = useState([])
   const [selectedApplicability, setSelectedApplicability] = useState([])
+  const [excludedContentPrinciples, setExcludedContentPrinciples] = useState([])
   const [showStartWarning, setShowStartWarning] = useState(false)
 
   // Derive filter options from the data
@@ -59,6 +60,17 @@ export default function Start({ onStart }) {
         .map(cat => cat.category),
     []
   )
+  const visibleContentPrinciples = useMemo(() =>
+    assessments.content
+      .filter(cat => selectedContentCats.includes(cat.category))
+      .flatMap(cat => cat.principles)
+      .map(p => ({ id: p.id, title: p.title }))
+  , [selectedContentCats])
+
+  const toggleExcludedPrinciple = (id) =>
+  setExcludedContentPrinciples(prev =>
+    prev.includes(id) ? prev.filter(x => x !== id) : [...prev, id]
+  )
 
   // Toggle an item in an array
   const toggle = (item, arr, setter) =>
@@ -96,7 +108,8 @@ export default function Start({ onStart }) {
         applicability: selectedApplicability,
         feedstocks: selectedFeedstocks,
         phases: selectedPhases,
-        contentCategories: selectedContentCats
+        contentCategories: selectedContentCats,
+        excludedPrinciples: excludedContentPrinciples
       })
     }
   }
@@ -118,9 +131,15 @@ export default function Start({ onStart }) {
           </div>
           <div className='nav-center'></div>
           <div className='nav-right'>
-            <img style={{ maxWidth: '180px', height: 'auto', marginRight: '1rem' }} src={Star4bbsLogo}/>
-            <img style={{ maxWidth: '100px', height: 'auto', marginRight: '1rem' }} src={SustcertLogo}/>
-            <img style={{ maxWidth: '150px', height: 'auto' }} src={HarmonitorLogo}/>
+            <a href='https://star4bbs.eu/' target='_blank' rel='noopener noreferrer'>
+              <img style={{ maxWidth: '180px', height: 'auto', marginRight: '1rem' }} src={Star4bbsLogo}/>
+            </a>
+            <a href='https://sustcert4biobased.eu/' target='_blank' rel='noopener noreferrer'>
+              <img style={{ maxWidth: '100px', height: 'auto', marginRight: '1rem' }} src={SustcertLogo}/>
+            </a>
+            <a href='https://www.harmonitor.eu/' target='_blank' rel='noopener noreferrer'>
+              <img style={{ maxWidth: '150px', height: 'auto' }} src={HarmonitorLogo}/>
+            </a>
           </div>
         </div>
       </div>
@@ -248,6 +267,23 @@ export default function Start({ onStart }) {
                 </button>
               ))}
             </div>
+            
+            {selectedContentCats.length > 0 && (
+              <>
+                <h5>Please deselect any content level principles you do NOT wish to assess</h5>
+                <div>
+                  {visibleContentPrinciples.map(p => (
+                    <button
+                      key={p.id}
+                      onClick={() => toggleExcludedPrinciple(p.id)}
+                      className={excludedContentPrinciples.includes(p.id) ? '' : 'selected'}
+                    >
+                      {p.title}
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
           </div>
         )}
 

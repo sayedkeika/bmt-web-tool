@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import PopupDialog from './PopupDialog'
 
 export default function Backstop({ onAnswer, onBackToStart }) {
+    const [selected, setSelected] = useState(null)
+
     return (
         <>
             {/* Top navigation */}
@@ -31,8 +33,18 @@ export default function Backstop({ onAnswer, onBackToStart }) {
                         </strong>
                     </p>
                     <div className='options'>
-                        <button onClick={() => onAnswer(true)}>Yes</button>
-                        <button onClick={() => onAnswer(false)}>No</button>
+                        <button
+                            className={selected === true ? 'selected' : ''}
+                            onClick={() => setSelected(true)}
+                        >
+                            Yes
+                        </button>
+                        <button
+                            className={selected === false ? 'selected' : ''}
+                            onClick={() => setSelected(false)}
+                        >
+                            No
+                        </button>
                     </div>
                     <div className='inputs'>
                         <input
@@ -43,6 +55,17 @@ export default function Backstop({ onAnswer, onBackToStart }) {
                             type='text'
                             placeholder='Source Reference'
                         />
+                    </div>
+                    <div className='nav-header'>
+                        <div className='nav-right'>
+                        <button
+                            className='nav'
+                            onClick={() => onAnswer(selected)}
+                            disabled={selected === null}
+                        >
+                            Next
+                        </button>
+                    </div>
                     </div>
                 </div>
             </div>
