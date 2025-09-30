@@ -1,4 +1,5 @@
 import React, { useMemo } from 'react'
+import { makeAnswerKey } from '../utils/answerMapping'
 import { ResponsiveContainer, PieChart, Pie, Cell, BarChart, Bar, XAxis, YAxis, Tooltip, Legend, LabelList, CartesianGrid } from 'recharts'
 
 const LEVELS = ['Mandatory', 'Basic', 'Advanced']
@@ -16,8 +17,8 @@ const computeContentScores = (answers, categories) => {
 
   categories.forEach(cat => {
     // Initialize score tracking for this category
-    if (!scoreByCategory[cat.category]) {
-      scoreByCategory[cat.category] = {
+    if (!scoreByCategory[cat.label]) {
+      scoreByCategory[cat.label] = {
         Mandatory: { met: 0, total: 0 },
         Basic:     { met: 0, total: 0 },
         Advanced:  { met: 0, total: 0 }
@@ -26,9 +27,9 @@ const computeContentScores = (answers, categories) => {
 
     // Initialize score tracking for this principle
     cat.principles.forEach(principle => {
-      if (!principleScores[cat.category]) principleScores[cat.category] = {}
-      if (!principleScores[cat.category][principle.title]) {
-        principleScores[cat.category][principle.title] = {
+      if (!principleScores[cat.label]) principleScores[cat.label] = {}
+      if (!principleScores[cat.label][principle.title]) {
+        principleScores[cat.label][principle.title] = {
           Mandatory: { met: 0, total: 0 },
           Basic:     { met: 0, total: 0 },
           Advanced:  { met: 0, total: 0 }
@@ -41,12 +42,13 @@ const computeContentScores = (answers, categories) => {
           const level = req.level
           // Only score if level is recognized
           if (LEVELS.includes(level)) {
-            scoreByCategory[cat.category][level].total++
-            principleScores[cat.category][principle.title][level].total++
-            const a = answers[req.id]
+            scoreByCategory[cat.label][level].total++
+            principleScores[cat.label][principle.title][level].total++
+            const key = makeAnswerKey(criterion.id, req.id)
+            const a = answers[key]
             if (a?.response === 'Yes') {
-              scoreByCategory[cat.category][level].met++
-              principleScores[cat.category][principle.title][level].met++
+              scoreByCategory[cat.label][level].met++
+              principleScores[cat.label][principle.title][level].met++
             }
           }
         })
@@ -91,7 +93,7 @@ const computeContentScores = (answers, categories) => {
 }
 
 // Component for displaying visual results for content-level scores
-export default function ContentCharts({ answers, categories }) {
+export default function ContentCharts({ answers, categories = [] }) {
   const { scoreByCategory, principleScores, pieDataByCategory, principleBarData } =
     useMemo(() => computeContentScores(answers, categories), [answers, categories])
 
@@ -268,8 +270,8 @@ export default function ContentCharts({ answers, categories }) {
                       dataKey={`${lvl}Percent`}
                       position='right'
                       content={props => {
-                        const { x, y, value } = props;
-                        const display = value == null ? 'N/A' : `${value.toFixed(0)}%`;
+                        const { x, y, value } = props
+                        const display = value == null ? 'N/A' : `${value.toFixed(0)}%`
                         return (
                           <text
                             x={x+4}

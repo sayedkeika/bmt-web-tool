@@ -1,5 +1,7 @@
 import React, { useRef, useEffect, useState} from 'react'
 import { assessments } from '../Data'
+import ActionRail from './ActionRail'
+import { makeAnswerKey } from '../utils/answerMapping'
 import jsPDF from 'jspdf'
 import html2canvas from 'html2canvas'
 import SystemCharts from './SystemCharts'
@@ -7,6 +9,8 @@ import ContentCharts from './ContentCharts'
 import OutcomeCharts from './OutcomeCharts'
 import PopupDialog from './PopupDialog'
 import BioBasedCertLogo from '../images/BioBasedCertLogo.png'
+import GlossaryIcon from '../svgs/book.svg'
+import DownloadIcon from '../svgs/data-download.svg'
 
 const TYPE_LABELS = {
   system: 'System Level Assessment',
@@ -23,8 +27,17 @@ export default function Results({
   filteredSystemCategories,
   filteredContentCategories,
   filteredOutcomeCategories,
-  onBackToAssessment
+  onBackToAssessment,
+  onOpenGlossary
 }) {
+
+  const showSystem  = selectedTypes.includes('system')
+    && Array.isArray(filteredSystemCategories)  && filteredSystemCategories.length > 0
+  const showContent = selectedTypes.includes('content')
+    && Array.isArray(filteredContentCategories) && filteredContentCategories.length > 0
+  const showOutcome = selectedTypes.includes('outcome')
+    && Array.isArray(filteredOutcomeCategories) && filteredOutcomeCategories.length > 0
+
   const [showConfirm, setShowConfirm] = useState(false)
   const resultsRef = useRef()
   
@@ -99,29 +112,49 @@ export default function Results({
 
   // Generates and downloads a CSV file of the raw responses
   const handleDownloadCSV = () => {
-    // Define CSV headers
-    const headers = ['Assessment Type', 'Category', 'Principle', 'Criterion', 'Response', 'Justification', 'Feedback']
+    const headers = ['Assessment Type', 'Category', 'Principle', 'Criterion / Requirement', 'Response', 'Justification', 'Feedback']
     const rows = []
 
-    // Iterate through each selected assessment type
-    selectedTypes.forEach(type => {
-      const categories = assessments[type] || []
+    const levelData = [
+      { type: 'system', label: TYPE_LABELS.system, categories: filteredSystemCategories },
+      { type: 'content', label: TYPE_LABELS.content, categories: filteredContentCategories },
+      { type: 'outcome', label: TYPE_LABELS.outcome, categories: filteredOutcomeCategories }
+    ]
+
+    levelData.forEach(({ type, label, categories }) => {
+      if (!selectedTypes.includes(type)) return
+       if (!Array.isArray(categories) || categories.length === 0) return
+
       categories.forEach(category => {
         category.principles.forEach(principle => {
           principle.criteria.forEach(criterion => {
-            const items = Array.isArray(criterion.requirements) ? criterion.requirements : [criterion]
-            items.forEach(item => {
-              const a = answers[item.id] || {}
+            if (Array.isArray(criterion.requirements) && criterion.requirements.length > 0) {
+              criterion.requirements.forEach(req => {
+                const key = makeAnswerKey(criterion.id, req.id)
+                const a = answers[key] || {}
+                rows.push([
+                  label,
+                  category.label,
+                  principle.title,
+                  `${req.code ? req.code + ': ' : ''}${req.text}`,
+                  a.response || '',
+                  a.justification || '',
+                  a.feedback || ''
+                ])
+              })
+            } else {
+              const key = makeAnswerKey(criterion.id, null)
+              const a = answers[key] || {}
               rows.push([
-                TYPE_LABELS[type],
-                category.category,
+                label,
+                category.label,
                 principle.title,
-                item.text,
+                `${criterion.code ? criterion.code + ': ' : ''}${criterion.text}`,
                 a.response || '',
                 a.justification || '',
                 a.feedback || ''
               ])
-            })
+            }
           })
         })
       })
@@ -162,7 +195,7 @@ export default function Results({
       {/* Confirmation Dialog */}
       {showConfirm && (
         <PopupDialog
-          message='Are you sure you want to start a new assessment? All progress will be lost.'
+          message='Are you sure you want to start a new assessment?'
           onCancel={cancelRestart}
           onConfirm={confirmRestart}
         />
@@ -184,47 +217,42 @@ export default function Results({
       </div>
 
       {/* Main results content */}
-      <div className='container' ref={resultsRef}>
-        <div>
-          <button
-              className='nav floating-button download-pdf'
-              onClick={handleDownloadPDF}>
-              <span className='label'>Download Results</span>
-              <span className='label-sub'>as PDF</span>
-            </button>
-            <button
-              className='nav floating-button download-csv'
-              onClick={handleDownloadCSV}>
-              <span className='label'>Download Responses</span>
-              <span className='label-sub'>as CSV</span>
-            </button>
+      <div className="page-row">
+        <div className='container' ref={resultsRef}>
+          {showSystem && (
+            <section className='dashboard-section result-section result-system'>
+              <SystemCharts
+                answers={answers}
+                categories={filteredSystemCategories}
+              />
+            </section>
+          )}
+
+          {showContent && (
+            <section className='dashboard-section result-section result-content'>
+              <ContentCharts 
+                answers={answers} 
+                categories={filteredContentCategories}
+              />
+            </section>
+          )}
+
+          {showOutcome && (
+            <section className='dashboard-section result-section result-outcome'>
+              <OutcomeCharts
+                answers={answers}
+                categories={filteredOutcomeCategories}
+              />
+            </section>
+          )}
         </div>
-        {selectedTypes.includes('system') && (
-          <section className='dashboard-section result-section result-system'>
-            <SystemCharts
-              answers={answers}
-              categories={filteredSystemCategories}
-            />
-          </section>
-        )}
-
-        {selectedTypes.includes('content') && (
-          <section className='dashboard-section result-section result-content'>
-            <ContentCharts 
-              answers={answers} 
-              categories={filteredContentCategories}
-            />
-          </section>
-        )}
-
-        {selectedTypes.includes('outcome') && (
-          <section className='dashboard-section result-section result-outcome'>
-            <OutcomeCharts
-              answers={answers}
-              categories={filteredOutcomeCategories}
-            />
-          </section>
-        )}
+        <ActionRail
+          actions={[
+            { id: 'glossary',   label: 'Glossary', title: 'Go to Glossary', onClick: onOpenGlossary, imgSrc: GlossaryIcon },
+            { id: 'download-results', label: 'Results', title: 'Download Results as PDF', onClick: handleDownloadPDF, imgSrc: DownloadIcon },
+            { id: 'download-csv',     label: 'Responses', title: 'Download Responses as CSV', onClick: handleDownloadCSV, imgSrc: DownloadIcon }
+          ]}
+        />
       </div>
     </>     
   )

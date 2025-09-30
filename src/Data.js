@@ -160,7 +160,7 @@ export const assessments = {
                             text: "The scheme owner provides information on the input received from stakeholder consultations and how it was used.",
                             responseOptions: [
                                 {label: "Yes, comments and explanations", score: 2},
-                                {label: "Yes, comments only ", score: 1},
+                                {label: "Yes, comments only", score: 1},
                                 {label: "No", score: 0}
                             ],
                             examples: [
@@ -1300,7 +1300,7 @@ export const assessments = {
                                 {
                                     id: "r24",
                                     level: "Basic",
-                                    text: "iii.  The plan is updated and progress is monitored regularly.",
+                                    text: "iii. The plan is updated and progress is monitored regularly.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Forest"],
                                     applicablePhases: ["Biomass producer"]
@@ -1355,7 +1355,7 @@ export const assessments = {
                                 {
                                     id: "r27",
                                     level: "Basic",
-                                    text: "i. Regeneration methods are used to regenerate vegetation cover to pre-harvesting or more natural conditions. ",
+                                    text: "i. Regeneration methods are used to regenerate vegetation cover to pre-harvesting or more natural conditions.",
                                     responseOptions: YES_NO,
                                     applicableFeedstocks: ["Forest"],
                                     applicablePhases: ["Biomass producer"]
@@ -4012,7 +4012,7 @@ export const assessments = {
                                     examples: [
                                         "Indicator fulfilment",
                                         "A \"Fully\" rating is assigned if: The scheme conducts both performance monitoring and outcome evaluation on an annual basis. Evidence of this may include a monitoring and evaluation procedure, an annual impact report, or any relevant publications available on the scheme’s website. At a minimum, there should be documentation demonstrating that performance monitoring and outcome evaluation are carried out annually and made available to internal stakeholders.",
-                                        "A \"Partial\" rating is assigned if: • The scheme conducts only one of the two activities (performance monitoring or outcome evaluation) annually; and/or • The frequency of either activity is less than once per year.• ",
+                                        "A \"Partial\" rating is assigned if: • The scheme conducts only one of the two activities (performance monitoring or outcome evaluation) annually; and/or • The frequency of either activity is less than once per year. ",
                                         "A \"Missing\" rating is assigned if: Neither performance monitoring nor outcome evaluation is conducted, or there is no available evidence to demonstrate these activities.",
                                         "Definitions See the following definition of performance monitoring and outcome evaluation (as stated in the ISEAL Impact Code of Good Practice)",
                                         "• Performance monitoring: A continuing function that uses systematic collection of data on specified indicators to provide indications of the extent to which outputs and short and medium term results are being achieved. (Adapted from OECD Glossary,2002). Examples of performance indicators: number of certificate holders, number of workers protected under the standard, amount of certified materials",

@@ -1,5 +1,6 @@
 import React, { useMemo } from 'react'
 import { assessments } from '../Data'
+import { makeAnswerKey } from '../utils/answerMapping'
 import { RadarChart, Radar, PolarGrid, PolarAngleAxis, PolarRadiusAxis, ResponsiveContainer, Tooltip, BarChart, Bar, XAxis, YAxis, Legend, CartesianGrid } from 'recharts'
 
 const CATEGORY_COLORS = {
@@ -22,20 +23,21 @@ const computeSystemScores = (answers, categories) => {
     let categoryMaxTotal = 0
 
     cat.principles.forEach(principle => {
-      // only count those criteria that remain after filtering
       const answeredCriteria = principle.criteria.filter(item => {
-        const a = answers[item.id]?.response
-        const opt = item.responseOptions?.find(o => o.label === a)
+        const key = makeAnswerKey(item.id, null)
+        const a = answers[key]?.response
+        const opt = item.response_options?.find(o => o.label === a)
         return opt?.score != null
       })
 
       if (!answeredCriteria.length) return
 
-      // compute avg % for this principle
       const percentages = answeredCriteria.map(item => {
-        const match = item.responseOptions.find(o => o.label === answers[item.id]?.response)
+        const key = makeAnswerKey(item.id, null)
+        const a = answers[key]?.response
+        const match = item.response_options.find(o => o.label === a)
         const score = match?.score ?? 0
-        const maxScore = Math.max(...item.responseOptions.map(o => o.score ?? 0))
+        const maxScore = Math.max(...item.response_options.map(o => o.score ?? 0))
         return (score / maxScore) * 100
       })
       const principlePct = percentages.reduce((s, p) => s + p, 0) / percentages.length
@@ -43,7 +45,7 @@ const computeSystemScores = (answers, categories) => {
       allPrinciplesChart.push({
         principle: principle.title,
         score: principlePct,
-        category: cat.category
+        category: cat.label
       })
 
       categoryScoreTotal += principlePct
@@ -52,7 +54,7 @@ const computeSystemScores = (answers, categories) => {
 
     if (categoryMaxTotal > 0) {
       barChartData.push({
-        category: cat.category,
+        category: cat.label,
         score: (categoryScoreTotal / categoryMaxTotal) * 100
       })
     }
