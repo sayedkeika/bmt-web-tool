@@ -24,6 +24,6 @@ Future updates may include adding new questionnaires, editing active questionnai
 For best practices, always clone and version questionnaires instead of directly modifying active ones to preserve past submissions integrity. After updating any part of the tool, always run tests to check UI rendering and API responses.
 
 # References
-Backend API Documentation: https://adminbmt.star4bbs.eu/docs/
-Base Endpoint for the APIs: https://adminbmt.star4bbs.eu/api/
-Admin Management Dashboard: https://adminbmt.star4bbs.eu/
+- Backend API Documentation: https://adminbmt.star4bbs.eu/docs/
+- Base Endpoint for the APIs: https://adminbmt.star4bbs.eu/api/
+- Admin Management Dashboard: https://adminbmt.star4bbs.eu/
